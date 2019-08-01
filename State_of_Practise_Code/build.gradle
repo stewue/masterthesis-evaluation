@@ -1,0 +1,42 @@
+buildscript {
+    // version variables
+    ext.kotlin_version = "1.3.41"
+    ext.opencsv_version = '4.3.2'
+    ext.bencher_version = "1.0-SNAPSHOT"
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+    }
+}
+
+group = "ch.uzh.ifi.seal"
+version = "1.0-SNAPSHOT"
+
+apply(plugin: "kotlin")
+apply(plugin: "application")
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+    mavenLocal()
+}
+
+dependencies {
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
+    compile("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
+    compile("com.opencsv:opencsv:$opencsv_version")
+    compile("ch.uzh.ifi.seal:bencher:$bencher_version")
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
