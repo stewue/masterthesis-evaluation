@@ -39,7 +39,8 @@ fun main() {
 
         val c = res.right().get()
 
-        val benchmarkName = "${it.clazz}.${it.name}${JmhParamHelper.getJmhParamsString(it.jmhParams)}"
+        val versionString = "${version.major}.${version.minor}"
+        val benchmarkName = "${it.clazz}.${it.name}"
         val warmupIterationsIsDefault = isDefault(c.warmupIterations, default.warmupIterations)
         val warmupTime = inSeconds(c.warmupTime, c.warmupTimeUnit)
         val warmupTimeIsDefault = isDefault(warmupTime, inSeconds(default.warmupTime, default.warmupTimeUnit))
@@ -54,7 +55,7 @@ fun main() {
         val modeIsSingleShotTime = c.mode.contains("SingleShotTime") || c.mode.contains("All")
         val modeIsDefault = isDefault(c.mode, default.mode)
 
-        val r = Result(project, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault)
+        val r = Result(project, versionString, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault)
         results.add(r)
     }
 
