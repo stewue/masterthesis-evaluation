@@ -48,9 +48,13 @@ fun main() {
         val measurementTimeIsDefault = isDefault(measurementTime, inSeconds(default.measurementTime, default.measurementTimeUnit))
         val forksIsDefault = isDefault(c.forks, default.forks)
         val warmupForksIsDefault = isDefault(c.warmupForks, default.warmupForks)
+        val modeIsThroughput = c.mode.contains("Throughput") || c.mode.contains("All")
+        val modeIsAverageTime = c.mode.contains("AverageTime") || c.mode.contains("All")
+        val modeIsSampleTime = c.mode.contains("SampleTime") || c.mode.contains("All")
+        val modeIsSingleShotTime = c.mode.contains("SingleShotTime") || c.mode.contains("All")
         val modeIsDefault = isDefault(c.mode, default.mode)
 
-        val r = Result(project, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, c.mode, modeIsDefault)
+        val r = Result(project, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault)
         results.add(r)
     }
 

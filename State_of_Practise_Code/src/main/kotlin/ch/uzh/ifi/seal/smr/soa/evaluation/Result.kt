@@ -46,8 +46,17 @@ data class Result(
         val warmupForksIsDefault: Boolean,
 
         @CsvBindByPosition(position = 14)
-        val mode: List<String>,
+        val modeIsThroughput: Boolean,
 
         @CsvBindByPosition(position = 15)
+        val modeIsAverageTime: Boolean,
+
+        @CsvBindByPosition(position = 16)
+        val modeIsSampleTime: Boolean,
+
+        @CsvBindByPosition(position = 17)
+        val modeIsSingleShotTime: Boolean,
+
+        @CsvBindByPosition(position = 18)
         val modeIsDefault: Boolean
 )
