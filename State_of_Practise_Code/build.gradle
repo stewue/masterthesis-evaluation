@@ -2,6 +2,7 @@ buildscript {
     // version variables
     ext.kotlin_version = "1.3.41"
     ext.opencsv_version = '4.3.2'
+    ext.jackson_version = '2.9.6'
     ext.bencher_version = "1.0-SNAPSHOT"
 
     repositories {
@@ -31,6 +32,7 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
     compile("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
     compile("com.opencsv:opencsv:$opencsv_version")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version")
     compile("ch.uzh.ifi.seal:bencher:$bencher_version")
 }
 
