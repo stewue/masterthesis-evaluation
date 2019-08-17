@@ -4,12 +4,15 @@ import com.opencsv.CSVWriter
 import com.opencsv.bean.StatefulBeanToCsvBuilder
 
 import java.nio.file.Files
-import java.nio.file.Paths
+import java.nio.file.Path
 
 object OpenCSVWriter {
-    fun <T> write(fileName: String, input: Iterable<T>) {
+    fun <T> write(outputFile: Path, input: Iterable<T>) {
+        if (!outputFile.toFile().exists()) {
+            outputFile.toFile().createNewFile()
+        }
 
-        Files.newBufferedWriter(Paths.get(fileName)).use { writer ->
+        Files.newBufferedWriter(outputFile).use { writer ->
             val beanToCsv = StatefulBeanToCsvBuilder<T>(writer)
                     .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER)
                     .build()

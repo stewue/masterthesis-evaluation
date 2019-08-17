@@ -61,5 +61,8 @@ data class Result(
         val modeIsSingleShotTime: Boolean,
 
         @CsvBindByPosition(position = 19)
-        val modeIsDefault: Boolean
+        val modeIsDefault: Boolean,
+
+        @CsvBindByPosition(position = 20)
+        val methodhasParams: Boolean
 )

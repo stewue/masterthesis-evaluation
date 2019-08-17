@@ -6,11 +6,25 @@ import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
 import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
 import org.funktionale.option.Option
 import java.io.File
+import java.nio.file.Paths
 import java.util.concurrent.TimeUnit
 
 fun main() {
-    val project = "myProject"
-    val sourceDir = File("D:\\logging-log4j2-log4j-2.8")
+    val dir = File("D:/projects")
+    val outputDir = "D:/projects"
+
+    dir.listFiles().forEach {
+        if (it.isDirectory) {
+            val name = it.name
+            println("Process $name")
+            doPerProject(name, it, outputDir)
+        }
+
+    }
+}
+
+fun doPerProject(project: String, sourceDir: File, outputDir: String) {
+    // TODO als input benötigt
     val version = JMHVersion(1, 20)
 
     val finder = JdtBenchFinder(sourceDir)
@@ -54,12 +68,13 @@ fun main() {
         val modeIsSampleTime = c.mode.contains("SampleTime") || c.mode.contains("All")
         val modeIsSingleShotTime = c.mode.contains("SingleShotTime") || c.mode.contains("All")
         val modeIsDefault = isDefault(c.mode, default.mode)
+        val methodhasParams = it.params.isNotEmpty()
 
-        val r = Result(project, versionString, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault)
+        val r = Result(project, versionString, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault, methodhasParams)
         results.add(r)
     }
 
-    OpenCSVWriter.write("test.csv", results)
+    OpenCSVWriter.write(Paths.get(outputDir, "$project.csv"), results)
 }
 
 fun isDefault(a: Any, b: Any) = a == b
