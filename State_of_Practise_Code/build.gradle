@@ -32,6 +32,7 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
     compile("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
     compile("com.opencsv:opencsv:$opencsv_version")
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jackson_version")
     compile("com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version")
     compile("ch.uzh.ifi.seal:bencher:$bencher_version")
 }
