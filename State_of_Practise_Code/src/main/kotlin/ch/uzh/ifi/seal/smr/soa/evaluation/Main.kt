@@ -19,7 +19,6 @@ fun main() {
             println("Process $name")
             doPerProject(name, it, outputDir)
         }
-
     }
 }
 
