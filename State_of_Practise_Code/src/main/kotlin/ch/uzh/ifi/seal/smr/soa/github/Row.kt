@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.bigquery
+package ch.uzh.ifi.seal.smr.soa.preprocessing
 
 import com.opencsv.bean.CsvBindByPosition
 
@@ -10,16 +10,16 @@ class Row {
     var forked: Boolean = false
 
     @CsvBindByPosition(position = 2)
-    var watchers: Int = 0
+    var watchers: Int? = null
 
     @CsvBindByPosition(position = 3)
-    var stars: Int = 0
+    var stars: Int? = null
 
     @CsvBindByPosition(position = 4)
-    var forks: Int = 0
+    var forks: Int? = null
 
     @CsvBindByPosition(position = 5)
-    var subscribers: Int = 0
+    var subscribers: Int? = null
 
     // we get a 404 error from the github api -> repo not available
     @CsvBindByPosition(position = 6)
@@ -29,33 +29,20 @@ class Row {
     @CsvBindByPosition(position = 7)
     var parentProject: String? = null
 
-    // is the parent project in our list
     @CsvBindByPosition(position = 8)
-    var parentInList: Boolean? = null
-
-    @CsvBindByPosition(position = 9)
     var cloneUrl: String? = null
 
-    @CsvBindByPosition(position = 10)
+    @CsvBindByPosition(position = 9)
     var lastUpdate: String? = null
 
+    @CsvBindByPosition(position = 10)
+    var numberOfCommits: Int? = null
+
     @CsvBindByPosition(position = 11)
-    var duplicatedFork: Boolean? = null
+    var numberOfTags: Int? = null
 
     @CsvBindByPosition(position = 12)
-    var selectedForStudy: Boolean? = null
-
-    @CsvBindByPosition(position = 13)
-    var archived: Boolean? = null
-
-    @CsvBindByPosition(position = 14)
-    var disabled: Boolean? = null
-
-    @CsvBindByPosition(position = 15)
-    var numberOfReleases: Int? = null
-
-    @CsvBindByPosition(position = 16)
-    var numberOfCommits: Int? = null
+    var numberOfContributors: Int? = null
 
     constructor()
 }

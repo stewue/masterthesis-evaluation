@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.bigquery
+package ch.uzh.ifi.seal.smr.soa.preprocessing
 
 import com.opencsv.bean.ColumnPositionMappingStrategy
 import com.opencsv.bean.CsvToBean
