@@ -1,5 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.evaluation
 
+import ch.uzh.ifi.seal.bencher.JMHVersion
 import com.opencsv.bean.CsvBindByPosition
 
 data class Result(
@@ -7,7 +8,7 @@ data class Result(
         val project: String,
 
         @CsvBindByPosition(position = 1)
-        val jmhVersion: String,
+        val jmhVersion: JMHVersion?,
 
         @CsvBindByPosition(position = 2)
         val benchmarkName: String,

@@ -52,7 +52,6 @@ fun doPerProject(project: String, sourceDir: File, outputDir: String) {
 
         val c = res.right().get()
 
-        val versionString = "${version.major}.${version.minor}"
         val benchmarkName = "${it.clazz}.${it.name}"
         val warmupIterationsIsDefault = isDefault(c.warmupIterations, default.warmupIterations)
         val warmupTime = inSeconds(c.warmupTime, c.warmupTimeUnit)
@@ -69,7 +68,7 @@ fun doPerProject(project: String, sourceDir: File, outputDir: String) {
         val modeIsDefault = isDefault(c.mode, default.mode)
         val methodhasParams = it.params.isNotEmpty()
 
-        val r = Result(project, versionString, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault, methodhasParams)
+        val r = Result(project, version, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault, methodhasParams)
         results.add(r)
     }
 

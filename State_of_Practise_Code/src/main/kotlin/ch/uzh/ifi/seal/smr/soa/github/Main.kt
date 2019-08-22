@@ -13,7 +13,7 @@ val mapper = ObjectMapper()
 val token = ""
 
 fun main() {
-    val inFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Code\\Evaluation\\State_of_Practise_Code\\src\\main\\kotlin\\ch\\uzh\\ifi\\seal\\smr\\soa\\github\\input.csv")
+    val inFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Code\\Evaluation\\State_of_Practise_Code\\src\\main\\kotlin\\ch\\uzh\\ifi\\seal\\smr\\soa\\github\\input.txt")
     val outFile = File("C:\\Users\\stewue\\Downloads\\out.csv").toPath()
     val res = mutableListOf<Row>()
 

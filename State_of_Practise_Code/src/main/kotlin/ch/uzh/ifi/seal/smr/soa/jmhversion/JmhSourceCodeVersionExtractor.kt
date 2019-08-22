@@ -1,9 +1,10 @@
 package ch.uzh.ifi.seal.smr.soa.jmhversion
 
+import ch.uzh.ifi.seal.bencher.JMHVersion
 import java.io.File
 
 class JmhSourceCodeVersionExtractor(private val dir: File) {
-    fun get(): String? {
+    fun get(): JMHVersion? {
         var version: String? = null
         dir.walk().forEach {
             val resMaven = checkMaven(it)
@@ -16,7 +17,7 @@ class JmhSourceCodeVersionExtractor(private val dir: File) {
             }
         }
 
-        return version
+        return convert(version)
     }
 
     private fun checkMaven(file: File): String? {
@@ -96,6 +97,18 @@ class JmhSourceCodeVersionExtractor(private val dir: File) {
         }
 
         return null
+    }
+
+    private fun convert(input: String?): JMHVersion? {
+        return if(input == null){
+            null
+        }else {
+            val list = input.split(".")
+            val major = list[0].toInt()
+            val minor = list[1].toInt()
+            val patch = list.getOrNull(2)?.toInt() ?: 0
+            JMHVersion(major, minor, patch)
+        }
     }
 
     companion object {

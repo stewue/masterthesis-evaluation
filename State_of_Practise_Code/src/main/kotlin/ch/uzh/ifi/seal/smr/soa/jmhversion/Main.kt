@@ -1,13 +1,20 @@
 package ch.uzh.ifi.seal.smr.soa.jmhversion
 
 import java.io.File
+import kotlin.system.exitProcess
 
-val dir = File("D:/projects")
+fun main(args: Array<String>) {
+    if(args.size != 1){
+        println("Needed arguments: inputDirectory")
+        exitProcess(-1)
+    }
 
-fun main() {
-    dir.listFiles().forEach {
+    val inDir = File(args[0])
+
+    inDir.listFiles().forEach {
         if (it.isDirectory) {
-            JmhSourceCodeVersionExtractor(it).get()
+            val res = JmhSourceCodeVersionExtractor(it).get()
+            println("$it: $res")
         }
     }
 }
