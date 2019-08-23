@@ -66,10 +66,12 @@ class JmhSourceCodeVersionExtractor(private val dir: File) {
     private fun checkSingleLine(file: File): String? {
         var found: String? = null
         file.forEachLine { line ->
-            val res = checkContent(line)
-            if (res != null) {
-                found = res
-                return@forEachLine
+            if (found == null) {
+                val res = checkContent(line)
+                if (res != null) {
+                    found = res
+                    return@forEachLine
+                }
             }
         }
         return found
@@ -82,13 +84,13 @@ class JmhSourceCodeVersionExtractor(private val dir: File) {
                     return version
                 }
             }
-        } else if (input.contains("org.openjdk.jmh")) {
+        } else if (input.contains("jmh") && input.contains("version") && !input.contains("champeau")) {
             jmhVersions.forEach { version ->
                 if (input.contains(version)) {
                     return version
                 }
             }
-        } else if (input.contains("jmh") && input.contains("version")) {
+        } else if (input.contains("org.openjdk.jmh")) {
             jmhVersions.forEach { version ->
                 if (input.contains(version)) {
                     return version
@@ -100,9 +102,9 @@ class JmhSourceCodeVersionExtractor(private val dir: File) {
     }
 
     private fun convert(input: String?): JMHVersion? {
-        return if(input == null){
+        return if (input == null) {
             null
-        }else {
+        } else {
             val list = input.split(".")
             val major = list[0].toInt()
             val minor = list[1].toInt()
