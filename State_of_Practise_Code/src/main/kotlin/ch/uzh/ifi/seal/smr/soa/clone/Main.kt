@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.clone
 
-import ch.uzh.ifi.seal.smr.soa.preprocessing.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import java.io.File
 import java.nio.file.Paths
 import kotlin.system.exitProcess

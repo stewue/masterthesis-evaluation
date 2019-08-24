@@ -1,6 +1,7 @@
-package ch.uzh.ifi.seal.smr.soa.preprocessing
+package ch.uzh.ifi.seal.smr.soa.github
 
-import ch.uzh.ifi.seal.smr.soa.evaluation.OpenCSVWriter
+import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
+import ch.uzh.ifi.seal.smr.soa.utils.Row
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.commons.io.IOUtils
 import java.io.File

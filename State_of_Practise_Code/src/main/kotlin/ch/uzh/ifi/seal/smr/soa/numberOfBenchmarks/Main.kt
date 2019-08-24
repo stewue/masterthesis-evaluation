@@ -28,7 +28,6 @@ fun main(args: Array<String>) {
                 log.error("Error during parsing $name: ${e.message}")
             }
         }
-
     }
 }
 

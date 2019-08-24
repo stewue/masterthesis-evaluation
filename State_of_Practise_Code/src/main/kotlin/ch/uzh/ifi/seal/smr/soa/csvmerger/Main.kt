@@ -1,6 +1,7 @@
 package ch.uzh.ifi.seal.smr.soa.csvmerger
 
-import ch.uzh.ifi.seal.smr.soa.evaluation.OpenCSVWriter
+import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import com.fasterxml.jackson.databind.ObjectMapper
 import java.io.File
 

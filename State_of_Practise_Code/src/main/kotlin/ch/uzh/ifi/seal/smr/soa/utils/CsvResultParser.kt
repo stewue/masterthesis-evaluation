@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.preprocessing
+package ch.uzh.ifi.seal.smr.soa.utils
 
 import com.opencsv.bean.ColumnPositionMappingStrategy
 import com.opencsv.bean.CsvToBean

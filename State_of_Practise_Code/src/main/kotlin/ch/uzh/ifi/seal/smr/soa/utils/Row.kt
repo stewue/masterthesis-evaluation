@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.preprocessing
+package ch.uzh.ifi.seal.smr.soa.utils
 
 import com.opencsv.bean.CsvBindByPosition
 
@@ -43,6 +43,12 @@ class Row {
 
     @CsvBindByPosition(position = 12)
     var numberOfContributors: Int? = null
+
+    @CsvBindByPosition(position = 13)
+    var jmhVersion: String? = null
+
+    @CsvBindByPosition(position = 14)
+    var numberOFBenchmarks: Int? = null
 
     constructor()
 }

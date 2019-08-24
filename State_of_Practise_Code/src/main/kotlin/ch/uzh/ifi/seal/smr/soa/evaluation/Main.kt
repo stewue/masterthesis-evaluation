@@ -4,6 +4,7 @@ import ch.uzh.ifi.seal.bencher.JMHVersion
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
 import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
+import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import org.funktionale.option.Option
 import java.io.File
 import java.nio.file.Paths

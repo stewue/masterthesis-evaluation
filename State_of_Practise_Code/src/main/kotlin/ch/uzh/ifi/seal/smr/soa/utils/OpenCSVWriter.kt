@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation
+package ch.uzh.ifi.seal.smr.soa.utils
 
 import com.opencsv.CSVWriter
 import com.opencsv.bean.StatefulBeanToCsvBuilder
