@@ -6,6 +6,7 @@ import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
 import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
 import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
+import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
 import java.io.File
 
 val commits = listOf("0f681e6", "dcc91a7", "17b51aa", "2e4c35a", "d5056f2", "3d2e602", "0cd8cd3", "cfa0e4b", "38c0402", "beaf576", "84b7383", "ab7e923")
@@ -14,6 +15,8 @@ val dir = File("D:\\test")
 val benchsLastChanged = mutableMapOf<String, Pair<ByteArray, Triple<String, Benchmark, ExecutionConfiguration>>>()
 
 fun main() {
+    disableSystemErr()
+
     commits.reversed().forEach { commit ->
         checkout(commit)
 

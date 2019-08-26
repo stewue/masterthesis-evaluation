@@ -1,13 +1,16 @@
 package ch.uzh.ifi.seal.smr.soa.numberOfBenchmarks
 
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
+import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
 import org.apache.logging.log4j.LogManager
 import java.io.File
 import kotlin.system.exitProcess
 
-val log = LogManager.getLogger()
+private val log = LogManager.getLogger()
 
 fun main(args: Array<String>) {
+    disableSystemErr()
+
     if (args.size != 1) {
         log.error("Needed arguments: dir")
         exitProcess(-1)

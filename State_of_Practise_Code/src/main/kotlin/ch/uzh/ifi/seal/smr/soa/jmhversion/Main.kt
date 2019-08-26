@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager
 import java.io.File
 import kotlin.system.exitProcess
 
-val log = LogManager.getLogger()
+private val log = LogManager.getLogger()
 
 fun main(args: Array<String>) {
     if(args.size != 1){
