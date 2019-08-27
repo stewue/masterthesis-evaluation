@@ -50,5 +50,8 @@ class Row {
     @CsvBindByPosition(position = 14)
     var numberOFBenchmarks: Int? = null
 
+    @CsvBindByPosition(position = 15)
+    var javaVersion: String? = null
+
     constructor()
 }
