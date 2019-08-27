@@ -24,7 +24,23 @@ publishing {
 }
 ```
 
-iii. Run 
+iii. Replace the following code in the class `ConfigBasedConfigurator`
+
+```kotlin
+return if (valid(c)) {
+    Either.right(c)
+} else {
+    Either.left("Invalid configuration for benchmark ($bench) and provided default/class/benchmark configurations")
+}
+```
+
+with
+
+```kotlin
+return Either.right(c)
+```
+
+iv. Run 
 
 ```
 gradle publishToMavenLocal
