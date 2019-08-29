@@ -17,11 +17,16 @@ fun main(args: Array<String>) {
 
     inDir.listFiles().forEach {
         if (it.isDirectory) {
-            val res = JavaVersionExtractor(it).get()
-            log.info("$it : $res")
+            val resTarget = JavaTargetVersionExtractor(it).get()
+            val resSource = JavaSourceVersionExtractor(it).get()
 
-            val resString = res ?: ""
-            outputFile.appendText("${it.name.replace('#', '/')};$resString\n")
+            if(resTarget != resSource){
+                log.info("$it : $resTarget/$resSource")
+            }
+
+            val resTargetString = resTarget ?: ""
+            val resSourceString = resSource ?: ""
+            outputFile.appendText("${it.name.replace('#', '/')};$resTargetString;$resSourceString\n")
         }
     }
 }

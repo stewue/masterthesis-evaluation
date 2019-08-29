@@ -2,9 +2,8 @@ package ch.uzh.ifi.seal.smr.soa.java
 
 import java.io.File
 
-class JavaVersionExtractor(private val dir: File) {
+abstract class JavaVersionExtractor(private val dir: File, private val name: String) {
     fun get(): String? {
-        println(jdkVersion.size)
         var version: String? = null
         dir.walkTopDown().forEach {
             val resMaven = checkMaven(it)
@@ -65,13 +64,7 @@ class JavaVersionExtractor(private val dir: File) {
     }
 
     private fun checkContentGradle(input: String): String? {
-        if (input.contains("targetCompatibility")) {
-            jdkVersion.forEach { version ->
-                if (input.contains(version)) {
-                    return version
-                }
-            }
-        } else if (input.contains("sourceCompatibility")) {
+        if (input.contains("${name}Compatibility")) {
             jdkVersion.forEach { version ->
                 if (input.contains(version)) {
                     return version
@@ -119,32 +112,22 @@ class JavaVersionExtractor(private val dir: File) {
     }
 
     private fun checkContentMaven(input: String): String? {
-        val resTarget1 = checkRegex("<maven.compiler.target>(.)*?<\\/maven.compiler.target>".toRegex(), input)
-        if (resTarget1 != null) {
-            return resTarget1
+        val res1 = checkRegex("<maven.compiler.$name>(.)*?<\\/maven.compiler.$name>".toRegex(), input)
+        if (res1 != null) {
+            return res1
         }
 
-        val resTarget2 = checkRegex("<(.)*?target(.)*?>(.)*?<\\/(.)*?target(.)*?>".toRegex(), input)
-        if (resTarget2 != null) {
-            return resTarget2
-        }
-
-        val resSource1 = checkRegex("<maven.compiler.source>(.)*?<\\/maven.compiler.source>".toRegex(), input)
-        if (resSource1 != null) {
-            return resSource1
-        }
-
-        val resSource2 = checkRegex("<(.)*?source(.)*?>(.)*?<\\/(.)*?source(.)*?>".toRegex(), input)
-        if (resSource2 != null) {
-            return resSource2
+        val res2 = checkRegex("<(.)*?$name(.)*?>(.)*?<\\/(.)*?$name(.)*?>".toRegex(), input)
+        if (res2 != null) {
+            return res2
         }
 
         return null
     }
 
-    private fun checkRegex(regexSource: Regex, input: String): String? {
-        val matchSource = regexSource.findAll(input)
-        matchSource.forEach { res ->
+    private fun checkRegex(regex: Regex, input: String): String? {
+        val match = regex.findAll(input)
+        match.forEach { res ->
             jdkVersion.forEach { version ->
                 if (res.value.contains(version)) {
                     return version
