@@ -2,39 +2,57 @@ package ch.uzh.ifi.seal.smr.soa.evaluation
 
 import ch.uzh.ifi.seal.bencher.Benchmark
 import ch.uzh.ifi.seal.bencher.JMHVersion
+import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JMHConstants
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
 import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
 import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
+import ch.uzh.ifi.seal.smr.soa.java.JavaSourceVersionExtractor
+import ch.uzh.ifi.seal.smr.soa.java.JavaTargetVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.jmhversion.JmhSourceCodeVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
+import ch.uzh.ifi.seal.smr.soa.utils.convertToString
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
+import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
 import org.funktionale.option.Option
 import java.io.File
 import java.nio.file.Paths
 import java.util.concurrent.TimeUnit
+import kotlin.system.exitProcess
 
 private val log = LogManager.getLogger()
 
-fun main() {
+fun main(args: Array<String>) {
     disableSystemErr()
 
-    val dir = File("D:/projects")
-    val outputDir = "D:/projects"
+    if (args.size != 4) {
+        log.error("Needed arguments: inputFile inputDir outputDir outputFile")
+        exitProcess(-1)
+    }
 
-    dir.listFiles().forEach {
-        if (it.isDirectory) {
-            val name = it.name
-            log.info("Process $name")
-            doPerProject(name, null, it, outputDir)
+    val inputFile = File(args[0])
+    val inputDir = args[1]
+    val outputDir = File(args[2])
+    val outputFile = File(args[3])
+
+    inputFile.forEachLine { project ->
+        val dir = File(inputDir + project.toFileSystemName)
+        if (dir.exists()) {
+            log.info("Process $dir")
+            doPerProject(project, null, dir, outputDir, outputFile)
+        } else {
+            // TODO
+            //log.warn("Project ${it.project} does not exist in input directory -> skipped")
         }
     }
 }
 
-fun doPerProject(project: String, codeVersion: String?, sourceDir: File, outputDir: String) {
+private fun doPerProject(project: String, codeVersion: String?, sourceDir: File, outputDir: File, outputFile: File) {
     try {
         val jmhVersion = JmhSourceCodeVersionExtractor(sourceDir).get()
+        val javaTarget = JavaTargetVersionExtractor(sourceDir).get()
+        val javaSource = JavaSourceVersionExtractor(sourceDir).get()
 
         val finder = JdtBenchFinder(sourceDir)
 
@@ -52,80 +70,162 @@ fun doPerProject(project: String, codeVersion: String?, sourceDir: File, outputD
             throw RuntimeException("Could not retrieve benchmark execution info: ${be.left().get()}")
         }
 
-        val default = unsetExecConfig
+        val hashes = finder.hashes()
+        if (hashes.isLeft()) {
+            throw RuntimeException("Could not retrieve hashes: ${hashes.left().get()}")
+        }
 
-        val configurator = ConfigBasedConfigurator(unsetExecConfig, ce.right().get(), be.right().get())
+        val cb = be.right().get()
+        val cc = ce.right().get()
+        val configurator = ConfigBasedConfigurator(unsetExecConfig, cc, cb)
 
         val results = mutableListOf<Result>()
 
-        benchs.right().get().forEach {
-            val res = configurator.config(it)
+        benchs.right().get().forEach { bench ->
+            val res = configurator.config(bench)
             if (res.isLeft()) {
                 throw java.lang.RuntimeException("Could not retrieve config: ${res.left().get()}")
             }
 
             val config = res.right().get()
-            val item = convertResult(project, codeVersion, jmhVersion, it, config)
+            val configBench = cb.getValue(bench)
+            val configClass = cc.toList().filter { bench.clazz == it.first.name }.first().second
+            val hash = hashes.right().get().getValue(bench)
+            val jmhParamSource = finder.jmhParamSource(bench)
+
+            val item = convertResult(project, codeVersion, jmhVersion, javaTarget, javaSource, bench, config, configBench, configClass, jmhParamSource, hash)
             results.add(item)
         }
 
-        OpenCSVWriter.write(Paths.get(outputDir, "$project.csv"), results)
+        OpenCSVWriter.write(Paths.get(outputDir.absolutePath, "${project.toFileSystemName}.csv"), results)
     } catch (e: Exception) {
         log.error("Error during parsing project $project at code version $codeVersion: ${e.message}")
+        outputFile.appendText("$project;$codeVersion;${e.message}\n")
     }
 }
 
-fun convertResult(p: String, codeVersion: String?, jmhVersion: JMHVersion?, bench: Benchmark, c: ExecutionConfiguration): Result {
-    val project = p.replace('#', '/')
-    val benchmarkName = "${bench.clazz}.${bench.name}"
-    val warmupIterations = if (c.warmupIterations == unsetExecConfig.warmupIterations) {
-        null
-    } else {
-        c.warmupIterations
-    }
-    val warmupTime = if (c.warmupTime == unsetExecConfig.warmupTime && c.warmupTimeUnit == unsetExecConfig.warmupTimeUnit) {
-        null
-    } else {
-        inSeconds(c.warmupTime, c.warmupTimeUnit)
-    }
-    val measurementIterations = if (c.measurementIterations == unsetExecConfig.measurementIterations) {
-        null
-    } else {
-        c.measurementIterations
-    }
-    val measurementTime = if (c.measurementTime == unsetExecConfig.measurementTime && c.measurementTimeUnit == unsetExecConfig.measurementTimeUnit) {
-        null
-    } else {
-        inSeconds(c.measurementTime, c.measurementTimeUnit)
-    }
-    val forks = if (c.forks == unsetExecConfig.forks) {
-        null
-    } else {
-        c.forks
-    }
-    val warmupForks = if (c.warmupForks == unsetExecConfig.warmupForks) {
-        null
-    } else {
-        c.warmupForks
-    }
-    val (modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime) = if (c.mode == unsetExecConfig.mode) {
-        listOf(null, null, null, null)
-    } else {
-        listOf(
-                c.mode.contains("Throughput") || c.mode.contains("All"),
-                c.mode.contains("AverageTime") || c.mode.contains("All"),
-                c.mode.contains("SampleTime") || c.mode.contains("All"),
-                c.mode.contains("SingleShotTime") || c.mode.contains("All")
-        )
-    }
-    val methodHasParams = bench.params.isNotEmpty()
-    return Result(project, codeVersion, jmhVersion, benchmarkName, warmupIterations, warmupTime, measurementIterations, measurementTime, forks, warmupForks, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, methodHasParams)
+private fun convertResult(project: String, codeVersion: String?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, bench: Benchmark, ec: ExecutionConfiguration, b: ExecutionConfiguration, c: ExecutionConfiguration, jmhParamSource: Map<String, String>, hash: ByteArray): Result {
+    return Result(
+            project = project,
+            codeVersion = codeVersion,
+            jmhVersion = jmhVersion,
+            javaTarget = javaTarget,
+            javaSource = javaSource,
+            benchmarkName = "${bench.clazz}.${bench.name}",
+            warmupIterations = iterations(ec.warmupIterations, unsetExecConfig.warmupIterations),
+            warmupIterationsClass = iterations(c.warmupIterations, unsetExecConfig.warmupIterations),
+            warmupIterationsMethod = iterations(b.warmupIterations, unsetExecConfig.warmupIterations),
+            warmupTime = time(ec.warmupTime, ec.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
+            warmupTimeClass = time(c.warmupTime, c.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
+            warmupTimeMethod = time(b.warmupTime, b.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
+            measurementIterations = iterations(ec.measurementIterations, unsetExecConfig.measurementIterations),
+            measurementIterationsClass = iterations(c.measurementIterations, unsetExecConfig.measurementIterations),
+            measurementIterationsMethod = iterations(b.measurementIterations, unsetExecConfig.measurementIterations),
+            measurementTime = time(ec.measurementTime, ec.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
+            measurementTimeClass = time(c.measurementTime, c.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
+            measurementTimeMethod = time(b.measurementTime, b.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
+            forks = forks(ec.forks, unsetExecConfig.forks),
+            forksClass = forks(c.forks, unsetExecConfig.forks),
+            forksMethod = forks(b.forks, unsetExecConfig.forks),
+            warmupForks = forks(ec.warmupForks, unsetExecConfig.warmupForks),
+            warmupForksClass = forks(c.warmupForks, unsetExecConfig.warmupForks),
+            warmupForksMethod = forks(b.warmupForks, unsetExecConfig.warmupForks),
+            modeIsThroughput = mode(ec.mode, unsetExecConfig.mode, "Throughput"),
+            modeIsThroughputClass = mode(c.mode, unsetExecConfig.mode, "Throughput"),
+            modeIsThroughputMethod = mode(b.mode, unsetExecConfig.mode, "Throughput"),
+            modeIsAverageTime = mode(ec.mode, unsetExecConfig.mode, "AverageTime"),
+            modeIsAverageTimeClass = mode(c.mode, unsetExecConfig.mode, "AverageTime"),
+            modeIsAverageTimeMethod = mode(b.mode, unsetExecConfig.mode, "AverageTime"),
+            modeIsSampleTime = mode(ec.mode, unsetExecConfig.mode, "SampleTime"),
+            modeIsSampleTimeClass = mode(c.mode, unsetExecConfig.mode, "SampleTime"),
+            modeIsSampleTimeMethod = mode(b.mode, unsetExecConfig.mode, "SampleTime"),
+            modeIsSingleShotTime = mode(ec.mode, unsetExecConfig.mode, "SingleShotTime"),
+            modeIsSingleShotTimeClass = mode(c.mode, unsetExecConfig.mode, "SingleShotTime"),
+            modeIsSingleShotTimeMethod = mode(b.mode, unsetExecConfig.mode, "SingleShotTime"),
+            paramString = paramString(bench.params),
+            paramCount = bench.params.size,
+            hasBlackhole = bench.params.contains(JMHConstants.Class.blackhole),
+            hasControl = bench.params.contains(JMHConstants.Class.control),
+            hasBenchmarkParams = bench.params.contains(JMHConstants.Class.benchmarkParams),
+            hasIterationParams = bench.params.contains(JMHConstants.Class.iterationParams),
+            hasThreadParams = bench.params.contains(JMHConstants.Class.threadParams),
+            jmhParamString = jmhParamString(jmhParamSource),
+            jmhParamCount = jmhParamSource.size,
+            jmhParamFromStateObjectCount = jmhParamStateObjectCounter(bench.clazz, jmhParamSource),
+            partOfGroup = bench.group != null,
+            methodHash = hash.convertToString
+    )
 }
 
-fun inSeconds(time: Int, unit: Option<TimeUnit>): Long {
+private fun inSeconds(time: Int, unit: Option<TimeUnit>): Long {
     return if (time == -1 || !unit.isDefined()) {
         -1
     } else {
-        TimeUnit.SECONDS.convert(time.toLong(), unit.get())
+        TimeUnit.NANOSECONDS.convert(time.toLong(), unit.get())
     }
+}
+
+private fun iterations(value: Int, default: Int): Int? {
+    return if (value == default) {
+        null
+    } else {
+        value
+    }
+}
+
+private fun time(value: Int, valueUnit: Option<TimeUnit>, default: Int, defaultUnit: Option<TimeUnit>): Long? {
+    return if (value == default && valueUnit == defaultUnit) {
+        null
+    } else {
+        inSeconds(value, valueUnit)
+    }
+}
+
+private fun forks(value: Int, default: Int): Int? {
+    return if (value == default) {
+        null
+    } else {
+        value
+    }
+}
+
+private fun mode(value: List<String>, default: List<String>, type: String): Boolean? {
+    return if (value == default) {
+        null
+    } else {
+        value.contains(type) || value.contains("All")
+    }
+}
+
+private fun paramString(params: List<String>): String? {
+    return if (params.isEmpty()) {
+        null
+    } else {
+        params.joinToString(separator = "&")
+    }
+}
+
+private fun jmhParamString(jmhParamSource: Map<String, String>): String? {
+    return if (jmhParamSource.isEmpty()) {
+        null
+    } else {
+        var res = ""
+        jmhParamSource.toList().forEachIndexed { index, (value, source) ->
+            if (index > 0) {
+                res += "&"
+            }
+            res += "$value=$source"
+        }
+        res
+    }
+}
+
+private fun jmhParamStateObjectCounter(benchmarkClass: String, jmhParamSource: Map<String, String>): Int {
+    return jmhParamSource.map { (value, source) ->
+        if (source == benchmarkClass) {
+            0
+        } else {
+            1
+        }
+    }.sum()
 }
