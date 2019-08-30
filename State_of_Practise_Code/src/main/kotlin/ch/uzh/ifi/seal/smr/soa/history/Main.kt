@@ -28,23 +28,26 @@ fun main() {
         val version = JMHVersion(1, 21)
         val configurator = ConfigBasedConfigurator(defaultExecConfig(version), classConfig, benchConfig)
 
+        val hashes = jdt.hashes()
+
         benchs.forEach { bench ->
             val fqn = "${bench.clazz}.${bench.name}"
             val item = benchsLastChanged[fqn]
             val config = configurator.config(bench).right().get()
+            val hash = hashes.getValue(bench)
 
             if (item == null) {
-                benchsLastChanged[fqn] = Pair(bench.bodyHash!!, Triple(commit, bench, config))
+                benchsLastChanged[fqn] = Pair(hash, Triple(commit, bench, config))
                 println("Benchmark $fqn found for the first time in commit $commit")
             } else {
                 val lastBodyHash = benchsLastChanged[fqn]!!.first
                 val lastBench = benchsLastChanged[fqn]!!.second.second
                 val lastBenchConfig = benchsLastChanged[fqn]!!.second.third
-                if (!lastBodyHash.contentEquals(bench.bodyHash!!)) {
-                    benchsLastChanged[fqn] = Pair(bench.bodyHash!!, Triple(commit, bench, config))
+                if (!lastBodyHash.contentEquals(hash)) {
+                    benchsLastChanged[fqn] = Pair(hash, Triple(commit, bench, config))
                     println("Method body of benchmark $fqn was updated in commit $commit")
                 } else if (lastBench.jmhParams != bench.jmhParams || config != lastBenchConfig) {
-                    benchsLastChanged[fqn] = Pair(bench.bodyHash!!, Triple(commit, bench, config))
+                    benchsLastChanged[fqn] = Pair(hash, Triple(commit, bench, config))
                     println("JmhParams or configuration of benchmark $fqn was updated in commit $commit")
                 }
             }
