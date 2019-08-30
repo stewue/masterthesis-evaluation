@@ -37,7 +37,7 @@ fun main(args: Array<String>) {
     }
 }
 
-fun doPerProject(project: String, sourceDir: File, outputFile: File) {
+private fun doPerProject(project: String, sourceDir: File, outputFile: File) {
     val filePaths = sourceDir.walkTopDown().filter { f ->
         f.isFile && f.extension == "java"
     }.map { it.absolutePath }.toList().toTypedArray()

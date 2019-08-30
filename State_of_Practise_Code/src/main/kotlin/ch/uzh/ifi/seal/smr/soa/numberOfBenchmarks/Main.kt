@@ -35,7 +35,7 @@ fun main(args: Array<String>) {
     }
 }
 
-fun doPerProject(sourceDir: File): Int {
+private fun doPerProject(sourceDir: File): Int {
     val finder = JdtBenchFinder(sourceDir)
 
     return finder.all().right().get().size

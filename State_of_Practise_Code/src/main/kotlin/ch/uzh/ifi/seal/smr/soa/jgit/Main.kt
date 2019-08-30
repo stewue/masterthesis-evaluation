@@ -19,7 +19,7 @@ fun main() {
     }
 }
 
-fun getRepo(): Repository {
+private fun getRepo(): Repository {
     val repoDir = File("D:\\test\\.git")
 
     val builder = FileRepositoryBuilder()

@@ -56,7 +56,7 @@ fun main() {
     }
 }
 
-fun checkout(commit: String) {
+private fun checkout(commit: String) {
     val process = Runtime.getRuntime().exec("git checkout $commit", null, dir)
     process.waitFor()
 

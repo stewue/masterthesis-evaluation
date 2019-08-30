@@ -30,9 +30,9 @@ fun main() {
     }
 }
 
-val xmlMapper = XmlMapper()
+private val xmlMapper = XmlMapper()
 
-fun getVersion(groupId: String, artifactId: String): String? {
+private fun getVersion(groupId: String, artifactId: String): String? {
     val url = "https://repo1.maven.org/maven2/${groupId.replace('.', '/')}/${artifactId.replace('.', '/')}/maven-metadata.xml"
     val obj = URL(url)
     val con = obj.openConnection() as HttpURLConnection
@@ -47,7 +47,7 @@ fun getVersion(groupId: String, artifactId: String): String? {
     }
 }
 
-fun getGit(groupId: String, artifactId: String, version: String): JsonNode? {
+private fun getGit(groupId: String, artifactId: String, version: String): JsonNode? {
     val artifactIdDots = artifactId.replace('.', '/')
     val url = "https://repo1.maven.org/maven2/${groupId.replace('.', '/')}/$artifactIdDots/$version/$artifactIdDots-$version.pom"
     val obj = URL(url)
