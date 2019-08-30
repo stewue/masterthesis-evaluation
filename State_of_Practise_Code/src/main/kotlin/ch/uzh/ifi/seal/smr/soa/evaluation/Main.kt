@@ -1,82 +1,126 @@
 package ch.uzh.ifi.seal.smr.soa.evaluation
 
+import ch.uzh.ifi.seal.bencher.Benchmark
 import ch.uzh.ifi.seal.bencher.JMHVersion
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
-import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
+import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
+import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
+import ch.uzh.ifi.seal.smr.soa.jmhversion.JmhSourceCodeVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
+import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
+import org.apache.logging.log4j.LogManager
 import org.funktionale.option.Option
 import java.io.File
 import java.nio.file.Paths
 import java.util.concurrent.TimeUnit
 
+private val log = LogManager.getLogger()
+
 fun main() {
+    disableSystemErr()
+
     val dir = File("D:/projects")
     val outputDir = "D:/projects"
 
     dir.listFiles().forEach {
         if (it.isDirectory) {
             val name = it.name
-            println("Process $name")
-            doPerProject(name, it, outputDir)
+            log.info("Process $name")
+            doPerProject(name, null, it, outputDir)
         }
     }
 }
 
-fun doPerProject(project: String, sourceDir: File, outputDir: String) {
-    // TODO als input benötigt
-    val version = JMHVersion(1, 20)
+fun doPerProject(project: String, codeVersion: String?, sourceDir: File, outputDir: String) {
+    try {
+        val jmhVersion = JmhSourceCodeVersionExtractor(sourceDir).get()
 
-    val finder = JdtBenchFinder(sourceDir)
+        val finder = JdtBenchFinder(sourceDir)
 
-    val ce = finder.classExecutionInfos()
-    if (ce.isLeft()) {
-        throw RuntimeException("Could not retrieve class execution info: ${ce.left().get()}")
-    }
-    val be = finder.benchmarkExecutionInfos()
-    if (be.isLeft()) {
-        throw RuntimeException("Could not retrieve benchmark execution info: ${be.left().get()}")
-    }
-
-    val default = defaultExecConfig(version)
-
-    val configurator = ConfigBasedConfigurator(default, ce.right().get(), be.right().get())
-
-    val results = mutableListOf<Result>()
-
-    finder.all().right().get().forEach {
-        val res = configurator.config(it)
-
-        if (res.isLeft()) {
-            throw java.lang.RuntimeException("Could not retrieve config: ${res.left().get()}")
+        val benchs = finder.all()
+        if (benchs.isLeft()) {
+            throw RuntimeException("Could not retrieve benchmarks: ${benchs.left().get()}")
         }
 
-        val c = res.right().get()
+        val ce = finder.classExecutionInfos()
+        if (ce.isLeft()) {
+            throw RuntimeException("Could not retrieve class execution info: ${ce.left().get()}")
+        }
+        val be = finder.benchmarkExecutionInfos()
+        if (be.isLeft()) {
+            throw RuntimeException("Could not retrieve benchmark execution info: ${be.left().get()}")
+        }
 
-        val benchmarkName = "${it.clazz}.${it.name}"
-        val warmupIterationsIsDefault = isDefault(c.warmupIterations, default.warmupIterations)
-        val warmupTime = inSeconds(c.warmupTime, c.warmupTimeUnit)
-        val warmupTimeIsDefault = isDefault(warmupTime, inSeconds(default.warmupTime, default.warmupTimeUnit))
-        val measurementIterationsIsDefault = isDefault(c.measurementIterations, default.measurementIterations)
-        val measurementTime = inSeconds(c.measurementTime, c.measurementTimeUnit)
-        val measurementTimeIsDefault = isDefault(measurementTime, inSeconds(default.measurementTime, default.measurementTimeUnit))
-        val forksIsDefault = isDefault(c.forks, default.forks)
-        val warmupForksIsDefault = isDefault(c.warmupForks, default.warmupForks)
-        val modeIsThroughput = c.mode.contains("Throughput") || c.mode.contains("All")
-        val modeIsAverageTime = c.mode.contains("AverageTime") || c.mode.contains("All")
-        val modeIsSampleTime = c.mode.contains("SampleTime") || c.mode.contains("All")
-        val modeIsSingleShotTime = c.mode.contains("SingleShotTime") || c.mode.contains("All")
-        val modeIsDefault = isDefault(c.mode, default.mode)
-        val methodhasParams = it.params.isNotEmpty()
+        val default = unsetExecConfig
 
-        val r = Result(project, version, benchmarkName, c.warmupIterations, warmupIterationsIsDefault, warmupTime, warmupTimeIsDefault, c.measurementIterations, measurementIterationsIsDefault, measurementTime, measurementTimeIsDefault, c.forks, forksIsDefault, c.warmupForks, warmupForksIsDefault, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, modeIsDefault, methodhasParams)
-        results.add(r)
+        val configurator = ConfigBasedConfigurator(unsetExecConfig, ce.right().get(), be.right().get())
+
+        val results = mutableListOf<Result>()
+
+        benchs.right().get().forEach {
+            val res = configurator.config(it)
+            if (res.isLeft()) {
+                throw java.lang.RuntimeException("Could not retrieve config: ${res.left().get()}")
+            }
+
+            val config = res.right().get()
+            val item = convertResult(project, codeVersion, jmhVersion, it, config)
+            results.add(item)
+        }
+
+        OpenCSVWriter.write(Paths.get(outputDir, "$project.csv"), results)
+    } catch (e: Exception) {
+        log.error("Error during parsing project $project at code version $codeVersion: ${e.message}")
     }
-
-    OpenCSVWriter.write(Paths.get(outputDir, "$project.csv"), results)
 }
 
-fun isDefault(a: Any, b: Any) = a == b
+fun convertResult(p: String, codeVersion: String?, jmhVersion: JMHVersion?, bench: Benchmark, c: ExecutionConfiguration): Result {
+    val project = p.replace('#', '/')
+    val benchmarkName = "${bench.clazz}.${bench.name}"
+    val warmupIterations = if (c.warmupIterations == unsetExecConfig.warmupIterations) {
+        null
+    } else {
+        c.warmupIterations
+    }
+    val warmupTime = if (c.warmupTime == unsetExecConfig.warmupTime && c.warmupTimeUnit == unsetExecConfig.warmupTimeUnit) {
+        null
+    } else {
+        inSeconds(c.warmupTime, c.warmupTimeUnit)
+    }
+    val measurementIterations = if (c.measurementIterations == unsetExecConfig.measurementIterations) {
+        null
+    } else {
+        c.measurementIterations
+    }
+    val measurementTime = if (c.measurementTime == unsetExecConfig.measurementTime && c.measurementTimeUnit == unsetExecConfig.measurementTimeUnit) {
+        null
+    } else {
+        inSeconds(c.measurementTime, c.measurementTimeUnit)
+    }
+    val forks = if (c.forks == unsetExecConfig.forks) {
+        null
+    } else {
+        c.forks
+    }
+    val warmupForks = if (c.warmupForks == unsetExecConfig.warmupForks) {
+        null
+    } else {
+        c.warmupForks
+    }
+    val (modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime) = if (c.mode == unsetExecConfig.mode) {
+        listOf(null, null, null, null)
+    } else {
+        listOf(
+                c.mode.contains("Throughput") || c.mode.contains("All"),
+                c.mode.contains("AverageTime") || c.mode.contains("All"),
+                c.mode.contains("SampleTime") || c.mode.contains("All"),
+                c.mode.contains("SingleShotTime") || c.mode.contains("All")
+        )
+    }
+    val methodHasParams = bench.params.isNotEmpty()
+    return Result(project, codeVersion, jmhVersion, benchmarkName, warmupIterations, warmupTime, measurementIterations, measurementTime, forks, warmupForks, modeIsThroughput, modeIsAverageTime, modeIsSampleTime, modeIsSingleShotTime, methodHasParams)
+}
 
 fun inSeconds(time: Int, unit: Option<TimeUnit>): Long {
     return if (time == -1 || !unit.isDefined()) {

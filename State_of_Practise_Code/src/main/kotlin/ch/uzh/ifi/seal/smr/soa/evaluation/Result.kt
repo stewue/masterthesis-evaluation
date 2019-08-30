@@ -8,62 +8,44 @@ data class Result(
         val project: String,
 
         @CsvBindByPosition(position = 1)
-        val jmhVersion: JMHVersion?,
+        val codeVersion: String?,
 
         @CsvBindByPosition(position = 2)
-        val benchmarkName: String,
+        val jmhVersion: JMHVersion?,
 
         @CsvBindByPosition(position = 3)
-        val warmupIterations: Int,
+        val benchmarkName: String,
 
         @CsvBindByPosition(position = 4)
-        val warmupIterationsIsDefault: Boolean,
+        val warmupIterations: Int?,
 
         @CsvBindByPosition(position = 5)
-        val warmupTime: Long,
+        val warmupTime: Long?,
 
         @CsvBindByPosition(position = 6)
-        val warmupTimeIsDefault: Boolean,
+        val measurementIterations: Int?,
 
         @CsvBindByPosition(position = 7)
-        val measurementIterations: Int,
+        val measurementTime: Long?,
 
         @CsvBindByPosition(position = 8)
-        val measurementIterationsIsDefault: Boolean,
+        val forks: Int?,
 
         @CsvBindByPosition(position = 9)
-        val measurementTime: Long,
+        val warmupForks: Int?,
 
         @CsvBindByPosition(position = 10)
-        val measurementTimeIsDefault: Boolean,
+        val modeIsThroughput: Boolean?,
 
         @CsvBindByPosition(position = 11)
-        val forks: Int,
+        val modeIsAverageTime: Boolean?,
 
         @CsvBindByPosition(position = 12)
-        val forksIsDefault: Boolean,
+        val modeIsSampleTime: Boolean?,
 
         @CsvBindByPosition(position = 13)
-        val warmupForks: Int,
+        val modeIsSingleShotTime: Boolean?,
 
         @CsvBindByPosition(position = 14)
-        val warmupForksIsDefault: Boolean,
-
-        @CsvBindByPosition(position = 15)
-        val modeIsThroughput: Boolean,
-
-        @CsvBindByPosition(position = 16)
-        val modeIsAverageTime: Boolean,
-
-        @CsvBindByPosition(position = 17)
-        val modeIsSampleTime: Boolean,
-
-        @CsvBindByPosition(position = 18)
-        val modeIsSingleShotTime: Boolean,
-
-        @CsvBindByPosition(position = 19)
-        val modeIsDefault: Boolean,
-
-        @CsvBindByPosition(position = 20)
         val methodhasParams: Boolean
 )
