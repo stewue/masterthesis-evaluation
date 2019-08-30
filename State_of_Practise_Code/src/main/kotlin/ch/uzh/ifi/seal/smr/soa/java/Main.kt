@@ -1,5 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.java
 
+import ch.uzh.ifi.seal.smr.soa.utils.toGithubName
 import org.apache.logging.log4j.LogManager
 import java.io.File
 import kotlin.system.exitProcess
@@ -26,7 +27,7 @@ fun main(args: Array<String>) {
 
             val resTargetString = resTarget ?: ""
             val resSourceString = resSource ?: ""
-            outputFile.appendText("${it.name.replace('#', '/')};$resTargetString;$resSourceString\n")
+            outputFile.appendText("${it.name.toGithubName};$resTargetString;$resSourceString\n")
         }
     }
 }

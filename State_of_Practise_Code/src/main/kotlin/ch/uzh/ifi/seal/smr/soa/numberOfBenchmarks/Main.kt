@@ -2,6 +2,7 @@ package ch.uzh.ifi.seal.smr.soa.numberOfBenchmarks
 
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
+import ch.uzh.ifi.seal.smr.soa.utils.toGithubName
 import org.apache.logging.log4j.LogManager
 import java.io.File
 import kotlin.system.exitProcess
@@ -26,7 +27,7 @@ fun main(args: Array<String>) {
             try {
                 val res = doPerProject(it)
                 log.info("Process $name => $res")
-                outputFile.appendText("${name.replace('#', '/')};$res\n")
+                outputFile.appendText("${name.toGithubName};$res\n")
             } catch (e: Exception) {
                 log.error("Error during parsing $name: ${e.message}")
             }

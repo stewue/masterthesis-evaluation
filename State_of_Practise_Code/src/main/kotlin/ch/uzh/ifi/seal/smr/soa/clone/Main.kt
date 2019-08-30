@@ -1,6 +1,7 @@
 package ch.uzh.ifi.seal.smr.soa.clone
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import java.io.File
 import java.nio.file.Paths
 import kotlin.system.exitProcess
@@ -17,7 +18,7 @@ fun main(args: Array<String>) {
     val res = CsvResultParser(inFile).getList()
 
     res.forEach {
-        val projectName = it.project.replace('/', '#')
+        val projectName = it.project.toFileSystemName
 
         val projectDir = Paths.get(outputDir, projectName).toFile()
         val c = projectDir.mkdir()

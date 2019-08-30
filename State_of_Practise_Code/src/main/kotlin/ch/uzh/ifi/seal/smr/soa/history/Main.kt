@@ -34,7 +34,7 @@ fun main() {
             val fqn = "${bench.clazz}.${bench.name}"
             val item = benchsLastChanged[fqn]
             val config = configurator.config(bench).right().get()
-            val hash = hashes.getValue(bench)
+            val hash = hashes.right().get().getValue(bench)
 
             if (item == null) {
                 benchsLastChanged[fqn] = Pair(hash, Triple(commit, bench, config))

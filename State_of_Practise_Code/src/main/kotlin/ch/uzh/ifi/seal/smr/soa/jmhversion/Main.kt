@@ -1,5 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.jmhversion
 
+import ch.uzh.ifi.seal.smr.soa.utils.toGithubName
 import org.apache.logging.log4j.LogManager
 import java.io.File
 import kotlin.system.exitProcess
@@ -20,7 +21,7 @@ fun main(args: Array<String>) {
             val res = JmhSourceCodeVersionExtractor(it).get()
             log.info("$it: $res")
             val resString = res?.toString() ?: ""
-            outputFile.appendText("${it.name.replace('#', '/')};$resString\n")
+            outputFile.appendText("${it.name.toGithubName};$resString\n")
         }
     }
 }

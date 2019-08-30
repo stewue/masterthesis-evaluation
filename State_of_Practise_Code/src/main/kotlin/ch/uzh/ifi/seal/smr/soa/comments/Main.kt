@@ -2,6 +2,7 @@ package ch.uzh.ifi.seal.smr.soa.comments
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
+import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
 import org.eclipse.jdt.core.dom.*
 import java.io.File
@@ -25,7 +26,7 @@ fun main(args: Array<String>) {
 
     list.forEach {
         if (!it.forked) {
-            val dir = File(inputDir + "${it.project.replace('/', '#')}")
+            val dir = File(inputDir + "${it.project.toFileSystemName}")
             if (dir.exists()) {
                 log.info("Process $dir")
                 doPerProject(it.project, dir, outputFile)
