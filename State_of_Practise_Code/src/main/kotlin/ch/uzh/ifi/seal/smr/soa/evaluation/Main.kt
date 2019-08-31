@@ -117,12 +117,18 @@ private fun convertResult(project: String, codeVersion: String?, jmhVersion: JMH
             warmupTime = time(ec.warmupTime, ec.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
             warmupTimeClass = time(c.warmupTime, c.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
             warmupTimeMethod = time(b.warmupTime, b.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
+            warmupTimeStatus = status(ec.warmupTime, ec.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
+            warmupTimeStatusClass = status(c.warmupTime, c.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
+            warmupTimeStatusMethod = status(b.warmupTime, b.warmupTimeUnit, unsetExecConfig.warmupTime, unsetExecConfig.warmupTimeUnit),
             measurementIterations = iterations(ec.measurementIterations, unsetExecConfig.measurementIterations),
             measurementIterationsClass = iterations(c.measurementIterations, unsetExecConfig.measurementIterations),
             measurementIterationsMethod = iterations(b.measurementIterations, unsetExecConfig.measurementIterations),
             measurementTime = time(ec.measurementTime, ec.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
             measurementTimeClass = time(c.measurementTime, c.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
             measurementTimeMethod = time(b.measurementTime, b.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
+            measurementTimeStatus = status(ec.measurementTime, ec.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
+            measurementTimeStatusClass = status(c.measurementTime, c.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
+            measurementTimeStatusMethod = status(b.measurementTime, b.measurementTimeUnit, unsetExecConfig.measurementTime, unsetExecConfig.measurementTimeUnit),
             forks = forks(ec.forks, unsetExecConfig.forks),
             forksClass = forks(c.forks, unsetExecConfig.forks),
             forksMethod = forks(b.forks, unsetExecConfig.forks),
@@ -149,19 +155,26 @@ private fun convertResult(project: String, codeVersion: String?, jmhVersion: JMH
             hasIterationParams = bench.params.contains(JMHConstants.Class.iterationParams),
             hasThreadParams = bench.params.contains(JMHConstants.Class.threadParams),
             jmhParamString = jmhParamString(jmhParamSource),
+            jmhParamPairs = jmhParamPairs(bench.jmhParams),
             jmhParamCount = jmhParamSource.size,
             jmhParamFromStateObjectCount = jmhParamStateObjectCounter(bench.clazz, jmhParamSource),
+            returnType = returnType(bench.returnType),
             partOfGroup = bench.group != null,
             methodHash = hash.convertToString
     )
 }
 
-private fun inSeconds(time: Int, unit: Option<TimeUnit>): Long {
-    return if (time == -1 || !unit.isDefined()) {
-        -1
-    } else {
-        TimeUnit.NANOSECONDS.convert(time.toLong(), unit.get())
+private fun inSeconds(time: Int, unit: Option<TimeUnit>): Long? {
+    if (time == -1) {
+        return null
     }
+
+    val u = if (unit == Option.empty<TimeUnit>()) {
+        TimeUnit.SECONDS
+    } else {
+        unit.get()
+    }
+    return TimeUnit.NANOSECONDS.convert(time.toLong(), u)
 }
 
 private fun iterations(value: Int, default: Int): Int? {
@@ -227,4 +240,36 @@ private fun jmhParamStateObjectCounter(benchmarkClass: String, jmhParamSource: M
             1
         }
     }.sum()
+}
+
+private fun status(value: Int, valueUnit: Option<TimeUnit>, default: Int, defaultUnit: Option<TimeUnit>): Status {
+    return when {
+        value == default && valueUnit == defaultUnit -> Status.BOTH_UNSET
+        valueUnit == defaultUnit -> Status.TIME_SET
+        value == default -> Status.UNIT_SET
+        else -> Status.BOTH_SET
+    }
+}
+
+private fun returnType(input: String): String? {
+    return if (input == "void") {
+        null
+    } else {
+        input
+    }
+}
+
+private fun jmhParamPairs(jmhParams: List<Pair<String, String>>): String? {
+    return if (jmhParams.isEmpty()) {
+        null
+    } else {
+        var res = ""
+        jmhParams.forEachIndexed { index, (name, value) ->
+            if (index > 0) {
+                res += "&"
+            }
+            res += "$name=$value"
+        }
+        res
+    }
 }
