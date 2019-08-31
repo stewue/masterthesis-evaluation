@@ -1509,3 +1509,4 @@
 17:13:53.463 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fpavageau#bench-simple-name
 17:13:53.514 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gensym#jmh-lein-example
 17:13:53.841 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eclipse#eclipse-collections
+17:14:27.801 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/motlin#eclipse-collections
