@@ -14,7 +14,7 @@ object OpenCSVWriter {
 
         Files.newBufferedWriter(outputFile).use { writer ->
             val beanToCsv = StatefulBeanToCsvBuilder<T>(writer)
-                    .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER)
+                    .withQuotechar(CSVWriter.DEFAULT_QUOTE_CHARACTER)
                     .build()
 
             beanToCsv.write(input.toList())
