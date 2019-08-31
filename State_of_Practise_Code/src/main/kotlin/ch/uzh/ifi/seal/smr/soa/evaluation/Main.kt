@@ -42,8 +42,7 @@ fun main(args: Array<String>) {
             log.info("Process $dir")
             doPerProject(project, null, dir, outputDir, outputFile)
         } else {
-            // TODO
-            //log.warn("Project ${it.project} does not exist in input directory -> skipped")
+            log.warn("Project $project does not exist in input directory -> skipped")
         }
     }
 }

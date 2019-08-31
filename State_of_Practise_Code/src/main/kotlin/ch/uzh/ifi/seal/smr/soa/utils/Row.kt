@@ -31,30 +31,33 @@ class Row {
     var rootProject: String? = null
 
     @CsvBindByPosition(position = 8)
-    var cloneUrl: String? = null
+    var mainRepo: Boolean? = null
 
     @CsvBindByPosition(position = 9)
-    var lastUpdate: String? = null
+    var cloneUrl: String? = null
 
     @CsvBindByPosition(position = 10)
-    var numberOfCommits: Int? = null
+    var lastUpdate: String? = null
 
     @CsvBindByPosition(position = 11)
-    var numberOfTags: Int? = null
+    var numberOfCommits: Int? = null
 
     @CsvBindByPosition(position = 12)
-    var numberOfContributors: Int? = null
+    var numberOfTags: Int? = null
 
     @CsvBindByPosition(position = 13)
-    var jmhVersion: String? = null
+    var numberOfContributors: Int? = null
 
     @CsvBindByPosition(position = 14)
-    var numberOfBenchmarks: Int? = null
+    var jmhVersion: String? = null
 
     @CsvBindByPosition(position = 15)
-    var javaTarget: String? = null
+    var numberOfBenchmarks: Int? = null
 
     @CsvBindByPosition(position = 16)
+    var javaTarget: String? = null
+
+    @CsvBindByPosition(position = 17)
     var javaSource: String? = null
 
     constructor()
