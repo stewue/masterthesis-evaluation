@@ -39,10 +39,9 @@ fun main() {
             val fork = json["fork"].booleanValue()
 
             item.forked = fork
-            item.watchers = json["watchers_count"].intValue()
             item.stars = json["stargazers_count"].intValue()
             item.forks = json["forks_count"].intValue()
-            item.subscribers = json["subscribers_count"].intValue()
+            item.watchers = json["subscribers_count"].intValue()
             item.repoAvailable = true
             item.cloneUrl = json["clone_url"].textValue()
             item.lastUpdate = json["updated_at"].textValue()

@@ -42,7 +42,7 @@ fun main() {
         }
 
         if (b != null) {
-            it.numberOFBenchmarks = b
+            it.numberOfBenchmarks = b
         }
 
         if (j != null) {
