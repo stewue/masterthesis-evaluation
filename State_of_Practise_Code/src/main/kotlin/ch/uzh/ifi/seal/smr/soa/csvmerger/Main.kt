@@ -46,11 +46,11 @@ fun main() {
         }
 
         if (j != null) {
-            if (j.first != null) {
+            if (!j.first.isNullOrBlank()) {
                 it.javaTarget = j.first
             }
 
-            if (j.second != null) {
+            if (!j.second.isNullOrBlank()) {
                 it.javaSource = j.second
             }
         }
