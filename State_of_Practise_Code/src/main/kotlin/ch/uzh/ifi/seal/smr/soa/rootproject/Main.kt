@@ -17,15 +17,17 @@ fun main() {
     }
 
     list.forEach {
-        var lastParent: String? = it.project
-        var currentParent = it.parentProject
+        if(it.repoAvailable) {
+            var lastParent: String? = it.project
+            var currentParent = it.parentProject
 
-        while (!currentParent.isNullOrBlank()) {
-            lastParent = currentParent
-            currentParent = parent[currentParent]
+            while (!currentParent.isNullOrBlank()) {
+                lastParent = currentParent
+                currentParent = parent[currentParent]
+            }
+
+            it.rootProject = lastParent
         }
-
-        it.rootProject = lastParent
     }
 
     OpenCSVWriter.write(csv.toPath(), list)
