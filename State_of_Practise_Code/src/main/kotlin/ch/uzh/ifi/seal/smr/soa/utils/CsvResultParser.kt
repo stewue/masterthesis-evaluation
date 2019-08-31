@@ -17,7 +17,6 @@ class CsvResultParser(file: File) {
 
         return CsvToBeanBuilder<Row>(fileReader)
                 .withMappingStrategy(mappingStrategy)
-                .withSkipLines(1)
                 .withSeparator(',')
                 .withIgnoreLeadingWhiteSpace(true)
                 .build()
