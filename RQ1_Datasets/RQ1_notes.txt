@@ -33,7 +33,6 @@ linkedin/pinot
 linkedin/gobblin
 druid-io/druid
 
-
 removed because they are forks of popular repos
 -----------------------------------------------
 jacek-lewandowski/jmh-jl (jmh-core)
@@ -52,7 +51,6 @@ akarnokd/rxjava2-backport
 
 manually modify mainRepo
 ------------------------
-sabineheider/eclipselink.runtime: developement moved to gameduell/eclipselink.runtime
 orbit/orbit: v1 was moved to a new repo -> v2 new code base (use for jthelin/orbit)
 carrotsearch/hppc and vsonnier/hppcrt are over 500 commits independent (analyze both)
 eclipse/eclipse-collections is less forks because its a minor repo
