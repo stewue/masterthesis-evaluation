@@ -10,7 +10,6 @@ import java.net.URL
 import java.nio.charset.Charset
 
 val mapper = ObjectMapper()
-// TODO entfernen
 val token = ""
 
 fun main() {
