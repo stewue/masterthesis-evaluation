@@ -1,0 +1,3 @@
+restfb/restfb-benchmark,,1.6,1.6,,com.restfb.benchmark.DefaultJsonMapperBenchmark.toJavaObject,,,,,,,,,,,,,5,5,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,6629b201dea21aac2362960a2ecc1a7f7d0e8a946f3f5301deff53a051ba084c
+restfb/restfb-benchmark,,1.6,1.6,,com.restfb.benchmark.SimpleDateFormatBenchmark.measureSimpleDateFormat,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,d4217bdb51db5136ad820c00b4f6000121cee326fa11968c78571f28a8515554
+restfb/restfb-benchmark,,1.6,1.6,,com.restfb.benchmark.SimpleDateFormatBenchmark.measurePrivateSimpleDateFormat,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,12825a506086f9f84f6f85db9395c8707521fa6402af2fcb3e85d1ac3c4857eb

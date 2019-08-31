@@ -1,0 +1,9 @@
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.parse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,7533cfeb2dcc46f5bd9e34f612d660b11a22d2db83e496f35cc3d41ac2736fc1
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.write,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,417bd12e860316d5f0c418696f47ec7c5dbf5c802c4717a227cdd68849136a11
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.search,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,eb3de0d8d022d6f7c5d223c1880f896b9b2161d3992cd665b7cbee762c386a5f
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.inferBibDatabaseMode,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,f66320ccdd3b7aa145002ed3a9f7aa9796dca362e9982d3d47cdf4d105a27f70
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.latexToUnicodeConversion,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,6218154c733adf8405860df359c645c036064337f0cef45ae34a5eae6503371c
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.latexToHTMLConversion,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,74d016fe5a94896aee1a644861ef14a51f5ca20a613b2cb775a0caf9f123afde
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.htmlToLatexConversion,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,6b9f68d59af0c333cbc3499b2bc76c8aa5b29019e11bd5ac3820983881246797
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.keywordGroupContains,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,8027da31fcd4b5d46f774117aba8c919e4282377097053b08a967412777673ce
+ayanai1/jabref,,,1.8,1.8,net.sf.jabref.benchmarks.Benchmarks.keywordGroupContainsWord,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,bd6bb544b75996afb0aa8509586960be1998e0acd55f61b5e5fa3b05be20556b

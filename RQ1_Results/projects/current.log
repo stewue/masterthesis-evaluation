@@ -1,0 +1,1511 @@
+16:09:36.686 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/g-votte#eclipse-collections
+16:10:08.766 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bhav0904#eclipse-collections
+16:10:36.077 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/goldmansachs#gs-collections
+16:11:00.248 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smarr#GraalCompiler
+16:11:11.964 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.964 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.966 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.966 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.968 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.968 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.968 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.968 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.969 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.969 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.969 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.969 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.978 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.978 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.978 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OUT_OF_LOOPS_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.978 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_EARLIEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:11:11.979 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.FrameStateAssigmentPhaseBenchmark.StringTokenizedNextToken' was not found (State objects from external dependencies cannot be resolved)
+16:11:13.839 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xingguang2013#gs-collections
+16:11:33.637 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zapster#graal-core
+16:11:45.750 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.LSRA_StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.751 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.LSRA_HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.751 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.TraceRA_StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.751 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.TraceRA_HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.763 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.CompileTimeBenchmark.CompileState' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.763 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.CompileTimeBenchmark.FrontEndState' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.763 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.CompileTimeBenchmark.BackEndEndState' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.765 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.trace.TraceLSRAIntervalBuildingBench.State' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.766 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.trace.TraceBuilderBenchmark.State' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.766 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.trace.TraceBuilderBenchmark.State' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.770 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.770 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.772 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.772 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.775 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.776 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.776 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.782 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.782 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.783 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.783 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.783 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.783 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.783 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OUT_OF_LOOPS_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.783 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_EARLIEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:11:45.785 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.FrameStateAssigmentPhaseBenchmark.StringTokenizedNextToken' was not found (State objects from external dependencies cannot be resolved)
+16:11:48.132 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/y-lan#presto
+16:12:00.626 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#logging-log4j2
+16:12:08.154 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xnslong#logging-log4j2
+16:12:13.761 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lqbweb#logging-log4j2
+16:12:18.520 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/SquidPony#SquidLib
+16:12:25.170 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lemire#RoaringBitmap
+16:12:27.787 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marshallpierce#RoaringBitmap
+16:12:29.983 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RoaringBitmap#RoaringBitmap
+16:12:32.093 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/prestodb#presto
+16:13:01.403 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nezihyigitbasi#presto
+16:13:30.798 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wyukawa#presto
+16:13:59.851 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/prestosql#presto
+16:14:27.702 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ptkool#presto
+16:14:54.441 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smartnews#presto
+16:15:19.744 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/martint#presto
+16:15:46.199 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lburgazzoli#apache-logging-log4j2
+16:15:50.684 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ReactiveX#RxJava
+16:16:05.985 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/twitter-forks#presto
+16:16:30.622 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nurkiewicz#RxJava
+16:16:34.659 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#RxJava
+16:16:39.110 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/okrische#RoaringBitmap
+16:16:40.750 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#RxJava
+16:16:54.971 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jacek-rzrz#RxJava
+16:16:58.782 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zsxwing#RxJava
+16:17:02.437 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/netty#netty
+16:17:14.009 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jchambers#netty
+16:17:24.796 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gianm#druid
+16:17:48.232 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tbrooks8#netty
+16:17:58.743 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yipen9#netty
+16:18:08.979 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#incubator-druid
+16:18:30.367 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fenik17#netty
+16:18:40.830 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nishantmonu51#druid
+16:19:00.939 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gssiyankai#RoaringBitmap
+16:19:02.008 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ejona86#netty
+16:19:12.195 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/moves-rwth#attestor-examples
+16:19:12.397 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/afredlyj#learn-netty
+16:19:17.297 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/neuro-sys#logging-log4j2
+16:19:20.765 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/liquidm#druid
+16:19:37.725 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/KatsuraKKKK#netty
+16:19:47.128 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/b-slim#druid
+16:20:02.988 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kiegroup#kie-benchmarks
+16:20:04.089 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/andsel#netty
+16:20:13.433 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/renchunxiao#logging-log4j2
+16:20:16.867 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pisfly#logging-log4j2
+16:20:20.069 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/s-gheldd#netty
+16:20:28.808 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/oracle#graal
+16:20:56.386 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.lir.RegisterAllocationTimeBenchmark.State' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.398 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.lir.CompileTimeBenchmark.CompileState' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.398 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.lir.CompileTimeBenchmark.FrontEndState' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.398 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.lir.CompileTimeBenchmark.BackEndEndState' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.400 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.ConditionalEliminationBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.400 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.ConditionalEliminationBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.400 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.ConditionalEliminationBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.402 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.GraphCopyBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.402 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.GraphCopyBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.404 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.404 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.404 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.404 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.404 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.405 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OUT_OF_LOOPS_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_EARLIEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_EARLIEST_WITH_GUARD_ORDER_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.ScheduleEarliestIterative_LATEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.413 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.ScheduleEarliestIterative_LATEST_OUT_OF_LOOPS_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.414 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.ScheduleEarliestIterative_EARLIEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.414 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.SchedulePhaseBenchmark.ScheduleEarliestIterative_EARLIEST_WITH_GUARD_ORDER_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:20:56.414 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.graalvm.compiler.microbenchmarks.graal.FrameStateAssigmentPhaseBenchmark.StringTokenizedNextToken' was not found (State objects from external dependencies cannot be resolved)
+16:21:12.667 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lizhanhui#data_druid
+16:21:26.403 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/KevinTCoughlin#RxJava
+16:21:29.387 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dotCMS#log4j
+16:21:32.763 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/java02014#RxJava
+16:21:36.154 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ronenhamias#RxJava
+16:21:39.172 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eduardotrandafilov#RxJava
+16:21:42.507 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/androidyue#RxJava
+16:21:45.773 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kuanghao#RxJava
+16:21:48.568 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Bragaman#atom
+16:21:48.928 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.openjdk.jmh.samples.JMHSample_07_FixtureLevelInvocation.LaggingState' was not found (State objects from external dependencies cannot be resolved)
+16:21:48.986 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Hunte9999#atom
+16:21:49.700 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.openjdk.jmh.samples.JMHSample_07_FixtureLevelInvocation.LaggingState' was not found (State objects from external dependencies cannot be resolved)
+16:21:49.776 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/elBroom#atom
+16:21:50.451 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.openjdk.jmh.samples.JMHSample_07_FixtureLevelInvocation.LaggingState' was not found (State objects from external dependencies cannot be resolved)
+16:21:50.549 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Teradata#presto
+16:22:11.982 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gjesse#RxJava
+16:22:14.934 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nkhuyu#RxJava
+16:22:17.984 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Shedings#RxJava
+16:22:20.621 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lijunhuayc#RxJava
+16:22:23.487 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sposam#RxJava
+16:22:26.258 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/srayhunter#RxJava
+16:22:28.951 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/frodoking#RxJava
+16:22:31.723 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/suclike#RxJava
+16:22:34.482 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jbripley#RxJava
+16:22:37.097 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hyarlagadda#RxJava
+16:22:39.613 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tools4j#decimal4j
+16:22:40.892 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mono-plane#presto
+16:22:48.630 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hehonghui#RxJava
+16:22:51.056 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/maliqq#netty
+16:22:59.220 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/azadmanesh#sl-tracer
+16:23:02.617 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/luyiisme#netty
+16:23:10.651 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Techcable#netty
+16:23:18.631 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gh351135612#presto
+16:23:38.647 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kennyledet#Algorithm-Implementations
+16:23:39.021 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yrcourage#netty
+16:23:46.729 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Scottmitch#netty
+16:23:54.460 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sparkoo#Java-Grande-JMH
+16:23:54.563 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/JCTools#JCTools
+16:23:55.940 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/traneio#future
+16:23:56.295 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smayoorans#netty
+16:24:03.309 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lukehutch#netty
+16:24:10.049 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mosoft521#netty
+16:24:16.820 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/joansmith#netty
+16:24:24.190 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/svstanev#presto
+16:24:41.731 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/windie#netty
+16:24:49.048 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kjniemi#netty
+16:24:55.557 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/takari#presto
+16:25:10.996 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mrijke#druid
+16:25:19.769 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bogdandrutu#instrumentation-java
+16:25:22.361 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/songy23#instrumentation-java
+16:25:24.998 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/census-instrumentation#opencensus-java
+16:25:27.606 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/benjchristensen#RxJava
+16:25:38.793 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/neo4j-contrib#neo4j-graph-algorithms
+16:25:41.288 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/louiscryan#netty
+16:25:47.898 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marsorp#blog
+16:26:03.104 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/openzipkin#zipkin
+16:26:05.225 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chrisunder#presto
+16:26:20.877 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/salyh#jsr353-benchmark
+16:26:21.019 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dabaitu#presto
+16:26:35.765 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/JetBrains#xodus
+16:26:39.096 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jpaw#bonaparte-java
+16:26:40.503 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cawallin#presto
+16:26:55.334 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mugglmenzel#presto
+16:27:09.701 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fiedukow#presto
+16:27:24.073 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/brharrington#spectator
+16:27:25.730 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Netflix#spectator
+16:27:27.415 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wrmsr#presto
+16:27:40.352 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/centic9#poi-benchmark
+16:27:40.537 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hazelcast#hazelcast
+16:28:18.135 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/EvilMcJerkface#atlasdb
+16:28:28.104 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lettuce-io#lettuce-core
+16:28:33.044 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/palantir#atlasdb
+16:28:43.097 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mshuler#cassandra
+16:29:01.219 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/franz1981#JCTools
+16:29:02.211 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#cassandra
+16:29:20.501 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thelastpickle#cassandra
+16:29:36.241 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/TridentSDK#TridentSDK
+16:29:36.740 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tubemogul#druid
+16:29:44.632 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/SlimRoms#android_external_okhttp
+16:29:46.673 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vladimir-bukhtoyarov#rolling-metrics
+16:29:46.978 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/reactor#reactive-streams-commons
+16:29:49.175 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hsqlu#coding-lab
+16:29:49.869 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/seetharamireddy540#netty
+16:29:56.705 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mcberg2016#graal-core
+16:30:08.196 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.LSRA_StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.196 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.LSRA_HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.196 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.TraceRA_StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.196 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.RegisterAllocationTimeBenchmark.TraceRA_HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.208 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.CompileTimeBenchmark.CompileState' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.208 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.CompileTimeBenchmark.FrontEndState' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.208 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.CompileTimeBenchmark.BackEndEndState' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.209 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.trace.TraceLSRAIntervalBuildingBench.State' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.210 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.trace.TraceBuilderBenchmark.State' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.210 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.lir.trace.TraceBuilderBenchmark.State' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.212 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.212 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.214 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.214 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.216 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.217 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.217 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.217 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.217 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.217 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.223 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.223 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.223 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.223 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.224 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.224 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.224 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OUT_OF_LOOPS_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.224 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_EARLIEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:30:08.224 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.FrameStateAssigmentPhaseBenchmark.StringTokenizedNextToken' was not found (State objects from external dependencies cannot be resolved)
+16:30:10.436 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xingguang2013#netty
+16:30:17.073 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jenskordowski#netty
+16:30:23.743 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/satishsaley#netty
+16:30:30.525 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hyperverse#mini2Dx
+16:30:31.811 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eincs#netty
+16:30:38.294 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/AnselQiao#netty
+16:30:44.710 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/caoyanwei#netty
+16:30:51.269 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zhujingling#netty
+16:30:57.749 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/structlogging#structlogger
+16:30:57.942 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/aol#cyclops-react
+16:31:23.936 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shenguoquan#netty
+16:31:30.845 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rslemos#cobolg
+16:31:37.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jdivy#netty
+16:31:44.373 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tempbottle#netty
+16:31:50.731 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/liyang1025#netty
+16:31:57.313 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#parquet-mr
+16:32:01.035 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jenetics#jenetics
+16:32:03.564 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/robertdale#tinkerpop
+16:32:12.118 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gameduell#eclipselink.runtime
+16:33:20.077 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#tinkerpop
+16:33:28.640 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tzaeschke#distributed-phtree
+16:33:29.461 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ruhkopf#Hystrix
+16:33:30.955 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jforge#Hystrix
+16:33:32.427 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thomasandersen77#Hystrix
+16:33:34.106 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mukteshkrmishra#Hystrix
+16:33:35.612 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sensaid#Hystrix
+16:33:37.442 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tvaughan77#Hystrix
+16:33:38.941 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hcheung#Hystrix
+16:33:40.456 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidkarlsen#Hystrix
+16:33:42.050 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sasrin#Hystrix
+16:33:43.558 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fredboutin#Hystrix
+16:33:45.096 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Fsero#Hystrix
+16:33:46.601 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mantofast#Hystrix
+16:33:48.100 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ouyangkongtong#Hystrix
+16:33:49.604 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/comodal#hash-overlay
+16:33:50.179 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/neowu#core-ng-demo-project
+16:33:50.384 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sebright#opencensus-java
+16:33:52.721 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Alex-Diez#Java-TDD-Katas
+16:33:53.878 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/airlift#slice
+16:33:54.200 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/loganj#RxJava
+16:33:56.361 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/electrum#slice
+16:33:56.682 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zxs#druid
+16:34:04.209 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yshaojie#Hystrix
+16:34:05.695 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/abersnaze#RxJava
+16:34:08.765 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/liyuqi#Hystrix
+16:34:10.266 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fengshao0907#Hystrix
+16:34:11.727 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fabcipriano#Hystrix
+16:34:13.195 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dain#slice
+16:34:13.513 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rukor#Hystrix
+16:34:14.982 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shunfei#indexr
+16:34:16.831 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/terma#fast-select
+16:34:17.391 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/alesharik#AlesharikWebServer
+16:34:20.248 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/suzukaze#json-benchmarks
+16:34:20.365 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tokuhirom#json-benchmarks
+16:34:20.496 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arnaudroger#SimpleFlatMapper
+16:34:24.923 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mini2Dx#mini2Dx
+16:34:27.216 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/isalnikov#ACMP
+16:34:28.057 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jajir#jblinktree
+16:34:28.434 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/orfjackal#cqrs-hotel
+16:34:28.779 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mosoft521#jodd
+16:34:34.043 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/puniverse#RxJava
+16:34:37.068 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/oblac#jodd
+16:34:42.300 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fengshao0907#slice
+16:34:42.586 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mttkay#RxJava
+16:34:45.537 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cberner#slice
+16:34:45.850 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/haozhun#slice
+16:34:46.138 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/drudenko#slice
+16:34:46.437 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/firebase#netty
+16:34:52.724 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jxqlovejava#RxJavaParallel
+16:34:52.848 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PizzaCrust#Trident
+16:34:53.676 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Alwayswithme#netty
+16:35:00.193 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lznhust#netty
+16:35:06.669 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/msteindorfer#criterion
+16:35:07.188 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/real-logic#benchmarks
+16:35:07.287 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wuyinxian124#netty
+16:35:13.455 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dropbox#dropbox-sdk-java
+16:35:14.159 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Twister915#Trident
+16:35:14.938 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Konstantin8105#Triangulation
+16:35:15.093 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/elandau#grpc-java
+16:35:22.684 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zhangkun83#grpc-java
+16:35:30.265 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/carl-mastrangelo#grpc-java
+16:35:35.835 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dapengzhang0#grpc-java
+16:35:41.244 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ejona86#grpc-java
+16:35:46.472 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#rtree
+16:35:46.964 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/grpc#grpc-java
+16:35:52.496 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wangsan#Hystrix
+16:35:54.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eunmin#Hystrix
+16:35:57.061 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dmgcodevil#Hystrix
+16:35:59.180 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/robertroeser#Hystrix
+16:36:01.279 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/agentgt#Hystrix
+16:36:03.220 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ianynchen#Hystrix
+16:36:05.556 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#akarnokd-misc
+16:36:06.927 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jpaw#jpaw
+16:36:07.435 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Netflix#Hystrix
+16:36:09.793 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RTBHOUSE#avro-fastserde
+16:36:10.051 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mauricionr#Hystrix
+16:36:11.485 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/npccsb#Hystrix
+16:36:12.923 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tromantic#Hystrix
+16:36:14.417 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/JayhJung#Hystrix
+16:36:15.838 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sposam#Hystrix
+16:36:17.281 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DALDEI#byte-buddy
+16:36:26.728 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/KoltonAndrus#Hystrix
+16:36:28.203 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jordancheah#Hystrix
+16:36:29.656 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/loop-jazz#Hystrix
+16:36:31.104 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sourceops#Hystrix
+16:36:32.566 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ReactiveX#RxJavaParallel
+16:36:32.714 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jpaw#jpaw8
+16:36:32.934 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/raphw#byte-buddy
+16:36:42.703 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/AgentTroll#TrollCommons
+16:36:42.988 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/btraceio#btrace
+16:36:44.384 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/crate#crate
+16:37:06.112 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mackstone#JCTools
+16:37:06.732 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tommyettinger#sarong
+16:37:07.691 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arnohaase#a-foundation
+16:37:08.499 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mike-tr-adamson#cassandra
+16:37:25.200 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hyangtack#netty
+16:37:31.356 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/carlyeks#cassandra
+16:37:47.662 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/simonhorlick#grpc-java
+16:37:53.068 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/h2oai#h2o-3
+16:38:03.302 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wondee#faststring
+16:38:03.600 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/asarkar#java
+16:38:04.584 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arnaudroger#orm-benchmark
+16:38:17.418 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zapov#pgjdbc
+16:38:19.341 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tbrooks8#quasar
+16:38:21.915 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/whitingjr#pgjdbc
+16:38:23.879 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tomasonjo#neo4j-graph-algorithms
+16:38:24.966 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cinnober#msgcodec
+16:38:26.013 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/OpenHFT#Chronicle-Wire
+16:38:28.401 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#incubator-retired-pirk
+16:38:28.906 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#incubator-pinot
+16:38:41.701 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/branches-cc#rtree
+16:38:42.067 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/biboudis#streamalg
+16:38:42.288 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/outbrain#prometheus-client
+16:38:42.687 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Javalbert#sql-builder-orm
+16:38:43.345 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lmdbjava#benchmarks
+16:38:43.479 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davecramer#pgjdbc
+16:38:45.321 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kevinyien#client_java
+16:38:45.632 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/abesto#zipkin
+16:38:46.734 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eclipse#vert.x
+16:38:52.911 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/prometheus#client_java
+16:38:53.343 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rkraneis#rtree
+16:38:53.578 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#ignite
+16:40:13.210 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/square#okio
+16:40:13.844 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/guyko#weighted-lottery
+16:40:13.911 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jkirsch#spex
+16:40:14.293 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ericmm#Woobaben
+16:40:14.508 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/atlassian#commonmark-java
+16:40:14.871 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/almondtools#stringbench
+16:40:15.133 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sunchao#presto
+16:40:27.743 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chandresh-pancholi#ignite
+16:41:44.623 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zsurocking#grpc-java
+16:41:49.871 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davleopo#graal-core
+16:42:00.058 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.058 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.059 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.059 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.061 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OUT_OF_LOOPS_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_EARLIEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:42:00.068 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.FrameStateAssigmentPhaseBenchmark.StringTokenizedNextToken' was not found (State objects from external dependencies cannot be resolved)
+16:42:02.104 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nmittler#grpc-java
+16:42:06.913 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/trustin#armeria
+16:42:13.495 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/line#armeria
+16:42:20.078 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/paritytrading#philadelphia
+16:42:20.767 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/uujava#cqengine-query-jmh
+16:42:20.867 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tjake#cassandra
+16:42:36.005 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ivansenic#inspectIT
+16:42:44.995 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kojilin#armeria
+16:42:51.331 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mariusoe#inspectIT
+16:42:59.855 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cache2k#cache2k-benchmark
+16:43:00.301 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/inspectIT#inspectIT
+16:43:08.931 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/andreytim#jafar
+16:43:09.477 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/toyama0919#presto
+16:43:20.928 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/junkdog#entity-system-benchmarks
+16:43:21.194 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/insano10#puzzlers
+16:43:21.502 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/puniverse#quasar
+16:43:23.727 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gdusbabek#cassandra
+16:43:35.244 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/panchenko#pgjdbc
+16:43:37.075 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mikeb01#benchmarks
+16:43:37.185 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sluk3r#cassandra
+16:43:49.412 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vsonnier#hppcrt
+16:43:50.594 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/anuraaga#grpc-java
+16:43:54.645 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#rtree-3d
+16:43:54.992 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/optimatika#ojAlgo-linear-algebra-benchmark
+16:43:55.128 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bearmug#x-traktor-core
+16:43:55.219 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/besza#jgrapht
+16:43:59.406 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jgrapht#jgrapht
+16:44:03.593 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/erichwang#presto
+16:44:13.472 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jf367#presto
+16:44:24.115 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DavideD#hibernate-ogm
+16:44:28.265 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lingochamp#presto
+16:44:38.369 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kietly#presto
+16:44:48.610 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tellproject#presto
+16:44:58.928 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jhalliday#hibernate-ogm
+16:45:01.521 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mpilman#presto
+16:45:11.933 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jkinable#jgrapht
+16:45:15.918 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mp911de#hibernate-ogm
+16:45:19.388 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thomasdarimont#JCTools
+16:45:19.924 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tempbottle#hibernate-ogm
+16:45:22.733 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gunnarmorling#hibernate-ogm
+16:45:26.237 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/uugaa#hibernate-ogm
+16:45:29.036 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/phensley#template-compiler
+16:45:29.792 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ZJaffee#hibernate-ogm
+16:45:32.584 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hferentschik#hibernate-ogm
+16:45:34.901 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Sanne#hibernate-ogm
+16:45:39.131 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cinquin#mutinack
+16:45:42.908 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dimitrovchi#enum-like
+16:45:43.043 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hibernate#hibernate-ogm
+16:45:47.378 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/JetBrains-Research#viktor
+16:45:47.451 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/virsox#cepsim
+16:45:47.576 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Squarespace#template-compiler
+16:45:48.340 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/KurtYoung#druid
+16:45:55.896 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/AdoptOpenJDK#vmbenchmarks
+16:45:55.979 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#JCTools
+16:45:56.448 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rschatz#graal-core
+16:46:06.694 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.694 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.ConditionalEliminationBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.695 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Nullness' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.696 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.GraphCopyBenchmark.Search' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.697 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.697 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.697 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.697 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.697 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.697 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.HashMapComputeIfAbsent' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.697 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.NodeBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.703 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.StringEquals' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.703 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.703 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_LATEST_OUT_OF_LOOPS_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.703 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.SchedulePhaseBenchmark.IntersectionState_EARLIEST_OPTIMAL' was not found (State objects from external dependencies cannot be resolved)
+16:46:06.704 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'com.oracle.graal.microbenchmarks.graal.FrameStateAssigmentPhaseBenchmark.StringTokenizedNextToken' was not found (State objects from external dependencies cannot be resolved)
+16:46:08.598 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fengjiachun#JCTools
+16:46:09.124 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/minwoox#armeria
+16:46:13.519 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arteam#100-Java-Concurrency-questions
+16:46:13.607 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ttsiodras#HexSpeak
+16:46:13.681 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lemire#microbenchmarks
+16:46:13.854 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chosen0ne#btrace
+16:46:14.902 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/frankboller#watcher
+16:46:15.047 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/google#conscrypt
+16:46:17.112 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#rxjava2-backport
+16:46:22.482 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/areese#TestUTF8Decoding
+16:46:22.627 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rspieldenner#spectator
+16:46:23.243 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zhenxiao#parquet-mr
+16:46:25.675 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sunios#btrace
+16:46:26.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/brettwooldridge#object-pool-benchmarks
+16:46:26.819 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/simonpatrick#stepbystep-java
+16:46:29.037 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/atlanmod#NeoEMF
+16:46:30.580 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadWriteResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.581 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.581 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.581 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.582 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.583 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyResourceState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.584 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyAtomicState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.584 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.WriteOnlyAtomicState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.584 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadWriteAtomicState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.584 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadOnlyAtomicState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.584 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.WriteOnlyAtomicState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.584 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'fr.inria.atlanmod.neoemf.benchmarks.runner.state.ReadWriteAtomicState' was not found (State objects from external dependencies cannot be resolved)
+16:46:30.792 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bowlofstew#Chronicle-Wire
+16:46:31.563 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/phillipross#pgjdbc
+16:46:33.259 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wesleyegberto#courses-projects
+16:46:34.165 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/intropro#prairie
+16:46:34.578 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jsurfer#JsonSurfer
+16:46:34.883 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fabienrenaud#java-json-benchmark
+16:46:35.114 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kevoree-modeling#benchmark
+16:46:35.272 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cfieber#spectator
+16:46:35.800 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dmuino#spectator
+16:46:36.325 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Vedenin#java_in_examples
+16:46:36.714 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/txazo#java
+16:46:37.414 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marschall#mini-commons
+16:46:37.515 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thheller#shadow-pgsql
+16:46:37.718 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tudorv91#SparkJNI
+16:46:37.964 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mcanthony#presto
+16:46:47.260 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/toxeh#presto
+16:46:56.741 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fipar#presto
+16:47:06.084 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shubham166#presto
+16:47:14.048 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Zutai#presto
+16:47:21.970 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pdeva#druid
+16:47:28.814 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rasahner#druid
+16:47:35.405 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vermaravikant#presto
+16:47:44.074 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/siddhartharay007#presto
+16:47:52.769 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jiakuan#commonmark-java
+16:47:53.029 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chiwanpark#commonmark-java
+16:47:53.279 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vibneiro#dispatching
+16:47:53.382 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchmarkMethodVisitor - Fully qualified name resolution of parameter type 'ThreadState' in method 'dispatchRandomly' in class 'vibneiro.ThreadBoundHashDispatcherBenchmark' is not possible (Parameters from external dependencies cannot be resolved). Parameter is skipped
+16:47:53.382 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'ThreadState' was not found (State objects from external dependencies cannot be resolved)
+16:47:53.382 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchmarkMethodVisitor - Fully qualified name resolution of parameter type 'ThreadState' in method 'dispatchRandomly' in class 'vibneiro.WorkStealingDispatcherBenchmark' is not possible (Parameters from external dependencies cannot be resolved). Parameter is skipped
+16:47:53.383 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'ThreadState' was not found (State objects from external dependencies cannot be resolved)
+16:47:53.403 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fabri1983#menuapp
+16:47:54.141 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#hive
+16:49:06.279 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PascalSchumacher#byte-buddy
+16:49:10.449 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vic#byte-buddy
+16:49:16.070 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RobAustin#byte-buddy
+16:49:20.508 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/austinv11#ETF-Java
+16:49:20.648 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/optimizely#java-sdk
+16:49:21.497 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kvr000#zbynek-java-exp
+16:49:22.035 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mike-tr-adamson#incubator-tinkerpop
+16:49:28.110 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/newkek#incubator-tinkerpop
+16:49:34.729 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/achmadns#jmh-samples
+16:49:34.803 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/imglib#imglib2
+16:49:36.900 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/biboudis#clashofthelambdas
+16:49:36.952 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spring-cloud#spring-cloud-sleuth
+16:49:38.283 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apptik#jus
+16:49:39.660 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PhantomYdn#orientdb
+16:49:49.165 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jblievremont#sonarqube
+16:50:04.380 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/abbeyj#sonarqube
+16:50:24.372 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/seven332#okio
+16:50:24.876 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ivgiuliani#jelf
+16:50:24.975 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/iloveyou416068#CookNIOServer
+16:50:29.326 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Abnaxos#guards
+16:50:29.788 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/almondtools#regexbench
+16:50:29.916 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/trautonen#logback-ext
+16:50:30.070 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/golo-lang#golo-jmh-benchmarks
+16:50:30.207 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/uber#h3-java
+16:50:30.357 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/udoprog#tiny-serializer-java
+16:50:30.747 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ivgiuliani#cuckoohash
+16:50:30.841 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/x-stream#xstream
+16:50:32.833 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yandex#yoctodb
+16:50:33.631 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bdonlan#invokedynamic-proxy
+16:50:33.753 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DaanVanYperen#artemis-odb-contrib
+16:50:34.266 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lotusws#btrace
+16:50:35.196 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rschmitt#invokedynamic-proxy
+16:50:35.333 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ThaBalla1148#artemis-odb-contrib
+16:50:35.796 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/goldobin#resilience4j
+16:50:36.630 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mehtabsinghmann#resilience4j
+16:50:37.712 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ubschmidt2#instrumentation-java
+16:50:38.620 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/piotr-j#artemis-odb-contrib
+16:50:39.090 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gensym#hikesaber
+16:50:39.151 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apptik#RHub
+16:50:39.502 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcProxyParamsEmit' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.502 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcProxyParamsUpstream' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.503 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ObjProxyParamsEmit' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.503 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ObjProxyParamsUpstream' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.504 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchmarkMethodVisitor - Fully qualified name resolution of parameter type 'States.SubjectParamsEmit' in method 'onNext' in class 'io.apptik.rhub.PublishSubjectPerf' is not possible (Parameters from external dependencies cannot be resolved). Parameter is skipped
+16:50:39.504 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchmarkMethodVisitor - Fully qualified name resolution of parameter type 'States.SubjectParamsUpstream' in method 'observe' in class 'io.apptik.rhub.PublishSubjectPerf' is not possible (Parameters from external dependencies cannot be resolved). Parameter is skipped
+16:50:39.504 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.SubjectParamsEmit' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.504 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.SubjectParamsUpstream' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.507 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcessorParamsEmit' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.507 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcessorParamsUpstream' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.512 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcProxyParamsEmit' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.513 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcProxyParamsUpstream' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.514 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcessorParamsEmit' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.514 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'States.ProcessorParamsUpstream' was not found (State objects from external dependencies cannot be resolved)
+16:50:39.547 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/conversant#disruptor_benchmark
+16:50:39.626 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/curioswitch#curiostack
+16:50:41.035 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dyu#protostuff
+16:50:43.424 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bdobyns#OpenRQ
+16:50:44.429 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pstout#spectator
+16:50:45.171 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/morj#xodus
+16:50:48.451 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/myxyz#protostuff
+16:50:50.701 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thaibui#algorithms-core
+16:50:50.784 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter4Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.784 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter8Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.784 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter16Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.784 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter4Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.784 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter8Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.785 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter16Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.785 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter8Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.785 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter16Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.785 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter4Thread1000Granularity' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.785 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter4Thread5000Granularity' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.785 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ParallelMergesortBenchmark.Sorter4Thread20000Granularity' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter4Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter8Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter16Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter4Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter8Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter16Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter8Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter16Thread' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter4Thread1000Granularity' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter4Thread5000Granularity' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.790 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.bui.algorithms.ForkJoinMergesortBenchmark.Sorter4Thread20000Granularity' was not found (State objects from external dependencies cannot be resolved)
+16:50:50.808 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/java8#Java8InAction
+16:50:51.136 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xiajunsongfan#scud
+16:50:51.393 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#audio-recognition
+16:50:51.485 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/areese#JavaTheCostOfDoingNothing
+16:50:51.581 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mp911de#logstash-gelf
+16:50:52.125 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/openrq-team#OpenRQ
+16:50:53.180 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arnaudroger#mapping-benchmark
+16:50:53.497 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/protostuff#protostuff
+16:50:55.879 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Mojang#blixtser
+16:50:56.097 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rsocket#rsocket-java
+16:50:57.039 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marcelodeolive1ra#DC-UFSCar-ES2-201601-GrupoHelloWorld
+16:51:00.766 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/udoprog#tiny-async-java
+16:51:01.151 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#calcite
+16:51:09.186 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.apache.calcite.benchmarks.StatementTest.HrPreparedStatement' was not found (State objects from external dependencies cannot be resolved)
+16:51:15.520 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fabito#togglz
+16:51:16.450 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gorcz#Hystrix
+16:51:17.867 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/louiscryan#grpc-java
+16:51:20.993 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DealerDotCom#togglz
+16:51:21.841 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/julianhyde#calcite
+16:51:29.720 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.apache.calcite.benchmarks.StatementTest.HrPreparedStatement' was not found (State objects from external dependencies cannot be resolved)
+16:51:35.789 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hexmind#togglz
+16:51:36.724 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/drmaas#resilience4j
+16:51:38.435 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ceckhardt#orbit
+16:51:39.512 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/paychex#togglz
+16:51:40.416 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jpaw#jdp
+16:51:40.553 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/viniciusfbarbosa#DC-UFSCar-ES2-201601-Grupo-AMTV-
+16:51:44.188 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nielsbasjes#yauaa
+16:51:44.881 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nikarh#equals-builder
+16:51:45.009 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tmontgomery#nuklei
+16:51:45.187 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/resilience4j#resilience4j
+16:51:47.004 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/togglz#togglz
+16:51:48.221 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tramchamploo#buffer-slayer
+16:51:48.565 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/VitrifiedCode#JavaUtilities
+16:51:48.861 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vladimirdolzhenko#hashCodeLegend
+16:51:49.044 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/matthew-dailey#java-playaround
+16:51:49.153 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#commons-crypto
+16:51:49.470 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Vanilla-Java#Microservices
+16:51:49.579 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DataArt#CalculationEngine
+16:51:50.458 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/elastic#elasticsearch
+16:53:02.483 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kexianda#commons-crypto
+16:53:02.773 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cchang738#parquet-mr
+16:53:06.123 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/saucam#incubator-parquet-mr
+16:53:10.200 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ilya-g#pcollections
+16:53:10.423 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/juszczakn#pcollections
+16:53:10.649 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/winningsix#incubator-parquet-mr
+16:53:13.831 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/piyushnarang#parquet-mr
+16:53:16.628 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nitin2goyal#parquet-mr-1
+16:53:19.040 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/presidentio#test-data-generator
+16:53:19.248 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hrldcpr#pcollections
+16:53:19.509 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marschall#sets
+16:53:19.667 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/micrometer-metrics#micrometer
+16:53:21.829 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/maxdemarzi#GuancialeDB
+16:53:21.956 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/C0rWin#Java-KMeans-Coreset
+16:53:22.399 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vgalloy#autocatch
+16:53:22.532 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Pitt112#night-hawk
+16:53:22.718 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/krystian-k#java-feature-bench
+16:53:22.852 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eseifert#gral
+16:53:23.867 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/easymock#objenesis
+16:53:24.116 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lexas2509#perf
+16:53:24.367 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mourao666#cassandra-sim
+16:53:36.512 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/atomfrede#logw
+16:53:36.605 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/irudyak#objenesis
+16:53:36.816 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nickman#UnsafeAdapter
+16:53:37.710 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/reactor#reactor-core
+16:53:47.281 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sajato#logw
+16:53:47.363 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Leibnizhu#spring-boot-starter-netty
+16:53:47.529 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jvz#nio-logger
+16:53:47.634 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#RxJava2Extensions
+16:53:50.437 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#aurora
+16:53:53.559 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/blynkkk#blynk-server
+16:53:55.760 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/coconut2015#cookjson
+16:53:56.114 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#hilbert-curve
+16:53:56.238 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mbosecke#template-benchmark
+16:53:56.308 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/iksmada#DC-UFSCar-ES2-201601-GrupoDilema
+16:54:00.034 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mangeshpardeshiyahoo#druid
+16:54:05.565 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thinker0#aurora
+16:54:08.610 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RodrigoRubino#DC-UFSCar-ES2-201601-Grupo-Brainstorm
+16:54:12.194 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nextopcn#lite-pool
+16:54:12.475 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/opendaylight#controller
+16:54:18.650 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ReneNeubert#gradle-java-template
+16:54:18.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sboesebeck#morphium
+16:54:20.378 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/awood#crl-stream
+16:54:20.499 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#ixjava
+16:54:21.157 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#orc
+16:54:22.993 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/federicotg#hashing
+16:54:23.473 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tallerjavaunicen#TallerJava
+16:54:23.863 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dropwizard#metrics
+16:54:24.713 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/XueweiKent#LockedTransaction
+16:54:39.927 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/girirajsharma#elasticsearch
+16:55:05.193 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/martijnvg#elasticsearch
+16:56:04.932 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mwassil#inspectIT
+16:56:09.991 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jtulach#truffle
+16:56:13.184 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/danielmitterdorfer#elasticsearch
+16:56:37.640 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/reific#braid
+16:56:37.766 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arnaudroger#sfm-csv-variability
+16:56:37.863 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nitram509#intellij-idea-plugin-serializer-toolbox
+16:56:37.932 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/benalexau#hash-bench
+16:56:38.087 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tkowalcz#presentations
+16:56:38.630 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RTBHOUSE#neural-network-native-ops
+16:56:38.706 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jerrinot#FieldMagic
+16:56:38.814 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/asimihsan#jmh-gradle-anagrams
+16:56:38.872 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zzuhtzy#okio-source-read
+16:56:39.224 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/addthis#codec
+16:56:39.501 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dryuf#dryuf-concurrent
+16:56:39.838 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#kool
+16:56:40.465 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#rxjava2-extras
+16:56:41.025 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Domo42#saga-lib
+16:56:41.402 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Gilandel#utils-assertor
+16:56:42.902 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Graylog2#graylog-plugin-pipeline-processor
+16:56:43.591 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/d0k1#groovy-eval-bench
+16:56:43.733 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tschechlovdev#jabref
+16:56:48.275 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/volodarsky#zephyr-benchmark
+16:56:48.365 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/underyx#pgjdbc
+16:56:49.900 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/alexismeneses#pgjdbc
+16:56:51.418 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/antag99#artemis-odb-contrib
+16:56:51.735 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marcingrzejszczak#spring-cloud-sleuth
+16:56:52.784 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ydai1124#gobblin-1
+16:57:00.161 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jenetics#prngine
+16:57:00.420 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marschall#charsequences
+16:57:00.516 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/n1analytics#javallier
+16:57:00.782 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/plokhotnyuk#scala-vs-java
+16:57:00.840 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/openzipkin#zipkin-reporter-java
+16:57:01.196 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pietermartin#sqlg
+16:57:04.912 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/prasanthj#bloomfilter
+16:57:05.063 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Mart-Bogdan#vertx-hello
+16:57:05.141 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spotify#sparkey-java
+16:57:05.430 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/raviprak#JAVABench
+16:57:05.530 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/addthis#basis
+16:57:06.103 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/airlift#airlift
+16:57:08.039 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Zappos#zappos-json
+16:57:08.265 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codesorcery#juan
+16:57:08.497 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jmnarloch#trie
+16:57:08.613 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Querables#querables-java
+16:57:08.698 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hibernate#hibernate-validator
+16:57:13.027 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/agdphd#jgrapht
+16:57:16.263 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marko-bekhta#hibernate-validator
+16:57:20.468 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/johngmyers#airlift
+16:57:22.376 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ambro2#jabref
+16:57:26.537 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shitikanth#jabref
+16:57:31.670 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/JabRef#jabref
+16:57:36.632 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/denizdemir#presto
+16:57:44.472 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Siedlerchr#jabref
+16:57:49.328 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ayanai1#jabref
+16:57:53.254 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mythguided#basis
+16:57:53.849 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Jiri-Kremser#inventory-benchmark
+16:57:53.951 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dain#airlift
+16:57:55.879 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/checketts#spring-metrics
+16:57:56.236 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/somasun#reactivesocket-java
+16:57:56.850 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/electrum#airlift
+16:57:58.753 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/protochron#aurora
+16:58:01.783 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/motokito#jabref
+16:58:05.825 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spiffykahuna#TIJ4-code_idea
+16:58:08.221 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/joyent#java-http-signature
+16:58:08.450 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/manoelcampos#cloudsim-plus
+16:58:10.305 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/opendaylight#yangtools
+16:58:16.430 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/debmalya#vigilant-tribble
+16:58:16.588 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pombreda#btrace-hg
+16:58:17.517 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mikvor#hashmapTest
+16:58:17.724 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kno10#reversegeocode
+16:58:17.876 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vietj#reactive-pg-client
+16:58:18.600 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vladimir-bukhtoyarov#bucket4j
+16:58:18.941 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vladimirdolzhenko#gflogger
+16:58:19.408 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vlsi#compactmap
+16:58:19.532 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wavesoftware#java-eid-exceptions
+16:58:19.770 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#commons-csv
+16:58:20.191 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fenderstr#my-bench
+16:58:20.275 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chrisvest#object-pool-benchmarks
+16:58:20.378 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/igorgallon#DC-UFSCar-ES2-201601--GrupoAbeliano
+16:58:24.234 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cryptomator#cryptolib
+16:58:24.416 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/maxdemarzi#graph_processing
+16:58:24.536 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dropwizard#dropwizard
+16:58:27.464 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nguyenhongson03#caffeine
+16:58:29.653 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/BrentDouglas#vial
+16:58:30.042 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kvr000#zbynek-concurrent-pof
+16:58:30.274 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Javalbert#faster-than-reflection
+16:58:30.511 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jchambers#jvptree
+16:58:30.630 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/taer#lettuce
+16:58:33.730 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smartpcr#druid
+16:58:38.805 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fengshao0907#grpc-java
+16:58:40.364 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Tammie47#inspectIT
+16:58:45.439 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jhawo82882#MDP3Sample
+16:58:45.983 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/conchlee#grpc-java
+16:58:47.542 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/buchgr#grpc-java
+16:58:49.435 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#reactive-streams-impl
+16:58:49.756 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tfgm-bud#simple-binary-encoding
+16:58:50.375 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wrwg#grpc-java
+16:58:52.003 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jfallows#nuklei
+16:58:52.826 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eonezhang#grpc-java
+16:58:54.950 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/moujian#grpc-java
+16:58:56.464 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/LuminateWireless#grpc-java
+16:58:59.510 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jpaw#fixedpoint
+16:58:59.642 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jpxiong#okio
+16:58:59.889 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ConSol#parallel-streams-example
+16:58:59.974 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shashankasharma#commons-csv
+16:59:03.785 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/amluto#simple-binary-encoding
+16:59:04.355 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mingfly#grpc-java
+16:59:05.904 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/holidayfun#inspectIT
+16:59:10.487 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/NTDT-UniTuebingen#inspectIT
+16:59:15.709 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kilink#okio
+16:59:15.993 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pvllnspk#commons-csv
+16:59:16.249 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pbouillet#inspectIT
+16:59:20.572 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tejasmanohar#okio
+16:59:20.856 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sunshinecoast#okio
+16:59:21.146 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nickethier#grpc-java
+16:59:22.769 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/qix#druid
+16:59:27.574 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/UzumakiMansi#commons-csv
+16:59:27.843 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/767326791#druid
+16:59:33.012 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/saleyn#simple-binary-encoding
+16:59:33.601 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/andy32323#inspectIT
+16:59:38.234 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RavinaDhruve#commons-csv
+16:59:38.503 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zhiqinghuang#druid
+16:59:43.628 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/juoni#okio
+16:59:43.866 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/GauriGNaik#commons-csv
+16:59:44.122 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lcs777#simple-binary-encoding
+16:59:44.692 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/koushikan#grpc-java
+16:59:46.329 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/clemensgeibel#inspectIT
+16:59:51.115 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mohanaraosv#commons-csv
+16:59:51.368 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vampiregod1996#grpc-java
+16:59:52.864 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Henning-Schulz#inspectIT
+16:59:57.316 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Shedings#okio
+16:59:57.593 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/palaniyappanBala#okio
+16:59:57.871 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/madongfly#grpc-java
+16:59:59.983 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kevintvh#druid
+17:00:04.843 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eamonnmcmanus#grpc-java
+17:00:06.477 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smorin#simple-binary-encoding
+17:00:07.087 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tempbottle#okio
+17:00:07.369 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/stanley-cheung#grpc-java
+17:00:08.963 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xubuhang#okio
+17:00:09.247 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/v7lin#okio
+17:00:09.528 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/msdgwzhy6#okio
+17:00:09.807 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/aglne#grpc-java
+17:00:11.390 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/winstar#grpc-java
+17:00:12.955 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ybv#grpc-java
+17:00:14.572 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/angcyo#okio
+17:00:14.853 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chenrui2014#okio
+17:00:15.137 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Luccr1#inspectIT
+17:00:19.774 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pombredanne#druid
+17:00:25.111 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tuacy#grpc-java
+17:00:26.638 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/joshuabezaleel#grpc-java
+17:00:28.272 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/longbai#okio
+17:00:28.520 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/victor-cr#threadlocal-benchmark
+17:00:28.586 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lucwillems#JavaLinuxNet
+17:00:28.919 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marschall#line-parser
+17:00:29.049 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vongosling#jvm-serializer
+17:00:29.165 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fbaro#jpack
+17:00:29.293 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/maxifier#mxcache
+17:00:31.704 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pdemanget#examples
+17:00:31.952 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spriet2000#vertx-http-router
+17:00:32.037 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/OpenFeign#feign
+17:00:32.932 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pinterest#jbender
+17:00:33.033 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/promeG#TinyPinyin
+17:00:33.234 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/protobufel#multikeymapjava
+17:00:33.412 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nicoulaj#jmh-utils
+17:00:33.545 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jasobrown#barker
+17:00:33.674 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/snazy#ohc
+17:00:34.154 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ssaarela#javersion
+17:00:35.333 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/blemale#fuse
+17:00:35.402 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/TridentSDK#Trident
+17:00:36.054 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sormuras#treasure
+17:00:36.160 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ruslan-sverchkov#aho-corasick
+17:00:36.267 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#incubator-gobblin
+17:00:46.495 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tasomaniac#caffeine
+17:00:48.275 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PacktPublishing#Mastering-Mesos
+17:00:53.520 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/immutables#samples
+17:00:53.614 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ceki#logback-perf
+17:00:53.670 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/d0k1#jitloganalyzer
+17:00:53.820 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Devexperts#dlcheck
+17:00:54.066 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Gilandel#utils-commons
+17:00:55.324 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ben-manes#caffeine
+17:00:58.449 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/epickrram#jvm-warmup-talk
+17:00:58.527 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/svashisth#java-perv
+17:00:58.640 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tdunning#t-digest-benchmark
+17:00:58.719 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/CrispOSS#prime-sieves
+17:00:58.800 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marcust#stagemonitor
+17:00:59.568 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/neo4j-contrib#neo4j-jdbc
+17:01:00.368 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fizzed#template-benchmark
+17:01:00.440 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pcadabam#gobblin
+17:01:08.829 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/leveyj#ignite
+17:01:45.096 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/zhoupan#feign
+17:01:45.606 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jmnarloch#feign
+17:01:46.131 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jcanizales#grpc-java
+17:01:48.712 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/penuel-leo#druid
+17:01:53.405 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/didvae#feign
+17:01:53.838 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sdgdsffdsfff#stagemonitor
+17:01:54.531 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/prembasumatary#feign
+17:01:55.016 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Echo19890615#feign
+17:01:55.726 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/FrEaKmAn#feign
+17:01:56.181 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spencergibb#feign
+17:01:56.574 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bstick12#feign
+17:01:56.998 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/openedbox#feign
+17:01:57.420 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gorcz#feign
+17:01:57.818 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/olkulyk#feign
+17:01:58.239 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ddteeter#feign
+17:01:58.675 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/MaridProject#typedmap
+17:01:58.818 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/LiveMyKarma#Finalizer
+17:01:58.874 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/melix#jmh-gradle-plugin
+17:01:59.024 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/epickrram#lock-contention
+17:01:59.137 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rslemos#pet-grammars
+17:01:59.211 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/paritytrading#parity
+17:01:59.485 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/protobufel#protobuf-el
+17:02:11.151 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/s4ke#moar
+17:02:11.424 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/komiya-atsushi#fast-rng-java
+17:02:11.633 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/finn-no#serdes-shootout
+17:02:11.738 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rxin#jvm-unsafe-utils
+17:02:11.878 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/coder-press#crazy-soap
+17:02:11.974 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#kafka
+17:02:24.443 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/batterseapower#btreemap
+17:02:24.761 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codahale#gimli
+17:02:24.820 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codahale#xsalsa20poly1305
+17:02:24.895 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jayjaylab-benchmark#retrofitvsokhttp
+17:02:24.972 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/d0k1#acache
+17:02:25.050 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thymeleaf#thymeleaf-benchmarks
+17:02:25.227 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nitsanw#jmh-samples
+17:02:25.305 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/michaelhixson#jmh-benchmark-listof
+17:02:25.370 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/FIXTradingCommunity#silverflash
+17:02:25.923 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rjdkolb#vmbenchmarks
+17:02:26.000 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/prasanthj#hasher
+17:02:26.084 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/huxi#sulky
+17:02:26.788 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jvcaquino#DC-UFSCar-ES2-201601-Grupo6
+17:02:30.474 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mbosecke#pebble-benchmark
+17:02:30.528 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kaazing#gateway
+17:02:39.123 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mdhorton#experiments
+17:02:39.250 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/WANdisco#amplab-hive
+17:03:09.964 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mnuessler#metrics
+17:03:10.619 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shahankhatch#aurora
+17:03:13.766 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dmitryleskov#algs4bench
+17:03:13.874 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tempbottle#netty-zmtp
+17:03:14.401 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/stanculescu#gateway
+17:03:22.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/amoghmargoor#incubator-calcite
+17:03:29.249 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.apache.calcite.benchmarks.StatementTest.HrPreparedStatement' was not found (State objects from external dependencies cannot be resolved)
+17:03:33.861 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/522986491#yangtools
+17:03:39.271 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kidaa#aurora
+17:03:41.657 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/summerhai#ohc
+17:03:42.102 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mschenck#aurora
+17:03:45.593 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tempredirect#metrics
+17:03:46.265 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fakemongo#fongo
+17:03:47.314 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mattnelson#metrics
+17:03:48.294 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/AltitudeDigital#metrics
+17:03:48.957 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Banno#metrics
+17:03:49.579 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jasw#metrics
+17:03:50.236 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/egymgmbh#metrics
+17:03:50.925 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chetnachaudhari#metrics
+17:03:51.988 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/trampi#stagemonitor
+17:03:52.980 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kevintvh#metrics
+17:03:53.637 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jasonchaffee#metrics
+17:03:54.316 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/valery1707#dropwizard-metrics
+17:03:55.359 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mspiegel#metrics
+17:03:56.022 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rexren#metrics
+17:03:56.686 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jplock#metrics
+17:03:57.405 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/phillipross#java-http-signature
+17:03:57.586 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mt0803#metrics
+17:03:58.766 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arina-ielchiieva#calcite
+17:04:05.929 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.apache.calcite.benchmarks.StatementTest.HrPreparedStatement' was not found (State objects from external dependencies cannot be resolved)
+17:04:11.193 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/glamarre360#stagemonitor
+17:04:12.340 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thelastpickle#metrics
+17:04:12.985 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bentatham#metrics
+17:04:13.717 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mtakaki#metrics
+17:04:14.400 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/timezra#metrics
+17:04:15.053 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wfxiang08#metrics
+17:04:15.710 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/randomstatistic#metrics
+17:04:16.420 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hexdecteam#stagemonitor
+17:04:17.403 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gburton1#metrics
+17:04:18.072 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cirrus-dev#metrics
+17:04:18.755 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ohr#metrics
+17:04:19.443 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/slovdahl#metrics
+17:04:20.072 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chenxianghua2014#metrics
+17:04:20.736 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/AdrianCozma#gateway
+17:04:28.942 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/slachiewicz#metrics
+17:04:29.594 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/signalfx#metrics
+17:04:30.259 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/krraghavan#fongo
+17:04:31.224 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/qubole#calcite
+17:04:36.761 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'org.apache.calcite.benchmarks.StatementTest.HrPreparedStatement' was not found (State objects from external dependencies cannot be resolved)
+17:04:41.231 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mjeffrey#log-sanitizer
+17:04:41.336 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/JervenBolleman#java-benchmarks
+17:04:41.426 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/octabase#fnr-java
+17:04:41.544 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PhantomThief#scope
+17:04:41.682 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/reaktivity#nukleus.java
+17:04:41.840 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smoketurner#notification
+17:04:42.158 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spotify#netty-zmtp
+17:04:42.400 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bodewig#commons-compress-benchmarks
+17:04:42.463 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gpanther#benchmark-arraycopy
+17:04:42.532 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jnordwick#zerog-grisu
+17:04:42.626 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/renoth#texxxxas
+17:04:42.740 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cpoepke#demos
+17:04:42.885 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/batterseapower#timeseries-compression
+17:04:43.000 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Nawy#UnsafeCollections
+17:04:43.089 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/amsa-code#risky
+17:04:44.108 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/whitingjr#batch-rewrite-statements-perf
+17:04:44.181 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tempredirect#GeoFun
+17:04:44.254 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/carrotsearch#hppc
+17:04:44.785 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/danielnorberg#rut
+17:04:44.943 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/darwin-evolution#darwin
+17:04:45.079 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PhillHenry#palgorithms
+17:04:45.135 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/uchuhimo#kotlin-playground
+17:04:45.228 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gvsmirnov#java-perv
+17:04:45.361 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/glowroot#glowroot
+17:04:50.625 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mkraemerx#algorithm-art
+17:04:50.730 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smoketurner#graphiak
+17:04:50.833 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/volkodava#disruptor-benchmark-tests
+17:04:50.893 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/OpenHFT#jvm-micro-benchmarks
+17:04:50.973 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yulang#Modified-Parquet
+17:04:53.703 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/karlicoss#autohash
+17:04:53.795 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vyazelenko#jmh-gradle-plugin
+17:04:53.901 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/stevegury#reactivesocket-java
+17:04:54.320 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/philandstuff#dropwizard
+17:04:55.913 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/milimetric#druid
+17:05:00.736 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/MeteoGroup#jbrotli
+17:05:00.951 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ghxandsky#benchmarx
+17:05:01.005 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/konmik#collection-benchmark
+17:05:01.076 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/randiroe#dropwizard
+17:05:02.499 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bassemZohdy#SimpleUtils
+17:05:02.609 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mkouba#template-benchmark
+17:05:02.666 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/trask#glowroot
+17:05:07.525 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yngui#jephyr-benchmark
+17:05:07.592 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gunnarmorling#hibernate-validator
+17:05:10.573 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/taltmann#dropwizard
+17:05:12.673 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cmebarrow#nuklei
+17:05:13.134 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/headuck#lmdbjni
+17:05:13.403 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Randgalt#dropwizard
+17:05:14.845 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yrashk#es4j
+17:05:15.875 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dsavinkov#dropwizard
+17:05:17.362 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/deephacks#lmdbjni
+17:05:17.658 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/placrosse#lmdbjni
+17:05:17.888 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mnrasul#dropwizard
+17:05:19.404 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akshaymaniyar#dropwizard
+17:05:20.977 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/douzzi#dropwizard
+17:05:22.396 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yshaojie#dropwizard
+17:05:23.820 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ben1247#dropwizard
+17:05:25.292 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/phambryan#dropwizard
+17:05:26.677 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/johnou#orbit
+17:05:27.735 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mattnelson#dropwizard
+17:05:29.748 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/anonymint#dropwizard
+17:05:31.593 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akraxx#dropwizard
+17:05:32.987 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/authbox-lib#druid
+17:05:37.667 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jthelin#orbit
+17:05:38.778 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/KobeFeng#hppc
+17:05:39.316 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tomwhoiscontrary#sarcoptic
+17:05:39.442 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sbwdlihao#chainj
+17:05:39.825 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/michaljonko#blog-examples
+17:05:39.995 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RichardWarburton#java-final-benchmark
+17:05:40.058 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nickman#json-benchmark
+17:05:40.151 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/person-lee#nlp
+17:05:41.458 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/alexeyr#pcg-java
+17:05:41.521 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/allegro#json-avro-converter
+17:05:41.611 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/alexey-kotlyar#algostructure
+17:05:41.699 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/brettwooldridge#HikariJSON-benchmark
+17:05:41.760 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/maxdemarzi#ChronicleGraph
+17:05:41.835 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apptik#joio
+17:05:41.924 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bramp#unsafe
+17:05:42.083 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/andrepnh#data-structure-fun
+17:05:42.184 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/burmanm#gorilla-tsc
+17:05:42.287 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/classgraph#classgraph
+17:05:43.240 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codahale#aes-gcm-siv
+17:05:43.313 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codahale#passpol
+17:05:43.384 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/SeanPMiller#containers
+17:05:43.571 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eranharel#memcached-java-clients-benchmark
+17:05:43.644 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eventsourcing#es4j
+17:05:44.431 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'IndexedCollection' was not found (State objects from external dependencies cannot be resolved)
+17:05:44.612 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/foursquare#fsqio
+17:05:45.010 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/HubSpot#jinjava
+17:05:45.833 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/identifiers#identifiers-java
+17:05:46.037 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ruediste#salta-benchmark
+17:05:46.116 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/InvisibleTech#state
+17:05:46.197 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arjunswaj#Java8
+17:05:46.284 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Java-Courses#collections-m0e4
+17:05:46.335 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jsubercaze#simhashdb
+17:05:46.526 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/iamdarksorcerer#java-jmh-benchmarks
+17:05:46.580 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jayware#entity-essentials
+17:05:47.392 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arienkock#parallelism-benchmarks
+17:05:47.478 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/johnlcox#motif
+17:05:48.149 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dcapwell#java-file-operations
+17:05:48.265 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/victor-cr#template-text-parser
+17:05:48.422 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/camunda#camunda-engine-dmn-benchmark
+17:05:48.479 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/MartinanderssonDotcom#money-profiling
+17:05:48.713 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marksutt#commonmark-java
+17:05:48.917 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/benalexau#simple-binary-encoding
+17:05:49.415 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marksantos#simple-binary-encoding
+17:05:50.209 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jessefugitt#nuklei
+17:05:51.198 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kickass-jmh#riviera
+17:05:51.260 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rafaeljribeiro#reversegeocode
+17:05:51.382 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pcj#commonmark-java
+17:05:51.597 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jaredstehler#jinjava
+17:05:52.128 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dongfeng2008#Chronicle-Algorithms
+17:05:52.684 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/storozhukBM#javaslang-circuitbreaker
+17:05:52.946 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lburgazzoli#Chronicle-Algorithms
+17:05:53.509 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/OpenHFT#Chronicle-Algorithms
+17:05:54.208 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/OpenHFT#Chronicle-Logger
+17:05:54.419 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PKRoma#simple-binary-encoding
+17:05:55.241 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/WorstCase00#jgrapht
+17:05:57.237 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fc7#jabref
+17:06:00.824 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Mogztter#jinjava
+17:06:01.346 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bensteinert#chromarenderer-java-benchmarks
+17:06:01.406 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/daten-io#faster
+17:06:01.480 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lonnyj#pgjdbc
+17:06:03.002 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/buybackoff#simple-binary-encoding
+17:06:03.739 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/NiteshKant#reactivesocket-java
+17:06:04.751 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/real-logic#simple-binary-encoding
+17:06:05.595 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/willhaben#blog
+17:06:05.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/demoth#finistika
+17:06:05.970 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spotify#completable-futures
+17:06:06.102 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/stewsters#stewsters-util
+17:06:06.549 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/npetzall#persistent-queue
+17:06:06.646 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shalinmangar#solr-jmh-tests
+17:06:06.723 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/terma#mutable-fast-select
+17:06:06.815 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tinyj#tinyj-lazy
+17:06:06.895 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/MorganBauer#java-experiments
+17:06:06.962 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arnaudroger#benchmark-loop
+17:06:07.023 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tootedom#herdcache
+17:06:07.772 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wenerme#seq
+17:06:07.934 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Gohla#persistent-graph
+17:06:08.092 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vsch#flexmark-java
+17:06:11.796 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/airlift#aircompressor
+17:06:12.158 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/anonl#nvlist
+17:06:13.861 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#commons-bcel
+17:06:15.173 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/uliashkevich#native-struct
+17:06:15.345 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#incubator-rya
+17:06:22.317 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yanchith#pattern
+17:06:22.501 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sujanctg2005#test-project
+17:06:22.630 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/burmanm#compression-int
+17:06:22.726 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cryptomator#siv-mode
+17:06:22.824 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ecki#jmhbench-cryptospeed
+17:06:22.880 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/loxal#template
+17:06:22.930 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/robinst#microbenchmarks
+17:06:23.002 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/audit4j#audit4j-benchmarks
+17:06:23.086 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bingoohuang#javacode-demo
+17:06:23.441 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/graphql-java#graphql-java
+17:06:25.375 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/HBTGmbH#java-propertyname
+17:06:25.477 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ibodrov#bpm
+17:06:25.787 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Lawrence-zxc#springStarter
+17:06:26.002 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gdrouet#scanner-benchmark
+17:06:26.066 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/j-musca#kata08-conflicting-objectives
+17:06:26.152 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/peterszatmary#jmh-benchmark-demo
+17:06:26.218 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jchambers#jeospatial
+17:06:26.289 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cs-ester-peixoto#docker-jenkins
+17:06:28.539 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dcapwell#jmh-tests
+17:06:28.622 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ricdong#presto
+17:06:37.867 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nitsanw#safepoint-experiments
+17:06:37.960 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/larusba#neo4j-jdbc
+17:06:38.588 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nesteant#java-tests
+17:06:38.713 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Mercateo#reflection
+17:06:38.786 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/numenta#htm.java
+17:06:40.516 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/typetools#commons-bcel
+17:06:41.869 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sheenammittal7#directory-kerby
+17:06:43.211 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dflemstr#missinglink
+17:06:43.405 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cogmission#htm.java
+17:06:45.326 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DLotts#incubator-rya
+17:06:51.091 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/volodin-aa#openjdk-benchmark
+17:06:51.172 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pujav65#incubator-rya
+17:06:55.553 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tkao1000#pinot
+17:07:00.867 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/RaysaOliveira#cloudsim-plus
+17:07:02.948 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mohanaraosv#commons-bcel
+17:07:04.178 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/UniKnow#htm.java
+17:07:04.880 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DanielSperry#orbit
+17:07:06.396 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arcanefoam#jgrapht
+17:07:07.708 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jacobwil#incubator-pirk
+17:07:08.226 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dskinner#SiftXml
+17:07:08.311 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pford68#htm.java
+17:07:09.325 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/chelu#htm.java
+17:07:11.063 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mosoft521#springside4
+17:07:11.701 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Maccimo#commons-bcel
+17:07:12.878 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/quilombodigital#orbit
+17:07:13.834 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/aihua#springside4
+17:07:14.759 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ellisonanne#incubator-pirk
+17:07:15.261 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smarthi#incubator-pirk
+17:07:15.820 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/raydac#java-binary-block-parser
+17:07:16.998 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/amihalik#incubator-rya
+17:07:21.908 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tellison#incubator-pirk
+17:07:22.415 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dimstav23#cloudsim-plus
+17:07:24.500 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wraydulany#incubator-pirk
+17:07:24.996 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/YaningX#directory-kerby
+17:07:26.521 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/meiercaleb#incubator-rya
+17:07:31.508 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pettermahlen#missinglink
+17:07:31.702 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shashankasharma#directory-kerby
+17:07:33.020 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tempbottle#commons-bcel
+17:07:34.255 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wolf8334#springside4
+17:07:35.240 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kchilton2#incubator-rya
+17:07:41.922 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jiteshmohan#directory-kerby
+17:07:43.272 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codespecs#commons-bcel
+17:07:44.556 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/acisternino#narjillos-math-bench
+17:07:44.650 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rolve#better-checks
+17:07:44.875 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fstab#parallel-streams-example
+17:07:44.967 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mkosem#stringsplitting
+17:07:45.027 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spotify#missinglink
+17:07:45.241 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/springside#springside4
+17:07:45.879 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Swrve#rate-limited-logger
+17:07:46.039 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/asympro#CleanStringBuilderBenchmark
+17:07:46.097 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/takari#bpm
+17:07:46.813 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/m0wfo#false-sharing-demo
+17:07:46.876 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Techcable#Event4J
+17:07:46.974 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thejotta#CloudSimPlusModificado
+17:07:48.777 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thesmythgroup#SiftXml
+17:07:48.870 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/uber#tchannel-java
+17:07:49.751 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/user405#test
+17:07:50.912 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rgorodischer#microbenchmarks
+17:07:50.960 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'ValCounterProvider' was not found (State objects from external dependencies cannot be resolved)
+17:07:50.960 [main] WARN  ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager - The state object 'LazyValCounterProvider' was not found (State objects from external dependencies cannot be resolved)
+17:07:51.007 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/iNikem#clean
+17:07:51.082 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/aitusoftware#flute
+17:07:51.441 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/aNNiMON#Own-Programming-Language-Tutorial
+17:07:52.224 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apache#directory-kerby
+17:07:55.646 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/afdw#fastcloud
+17:07:55.752 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tobijdc#PRNG-Performance
+17:07:55.837 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ennerf#flatbuffers-java-benchmark
+17:07:56.052 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gvsmirnov#jmh-gradle-sample
+17:07:56.104 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nithril#sandbox-query-benchmark-jooq-hibernate-jdbc
+17:07:56.241 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bingoohuang#westcache
+17:07:56.620 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cglib#cglib
+17:07:57.348 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codahale#longmapper
+17:07:57.418 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codahale#shamir
+17:07:57.495 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/DanielThomas#spring-boot-starter-netty
+17:07:57.625 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dcapwell#collections
+17:07:57.711 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#geo
+17:07:57.839 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#rxjava-jdbc
+17:07:58.191 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ESAPI#esapi-java-legacy
+17:07:59.465 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/taojiaenx#netty-source-study
+17:08:03.992 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/planetsizebrain#stringbundler-tests
+17:08:04.077 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/srvaroa#jbcnconf
+17:08:04.213 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ThomasKrieger#benchmarks
+17:08:04.303 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Hanmourang#Pinot
+17:08:09.895 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/HansBrende#f8
+17:08:10.029 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/elbek#ir
+17:08:10.222 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/iok1979#test
+17:08:10.355 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/amoAHCP#Java8LunchSchool
+17:08:10.529 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/joyent#java-manta
+17:08:11.846 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/json-iterator#java
+17:08:12.520 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jayjaykim#jmh-sample
+17:08:12.582 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/TechEmpower#misc
+17:08:12.805 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/konik-io#itext-carriage
+17:08:12.881 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/konik-io#konik
+17:08:13.741 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/konik-io#pdfbox-carriage
+17:08:13.834 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akarnokd#ReactiveChannel
+17:08:14.006 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/escalate42#Javaz-Benchmarks
+17:08:14.066 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nithril#packedobject-test
+17:08:14.124 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Mercateo#json-schema
+17:08:14.241 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Mercateo#rest-schemagen
+17:08:14.707 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mweirauch#micrometer-jvm-extras
+17:08:14.807 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Netflix#servo
+17:08:15.483 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/netzwerg#paleo
+17:08:15.639 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nom-tam-fits#nom-tam-fits
+17:08:17.216 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/peptos#traffic-shm
+17:08:17.315 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/leeyikjiun#blog
+17:08:17.398 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PhantomThief#more-lambdas-java
+17:08:17.606 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/PhantomThief#simple-failover-java
+17:08:17.812 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xzy256#grpc-java-mips64
+17:08:21.123 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rabbitmq#rabbitmq-perf-test
+17:08:21.528 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/reaktivity#nukleus-tcp.java
+17:08:21.749 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/relayrides#pushy
+17:08:22.099 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/runidle#runidle-testing
+17:08:22.245 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/requery#requery
+17:08:23.622 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mwringe#hawkular-metrics
+17:08:25.287 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eonezhang#servo
+17:08:25.943 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mcculls#cglib
+17:08:26.594 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tkowalcz#openjdk-jmh
+17:08:26.646 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rodolfodpk#myeslib2
+17:08:26.857 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/stagraqubole#presto
+17:08:33.010 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidbecker#SquidLib
+17:08:34.469 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/thomasnield#rxjava-jdbc
+17:08:34.816 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jasonchaffee#parseq
+17:08:35.731 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jforge#rapidpm-microservice
+17:08:35.845 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marcomorain#rate-limited-logger
+17:08:35.944 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/drankye#directory-kerby
+17:08:38.763 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dain#aircompressor
+17:08:39.089 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pinotlytics#pinot
+17:08:45.288 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/incubos#yoctodb
+17:08:45.960 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rsby#gunmetal
+17:08:46.412 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tietang#rxjava-jdbc
+17:08:46.816 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sangupta#gather
+17:08:47.009 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/puneetarora2000#fastdtw-1
+17:08:47.130 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jjYBdx4IL#fannj
+17:08:47.231 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/urbanairship#pushy
+17:08:47.516 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/entelesis#servo
+17:08:48.222 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/is00hcw#parseq
+17:08:49.137 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ktoso#hpack
+17:08:49.262 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/brharrington#servo
+17:08:49.944 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/vtsyryuk#rxjava-jdbc
+17:08:50.259 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pravsingh#Algorithm-Implementations
+17:08:50.624 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/plusplusjiajia#directory-kerby
+17:08:54.081 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jotak#hawkular-metrics
+17:08:56.000 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/matrixdigi#pinot
+17:09:01.148 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kekbur#logback-ext
+17:09:01.308 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jonefeewang#armeria
+17:09:03.907 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Poxos#collections-m0e4
+17:09:03.971 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#fastdtw
+17:09:04.081 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fengshao0907#servo
+17:09:04.750 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sakuna63#requery
+17:09:06.199 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Ajeet-Ganga#howToGuide
+17:09:06.259 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/WriskHQ#logback-ext
+17:09:06.420 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jMotif#fastdtw
+17:09:06.522 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/EmteZogaf#rxjava-jdbc
+17:09:06.842 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dpolivaev#rest-schemagen
+17:09:07.305 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sdeleuze#reactor-core
+17:09:14.462 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ccortezb#servo
+17:09:15.128 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/sensaid#servo
+17:09:15.755 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fischmax#rest-schemagen
+17:09:16.157 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codehaus-plexus#plexus-utils
+17:09:16.835 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/scalecube#rsocket-transport-aeron
+17:09:16.913 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wesamhaboush#furmat
+17:09:17.021 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/svenruppert#rapidpm-microservice
+17:09:17.356 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/twitter#hpack
+17:09:17.476 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jjenkov#iap-tools-java-benchmarks
+17:09:17.805 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kaustubh-walokar#grpc-poll-service
+17:09:24.645 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/waffle#waffle
+17:09:25.223 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/abstools#timsort-benchmark
+17:09:25.386 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/manhcuongkd#blynk-server
+17:09:26.847 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/alexo#spinner
+17:09:26.921 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/andrey-vasilyev#gosthash
+17:09:27.031 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/apptik#JustJson
+17:09:27.492 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/drankye#bufferalloc
+17:09:27.583 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ThreeTen#threeten-bench
+17:09:27.650 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bckfnn#taggersty
+17:09:28.047 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/irobertson#invokedynamic-talk-code
+17:09:28.145 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bensteinert#chromarenderer-java
+17:09:28.413 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/bingoohuang#eql
+17:09:29.305 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jmiettinen#jradixheap
+17:09:29.380 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hhu-stups#bmoth
+17:09:30.204 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/K0zka#benchmarx
+17:09:30.263 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jharting#weld-collections-benchmark
+17:09:30.347 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/canepat#Helios
+17:09:30.639 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/codahale#usl4j
+17:09:30.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dafei1288#max
+17:09:31.066 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ipogudin#examples
+17:09:31.159 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#rxjava2-http
+17:09:31.316 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#rxjava-extras
+17:09:31.907 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidmoten#word-wrap
+17:09:32.023 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Codearte#duramen
+17:09:32.117 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dimagi#commcare-core
+17:09:34.224 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dmart28#reveno
+17:09:34.916 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/IRus#Instanceof-vs-Try-Catch
+17:09:34.992 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/stagemonitor#stagemonitor
+17:09:36.362 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eternita#frontcache
+17:09:36.888 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jfaleiro#keyvalue
+17:09:36.949 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/graalvm#mx
+17:09:37.125 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/GumTreeDiff#gumtree
+17:09:37.764 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hawkular#hawkular-metrics
+17:09:39.109 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ashishbende#RPC-API
+17:09:46.774 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jchambers#java-otp
+17:09:46.884 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/j-easy#easy-batch
+17:09:47.741 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/msteindorfer#oopsla15-artifact
+17:09:49.454 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/junkdog#artemis-odb
+17:09:50.677 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kgilmer#XMLObjectIterable
+17:09:50.797 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kpavlov#fixio
+17:09:51.126 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kvnxiao#kommandant
+17:09:51.209 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/debop#debop4k
+17:09:52.696 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/davidhagar-zz#java-microbenchmarks
+17:09:52.758 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rafamonteiro#SerializationProtocolsBenchMark
+17:09:52.887 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marcelmay#hadoop-hdfs-fsimage-exporter
+17:09:53.000 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marklogic#marklogic-jena
+17:09:53.304 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/marklogic#marklogic-sesame
+17:09:53.716 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jad7#AtomicIncrementBenchmark
+17:09:53.785 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gpanther#lychrel-numbers
+17:09:53.878 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/haozhun#regexp-bench
+17:09:53.939 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/britter#to-array-benchmark
+17:09:54.000 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/myzhan#locust4j
+17:09:54.155 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/josegom#training
+17:09:55.636 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/notsyncing#lightfur
+17:09:55.970 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/paninij#paninij
+17:09:56.940 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pantsbuild#pants
+17:09:57.823 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/patrickfav#bytes-java
+17:09:58.202 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/restfb#restfb-benchmark
+17:09:58.271 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/platan#idea-gradle-dependencies-formatter
+17:09:58.386 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ReactiveX#RxGroovy
+17:09:58.456 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rerorero#oleoleflake
+17:09:58.595 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rmpestano#cukedoctor
+17:09:58.931 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/robinst#autolink-java
+17:09:59.020 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/witi83#jmh-streams
+17:09:59.079 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/yshahun#probabilistic-util
+17:09:59.154 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/akashche#tzdata-jmh
+17:09:59.223 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/ericmoshare#uid-generator
+17:09:59.333 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/smoketurner#uploader
+17:09:59.462 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spotify#apollo
+17:10:00.335 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/spriet2000#handlers
+17:10:00.396 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Squarespace#less-compiler
+17:10:01.161 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/irobertson#StringBuilderInvokeDynamicBenchmark
+17:10:01.225 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/antag99#artemis-odb
+17:10:02.093 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tsouza#elasticsearch
+17:10:49.804 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/snikiforov4#try-geolocation
+17:10:49.895 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/aaronzirbes#RxGroovy
+17:10:49.967 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jsirois#pants
+17:10:50.837 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/247687009#tchannel-java
+17:10:51.072 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xquery#marklogic-sesame
+17:10:51.815 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/maximenajim#nashorn-react-jmh-microbenchmark
+17:10:51.869 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mox601#mybatis-pool-jmh
+17:10:51.933 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/comsysto#jmh-gradle-plugin
+17:10:51.989 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/titorenko#quick-csv-streamer
+17:10:52.247 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/VladimirErshov#ignite
+17:11:23.749 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/aslanbekirov#crate
+17:11:31.193 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jon-hanson#funcj
+17:11:32.874 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/udoprog#scribe
+17:11:33.461 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Infeligo#jgrapht
+17:11:34.590 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/keycai#jmh-gradle-plugin
+17:11:34.647 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nobeh#jmh-forked-main-threads
+17:11:34.713 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/pombredanne#pants
+17:11:35.569 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cotsog#tchannel-java
+17:11:35.801 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rouzwawi#apollo
+17:11:36.712 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rhauch#kafka
+17:11:41.834 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/xquery#marklogic-jena-1
+17:11:42.042 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gjroelofs#artemis-odb
+17:11:42.978 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/amannaly#jbender
+17:11:43.082 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/jtulach#mx
+17:11:43.229 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/grechaw#marklogic-jena
+17:11:43.608 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cthiebaud#jgrapht
+17:11:44.721 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/phensley#less-compiler
+17:11:45.490 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/loriopatrick#fixio
+17:11:45.792 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/snorrees#artemis-odb
+17:11:46.755 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/shiningguang#tchannel-java
+17:11:46.992 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wselwood#jgrapht
+17:11:48.166 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wallerlab#yoink
+17:11:49.566 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/nickrobson#TridentSDK
+17:11:49.880 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/elevennl#stagemonitor
+17:11:50.787 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Workiva#frugal
+17:11:53.134 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/wotifgroup#wotif-logutils
+17:11:53.197 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/taichi#json-benchmarks
+17:11:53.314 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Sandyarathi#Lab2gRPC
+17:11:59.947 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fpavageau#bench-filters
+17:12:00.007 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cschenyuan#hive-hack
+17:12:30.691 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/tweakers-dev#objectpool-benchmarks
+17:12:30.774 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/mikeb01#scratch
+17:12:31.202 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/magneticflux-#gridsim
+17:12:31.292 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/taichi#jmh-gradle-ide
+17:12:31.346 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/basho-labs#java-client-bench
+17:12:31.409 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gpanther#regex-libraries-benchmarks
+17:12:31.486 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/maxdemarzi#neo_dislikes
+17:12:31.565 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/rnc#jmh-benchmarks
+17:12:31.625 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/SerCeMan#jmh-spring
+17:12:31.686 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/meghana0507#grpc-java-poll
+17:12:50.893 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/lhyqie#rtree
+17:12:51.185 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/alexingcool#presto
+17:12:59.743 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/Lessnic#CAISS
+17:13:00.032 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/TU-Berlin-SNET#tresor-pdp-caching
+17:13:00.937 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/SoatGroup#benchamrk-lambda
+17:13:01.014 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/epickrram#benchmark
+17:13:01.102 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/artspb#javax-mail-pool
+17:13:01.194 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/dmnlukasik#java-8-concurrency-updates
+17:13:01.276 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/hmarchadour#EasyCDO
+17:13:01.391 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/witi83#jmh-primitive-data-types
+17:13:01.441 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/enisher#polymorphic-calls-benchmark
+17:13:01.504 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/epickrram#lock-benchmark
+17:13:01.559 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/kawasima#copyfile-benchmark
+17:13:01.618 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/elliottneilclark#time-test
+17:13:01.672 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gorkem#js-parser-benchmarks
+17:13:01.751 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/arnaudroger#jmh-exp
+17:13:01.803 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/belliottsmith#injector
+17:13:01.915 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/BunnyWei#truffle-llvmir
+17:13:41.266 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/cindywang#CaOntheGo
+17:13:53.321 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fenderstr#super-bench
+17:13:53.395 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/evanj#expire-threadlocal
+17:13:53.463 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/fpavageau#bench-simple-name
+17:13:53.514 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/gensym#jmh-lein-example
+17:13:53.841 [main] INFO  ch.uzh.ifi.seal.smr.soa.evaluation.MainKt - Process input/eclipse#eclipse-collections

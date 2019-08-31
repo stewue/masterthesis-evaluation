@@ -1,0 +1,5 @@
+yrashk/es4j,,,,,com.eventsourcing.jmh.RepositoryBenchmark.basicPublish,,,,,,,,,,,,,,,,,,,true,,true,true,,true,true,,true,true,,true,,0,false,false,false,false,false,,0,0,false,eae09ae204e060c15d804a7d3d5496ed6e91e6b9d2022c86de94ea8881e3dca6
+yrashk/es4j,,,,,com.eventsourcing.jmh.HashIndexBenchmark.t01memory,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,bb909365646601b1848b6c6db029a06b1765b7b88cfdaeb72125228ab60a9f87
+yrashk/es4j,,,,,com.eventsourcing.jmh.HashIndexBenchmark.t02memoryH2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,759a92dac6d062a5416228ec1381f626d1af32e8b5b187a9a368e5c6a9c27c5e
+yrashk/es4j,,,,,com.eventsourcing.jmh.HashIndexBenchmark.t03fileH2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,false,false,false,false,false,,0,0,false,e239c70c0d139071ca7f9ab41644134339008c69a4f5115aebcb997da77738ea
+yrashk/es4j,,,,,com.eventsourcing.jmh.JournalBenchmark.basicPublish,,,,,,,,,,,,,,,,,,,true,,true,true,,true,true,,true,true,,true,,0,false,false,false,false,false,,0,0,false,29d55befb286087aa24d7d7f7f1c2dfcf6c1a73a24dad567e343d6b14c29c566
