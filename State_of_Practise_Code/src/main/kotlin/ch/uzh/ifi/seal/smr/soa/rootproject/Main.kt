@@ -17,7 +17,7 @@ fun main() {
     }
 
     list.forEach {
-        var lastParent: String? = null
+        var lastParent: String? = it.project
         var currentParent = it.parentProject
 
         while (!currentParent.isNullOrBlank()) {
