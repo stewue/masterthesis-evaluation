@@ -29,29 +29,36 @@ class Row {
     @CsvBindByPosition(position = 7)
     var parentProject: String? = null
 
+    // full name of the root project (null if not a forked project)
     @CsvBindByPosition(position = 8)
-    var cloneUrl: String? = null
+    var rootProject: String? = null
 
     @CsvBindByPosition(position = 9)
-    var lastUpdate: String? = null
+    var cloneUrl: String? = null
 
     @CsvBindByPosition(position = 10)
-    var numberOfCommits: Int? = null
+    var lastUpdate: String? = null
 
     @CsvBindByPosition(position = 11)
-    var numberOfTags: Int? = null
+    var numberOfCommits: Int? = null
 
     @CsvBindByPosition(position = 12)
-    var numberOfContributors: Int? = null
+    var numberOfTags: Int? = null
 
     @CsvBindByPosition(position = 13)
-    var jmhVersion: String? = null
+    var numberOfContributors: Int? = null
 
     @CsvBindByPosition(position = 14)
-    var numberOFBenchmarks: Int? = null
+    var jmhVersion: String? = null
 
     @CsvBindByPosition(position = 15)
-    var javaVersion: String? = null
+    var numberOFBenchmarks: Int? = null
+
+    @CsvBindByPosition(position = 16)
+    var javaTarget: String? = null
+
+    @CsvBindByPosition(position = 17)
+    var javaSource: String? = null
 
     constructor()
 }

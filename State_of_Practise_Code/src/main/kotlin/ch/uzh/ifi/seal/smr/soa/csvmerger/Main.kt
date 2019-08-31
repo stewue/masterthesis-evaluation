@@ -25,13 +25,11 @@ fun main() {
         benchmarks[p] = n.toIntOrNull()
     }
 
-    val javaVersion = mutableMapOf<String, String?>()
+    val javaVersion = mutableMapOf<String, Pair<String?, String?>>()
     javaFile.forEachLine {
-         val (p, v) = it.split(";")
-         if (!v.isNullOrEmpty()) {
-             javaVersion[p] = v
-         }
-     }
+        val (p, vt, vs) = it.split(";")
+        javaVersion[p] = Pair(vt, vs)
+    }
 
     list.forEach {
         val name = it.project
@@ -48,7 +46,13 @@ fun main() {
         }
 
         if (j != null) {
-            it.javaVersion = j
+            if (j.first != null) {
+                it.javaTarget = j.first
+            }
+
+            if (j.second != null) {
+                it.javaSource = j.second
+            }
         }
     }
 
