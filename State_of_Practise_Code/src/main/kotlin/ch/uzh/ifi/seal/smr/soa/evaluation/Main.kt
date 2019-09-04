@@ -18,6 +18,8 @@ import org.apache.logging.log4j.LogManager
 import org.funktionale.option.Option
 import java.io.File
 import java.nio.file.Paths
+import java.util.concurrent.Executors
+import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 
@@ -27,7 +29,7 @@ fun main(args: Array<String>) {
     disableSystemErr()
 
     if (args.size != 4) {
-        log.error("Needed arguments: inputFile inputDir outputDir outputFile")
+        log.error("Needed arguments: inputFile inputDir outputDir outputFile #threads")
         exitProcess(-1)
     }
 
@@ -35,14 +37,19 @@ fun main(args: Array<String>) {
     val inputDir = args[1]
     val outputDir = File(args[2])
     val outputFile = File(args[3])
+    val numberOfThreads = args[4].toInt()
 
+    val executor = Executors.newFixedThreadPool(numberOfThreads) as ThreadPoolExecutor
     inputFile.forEachLine { project ->
-        val dir = File(inputDir + project.toFileSystemName)
-        if (dir.exists()) {
-            log.info("Process $dir")
-            doPerProject(project, null, dir, outputDir, outputFile)
-        } else {
-            log.warn("Project $project does not exist in input directory -> skipped")
+        executor.submit<Any> {
+            val dir = File(inputDir + project.toFileSystemName)
+            if (dir.exists()) {
+                log.info("Process $dir start")
+                doPerProject(project, null, dir, outputDir, outputFile)
+                log.info("Process $dir end")
+            } else {
+                log.warn("Project $project does not exist in input directory -> skipped")
+            }
         }
     }
 }
@@ -69,7 +76,7 @@ private fun doPerProject(project: String, codeVersion: String?, sourceDir: File,
             throw RuntimeException("Could not retrieve benchmark execution info: ${be.left().get()}")
         }
 
-        val hashes = finder.hashes()
+        val hashes = finder.methodHashes()
         if (hashes.isLeft()) {
             throw RuntimeException("Could not retrieve hashes: ${hashes.left().get()}")
         }
