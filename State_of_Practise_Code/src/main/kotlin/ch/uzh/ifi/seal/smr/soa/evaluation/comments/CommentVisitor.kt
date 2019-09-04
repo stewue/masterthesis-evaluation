@@ -1,47 +1,58 @@
 package ch.uzh.ifi.seal.smr.soa.evaluation.comments
 
-import org.eclipse.jdt.core.dom.ASTVisitor
-import org.eclipse.jdt.core.dom.BlockComment
-import org.eclipse.jdt.core.dom.CompilationUnit
-import org.eclipse.jdt.core.dom.LineComment
+import org.apache.logging.log4j.LogManager
+import org.eclipse.jdt.core.dom.*
 
-class CommentVisitor(private var compilationUnit: CompilationUnit, private val source: List<String>) : ASTVisitor() {
-    var counter = 0
+private val log = LogManager.getLogger()
+
+class CommentVisitor(private var compilationUnit: CompilationUnit, private val source: List<String>, private val sourceFile: String, private val project: String) : ASTVisitor() {
+    val methodNames = mutableListOf<String>()
 
     override fun visit(node: LineComment): Boolean {
 
         val startLineNumber = compilationUnit.getLineNumber(node.startPosition) - 1
         val lineComment = source[startLineNumber].trim { it <= ' ' }
 
-        check(lineComment)
+        check(lineComment, node, startLineNumber)
 
         return true
     }
 
     override fun visit(node: BlockComment): Boolean {
-
+        node.parent
         val startLineNumber = compilationUnit.getLineNumber(node.startPosition) - 1
         val endLineNumber = compilationUnit.getLineNumber(node.startPosition + node.length) - 1
 
-        val blockComment = StringBuffer()
-
         for (lineCount in startLineNumber..endLineNumber) {
-
             val blockCommentLine = source[lineCount].trim { it <= ' ' }
-            blockComment.append(blockCommentLine)
-            if (lineCount != endLineNumber) {
-                blockComment.append("\n")
-            }
-        }
 
-        check(blockComment.toString())
+            check(blockCommentLine, node, lineCount)
+        }
 
         return true
     }
 
-    private fun check(text: String) {
+    private fun check(text: String, node: ASTNode, lineNumber: Int) {
         if (text.contains("@Benchmark")) {
-            counter++
+
+            var currentLineNumber = lineNumber
+            while (currentLineNumber < source.size) {
+                val nextLine = source[currentLineNumber + 1].replace("//", "").replace("/*", "").trim()
+
+                if (nextLine.startsWith('@')) {
+                    currentLineNumber++
+                } else {
+                    val name = nextLine.substringBefore('(').substringAfterLast(' ')
+
+                    if (name.isNullOrBlank()) {
+                        log.error("[$project] cannot extract method name for line $lineNumber in file $sourceFile")
+                    } else {
+                        methodNames.add(name)
+                    }
+
+                    break
+                }
+            }
         }
     }
 }
