@@ -4,9 +4,9 @@ import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
 import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
 import ch.uzh.ifi.seal.smr.soa.evaluation.EvaluationHelper.convertResult
-import ch.uzh.ifi.seal.smr.soa.java.JavaSourceVersionExtractor
-import ch.uzh.ifi.seal.smr.soa.java.JavaTargetVersionExtractor
-import ch.uzh.ifi.seal.smr.soa.jmhversion.JmhSourceCodeVersionExtractor
+import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaSourceVersionExtractor
+import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaTargetVersionExtractor
+import ch.uzh.ifi.seal.smr.soa.evaluation.jmhversion.JmhSourceCodeVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager

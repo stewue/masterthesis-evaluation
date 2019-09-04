@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.github
+package ch.uzh.ifi.seal.smr.soa.datapreparation.github
 
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import ch.uzh.ifi.seal.smr.soa.utils.Row

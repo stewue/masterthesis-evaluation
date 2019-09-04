@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.clone
+package ch.uzh.ifi.seal.smr.soa.datapreparation.clone
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName

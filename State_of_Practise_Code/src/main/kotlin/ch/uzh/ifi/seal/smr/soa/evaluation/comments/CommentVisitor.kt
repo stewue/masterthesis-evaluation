@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.comments
+package ch.uzh.ifi.seal.smr.soa.evaluation.comments
 
 import org.eclipse.jdt.core.dom.ASTVisitor
 import org.eclipse.jdt.core.dom.BlockComment

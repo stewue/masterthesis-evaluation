@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.rootproject
+package ch.uzh.ifi.seal.smr.soa.datapreparation.rootproject
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter

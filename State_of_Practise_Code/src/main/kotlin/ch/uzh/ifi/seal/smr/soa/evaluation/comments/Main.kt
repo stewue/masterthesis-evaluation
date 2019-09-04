@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.comments
+package ch.uzh.ifi.seal.smr.soa.evaluation.comments
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr

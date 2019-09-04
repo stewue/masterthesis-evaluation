@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.jmhversion
+package ch.uzh.ifi.seal.smr.soa.evaluation.jmhversion
 
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test

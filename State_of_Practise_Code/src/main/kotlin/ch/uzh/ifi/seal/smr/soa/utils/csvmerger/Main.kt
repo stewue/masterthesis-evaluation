@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.csvmerger
+package ch.uzh.ifi.seal.smr.soa.utils.csvmerger
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter

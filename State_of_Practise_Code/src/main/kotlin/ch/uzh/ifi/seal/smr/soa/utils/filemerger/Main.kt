@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.filemerger
+package ch.uzh.ifi.seal.smr.soa.utils.filemerger
 
 import java.io.File
 import java.nio.channels.FileChannel

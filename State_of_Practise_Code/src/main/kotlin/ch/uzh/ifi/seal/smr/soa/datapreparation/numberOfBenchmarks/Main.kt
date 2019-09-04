@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.numberOfBenchmarks
+package ch.uzh.ifi.seal.smr.soa.datapreparation.numberOfBenchmarks
 
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr

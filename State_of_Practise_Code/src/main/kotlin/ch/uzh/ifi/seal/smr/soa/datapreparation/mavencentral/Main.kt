@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.mavencentral
+package ch.uzh.ifi.seal.smr.soa.datapreparation.mavencentral
 
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
