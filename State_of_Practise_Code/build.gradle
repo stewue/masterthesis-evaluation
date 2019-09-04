@@ -30,7 +30,7 @@ apply(plugin: "com.github.johnrengelman.shadow")
 
 sourceCompatibility = 1.8
 
-mainClassName = 'ch.uzh.ifi.seal.smr.soa.jmhversion.MainKt'
+mainClassName = 'ch.uzh.ifi.seal.smr.soa.evaluation.MainKt'
 
 repositories {
     mavenCentral()

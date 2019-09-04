@@ -8,167 +8,170 @@ data class Result(
         val project: String,
 
         @CsvBindByPosition(position = 1)
-        val codeVersion: String?,
+        val commitId: String?,
 
         @CsvBindByPosition(position = 2)
-        val jmhVersion: JMHVersion?,
+        val commitTime: Int?,
 
         @CsvBindByPosition(position = 3)
-        val javaTarget: String?,
+        val jmhVersion: JMHVersion?,
 
         @CsvBindByPosition(position = 4)
-        val javaSource: String?,
+        val javaTarget: String?,
 
         @CsvBindByPosition(position = 5)
-        val benchmarkName: String,
+        val javaSource: String?,
 
         @CsvBindByPosition(position = 6)
-        val warmupIterations: Int?,
+        val benchmarkName: String,
 
         @CsvBindByPosition(position = 7)
-        val warmupIterationsClass: Int?,
+        val warmupIterations: Int?,
 
         @CsvBindByPosition(position = 8)
-        val warmupIterationsMethod: Int?,
+        val warmupIterationsClass: Int?,
 
         @CsvBindByPosition(position = 9)
-        val warmupTime: Long?,
+        val warmupIterationsMethod: Int?,
 
         @CsvBindByPosition(position = 10)
-        val warmupTimeClass: Long?,
+        val warmupTime: Long?,
 
         @CsvBindByPosition(position = 11)
-        val warmupTimeMethod: Long?,
+        val warmupTimeClass: Long?,
 
         @CsvBindByPosition(position = 12)
-        val warmupTimeStatus: Status,
+        val warmupTimeMethod: Long?,
 
         @CsvBindByPosition(position = 13)
-        val warmupTimeStatusClass: Status,
+        val warmupTimeStatus: Status,
 
         @CsvBindByPosition(position = 14)
-        val warmupTimeStatusMethod: Status,
+        val warmupTimeStatusClass: Status,
 
         @CsvBindByPosition(position = 15)
-        val measurementIterations: Int?,
+        val warmupTimeStatusMethod: Status,
 
         @CsvBindByPosition(position = 16)
-        val measurementIterationsClass: Int?,
+        val measurementIterations: Int?,
 
         @CsvBindByPosition(position = 17)
-        val measurementIterationsMethod: Int?,
+        val measurementIterationsClass: Int?,
 
         @CsvBindByPosition(position = 18)
-        val measurementTime: Long?,
+        val measurementIterationsMethod: Int?,
 
         @CsvBindByPosition(position = 19)
-        val measurementTimeClass: Long?,
+        val measurementTime: Long?,
 
         @CsvBindByPosition(position = 20)
-        val measurementTimeMethod: Long?,
+        val measurementTimeClass: Long?,
 
         @CsvBindByPosition(position = 21)
-        val measurementTimeStatus: Status,
+        val measurementTimeMethod: Long?,
 
         @CsvBindByPosition(position = 22)
-        val measurementTimeStatusClass: Status,
+        val measurementTimeStatus: Status,
 
         @CsvBindByPosition(position = 23)
-        val measurementTimeStatusMethod: Status,
+        val measurementTimeStatusClass: Status,
 
         @CsvBindByPosition(position = 24)
-        val forks: Int?,
+        val measurementTimeStatusMethod: Status,
 
         @CsvBindByPosition(position = 25)
-        val forksClass: Int?,
+        val forks: Int?,
 
         @CsvBindByPosition(position = 26)
-        val forksMethod: Int?,
+        val forksClass: Int?,
 
         @CsvBindByPosition(position = 27)
-        val warmupForks: Int?,
+        val forksMethod: Int?,
 
         @CsvBindByPosition(position = 28)
-        val warmupForksClass: Int?,
+        val warmupForks: Int?,
 
         @CsvBindByPosition(position = 29)
-        val warmupForksMethod: Int?,
+        val warmupForksClass: Int?,
 
         @CsvBindByPosition(position = 30)
-        val modeIsThroughput: Boolean?,
+        val warmupForksMethod: Int?,
 
         @CsvBindByPosition(position = 31)
-        val modeIsThroughputClass: Boolean?,
+        val modeIsThroughput: Boolean?,
 
         @CsvBindByPosition(position = 32)
-        val modeIsThroughputMethod: Boolean?,
+        val modeIsThroughputClass: Boolean?,
 
         @CsvBindByPosition(position = 33)
-        val modeIsAverageTime: Boolean?,
+        val modeIsThroughputMethod: Boolean?,
 
         @CsvBindByPosition(position = 34)
-        val modeIsAverageTimeClass: Boolean?,
+        val modeIsAverageTime: Boolean?,
 
         @CsvBindByPosition(position = 35)
-        val modeIsAverageTimeMethod: Boolean?,
+        val modeIsAverageTimeClass: Boolean?,
 
         @CsvBindByPosition(position = 36)
-        val modeIsSampleTime: Boolean?,
+        val modeIsAverageTimeMethod: Boolean?,
 
         @CsvBindByPosition(position = 37)
-        val modeIsSampleTimeClass: Boolean?,
+        val modeIsSampleTime: Boolean?,
 
         @CsvBindByPosition(position = 38)
-        val modeIsSampleTimeMethod: Boolean?,
+        val modeIsSampleTimeClass: Boolean?,
 
         @CsvBindByPosition(position = 39)
-        val modeIsSingleShotTime: Boolean?,
+        val modeIsSampleTimeMethod: Boolean?,
 
         @CsvBindByPosition(position = 40)
-        val modeIsSingleShotTimeClass: Boolean?,
+        val modeIsSingleShotTime: Boolean?,
 
         @CsvBindByPosition(position = 41)
-        val modeIsSingleShotTimeMethod: Boolean?,
+        val modeIsSingleShotTimeClass: Boolean?,
 
         @CsvBindByPosition(position = 42)
-        val paramString: String?,
+        val modeIsSingleShotTimeMethod: Boolean?,
 
         @CsvBindByPosition(position = 43)
-        val paramCount: Int,
+        val paramString: String?,
 
         @CsvBindByPosition(position = 44)
-        val hasBlackhole: Boolean,
+        val paramCount: Int,
 
         @CsvBindByPosition(position = 45)
-        val hasControl: Boolean,
+        val hasBlackhole: Boolean,
 
         @CsvBindByPosition(position = 46)
-        val hasBenchmarkParams: Boolean,
+        val hasControl: Boolean,
 
         @CsvBindByPosition(position = 47)
-        val hasIterationParams: Boolean,
+        val hasBenchmarkParams: Boolean,
 
         @CsvBindByPosition(position = 48)
-        val hasThreadParams: Boolean,
+        val hasIterationParams: Boolean,
 
         @CsvBindByPosition(position = 49)
-        val jmhParamString: String?,
+        val hasThreadParams: Boolean,
 
         @CsvBindByPosition(position = 50)
-        val jmhParamPairs: String?,
+        val jmhParamString: String?,
 
         @CsvBindByPosition(position = 51)
-        val jmhParamCount: Int,
+        val jmhParamPairs: String?,
 
         @CsvBindByPosition(position = 52)
-        val jmhParamFromStateObjectCount: Int,
+        val jmhParamCount: Int,
 
         @CsvBindByPosition(position = 53)
-        val returnType: String?,
+        val jmhParamFromStateObjectCount: Int,
 
         @CsvBindByPosition(position = 54)
-        val partOfGroup: Boolean,
+        val returnType: String?,
 
         @CsvBindByPosition(position = 55)
+        val partOfGroup: Boolean,
+
+        @CsvBindByPosition(position = 56)
         val methodHash: String
 )

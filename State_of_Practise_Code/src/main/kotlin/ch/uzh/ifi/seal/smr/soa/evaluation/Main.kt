@@ -28,7 +28,7 @@ private val log = LogManager.getLogger()
 fun main(args: Array<String>) {
     disableSystemErr()
 
-    if (args.size != 4) {
+    if (args.size != 5) {
         log.error("Needed arguments: inputFile inputDir outputDir outputFile #threads")
         exitProcess(-1)
     }
@@ -44,9 +44,9 @@ fun main(args: Array<String>) {
         executor.submit<Any> {
             val dir = File(inputDir + project.toFileSystemName)
             if (dir.exists()) {
-                log.info("Process $dir start")
-                doPerProject(project, null, dir, outputDir, outputFile)
-                log.info("Process $dir end")
+                log.info("Process $dir started")
+                doPerProject(project, null, null, dir, outputDir, outputFile)
+                log.info("Process $dir ended")
             } else {
                 log.warn("Project $project does not exist in input directory -> skipped")
             }
@@ -54,7 +54,7 @@ fun main(args: Array<String>) {
     }
 }
 
-private fun doPerProject(project: String, codeVersion: String?, sourceDir: File, outputDir: File, outputFile: File) {
+private fun doPerProject(project: String, commitId: String?, commitTime: Int?, sourceDir: File, outputDir: File, outputFile: File) {
     try {
         val jmhVersion = JmhSourceCodeVersionExtractor(sourceDir).get()
         val javaTarget = JavaTargetVersionExtractor(sourceDir).get()
@@ -99,21 +99,22 @@ private fun doPerProject(project: String, codeVersion: String?, sourceDir: File,
             val hash = hashes.right().get().getValue(bench)
             val jmhParamSource = finder.jmhParamSource(bench)
 
-            val item = convertResult(project, codeVersion, jmhVersion, javaTarget, javaSource, bench, config, configBench, configClass, jmhParamSource, hash)
+            val item = convertResult(project, commitId, commitTime, jmhVersion, javaTarget, javaSource, bench, config, configBench, configClass, jmhParamSource, hash)
             results.add(item)
         }
 
         OpenCSVWriter.write(Paths.get(outputDir.absolutePath, "${project.toFileSystemName}.csv"), results)
     } catch (e: Exception) {
-        log.error("Error during parsing project $project at code version $codeVersion: ${e.message}")
-        outputFile.appendText("$project;$codeVersion;${e.message}\n")
+        log.error("Error during parsing project $project at code version $commitId: ${e.message}")
+        outputFile.appendText("$project;$commitId;${e.message}\n")
     }
 }
 
-private fun convertResult(project: String, codeVersion: String?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, bench: Benchmark, ec: ExecutionConfiguration, b: ExecutionConfiguration, c: ExecutionConfiguration, jmhParamSource: Map<String, String>, hash: ByteArray): Result {
+private fun convertResult(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, bench: Benchmark, ec: ExecutionConfiguration, b: ExecutionConfiguration, c: ExecutionConfiguration, jmhParamSource: Map<String, String>, hash: ByteArray): Result {
     return Result(
             project = project,
-            codeVersion = codeVersion,
+            commitId = commitId,
+            commitTime = commitTime,
             jmhVersion = jmhVersion,
             javaTarget = javaTarget,
             javaSource = javaSource,
