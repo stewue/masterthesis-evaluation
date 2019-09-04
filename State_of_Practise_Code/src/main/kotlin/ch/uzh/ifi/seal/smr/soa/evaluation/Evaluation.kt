@@ -15,20 +15,20 @@ import java.nio.file.Paths
 import java.util.concurrent.Executors
 import java.util.concurrent.ThreadPoolExecutor
 
-private val log = LogManager.getLogger()
-
 abstract class Evaluation(private val inputFile: File, private val inputDir: String, private val outputDir: File, private val outputFile: File) {
+    protected val log = LogManager.getLogger()
+
     fun start(numberOfThreads: Int) {
         val executor = Executors.newFixedThreadPool(numberOfThreads) as ThreadPoolExecutor
         inputFile.forEachLine { project ->
             executor.submit<Any> {
                 val dir = File(inputDir + project.toFileSystemName)
                 if (dir.exists()) {
-                    log.info("Process $dir started")
+                    log.info("[$project] evaluation started")
                     processProject(project, dir, outputDir, outputFile)
-                    log.info("Process $dir ended")
+                    log.info("[$project] evaluation ended")
                 } else {
-                    log.warn("Project $project does not exist in input directory -> skipped")
+                    log.warn("[$project] repo does not exist -> evaluation skipped")
                 }
             }
         }
