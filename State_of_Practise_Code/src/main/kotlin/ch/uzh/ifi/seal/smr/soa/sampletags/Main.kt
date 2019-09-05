@@ -23,11 +23,12 @@ fun main(args: Array<String>) {
     val dir = File(args[0])
 
     try {
-        dir.listFiles().forEach {
-            if (it.isDirectory) {
-                println(it.name.toGithubName)
-                sampleCommits(it)
-                print("")
+        dir.listFiles().forEach { file ->
+            if (file.isDirectory) {
+                sampleCommits(file).forEach {
+                    println(file.name.toGithubName + ";" + it.first + ";" + it.second.name)
+                }
+
             }
         }
     } catch (e: Exception) {

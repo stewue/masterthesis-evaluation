@@ -11,7 +11,7 @@ import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
 import java.io.File
-import java.nio.file.Paths
+import java.nio.file.Path
 
 abstract class Evaluation(private val inputFile: File, private val inputDir: String, private val outputDir: File, private val outputFile: File) {
     protected val log = LogManager.getLogger()
@@ -22,7 +22,6 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
             if (dir.exists()) {
                 log.info("[$project] evaluation started")
                 processProject(project, dir, outputDir, outputFile)
-                log.info("[$project] evaluation ended")
             } else {
                 log.warn("[$project] repo does not exist -> evaluation skipped")
             }
@@ -31,7 +30,7 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
 
     protected abstract fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File)
 
-    protected fun evaluate(project: String, commitId: String?, commitTime: Int?, sourceDir: File, outputDir: File, outputFile: File) {
+    protected fun evaluate(project: String, commitId: String?, commitTime: Int?, sourceDir: File, resultFile: Path, outputFile: File) {
         try {
             val jmhVersion = JmhSourceCodeVersionExtractor(sourceDir).get()
             val javaTarget = JavaTargetVersionExtractor(sourceDir).get()
@@ -80,7 +79,7 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
                 results.add(item)
             }
 
-            OpenCSVWriter.write(Paths.get(outputDir.absolutePath, "${project.toFileSystemName}.csv"), results)
+            OpenCSVWriter.write(resultFile, results)
         } catch (e: Exception) {
             log.error("Error during parsing project $project at code version $commitId: ${e.message}")
             outputFile.appendText("$project;$commitId;${e.message}\n")

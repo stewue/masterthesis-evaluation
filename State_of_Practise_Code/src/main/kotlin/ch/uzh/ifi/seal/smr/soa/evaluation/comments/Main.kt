@@ -26,7 +26,6 @@ fun main(args: Array<String>) {
         if (dir.exists()) {
             log.info("[$project] evaluation started")
             processProject(project, dir, outputFile)
-            log.info("[$project] evaluation ended")
         } else {
             log.warn("[$project] repo does not exist -> evaluation skipped")
         }

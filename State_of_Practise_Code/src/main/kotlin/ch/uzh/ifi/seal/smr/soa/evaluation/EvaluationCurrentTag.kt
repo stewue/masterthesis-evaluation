@@ -1,9 +1,11 @@
 package ch.uzh.ifi.seal.smr.soa.evaluation
 
+import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.eclipse.jgit.api.Git
 import org.eclipse.jgit.lib.Repository
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder
 import java.io.File
+import java.nio.file.Paths
 
 class EvaluationCurrentTag(inputFile: File, inputDir: String, outputDir: File, outputFile: File) : Evaluation(inputFile, inputDir, outputDir, outputFile) {
     override fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File) {
@@ -13,7 +15,7 @@ class EvaluationCurrentTag(inputFile: File, inputDir: String, outputDir: File, o
                 if (tag != null) {
                     git.checkout().setName(tag.second)
                     log.info("[$project] Checkout version ${tag.second}")
-                    evaluate(project, tag.second, tag.third, sourceDir, outputDir, outputFile)
+                    evaluate(project, tag.second, tag.third, sourceDir, Paths.get(outputDir.absolutePath, "${project.toFileSystemName}.csv"), outputFile)
                 } else {
                     log.warn("[$project] Does not have a tag")
                 }
