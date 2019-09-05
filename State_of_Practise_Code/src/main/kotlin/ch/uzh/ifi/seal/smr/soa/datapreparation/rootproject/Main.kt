@@ -17,7 +17,7 @@ fun main() {
     }
 
     list.forEach {
-        if(it.repoAvailable) {
+        if (it.repoAvailable) {
             var lastParent: String? = it.project
             var currentParent = it.parentProject
 

@@ -12,24 +12,19 @@ import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
 import java.io.File
 import java.nio.file.Paths
-import java.util.concurrent.Executors
-import java.util.concurrent.ThreadPoolExecutor
 
 abstract class Evaluation(private val inputFile: File, private val inputDir: String, private val outputDir: File, private val outputFile: File) {
     protected val log = LogManager.getLogger()
 
-    fun start(numberOfThreads: Int) {
-        val executor = Executors.newFixedThreadPool(numberOfThreads) as ThreadPoolExecutor
+    fun start() {
         inputFile.forEachLine { project ->
-            executor.submit<Any> {
-                val dir = File(inputDir + project.toFileSystemName)
-                if (dir.exists()) {
-                    log.info("[$project] evaluation started")
-                    processProject(project, dir, outputDir, outputFile)
-                    log.info("[$project] evaluation ended")
-                } else {
-                    log.warn("[$project] repo does not exist -> evaluation skipped")
-                }
+            val dir = File(inputDir + project.toFileSystemName)
+            if (dir.exists()) {
+                log.info("[$project] evaluation started")
+                processProject(project, dir, outputDir, outputFile)
+                log.info("[$project] evaluation ended")
+            } else {
+                log.warn("[$project] repo does not exist -> evaluation skipped")
             }
         }
     }

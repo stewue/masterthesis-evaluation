@@ -10,8 +10,8 @@ private val log = LogManager.getLogger()
 fun main(args: Array<String>) {
     disableSystemErr()
 
-    if (args.size != 5) {
-        log.error("Needed arguments: inputFile inputDir outputDir outputFile #threads")
+    if (args.size != 4) {
+        log.error("Needed arguments: inputFile inputDir outputDir outputFile")
         exitProcess(-1)
     }
 
@@ -19,8 +19,7 @@ fun main(args: Array<String>) {
     val inputDir = args[1]
     val outputDir = File(args[2])
     val outputFile = File(args[3])
-    val numberOfThreads = args[4].toInt()
 
     val evaluation = EvaluationCurrentCommit(inputFile, inputDir, outputDir, outputFile)
-    evaluation.start(numberOfThreads)
+    evaluation.start()
 }

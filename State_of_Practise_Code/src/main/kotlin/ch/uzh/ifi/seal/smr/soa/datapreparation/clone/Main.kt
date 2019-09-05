@@ -7,7 +7,7 @@ import java.nio.file.Paths
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
-    if(args.size != 2){
+    if (args.size != 2) {
         println("Needed arguments: inputFile outputDirectory")
         exitProcess(-1)
     }

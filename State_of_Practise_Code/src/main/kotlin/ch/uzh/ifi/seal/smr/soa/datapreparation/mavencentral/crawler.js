@@ -1,15 +1,17 @@
 // Immediately-invoked function expression
-(function() {
+(function () {
     // Load the script
     var script = document.createElement("SCRIPT");
     script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
     script.type = 'text/javascript';
-    script.onload = function() {
+    script.onload = function () {
         var $ = window.jQuery;
 
         let out = ""
 
-        $('.im-title a:not(".im-usage")').each(function(){ out += $(this).attr('href').replace('/artifact/', '') + "\n"; })
+        $('.im-title a:not(".im-usage")').each(function () {
+            out += $(this).attr('href').replace('/artifact/', '') + "\n";
+        })
 
         console.log(out)
     };

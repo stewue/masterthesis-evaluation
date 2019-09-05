@@ -5,7 +5,7 @@ import org.eclipse.jdt.core.dom.ASTVisitor
 import org.eclipse.jdt.core.dom.TypeDeclaration
 
 class ClassVisitor : ASTVisitor() {
-    lateinit var fullyQualifiedClassName: String
+    var fullyQualifiedClassName: String? = ""
 
     override fun visit(node: TypeDeclaration): Boolean {
         fullyQualifiedClassName = FullyQualifiedNameHelper.getClassName(node)

@@ -5,8 +5,6 @@ import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
 import org.eclipse.jdt.core.dom.*
 import java.io.File
-import java.util.concurrent.Executors
-import java.util.concurrent.ThreadPoolExecutor
 import kotlin.system.exitProcess
 
 private val log = LogManager.getLogger()
@@ -14,27 +12,23 @@ private val log = LogManager.getLogger()
 fun main(args: Array<String>) {
     disableSystemErr()
 
-    if (args.size != 4) {
-        log.error("Needed arguments: inputFile inputDir outputFile #threads")
+    if (args.size != 3) {
+        log.error("Needed arguments: inputFile inputDir outputFile")
         exitProcess(-1)
     }
 
     val inputFile = File(args[0])
     val inputDir = args[1]
     val outputFile = File(args[2])
-    val numberOfThreads = args[3].toInt()
 
-    val executor = Executors.newFixedThreadPool(numberOfThreads) as ThreadPoolExecutor
     inputFile.forEachLine { project ->
-        executor.submit<Any> {
-            val dir = File(inputDir + project.toFileSystemName)
-            if (dir.exists()) {
-                log.info("[$project] evaluation started")
-                processProject(project, dir, outputFile)
-                log.info("[$project] evaluation ended")
-            } else {
-                log.warn("[$project] repo does not exist -> evaluation skipped")
-            }
+        val dir = File(inputDir + project.toFileSystemName)
+        if (dir.exists()) {
+            log.info("[$project] evaluation started")
+            processProject(project, dir, outputFile)
+            log.info("[$project] evaluation ended")
+        } else {
+            log.warn("[$project] repo does not exist -> evaluation skipped")
         }
     }
 }
@@ -69,7 +63,7 @@ private fun parse(project: String, sourceDirectory: File, filePaths: Array<Strin
             val fqnClass = classVisitor.fullyQualifiedClassName
 
             cv.methodNames.forEach {
-                outputFile.appendText("$project;$className;$fqnClass.$it\n")
+                outputFile.appendText("$project;$className;$fqnClass;$it\n")
             }
         }
     }, null)

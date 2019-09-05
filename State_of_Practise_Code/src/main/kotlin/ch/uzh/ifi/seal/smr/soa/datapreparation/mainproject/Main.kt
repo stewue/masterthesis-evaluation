@@ -37,7 +37,7 @@ fun main() {
     }
 
     list.forEach {
-        if(isMain.contains(it.project)){
+        if (isMain.contains(it.project)) {
             it.mainRepo = true
         }
     }

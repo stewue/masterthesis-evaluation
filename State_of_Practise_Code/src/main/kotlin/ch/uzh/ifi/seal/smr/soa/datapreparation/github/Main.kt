@@ -94,11 +94,10 @@ private fun callGitHubApi(url: String): Int {
             val currentPage = url.substringAfter("&page=", "1").toInt()
 
             val page = linkItemLast.substringAfter("&page=").substringBefore(">").trim().toInt()
-            if(currentPage == page){
+            if (currentPage == page) {
                 100 * (page - 1) + json.count()
-            }
-            else{
-                100 * (page - 1)  + callGitHubApi("$url&page=$page")
+            } else {
+                100 * (page - 1) + callGitHubApi("$url&page=$page")
             }
         }
     }

@@ -17,11 +17,11 @@ fun main() {
         val version = getVersion(groupId, artifactId)
         if (version != null) {
             val res = getGit(groupId, artifactId, version)
-            if(res != null){
+            if (res != null) {
                 val connection = res["connection"]
-                if(connection != null){
+                if (connection != null) {
                     val connectionValue = connection.textValue()
-                    if(connectionValue.contains("github")){
+                    if (connectionValue.contains("github")) {
                         println(connectionValue)
                     }
                 }
@@ -58,9 +58,9 @@ private fun getGit(groupId: String, artifactId: String, version: String): JsonNo
         val stringValue = IOUtils.toString(con.inputStream, Charset.defaultCharset())
         val node = xmlMapper.readTree(stringValue)
 
-        if(node["scm"] == null){
+        if (node["scm"] == null) {
             null
-        }else{
+        } else {
             node["scm"]
         }
     } else {
