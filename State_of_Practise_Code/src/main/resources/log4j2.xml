@@ -12,5 +12,8 @@
         <Logger name="ch.uzh.ifi.seal.bencher.analysis.finder.shared.StateObjectManager" level="ERROR">
             <AppenderRef ref="Console"/>
         </Logger>
+        <Logger name="ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchmarkMethodVisitor" level="ERROR">
+            <AppenderRef ref="Console"/>
+        </Logger>
     </Loggers>
 </Configuration>
