@@ -5,6 +5,7 @@ import ch.uzh.ifi.seal.bencher.JMHVersion
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JMHConstants
 import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
 import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
+import ch.uzh.ifi.seal.smr.soa.utils.Result
 import ch.uzh.ifi.seal.smr.soa.utils.convertToString
 import org.funktionale.option.Option
 import java.util.concurrent.TimeUnit

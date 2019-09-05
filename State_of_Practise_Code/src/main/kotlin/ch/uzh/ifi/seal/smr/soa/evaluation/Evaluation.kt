@@ -8,6 +8,7 @@ import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaSourceVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaTargetVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.evaluation.jmhversion.JmhSourceCodeVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
+import ch.uzh.ifi.seal.smr.soa.utils.Result
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
 import java.io.File

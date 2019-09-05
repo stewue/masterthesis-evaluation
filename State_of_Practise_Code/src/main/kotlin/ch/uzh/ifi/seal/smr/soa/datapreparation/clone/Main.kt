@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.datapreparation.clone
 
-import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import java.io.File
 import java.nio.file.Paths
@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
     val inFile = File(args[0])
     val outputDir = args[1]
 
-    val res = CsvResultParser(inFile).getList()
+    val res = CsvProjectParser(inFile).getList()
 
     res.forEach {
         val projectName = it.project.toFileSystemName

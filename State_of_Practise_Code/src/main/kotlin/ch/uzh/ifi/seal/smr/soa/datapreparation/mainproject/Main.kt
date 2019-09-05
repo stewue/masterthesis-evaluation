@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.datapreparation.mainproject
 
-import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import org.apache.logging.log4j.LogManager
 import java.io.File
@@ -9,7 +9,7 @@ private val log = LogManager.getLogger()
 
 fun main() {
     val csv = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\abc.csv")
-    val list = CsvResultParser(csv).getList()
+    val list = CsvProjectParser(csv).getList()
 
     val numberOfStars = mutableMapOf<String, MutableList<Pair<String, Int>>>()
     val isMain = mutableListOf<String>()

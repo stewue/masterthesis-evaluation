@@ -1,12 +1,12 @@
 package ch.uzh.ifi.seal.smr.soa.datapreparation.rootproject
 
-import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import java.io.File
 
 fun main() {
     val csv = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\abc.csv")
-    val list = CsvResultParser(csv).getList()
+    val list = CsvProjectParser(csv).getList()
 
     val parent = mutableMapOf<String, String?>()
 

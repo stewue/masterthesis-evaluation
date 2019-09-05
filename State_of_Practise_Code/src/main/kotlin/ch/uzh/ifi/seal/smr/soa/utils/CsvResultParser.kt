@@ -1,6 +1,5 @@
 package ch.uzh.ifi.seal.smr.soa.utils
 
-import com.opencsv.bean.ColumnPositionMappingStrategy
 import com.opencsv.bean.CsvToBean
 import com.opencsv.bean.CsvToBeanBuilder
 import java.io.BufferedReader
@@ -11,22 +10,19 @@ class CsvResultParser(file: File) {
 
     private var fileReader = BufferedReader(FileReader(file))
 
-    private fun getBean(): CsvToBean<Row> {
-        val mappingStrategy = ColumnPositionMappingStrategy<Row>()
-        mappingStrategy.type = Row::class.java
+    private fun getBean(): CsvToBean<Result> {
+        val mappingStrategy = CustomColumnPositionMappingStrategy<Result>()
+        mappingStrategy.type = Result::class.java
 
-        return CsvToBeanBuilder<Row>(fileReader)
+        return CsvToBeanBuilder<Result>(fileReader)
                 .withMappingStrategy(mappingStrategy)
                 .withSeparator(',')
                 .withIgnoreLeadingWhiteSpace(true)
                 .build()
     }
 
-    fun getList(): Set<Row> {
-        val result = mutableSetOf<Row>()
-        for (line in getBean()) {
-            result.add(line)
-        }
+    fun getList(): Set<Result> {
+        val result = getBean().toSet()
 
         fileReader.close()
 
