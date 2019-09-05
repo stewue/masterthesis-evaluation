@@ -7,8 +7,7 @@
     script.onload = function () {
         var $ = window.jQuery;
 
-        let out = ""
-
+        var out = "";
         $('.im-title a:not(".im-usage")').each(function () {
             out += $(this).attr('href').replace('/artifact/', '') + "\n";
         })
