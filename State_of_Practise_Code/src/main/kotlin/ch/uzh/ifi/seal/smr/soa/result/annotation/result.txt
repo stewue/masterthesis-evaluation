@@ -1,0 +1,65 @@
+~~~warmupIterations (40.45%)~~~
+only Class -> 13296 (93.48%)
+only Method -> 926 (6.51%)
+Both -> 2 (0.01%)
+	method: 0 & class: 10
+	method: 0 & class: 10
+-----
+~~~warmupTime (19.1%)~~~
+only Class -> 6342 (94.42%)
+only Method -> 375 (5.58%)
+Both -> 0 (0.0%)
+-----
+~~~measurementIterations (40.48%)~~~
+only Class -> 13347 (93.76%)
+only Method -> 880 (6.18%)
+Both -> 8 (0.06%)
+	method: 1 & class: 5
+	method: 1 & class: 10
+	method: 1 & class: 10
+	method: 1 & class: 10
+	method: 1 & class: 10
+	method: 1 & class: 10
+	method: 1 & class: 10
+	method: 2 & class: 2
+-----
+~~~measurementTime (22.31%)~~~
+only Class -> 7449 (94.95%)
+only Method -> 392 (5.0%)
+Both -> 4 (0.05%)
+	method: 1000000 & class: 1000000000
+	method: 100000000 & class: 100000000
+	method: 1000000000 & class: 1000000000
+	method: 1000000000 & class: 1000000000
+-----
+~~~forks (34.49%)~~~
+only Class -> 11557 (95.28%)
+only Method -> 573 (4.72%)
+Both -> 0 (0.0%)
+-----
+~~~warmupForks (0.61%)~~~
+only Class -> 102 (47.66%)
+only Method -> 112 (52.34%)
+Both -> 0 (0.0%)
+-----
+~~~mode (28.65%)~~~
+throughput (71.35%)
+	only Class -> 9622 (38.35%)
+	only Method -> 3129 (12.47%)
+	Both (same value) -> 0 (0.0%)
+	Both (different value) -> 40 (0.16%)
+average (71.35%)
+	only Class -> 7835 (31.23%)
+	only Method -> 2689 (10.72%)
+	Both (same value) -> 31 (0.12%)
+	Both (different value) -> 31 (0.12%)
+sample (71.35%)
+	only Class -> 507 (2.02%)
+	only Method -> 1388 (5.53%)
+	Both (same value) -> 0 (0.0%)
+	Both (different value) -> 55 (0.22%)
+singleshot (71.35%)
+	only Class -> 273 (1.09%)
+	only Method -> 221 (0.88%)
+	Both (same value) -> 0 (0.0%)
+	Both (different value) -> 50 (0.2%)
