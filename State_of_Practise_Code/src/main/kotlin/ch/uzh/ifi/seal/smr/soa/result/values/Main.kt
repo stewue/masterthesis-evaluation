@@ -1,9 +1,9 @@
 package ch.uzh.ifi.seal.smr.soa.result.values
 
+import ch.uzh.ifi.seal.smr.soa.result.percentage
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import java.io.File
-import kotlin.math.round
 import kotlin.reflect.KMutableProperty1
 
 fun main() {
@@ -76,9 +76,4 @@ private fun count(items: Set<Result>, property: KMutableProperty1<Result, *>, co
     items.filter { property.get(it) != null && property.get(it) == true }.forEach {
         counter[it] = counter.getOrDefault(it, 0) + 1
     }
-}
-
-private fun percentage(above: Int, below: Int): String {
-    val percentage = round(10000.0 * above / below) / 100
-    return "$percentage%"
 }

@@ -1,9 +1,9 @@
 package ch.uzh.ifi.seal.smr.soa.result.annotation
 
+import ch.uzh.ifi.seal.smr.soa.result.percentage
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import java.io.File
-import kotlin.math.round
 import kotlin.reflect.KMutableProperty1
 
 fun main() {
@@ -61,9 +61,4 @@ private fun analyzeSingleMode(items: Set<Result>, title: String, p: KMutableProp
     println("\tonly Method -> ${listMethod.size} (${percentage(listMethod.size, list.size)})")
     println("\tBoth (same value) -> ${listBothSame.size} (${percentage(listBothSame.size, list.size)})")
     println("\tBoth (different value) -> ${listBothDifferent.size} (${percentage(listBothDifferent.size, list.size)})")
-}
-
-private fun percentage(above: Int, below: Int): String {
-    val percentage = round(10000.0 * above / below) / 100
-    return "$percentage%"
 }
