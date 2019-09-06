@@ -10,16 +10,16 @@ fun main() {
     val file = File("D:\\merged-current-commit.csv")
     val items = CsvResultParser(file).getList()
 
-
     analyze(items, "warmupIterations", Result::warmupIterations, Result::warmupIterationsClass, Result::warmupIterationsMethod)
     analyze(items, "warmupTime", Result::warmupTime, Result::warmupTimeClass, Result::warmupTimeMethod)
     analyze(items, "measurementIterations", Result::measurementIterations, Result::measurementIterationsClass, Result::measurementIterationsMethod)
     analyze(items, "measurementTime", Result::measurementTime, Result::measurementTimeClass, Result::measurementTimeMethod)
     analyze(items, "forks", Result::forks, Result::forksClass, Result::forksMethod)
     analyze(items, "warmupForks", Result::warmupForks, Result::warmupForksClass, Result::warmupForksMethod)
+    analyzeMode(items)
 }
 
-fun analyze(items: Set<Result>, title: String, property: KMutableProperty1<Result, *>, propertyClass: KMutableProperty1<Result, *>, propertyMethod: KMutableProperty1<Result, *>) {
+private fun analyze(items: Set<Result>, title: String, property: KMutableProperty1<Result, *>, propertyClass: KMutableProperty1<Result, *>, propertyMethod: KMutableProperty1<Result, *>) {
     val list = items.filter { property.get(it) != null }
     val listClass = items.filter { propertyClass.get(it) != null && propertyMethod.get(it) == null }
     val listMethod = items.filter { propertyMethod.get(it) != null && propertyClass.get(it) == null }
@@ -35,7 +35,35 @@ fun analyze(items: Set<Result>, title: String, property: KMutableProperty1<Resul
     println("-----")
 }
 
-fun percentage(above: Int, below: Int): String {
+private fun analyzeMode(items: Set<Result>) {
+    val list = items.filter {
+        (it.modeIsThroughput != null || it.modeIsThroughput == false) &&
+                (it.modeIsAverageTime != null || it.modeIsAverageTime == false) &&
+                (it.modeIsSampleTime != null || it.modeIsSampleTime == false) &&
+                (it.modeIsSingleShotTime != null || it.modeIsSingleShotTime == false)
+    }
+    println("~~~mode (${percentage(items.size - list.size, items.size)})~~~")
+    analyzeSingleMode(items, "throughput", Result::modeIsThroughput, Result::modeIsThroughputClass, Result::modeIsThroughputMethod)
+    analyzeSingleMode(items, "average", Result::modeIsAverageTime, Result::modeIsAverageTimeClass, Result::modeIsAverageTimeMethod)
+    analyzeSingleMode(items, "sample", Result::modeIsSampleTime, Result::modeIsSampleTimeClass, Result::modeIsSampleTimeMethod)
+    analyzeSingleMode(items, "singleshot", Result::modeIsSingleShotTime, Result::modeIsSingleShotTimeClass, Result::modeIsSingleShotTimeMethod)
+}
+
+private fun analyzeSingleMode(items: Set<Result>, title: String, p: KMutableProperty1<Result, *>, pc: KMutableProperty1<Result, *>, pm: KMutableProperty1<Result, *>) {
+    val list = items.filter { p.get(it) != null }
+    val listClass = items.filter { pc.get(it) != null && pc.get(it) == true && pm.get(it) == null }
+    val listMethod = items.filter { pm.get(it) != null && pm.get(it) == true && pc.get(it) == null }
+    val listBothSame = items.filter { pm.get(it) != null && pm.get(it) == true && pc.get(it) != null && pc.get(it) == true }
+    val listBothDifferent = items.filter { pm.get(it) != null && pc.get(it) != null && pc.get(it) == pm.get(it) }
+
+    println("$title (${percentage(list.size, items.size)})")
+    println("\tonly Class -> ${listClass.size} (${percentage(listClass.size, list.size)})")
+    println("\tonly Method -> ${listMethod.size} (${percentage(listMethod.size, list.size)})")
+    println("\tBoth (same value) -> ${listBothSame.size} (${percentage(listBothSame.size, list.size)})")
+    println("\tBoth (different value) -> ${listBothDifferent.size} (${percentage(listBothDifferent.size, list.size)})")
+}
+
+private fun percentage(above: Int, below: Int): String {
     val percentage = round(10000.0 * above / below) / 100
     return "$percentage%"
 }
