@@ -37,10 +37,7 @@ private fun analyze(items: Set<Result>, title: String, property: KMutablePropert
 
 private fun analyzeMode(items: Set<Result>) {
     val notDefault = items.filter {
-        (it.modeIsThroughput != null && it.modeIsThroughput != false) ||
-                (it.modeIsAverageTime != null && it.modeIsAverageTime != false) ||
-                (it.modeIsSampleTime != null && it.modeIsSampleTime != false) ||
-                (it.modeIsSingleShotTime != null && it.modeIsSingleShotTime != false)
+        it.modeIsThroughput == true || it.modeIsAverageTime == true || it.modeIsSampleTime == true || it.modeIsSingleShotTime == true
     }.toSet()
     println("~~~mode (${percentage(items.size - notDefault.size, items.size)})~~~")
     analyzeSingleMode(notDefault, "throughput", Result::modeIsThroughput, Result::modeIsThroughputClass, Result::modeIsThroughputMethod)
@@ -50,10 +47,10 @@ private fun analyzeMode(items: Set<Result>) {
 }
 
 private fun analyzeSingleMode(items: Set<Result>, title: String, p: KMutableProperty1<Result, *>, pc: KMutableProperty1<Result, *>, pm: KMutableProperty1<Result, *>) {
-    val list = items.filter { p.get(it) != null && p.get(it) == true }
-    val listClass = items.filter { pc.get(it) != null && pc.get(it) == true && pm.get(it) == null }
-    val listMethod = items.filter { pm.get(it) != null && pm.get(it) == true && pc.get(it) == null }
-    val listBothSame = items.filter { pm.get(it) != null && pm.get(it) == true && pc.get(it) != null && pc.get(it) == true }
+    val list = items.filter { p.get(it) == true }
+    val listClass = items.filter { pc.get(it) == true && pm.get(it) == null }
+    val listMethod = items.filter { pm.get(it) == true && pc.get(it) == null }
+    val listBothSame = items.filter { pm.get(it) == true && pc.get(it) == true }
     val listBothDifferent = items.filter { pm.get(it) != null && pc.get(it) != null && pc.get(it) != pm.get(it) }
 
     println("$title (${percentage(list.size, items.size)})")

@@ -44,16 +44,13 @@ private fun analyzeMode(items: Set<Result>) {
 }
 
 private fun analyzeSingleMode(items: Set<Result>, title: String, property: KMutableProperty1<Result, *>) {
-    val list = items.filter { property.get(it) != null && property.get(it) == true }
+    val list = items.filter { property.get(it) == true }
     println("$title: ${list.size} (${percentage(list.size, items.size)})")
 }
 
 private fun analyzeModeAll(items: Set<Result>) {
     val list = items.filter {
-        it.modeIsThroughput != null && it.modeIsThroughput == true &&
-                it.modeIsAverageTime != null && it.modeIsAverageTime == true &&
-                it.modeIsSampleTime != null && it.modeIsSampleTime == true &&
-                it.modeIsSingleShotTime != null && it.modeIsSingleShotTime == true
+        it.modeIsThroughput == true && it.modeIsAverageTime == true && it.modeIsSampleTime == true && it.modeIsSingleShotTime == true
     }
     println("all: ${list.size} (${percentage(list.size, items.size)})")
 }
@@ -73,7 +70,7 @@ private fun analyzeNumberOfModes(items: Set<Result>) {
 }
 
 private fun count(items: Set<Result>, property: KMutableProperty1<Result, *>, counter: MutableMap<Result, Int>) {
-    items.filter { property.get(it) != null && property.get(it) == true }.forEach {
+    items.filter { property.get(it) == true }.forEach {
         counter[it] = counter.getOrDefault(it, 0) + 1
     }
 }

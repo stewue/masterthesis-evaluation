@@ -42,12 +42,12 @@ private fun analyze(items: Set<Result>, title: String, property: KMutablePropert
 
     val pre120 = hasValue.filter { it.jmhVersion!!.compareTo(jmh120) != 1 }
     val pre120Filtered = pre120.filter {
-                if (property == Result::warmupTime || property == Result::measurementTime) {
-                        property.get(it) == 10000000000
-                } else {
-                    property.get(it) == propertyDefault.get(defaultExecConfig(jmh121))
-                }
-            }
+        if (property == Result::warmupTime || property == Result::measurementTime) {
+            property.get(it) == 10000000000
+        } else {
+            property.get(it) == propertyDefault.get(defaultExecConfig(jmh121))
+        }
+    }
     val post120 = isDefault.filter { it.jmhVersion!!.compareTo(jmh120) == 1 }
 
     println("~~~$title~~~")
@@ -57,17 +57,12 @@ private fun analyze(items: Set<Result>, title: String, property: KMutablePropert
     println("------")
 }
 
-private fun analyzeMode(items: Set<Result>){
+private fun analyzeMode(items: Set<Result>) {
     val list = items.filter {
-        it.modeIsThroughput != null && it.modeIsThroughput == true &&
-                it.modeIsAverageTime != null && it.modeIsAverageTime == false &&
-                it.modeIsSampleTime != null && it.modeIsSampleTime == false &&
-                it.modeIsSingleShotTime != null && it.modeIsSingleShotTime == false
+        it.modeIsThroughput == true && it.modeIsAverageTime != true && it.modeIsSampleTime != true && it.modeIsSingleShotTime != true
     }
 
-    val modeUsed = items.filter {
-        it.modeIsThroughput != null && it.modeIsThroughput == true
-    }
+    val modeUsed = items.filter { it.modeIsThroughput == true }
 
     println("~~~mode~~~")
     println("in ${list.size} of ${items.size} cases is throughput the only mode (${percentage(list.size, items.size)})")
