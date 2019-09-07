@@ -47,10 +47,3 @@ dotCMS/log4j
 yrcourage/netty
 joansmith/netty
 akarnokd/rxjava2-backport
-
-
-manually modify mainRepo
-------------------------
-orbit/orbit: v1 was moved to a new repo -> v2 new code base (use for jthelin/orbit)
-carrotsearch/hppc and vsonnier/hppcrt are over 500 commits independent (analyze both)
-eclipse/eclipse-collections is less forks because its a minor repo
