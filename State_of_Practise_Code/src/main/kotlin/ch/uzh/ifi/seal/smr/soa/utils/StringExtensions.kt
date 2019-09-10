@@ -10,3 +10,6 @@ val String.toFileSystemName: String
 
 val ByteArray.convertToString: String
     inline get() = Hex.encodeHexString(this)
+
+val String.outerClass: String
+    inline get() = this.substringBefore('#')

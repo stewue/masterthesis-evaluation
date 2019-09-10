@@ -24,166 +24,182 @@ class Result {
     var javaSource: String? = null
 
     @CsvBindByPosition(position = 6)
-    lateinit var benchmarkName: String
+    lateinit var className: String
 
     @CsvBindByPosition(position = 7)
-    var warmupIterations: Int? = null
+    lateinit var benchmarkName: String
 
     @CsvBindByPosition(position = 8)
-    var warmupIterationsClass: Int? = null
+    var warmupIterations: Int? = null
 
     @CsvBindByPosition(position = 9)
-    var warmupIterationsMethod: Int? = null
+    var warmupIterationsClass: Int? = null
 
     @CsvBindByPosition(position = 10)
-    var warmupTime: Long? = null
+    var warmupIterationsMethod: Int? = null
 
     @CsvBindByPosition(position = 11)
-    var warmupTimeClass: Long? = null
+    var warmupTime: Long? = null
 
     @CsvBindByPosition(position = 12)
-    var warmupTimeMethod: Long? = null
+    var warmupTimeClass: Long? = null
 
     @CsvBindByPosition(position = 13)
-    lateinit var warmupTimeStatus: Status
+    var warmupTimeMethod: Long? = null
 
     @CsvBindByPosition(position = 14)
-    lateinit var warmupTimeStatusClass: Status
+    lateinit var warmupTimeStatus: Status
 
     @CsvBindByPosition(position = 15)
-    lateinit var warmupTimeStatusMethod: Status
+    lateinit var warmupTimeStatusClass: Status
 
     @CsvBindByPosition(position = 16)
-    var measurementIterations: Int? = null
+    lateinit var warmupTimeStatusMethod: Status
 
     @CsvBindByPosition(position = 17)
-    var measurementIterationsClass: Int? = null
+    var measurementIterations: Int? = null
 
     @CsvBindByPosition(position = 18)
-    var measurementIterationsMethod: Int? = null
+    var measurementIterationsClass: Int? = null
 
     @CsvBindByPosition(position = 19)
-    var measurementTime: Long? = null
+    var measurementIterationsMethod: Int? = null
 
     @CsvBindByPosition(position = 20)
-    var measurementTimeClass: Long? = null
+    var measurementTime: Long? = null
 
     @CsvBindByPosition(position = 21)
-    var measurementTimeMethod: Long? = null
+    var measurementTimeClass: Long? = null
 
     @CsvBindByPosition(position = 22)
-    lateinit var measurementTimeStatus: Status
+    var measurementTimeMethod: Long? = null
 
     @CsvBindByPosition(position = 23)
-    lateinit var measurementTimeStatusClass: Status
+    lateinit var measurementTimeStatus: Status
 
     @CsvBindByPosition(position = 24)
-    lateinit var measurementTimeStatusMethod: Status
+    lateinit var measurementTimeStatusClass: Status
 
     @CsvBindByPosition(position = 25)
-    var forks: Int? = null
+    lateinit var measurementTimeStatusMethod: Status
 
     @CsvBindByPosition(position = 26)
-    var forksClass: Int? = null
+    var forks: Int? = null
 
     @CsvBindByPosition(position = 27)
-    var forksMethod: Int? = null
+    var forksClass: Int? = null
 
     @CsvBindByPosition(position = 28)
-    var warmupForks: Int? = null
+    var forksMethod: Int? = null
 
     @CsvBindByPosition(position = 29)
-    var warmupForksClass: Int? = null
+    var warmupForks: Int? = null
 
     @CsvBindByPosition(position = 30)
-    var warmupForksMethod: Int? = null
+    var warmupForksClass: Int? = null
 
     @CsvBindByPosition(position = 31)
-    var modeIsThroughput: Boolean? = null
+    var warmupForksMethod: Int? = null
 
     @CsvBindByPosition(position = 32)
-    var modeIsThroughputClass: Boolean? = null
+    var modeIsThroughput: Boolean? = null
 
     @CsvBindByPosition(position = 33)
-    var modeIsThroughputMethod: Boolean? = null
+    var modeIsThroughputClass: Boolean? = null
 
     @CsvBindByPosition(position = 34)
-    var modeIsAverageTime: Boolean? = null
+    var modeIsThroughputMethod: Boolean? = null
 
     @CsvBindByPosition(position = 35)
-    var modeIsAverageTimeClass: Boolean? = null
+    var modeIsAverageTime: Boolean? = null
 
     @CsvBindByPosition(position = 36)
-    var modeIsAverageTimeMethod: Boolean? = null
+    var modeIsAverageTimeClass: Boolean? = null
 
     @CsvBindByPosition(position = 37)
-    var modeIsSampleTime: Boolean? = null
+    var modeIsAverageTimeMethod: Boolean? = null
 
     @CsvBindByPosition(position = 38)
-    var modeIsSampleTimeClass: Boolean? = null
+    var modeIsSampleTime: Boolean? = null
 
     @CsvBindByPosition(position = 39)
-    var modeIsSampleTimeMethod: Boolean? = null
+    var modeIsSampleTimeClass: Boolean? = null
 
     @CsvBindByPosition(position = 40)
-    var modeIsSingleShotTime: Boolean? = null
+    var modeIsSampleTimeMethod: Boolean? = null
 
     @CsvBindByPosition(position = 41)
-    var modeIsSingleShotTimeClass: Boolean? = null
+    var modeIsSingleShotTime: Boolean? = null
 
     @CsvBindByPosition(position = 42)
-    var modeIsSingleShotTimeMethod: Boolean? = null
+    var modeIsSingleShotTimeClass: Boolean? = null
 
     @CsvBindByPosition(position = 43)
-    var paramString: String? = null
+    var modeIsSingleShotTimeMethod: Boolean? = null
 
     @CsvBindByPosition(position = 44)
-    var paramCount: Int = 0
+    var parametrizationCombinations: Int = 0
 
     @CsvBindByPosition(position = 45)
-    var hasBlackhole: Boolean = false
+    var paramString: String? = null
 
     @CsvBindByPosition(position = 46)
-    var hasControl: Boolean = false
+    var paramCount: Int = 0
 
     @CsvBindByPosition(position = 47)
-    var hasBenchmarkParams: Boolean = false
+    var paramCountStateObject: Int = 0
 
     @CsvBindByPosition(position = 48)
-    var hasIterationParams: Boolean = false
+    var paramCountStateObjectWithoutJmhParam: Int = 0
 
     @CsvBindByPosition(position = 49)
-    var hasThreadParams: Boolean = false
+    var hasBlackhole: Boolean = false
 
     @CsvBindByPosition(position = 50)
-    var jmhParamString: String? = null
+    var hasControl: Boolean = false
 
     @CsvBindByPosition(position = 51)
-    var jmhParamPairs: String? = null
+    var hasBenchmarkParams: Boolean = false
 
     @CsvBindByPosition(position = 52)
-    var jmhParamCount: Int = 0
+    var hasIterationParams: Boolean = false
 
     @CsvBindByPosition(position = 53)
-    var jmhParamFromStateObjectCount: Int = 0
+    var hasThreadParams: Boolean = false
 
     @CsvBindByPosition(position = 54)
-    var returnType: String? = null
+    var jmhParamString: String? = null
 
     @CsvBindByPosition(position = 55)
-    var partOfGroup: Boolean = false
+    var jmhParamPairs: String? = null
 
     @CsvBindByPosition(position = 56)
+    var jmhParamCount: Int = 0
+
+    @CsvBindByPosition(position = 57)
+    var jmhParamCountOwnClass: Int = 0
+
+    @CsvBindByPosition(position = 58)
+    var jmhParamCountArgument: Int = 0
+
+    @CsvBindByPosition(position = 59)
+    var returnType: String? = null
+
+    @CsvBindByPosition(position = 60)
+    var partOfGroup: Boolean = false
+
+    @CsvBindByPosition(position = 61)
     lateinit var methodHash: String
 
     constructor()
-    constructor(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, benchmarkName: String, warmupIterations: Int?, warmupIterationsClass: Int?, warmupIterationsMethod: Int?, warmupTime: Long?, warmupTimeClass: Long?, warmupTimeMethod: Long?, warmupTimeStatus: Status, warmupTimeStatusClass: Status, warmupTimeStatusMethod: Status, measurementIterations: Int?, measurementIterationsClass: Int?, measurementIterationsMethod: Int?, measurementTime: Long?, measurementTimeClass: Long?, measurementTimeMethod: Long?, measurementTimeStatus: Status, measurementTimeStatusClass: Status, measurementTimeStatusMethod: Status, forks: Int?, forksClass: Int?, forksMethod: Int?, warmupForks: Int?, warmupForksClass: Int?, warmupForksMethod: Int?, modeIsThroughput: Boolean?, modeIsThroughputClass: Boolean?, modeIsThroughputMethod: Boolean?, modeIsAverageTime: Boolean?, modeIsAverageTimeClass: Boolean?, modeIsAverageTimeMethod: Boolean?, modeIsSampleTime: Boolean?, modeIsSampleTimeClass: Boolean?, modeIsSampleTimeMethod: Boolean?, modeIsSingleShotTime: Boolean?, modeIsSingleShotTimeClass: Boolean?, modeIsSingleShotTimeMethod: Boolean?, paramString: String?, paramCount: Int, hasBlackhole: Boolean, hasControl: Boolean, hasBenchmarkParams: Boolean, hasIterationParams: Boolean, hasThreadParams: Boolean, jmhParamString: String?, jmhParamPairs: String?, jmhParamCount: Int, jmhParamFromStateObjectCount: Int, returnType: String?, partOfGroup: Boolean, methodHash: String) {
+    constructor(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, className: String, benchmarkName: String, warmupIterations: Int?, warmupIterationsClass: Int?, warmupIterationsMethod: Int?, warmupTime: Long?, warmupTimeClass: Long?, warmupTimeMethod: Long?, warmupTimeStatus: Status, warmupTimeStatusClass: Status, warmupTimeStatusMethod: Status, measurementIterations: Int?, measurementIterationsClass: Int?, measurementIterationsMethod: Int?, measurementTime: Long?, measurementTimeClass: Long?, measurementTimeMethod: Long?, measurementTimeStatus: Status, measurementTimeStatusClass: Status, measurementTimeStatusMethod: Status, forks: Int?, forksClass: Int?, forksMethod: Int?, warmupForks: Int?, warmupForksClass: Int?, warmupForksMethod: Int?, modeIsThroughput: Boolean?, modeIsThroughputClass: Boolean?, modeIsThroughputMethod: Boolean?, modeIsAverageTime: Boolean?, modeIsAverageTimeClass: Boolean?, modeIsAverageTimeMethod: Boolean?, modeIsSampleTime: Boolean?, modeIsSampleTimeClass: Boolean?, modeIsSampleTimeMethod: Boolean?, modeIsSingleShotTime: Boolean?, modeIsSingleShotTimeClass: Boolean?, modeIsSingleShotTimeMethod: Boolean?, parametrizationCombinations: Int, paramString: String?, paramCount: Int, paramCountStateObject: Int, paramCountStateObjectWithoutJmhParam: Int, hasBlackhole: Boolean, hasControl: Boolean, hasBenchmarkParams: Boolean, hasIterationParams: Boolean, hasThreadParams: Boolean, jmhParamString: String?, jmhParamPairs: String?, jmhParamCount: Int, jmhParamCountOwnClass: Int, jmhParamCountArgument: Int, returnType: String?, partOfGroup: Boolean, methodHash: String) {
         this.project = project
         this.commitId = commitId
         this.commitTime = commitTime
         this.jmhVersion = jmhVersion
         this.javaTarget = javaTarget
         this.javaSource = javaSource
+        this.className = className
         this.benchmarkName = benchmarkName
         this.warmupIterations = warmupIterations
         this.warmupIterationsClass = warmupIterationsClass
@@ -221,8 +237,11 @@ class Result {
         this.modeIsSingleShotTime = modeIsSingleShotTime
         this.modeIsSingleShotTimeClass = modeIsSingleShotTimeClass
         this.modeIsSingleShotTimeMethod = modeIsSingleShotTimeMethod
+        this.parametrizationCombinations = parametrizationCombinations
         this.paramString = paramString
         this.paramCount = paramCount
+        this.paramCountStateObject = paramCountStateObject
+        this.paramCountStateObjectWithoutJmhParam = paramCountStateObjectWithoutJmhParam
         this.hasBlackhole = hasBlackhole
         this.hasControl = hasControl
         this.hasBenchmarkParams = hasBenchmarkParams
@@ -231,11 +250,10 @@ class Result {
         this.jmhParamString = jmhParamString
         this.jmhParamPairs = jmhParamPairs
         this.jmhParamCount = jmhParamCount
-        this.jmhParamFromStateObjectCount = jmhParamFromStateObjectCount
+        this.jmhParamCountOwnClass = jmhParamCountOwnClass
+        this.jmhParamCountArgument = jmhParamCountArgument
         this.returnType = returnType
         this.partOfGroup = partOfGroup
         this.methodHash = methodHash
     }
-
-
 }

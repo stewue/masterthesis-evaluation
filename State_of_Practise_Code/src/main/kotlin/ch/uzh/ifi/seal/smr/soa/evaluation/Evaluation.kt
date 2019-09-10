@@ -58,6 +58,12 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
                 throw RuntimeException("Could not retrieve hashes: ${hashes.left().get()}")
             }
 
+            val so = finder.stateObj()
+            if (hashes.isLeft()) {
+                throw RuntimeException("Could not retrieve stateObj: ${hashes.left().get()}")
+            }
+            val stateObjects = so.right().get()
+
             val cb = be.right().get()
             val cc = ce.right().get()
             val configurator = ConfigBasedConfigurator(unsetExecConfig, cc, cb)
@@ -76,7 +82,7 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
                 val hash = hashes.right().get().getValue(bench)
                 val jmhParamSource = finder.jmhParamSource(bench)
 
-                val item = convertResult(project, commitId, commitTime, jmhVersion, javaTarget, javaSource, bench, config, configBench, configClass, jmhParamSource, hash)
+                val item = convertResult(project, commitId, commitTime, jmhVersion, javaTarget, javaSource, bench, config, configBench, configClass, jmhParamSource, hash, stateObjects)
                 results.add(item)
             }
 

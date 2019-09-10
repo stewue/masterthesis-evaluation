@@ -7,11 +7,12 @@ import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
 import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import ch.uzh.ifi.seal.smr.soa.utils.convertToString
+import ch.uzh.ifi.seal.smr.soa.utils.outerClass
 import org.funktionale.option.Option
 import java.util.concurrent.TimeUnit
 
 object EvaluationHelper {
-    fun convertResult(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, bench: Benchmark, ec: ExecutionConfiguration, b: ExecutionConfiguration, c: ExecutionConfiguration, jmhParamSource: Map<String, String>, hash: ByteArray): Result {
+    fun convertResult(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, bench: Benchmark, ec: ExecutionConfiguration, b: ExecutionConfiguration, c: ExecutionConfiguration, jmhParamSource: Map<String, String>, hash: ByteArray, stateObjects: Map<String, Map<String, MutableList<String>>>): Result {
         return Result(
                 project = project,
                 commitId = commitId,
@@ -19,7 +20,8 @@ object EvaluationHelper {
                 jmhVersion = jmhVersion,
                 javaTarget = javaTarget,
                 javaSource = javaSource,
-                benchmarkName = "${bench.clazz}.${bench.name}",
+                className = bench.clazz,
+                benchmarkName = bench.name,
                 warmupIterations = iterations(ec.warmupIterations, unsetExecConfig.warmupIterations),
                 warmupIterationsClass = iterations(c.warmupIterations, unsetExecConfig.warmupIterations),
                 warmupIterationsMethod = iterations(b.warmupIterations, unsetExecConfig.warmupIterations),
@@ -56,8 +58,11 @@ object EvaluationHelper {
                 modeIsSingleShotTime = mode(ec.mode, unsetExecConfig.mode, "SingleShotTime"),
                 modeIsSingleShotTimeClass = mode(c.mode, unsetExecConfig.mode, "SingleShotTime"),
                 modeIsSingleShotTimeMethod = mode(b.mode, unsetExecConfig.mode, "SingleShotTime"),
+                parametrizationCombinations = bench.parameterizedBenchmarks().size,
                 paramString = paramString(bench.params),
                 paramCount = bench.params.size,
+                paramCountStateObject = paramCountStateObject(bench.params, stateObjects),
+                paramCountStateObjectWithoutJmhParam = paramCountStateObjectWithoutJmhParam(bench.params, stateObjects),
                 hasBlackhole = bench.params.contains(JMHConstants.Class.blackhole),
                 hasControl = bench.params.contains(JMHConstants.Class.control),
                 hasBenchmarkParams = bench.params.contains(JMHConstants.Class.benchmarkParams),
@@ -66,7 +71,8 @@ object EvaluationHelper {
                 jmhParamString = jmhParamString(jmhParamSource),
                 jmhParamPairs = jmhParamPairs(bench.jmhParams),
                 jmhParamCount = jmhParamSource.size,
-                jmhParamFromStateObjectCount = jmhParamStateObjectCounter(bench.clazz, jmhParamSource),
+                jmhParamCountOwnClass = jmhParamCountOwnClass(bench.clazz, jmhParamSource),
+                jmhParamCountArgument = jmhParamCountArgument(bench.params, jmhParamSource),
                 returnType = returnType(bench.returnType),
                 partOfGroup = bench.group != null,
                 methodHash = hash.convertToString
@@ -141,12 +147,22 @@ object EvaluationHelper {
         }
     }
 
-    private fun jmhParamStateObjectCounter(benchmarkClass: String, jmhParamSource: Map<String, String>): Int {
-        return jmhParamSource.map { (value, source) ->
+    private fun jmhParamCountOwnClass(benchmarkClass: String, jmhParamSource: Map<String, String>): Int {
+        return jmhParamSource.map { (_, source) ->
             if (source == benchmarkClass) {
-                0
-            } else {
                 1
+            } else {
+                0
+            }
+        }.sum()
+    }
+
+    private fun jmhParamCountArgument(params: List<String>, jmhParamSource: Map<String, String>): Int {
+        return jmhParamSource.map { (_, source) ->
+            if (params.contains(source)) {
+                1
+            } else {
+                0
             }
         }.sum()
     }
@@ -181,5 +197,26 @@ object EvaluationHelper {
             }
             res
         }
+    }
+
+    private fun paramCountStateObject(params: List<String>, stateObjects: Map<String, Map<String, MutableList<String>>>): Int {
+        return params.map{ param ->
+            if(stateObjects.containsKey(param)){
+                1
+            }else{
+                0
+            }
+        }.sum()
+    }
+
+    private fun paramCountStateObjectWithoutJmhParam(params: List<String>, stateObjects: Map<String, Map<String, MutableList<String>>>): Int {
+        return params.map{ param ->
+            val stateObj = stateObjects[param]
+            if(stateObj != null && stateObj.isEmpty()){
+                1
+            }else{
+                0
+            }
+        }.sum()
     }
 }
