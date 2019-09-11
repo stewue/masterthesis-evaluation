@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.result.method
+package ch.uzh.ifi.seal.smr.soa.result.features
 
 import ch.uzh.ifi.seal.smr.soa.result.percentage
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
