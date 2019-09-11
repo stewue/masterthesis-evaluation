@@ -6,6 +6,7 @@ import java.nio.file.Paths
 
 class EvaluationCurrentCommit(inputFile: File, inputDir: String, outputDir: File, outputFile: File) : Evaluation(inputFile, inputDir, outputDir, outputFile) {
     override fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File) {
+        super.processProject(project, sourceDir, outputDir, outputFile)
         evaluate(project, null, null, sourceDir, Paths.get(outputDir.absolutePath, "${project.toFileSystemName}.csv"), outputFile)
     }
 }

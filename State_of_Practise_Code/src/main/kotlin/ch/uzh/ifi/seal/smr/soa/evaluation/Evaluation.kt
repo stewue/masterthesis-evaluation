@@ -4,6 +4,7 @@ import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
 import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
 import ch.uzh.ifi.seal.smr.soa.evaluation.EvaluationHelper.convertResult
+import ch.uzh.ifi.seal.smr.soa.evaluation.history.HistoryManager
 import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaSourceVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaTargetVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.evaluation.jmhversion.JmhSourceCodeVersionExtractor
@@ -11,6 +12,7 @@ import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
+import org.eclipse.jgit.api.Git
 import java.io.File
 import java.nio.file.Path
 
@@ -29,7 +31,13 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
         }
     }
 
-    protected abstract fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File)
+    protected open fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File) {
+        HistoryManager.getRepo(sourceDir).use { repository ->
+            Git(repository).use { git ->
+                HistoryManager.resetToBranch(git)
+            }
+        }
+    }
 
     protected fun evaluate(project: String, commitId: String?, commitTime: Int?, sourceDir: File, resultFile: Path, outputFile: File) {
         try {

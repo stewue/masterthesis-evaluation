@@ -11,9 +11,10 @@ class EvaluationSampleCommits(inputFile: File, inputDir: String, outputDir: File
 
     override fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File) {
         try {
+            super.processProject(project, sourceDir, outputDir, outputFile)
+
             HistoryManager.getRepo(sourceDir).use { repository ->
                 Git(repository).use { git ->
-                    HistoryManager.resetToBranch(git)
                     val commits = HistoryManager.sampleCommits(repository, git)
                     commits.forEach { commit ->
                         try {

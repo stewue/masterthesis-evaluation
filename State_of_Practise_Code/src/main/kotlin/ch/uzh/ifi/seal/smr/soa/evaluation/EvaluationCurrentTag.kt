@@ -9,6 +9,8 @@ import java.nio.file.Paths
 
 class EvaluationCurrentTag(inputFile: File, inputDir: String, outputDir: File, outputFile: File) : Evaluation(inputFile, inputDir, outputDir, outputFile) {
     override fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File) {
+        super.processProject(project, sourceDir, outputDir, outputFile)
+
         getRepo(sourceDir).use { repository ->
             Git(repository).use { git ->
                 val tag = getLastTag(git)
