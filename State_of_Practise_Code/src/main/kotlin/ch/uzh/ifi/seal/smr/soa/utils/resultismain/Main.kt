@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.result.resultismain
+package ch.uzh.ifi.seal.smr.soa.utils.resultismain
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
