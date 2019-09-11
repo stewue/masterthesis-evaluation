@@ -256,4 +256,17 @@ class Result {
         this.partOfGroup = partOfGroup
         this.methodHash = methodHash
     }
+
+    fun sameConfig(o: Result): Boolean {
+        return warmupIterations == o.warmupIterations &&
+                warmupTime == o.warmupTime &&
+                measurementIterations == o.measurementIterations &&
+                measurementTime == o.measurementTime &&
+                forks == o.forks &&
+                warmupForks == o.warmupForks &&
+                modeIsThroughput == o.modeIsThroughput &&
+                modeIsAverageTime == o.modeIsAverageTime &&
+                modeIsSampleTime == o.modeIsSampleTime &&
+                modeIsSingleShotTime == o.modeIsSingleShotTime
+    }
 }
