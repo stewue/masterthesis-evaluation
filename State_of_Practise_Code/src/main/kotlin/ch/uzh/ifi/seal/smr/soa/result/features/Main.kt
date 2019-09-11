@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.result.features
 
-import ch.uzh.ifi.seal.smr.soa.result.percentage
+import ch.uzh.ifi.seal.smr.soa.result.percentageString
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import java.io.File
@@ -31,7 +31,7 @@ private fun count(items: Set<Result>, title: String, property: KMutableProperty1
 
     println("~~~$title~~~")
     grouped.forEach { (value, count) ->
-        println("$value -> $count (${percentage(count, items.size)})")
+        println("$value -> $count (${percentageString(count, items.size)})")
     }
     println("-----")
 }
@@ -40,7 +40,7 @@ private fun hasProperty(items: Set<Result>, title: String, property: KMutablePro
     val list = items.filter { property.get(it) == true }
 
     println("~~~$title~~~")
-    println("${list.size} of ${items.size} (${percentage(list.size, items.size)}) use a $title")
+    println("${list.size} of ${items.size} (${percentageString(list.size, items.size)}) use a $title")
     println("-----")
 }
 
@@ -48,7 +48,7 @@ private fun hasReturnType(items: Set<Result>) {
     val list = items.filter { !it.returnType.isNullOrBlank() }
 
     println("~~~hasReturnType~~~")
-    println("${list.size} of ${items.size} (${percentage(list.size, items.size)})")
+    println("${list.size} of ${items.size} (${percentageString(list.size, items.size)})")
     println("-----")
 }
 
@@ -56,6 +56,6 @@ private fun hasReturnTypeOrBlackHole(items: Set<Result>) {
     val list = items.filter { !it.returnType.isNullOrBlank() || it.hasBlackhole }
 
     println("~~~hasReturnTypeOrBlackHole~~~")
-    println("${list.size} of ${items.size} (${percentage(list.size, items.size)})")
+    println("${list.size} of ${items.size} (${percentageString(list.size, items.size)})")
     println("-----")
 }

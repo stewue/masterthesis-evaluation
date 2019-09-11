@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.result.values
 
-import ch.uzh.ifi.seal.smr.soa.result.percentage
+import ch.uzh.ifi.seal.smr.soa.result.percentageString
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import java.io.File
@@ -27,7 +27,7 @@ private fun analyze(items: Set<Result>, title: String, property: KMutablePropert
 
     println("~~~$title~~~")
     grouped.forEach { (value, count) ->
-        println("\t $value: $count (${percentage(count, list.size)})")
+        println("\t $value: $count (${percentageString(count, list.size)})")
     }
 
     println("-----")
@@ -45,14 +45,14 @@ private fun analyzeMode(items: Set<Result>) {
 
 private fun analyzeSingleMode(items: Set<Result>, title: String, property: KMutableProperty1<Result, *>) {
     val list = items.filter { property.get(it) == true }
-    println("$title: ${list.size} (${percentage(list.size, items.size)})")
+    println("$title: ${list.size} (${percentageString(list.size, items.size)})")
 }
 
 private fun analyzeModeAll(items: Set<Result>) {
     val list = items.filter {
         it.modeIsThroughput == true && it.modeIsAverageTime == true && it.modeIsSampleTime == true && it.modeIsSingleShotTime == true
     }
-    println("all: ${list.size} (${percentage(list.size, items.size)})")
+    println("all: ${list.size} (${percentageString(list.size, items.size)})")
 }
 
 private fun analyzeNumberOfModes(items: Set<Result>) {
@@ -65,7 +65,7 @@ private fun analyzeNumberOfModes(items: Set<Result>) {
     val grouped = counter.toList().groupingBy { it.second }.eachCount().toList().sortedBy { it.first }
 
     grouped.forEach { (numberOfModes, occurrences) ->
-        println("$numberOfModes mode: $occurrences (${percentage(occurrences, counter.size)})")
+        println("$numberOfModes mode: $occurrences (${percentageString(occurrences, counter.size)})")
     }
 }
 

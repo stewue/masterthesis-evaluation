@@ -3,7 +3,7 @@ package ch.uzh.ifi.seal.smr.soa.result.isdefaultvalue
 import ch.uzh.ifi.seal.bencher.JMHVersion
 import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
 import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
-import ch.uzh.ifi.seal.smr.soa.result.percentage
+import ch.uzh.ifi.seal.smr.soa.result.percentageString
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import java.io.File
@@ -51,9 +51,9 @@ private fun analyze(items: Set<Result>, title: String, property: KMutablePropert
     val post120 = isDefault.filter { it.jmhVersion!!.compareTo(jmh120) == 1 }
 
     println("~~~$title~~~")
-    println("is default in ${isDefault.size} of ${hasValue.size} cases (${percentage(isDefault.size, hasValue.size)})")
-    println("is default in ${post120.size} of ${isDefault.size} cases only = 1.21 (${percentage(post120.size, isDefault.size)})")
-    println("is new default value in ${pre120Filtered.size} of ${pre120.size} cases < 1.21 (${percentage(pre120Filtered.size, pre120.size)})")
+    println("is default in ${isDefault.size} of ${hasValue.size} cases (${percentageString(isDefault.size, hasValue.size)})")
+    println("is default in ${post120.size} of ${isDefault.size} cases only = 1.21 (${percentageString(post120.size, isDefault.size)})")
+    println("is new default value in ${pre120Filtered.size} of ${pre120.size} cases < 1.21 (${percentageString(pre120Filtered.size, pre120.size)})")
     println("------")
 }
 
@@ -65,9 +65,9 @@ private fun analyzeMode(items: Set<Result>) {
     val modeUsed = items.filter { it.modeIsThroughput == true }
 
     println("~~~mode~~~")
-    println("in ${list.size} of ${items.size} cases is throughput the only mode (${percentage(list.size, items.size)})")
+    println("in ${list.size} of ${items.size} cases is throughput the only mode (${percentageString(list.size, items.size)})")
     val notSingleModeCount = modeUsed.size - list.size
-    println("throughput is not single mode in $notSingleModeCount cases (${percentage(notSingleModeCount, modeUsed.size)})")
+    println("throughput is not single mode in $notSingleModeCount cases (${percentageString(notSingleModeCount, modeUsed.size)})")
 }
 
 private val jmh120 = JMHVersion(major = 1, minor = 20)

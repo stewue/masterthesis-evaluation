@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.smr.soa.result.jmhversion
 
 import ch.uzh.ifi.seal.bencher.JMHVersion
-import ch.uzh.ifi.seal.smr.soa.result.percentage
+import ch.uzh.ifi.seal.smr.soa.result.percentageString
 import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
 import ch.uzh.ifi.seal.smr.soa.utils.Row
 import java.io.File
@@ -126,7 +126,7 @@ private fun jmhVersion(items: List<Row>) {
 
     val total = sorted.map { it.second }.sum()
     sorted.forEach { (value, count) ->
-        println("$value -> $count (${percentage(count, total)})")
+        println("$value -> $count (${percentageString(count, total)})")
     }
 }
 
@@ -141,7 +141,7 @@ private fun jmhDate(items: List<Row>) {
 
     val total = list.map { it.second }.sum()
     list.forEach { (value, count) ->
-        println("${getDate(value)} -> $count (${percentage(count, total)})")
+        println("${getDate(value)} -> $count (${percentageString(count, total)})")
     }
 }
 

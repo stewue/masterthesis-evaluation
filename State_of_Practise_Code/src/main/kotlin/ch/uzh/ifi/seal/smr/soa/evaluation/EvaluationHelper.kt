@@ -7,7 +7,6 @@ import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
 import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import ch.uzh.ifi.seal.smr.soa.utils.convertToString
-import ch.uzh.ifi.seal.smr.soa.utils.outerClass
 import org.funktionale.option.Option
 import java.util.concurrent.TimeUnit
 
@@ -200,21 +199,21 @@ object EvaluationHelper {
     }
 
     private fun paramCountStateObject(params: List<String>, stateObjects: Map<String, Map<String, MutableList<String>>>): Int {
-        return params.map{ param ->
-            if(stateObjects.containsKey(param)){
+        return params.map { param ->
+            if (stateObjects.containsKey(param)) {
                 1
-            }else{
+            } else {
                 0
             }
         }.sum()
     }
 
     private fun paramCountStateObjectWithoutJmhParam(params: List<String>, stateObjects: Map<String, Map<String, MutableList<String>>>): Int {
-        return params.map{ param ->
+        return params.map { param ->
             val stateObj = stateObjects[param]
-            if(stateObj != null && stateObj.isEmpty()){
+            if (stateObj != null && stateObj.isEmpty()) {
                 1
-            }else{
+            } else {
                 0
             }
         }.sum()
