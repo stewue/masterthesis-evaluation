@@ -70,7 +70,7 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
             if (hashes.isLeft()) {
                 throw RuntimeException("Could not retrieve stateObj: ${hashes.left().get()}")
             }
-            val stateObjects = so.right().get()
+            val stateObjects = stateObjectToSourceCodeFqns(so.right().get())
 
             val cb = be.right().get()
             val cc = ce.right().get()
@@ -99,5 +99,11 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
             log.error("Error during parsing project $project at code version $commitId: ${e.message}")
             outputFile.appendText("$project;$commitId;${e.message}\n")
         }
+    }
+
+    private fun stateObjectToSourceCodeFqns(input: Map<String, Map<String, MutableList<String>>>): Map<String, Map<String, MutableList<String>>>{
+        return input.map { (fqn, values) ->
+            fqn.replace("$", ".") to values
+        }.toMap()
     }
 }
