@@ -2,6 +2,7 @@ package ch.uzh.ifi.seal.smr.soa.result.annotationpresent
 
 import ch.uzh.ifi.seal.smr.soa.result.percentage
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import java.io.File
@@ -22,7 +23,8 @@ fun main() {
     analyze(all, "warmupForks", Result::warmupForks, Result::warmupForksClass, Result::warmupForksMethod)
     analyzeMode(all)
 
-    OpenCSVWriter.write(outputFile, output)
+    val mapping = CustomMappingStrategy(ResAnnotationPresent::class.java)
+    OpenCSVWriter.write(outputFile, output, mapping)
 }
 
 private fun analyze(all: Set<Result>, title: String, property: KMutableProperty1<Result, *>, propertyClass: KMutableProperty1<Result, *>, propertyMethod: KMutableProperty1<Result, *>) {
