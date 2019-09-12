@@ -1,9 +1,11 @@
 package ch.uzh.ifi.seal.smr.soa.evaluation.comments
 
+import ch.uzh.ifi.seal.smr.soa.evaluation.history.HistoryManager
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager
 import org.eclipse.jdt.core.dom.*
+import org.eclipse.jgit.api.Git
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -33,6 +35,12 @@ fun main(args: Array<String>) {
 }
 
 private fun processProject(project: String, sourceDir: File, outputFile: File) {
+    HistoryManager.getRepo(sourceDir).use { repository ->
+        Git(repository).use { git ->
+            HistoryManager.resetToBranch(git)
+        }
+    }
+
     val filePaths = sourceDir.walkTopDown().filter { f ->
         f.isFile && f.extension == "java"
     }.map { it.absolutePath }.toList().toTypedArray()

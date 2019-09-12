@@ -37,12 +37,10 @@ class CommentVisitor(private var compilationUnit: CompilationUnit, private val s
 
             var currentLineNumber = lineNumber
             while (currentLineNumber < source.size) {
-                val nextLine = source[currentLineNumber + 1].replace("//", "").replace("/*", "").trim()
+                val currentLine = source[currentLineNumber].replace("//", "").replace("/*", "").trim()
 
-                if (nextLine.startsWith('@')) {
-                    currentLineNumber++
-                } else {
-                    val name = nextLine.substringBefore('(').substringAfterLast(' ')
+                if (currentLine.contains("public")) {
+                    val name = currentLine.substringBefore('(').substringAfterLast(' ')
 
                     if (name.isNullOrBlank()) {
                         log.error("[$project] cannot extract method name for line $lineNumber in file $sourceFile")
@@ -51,6 +49,8 @@ class CommentVisitor(private var compilationUnit: CompilationUnit, private val s
                     }
 
                     break
+                } else {
+                    currentLineNumber++
                 }
             }
         }
