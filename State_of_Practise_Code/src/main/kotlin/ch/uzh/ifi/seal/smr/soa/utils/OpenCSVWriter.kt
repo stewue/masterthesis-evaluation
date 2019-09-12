@@ -8,16 +8,20 @@ import java.nio.file.Files
 import java.nio.file.Path
 
 object OpenCSVWriter {
-    inline fun <reified T> write(outputFile: Path, input: Iterable<T>, mapping: ColumnPositionMappingStrategy<T> = ColumnPositionMappingStrategy()) {
+    inline fun <reified T> write(outputFile: Path, input: Iterable<T>, mapping: ColumnPositionMappingStrategy<T>? = null) {
         if (!outputFile.toFile().exists()) {
             outputFile.toFile().createNewFile()
         }
 
         Files.newBufferedWriter(outputFile).use { writer ->
-            val beanToCsv = StatefulBeanToCsvBuilder<T>(writer)
+            val builder = StatefulBeanToCsvBuilder<T>(writer)
                     .withQuotechar(CSVWriter.DEFAULT_QUOTE_CHARACTER)
-                    .withMappingStrategy(mapping)
-                    .build()
+
+            if (mapping != null) {
+                builder.withMappingStrategy(mapping)
+            }
+
+            val beanToCsv = builder.build()
 
             beanToCsv.write(input.toList())
         }
