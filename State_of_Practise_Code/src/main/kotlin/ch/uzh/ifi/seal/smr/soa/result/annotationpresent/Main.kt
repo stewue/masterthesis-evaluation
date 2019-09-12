@@ -23,8 +23,7 @@ fun main() {
     analyze(all, "warmupForks", Result::warmupForks, Result::warmupForksClass, Result::warmupForksMethod)
     analyzeMode(all)
 
-    val mapping = CustomMappingStrategy(ResAnnotationPresent::class.java)
-    OpenCSVWriter.write(outputFile, output, mapping)
+    OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResAnnotationPresent::class.java))
 }
 
 private fun analyze(all: Set<Result>, title: String, property: KMutableProperty1<Result, *>, propertyClass: KMutableProperty1<Result, *>, propertyMethod: KMutableProperty1<Result, *>) {
