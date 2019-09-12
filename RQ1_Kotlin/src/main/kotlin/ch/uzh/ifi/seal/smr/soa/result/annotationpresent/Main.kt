@@ -15,6 +15,8 @@ fun main() {
     val outputFile = File("D:\\mp\\out.csv").toPath()
     val all = CsvResultParser(file).getList()
 
+    output.add(ResAnnotationPresent("${all.size} benchmarks are baseline for percentage"))
+
     analyze(all, "warmupIterations", Result::warmupIterations, Result::warmupIterationsClass, Result::warmupIterationsMethod)
     analyze(all, "warmupTime", Result::warmupTime, Result::warmupTimeClass, Result::warmupTimeMethod)
     analyze(all, "measurementIterations", Result::measurementIterations, Result::measurementIterationsClass, Result::measurementIterationsMethod)
@@ -22,6 +24,7 @@ fun main() {
     analyze(all, "forks", Result::forks, Result::forksClass, Result::forksMethod)
     analyze(all, "warmupForks", Result::warmupForks, Result::warmupForksClass, Result::warmupForksMethod)
     analyzeMode(all)
+    analyzeNothingSet(all)
 
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResAnnotationPresent::class.java))
 }
@@ -44,7 +47,6 @@ private fun analyzeMode(all: Set<Result>) {
             name = "mode",
             annotationPresentPercentage = percentage(notDefault.size, all.size)
     ))
-    output.add(ResAnnotationPresent(name = ""))
 
     analyzeSingleMode(notDefault, "throughput", Result::modeIsThroughput, Result::modeIsThroughputClass, Result::modeIsThroughputMethod)
     analyzeSingleMode(notDefault, "average", Result::modeIsAverageTime, Result::modeIsAverageTimeClass, Result::modeIsAverageTimeMethod)
@@ -75,5 +77,20 @@ private fun addValue(title: String, all: Set<Result>, selected: List<Result>, li
             bothAnnotationsUsedDifferentValue = listBothDifferent.size,
             bothAnnotationsUsedDifferentValuePercentage = percentage(listBothDifferent.size, selected.size),
             note = note
+    ))
+}
+
+private fun analyzeNothingSet(all: Set<Result>) {
+    val nothingSet = all.filter {
+        it.warmupIterations == null && it.warmupTime == null && it.measurementIterations == null && it.measurementTime == null &&
+                it.forks == null && it.warmupForks == null && (it.modeIsThroughput == null || it.modeIsThroughput == false)
+                && (it.modeIsAverageTime == null || it.modeIsAverageTime == false) && (it.modeIsSampleTime == null || it.modeIsSampleTime == false)
+                && (it.modeIsSingleShotTime == null || it.modeIsSingleShotTime == false)
+    }
+
+    output.add(ResAnnotationPresent(
+            name = "nothingSet",
+            annotationPresentPercentage = percentage(nothingSet.size, all.size),
+            note = "annotationPresentPercentage = percentage of nothing set"
     ))
 }
