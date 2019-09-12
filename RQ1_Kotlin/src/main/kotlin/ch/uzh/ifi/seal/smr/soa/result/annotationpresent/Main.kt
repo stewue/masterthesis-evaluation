@@ -1,10 +1,7 @@
 package ch.uzh.ifi.seal.smr.soa.result.annotationpresent
 
 import ch.uzh.ifi.seal.smr.soa.result.percentage
-import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
-import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
-import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
-import ch.uzh.ifi.seal.smr.soa.utils.Result
+import ch.uzh.ifi.seal.smr.soa.utils.*
 import java.io.File
 import kotlin.reflect.KMutableProperty1
 
@@ -81,12 +78,7 @@ private fun addValue(title: String, all: Set<Result>, selected: List<Result>, li
 }
 
 private fun analyzeNothingSet(all: Set<Result>) {
-    val nothingSet = all.filter {
-        it.warmupIterations == null && it.warmupTime == null && it.measurementIterations == null && it.measurementTime == null &&
-                it.forks == null && it.warmupForks == null && (it.modeIsThroughput == null || it.modeIsThroughput == false)
-                && (it.modeIsAverageTime == null || it.modeIsAverageTime == false) && (it.modeIsSampleTime == null || it.modeIsSampleTime == false)
-                && (it.modeIsSingleShotTime == null || it.modeIsSingleShotTime == false)
-    }
+    val nothingSet = all.nothingSet()
 
     output.add(ResAnnotationPresent(
             name = "nothingSet",
