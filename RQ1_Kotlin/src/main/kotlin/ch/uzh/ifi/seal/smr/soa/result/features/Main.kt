@@ -35,6 +35,7 @@ fun main() {
     output.add(ResKeyValue("Benchmark has parametrization", "$hasParametrization (${percentageString(hasParametrization, all.size)})"))
 
     params(all)
+    avgBenchsAndInnerClassBenchs(all)
 
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResKeyValue::class.java))
 }
@@ -107,4 +108,39 @@ private fun params(all: Set<Result>) {
     val totalArguments = all.map { it.paramCount }.sum()
     val unresolved = totalArguments - numberOfStateObjectsWithJmhParams - numberOfStateObjectsWithoutJmhParams - countBlackhole - countControl - countBenchmarkParams - countIterationParams - countThreadParams
     output.add(ResKeyValue("$totalArguments method arguments are used", "$unresolved cannot be resolved ${percentageString(unresolved, totalArguments)}"))
+}
+
+private fun avgBenchsAndInnerClassBenchs(all: Set<Result>){
+    avgNumberOfBenchmarksPerClass(all, 1)
+    avgNumberOfBenchmarksPerClass(all, 5)
+    avgNumberOfBenchmarksPerClass(all, 10)
+    avgNumberOfBenchmarksPerClass(all, 25)
+    avgNumberOfBenchmarksPerClass(all, 50)
+    avgNumberOfBenchmarksPerClass(all, 100)
+    avgNumberOfBenchmarksPerClass(all, 250)
+    avgNumberOfBenchmarksPerClass(all, 500)
+    avgNumberOfBenchmarksPerFile(all, 1)
+    avgNumberOfBenchmarksPerFile(all, 5)
+    avgNumberOfBenchmarksPerFile(all, 10)
+    avgNumberOfBenchmarksPerFile(all, 25)
+    avgNumberOfBenchmarksPerFile(all, 50)
+    avgNumberOfBenchmarksPerFile(all, 100)
+    avgNumberOfBenchmarksPerFile(all, 250)
+    avgNumberOfBenchmarksPerFile(all, 500)
+    val innerClassBenchmark = all.filter { it.className.contains("$") }.size
+    output.add(ResKeyValue("benchmark is defined in inner class", "$innerClassBenchmark (${percentageString(innerClassBenchmark, all.size)})"))
+}
+
+private fun avgNumberOfBenchmarksPerClass(all: Set<Result>, minBenchs: Int ){
+    val filtered =  all.groupBy { it.project }.filter{ it.value.size >= minBenchs}.values.flatten()
+    val numberOfBenchmarks = filtered.size
+    val avgNumberOfBenchmarksPerClass = numberOfBenchmarks / filtered.groupBy { it.className }.count().toDouble()
+    output.add(ResKeyValue("average number of benchmarks per class (min=$minBenchs)", "$avgNumberOfBenchmarksPerClass"))
+}
+
+private fun avgNumberOfBenchmarksPerFile(all: Set<Result>, minBenchs: Int ){
+    val filtered =  all.groupBy { it.project }.filter{ it.value.size >= minBenchs}.values.flatten()
+    val numberOfBenchmarks = filtered.size
+    val avgNumberOfBenchmarksPerFile= numberOfBenchmarks / filtered.groupBy { it.className.substringBefore("$") }.count().toDouble()
+    output.add(ResKeyValue("average number of benchmarks per file (min=$minBenchs)", "$avgNumberOfBenchmarksPerFile"))
 }
