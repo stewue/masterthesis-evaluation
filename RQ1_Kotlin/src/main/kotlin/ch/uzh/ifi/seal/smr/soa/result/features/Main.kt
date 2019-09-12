@@ -11,7 +11,7 @@ import kotlin.reflect.KMutableProperty1
 private val output = mutableListOf<ResKeyValue>()
 
 fun main() {
-    val file = File("D:\\mp\\current-merged.csv")
+    val file = File("D:\\mp\\current-merged-isMain.csv")
     val outputFile = File("D:\\mp\\out.csv").toPath()
     val all = CsvResultParser(file).getList()
 
