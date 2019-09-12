@@ -1,3 +1,4 @@
+"name","annotationPresentPercentage","onlyClassAnnotationUsed","onlyClassAnnotationUsedPercentage","onlyMethodAnnotationUsed","onlyMethodAnnotationUsedPercentage","bothAnnotationsUsedSameValue","bothAnnotationsUsedSameValuePercentage","bothAnnotationsUsedDifferentValue","bothAnnotationsUsedDifferentValuePercentage","note"
 "warmupIterations","44.83","5498","91.6","502","8.36","0","0.0","2","0.03",""
 "warmupTime","21.51","2652","92.08","228","7.92","0","0.0","0","0.0",""
 "measurementIterations","44.54","5444","91.31","510","8.55","1","0.02","7","0.12",""
