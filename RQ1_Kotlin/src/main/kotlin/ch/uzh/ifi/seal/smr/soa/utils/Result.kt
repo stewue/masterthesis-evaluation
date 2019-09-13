@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.smr.soa.utils
 
 import ch.uzh.ifi.seal.bencher.JMHVersion
-import ch.uzh.ifi.seal.smr.soa.evaluation.Status
+import ch.uzh.ifi.seal.smr.soa.analysis.Status
 import com.opencsv.bean.CsvBindByPosition
 
 class Result {

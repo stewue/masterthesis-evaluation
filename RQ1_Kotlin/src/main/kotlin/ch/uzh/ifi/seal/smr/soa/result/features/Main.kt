@@ -46,18 +46,6 @@ private fun returnCountMap(all: Set<Result>, property: KMutableProperty1<Result,
     }).toMap()
 }
 
-private fun count(all: Set<Result>, title: String, property: KMutableProperty1<Result, *>) {
-    val grouped = all.groupingBy(property).eachCount().toList().sortedWith(compareBy {
-        it.first as Comparable<*>
-    })
-
-    println("~~~$title~~~")
-    grouped.forEach { (value, count) ->
-        println("$value -> $count (${percentageString(count, all.size)})")
-    }
-    println("-----")
-}
-
 private fun hasProperty(all: Set<Result>, title: String, property: KMutableProperty1<Result, *>) {
     val list = all.filter { property.get(it) == true }
 

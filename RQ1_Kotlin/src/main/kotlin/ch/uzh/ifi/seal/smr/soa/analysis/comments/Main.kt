@@ -1,6 +1,6 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation.comments
+package ch.uzh.ifi.seal.smr.soa.analysis.comments
 
-import ch.uzh.ifi.seal.smr.soa.evaluation.history.HistoryManager
+import ch.uzh.ifi.seal.smr.soa.analysis.history.HistoryManager
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.apache.logging.log4j.LogManager

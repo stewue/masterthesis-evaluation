@@ -1,6 +1,6 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation
+package ch.uzh.ifi.seal.smr.soa.analysis
 
-import ch.uzh.ifi.seal.smr.soa.evaluation.history.HistoryManager
+import ch.uzh.ifi.seal.smr.soa.analysis.history.HistoryManager
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
 import org.eclipse.jgit.api.Git
 import java.io.File

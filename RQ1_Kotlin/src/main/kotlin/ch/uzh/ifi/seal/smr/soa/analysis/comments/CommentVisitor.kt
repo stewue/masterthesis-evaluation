@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation.comments
+package ch.uzh.ifi.seal.smr.soa.analysis.comments
 
 import org.apache.logging.log4j.LogManager
 import org.eclipse.jdt.core.dom.*

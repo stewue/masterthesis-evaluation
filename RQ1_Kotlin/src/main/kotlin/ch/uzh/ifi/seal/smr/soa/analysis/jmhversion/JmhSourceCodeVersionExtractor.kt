@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation.jmhversion
+package ch.uzh.ifi.seal.smr.soa.analysis.jmhversion
 
 import ch.uzh.ifi.seal.bencher.JMHVersion
 import java.io.File

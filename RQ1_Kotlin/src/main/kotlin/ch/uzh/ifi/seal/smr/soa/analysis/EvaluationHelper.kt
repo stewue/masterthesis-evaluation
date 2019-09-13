@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation
+package ch.uzh.ifi.seal.smr.soa.analysis
 
 import ch.uzh.ifi.seal.bencher.Benchmark
 import ch.uzh.ifi.seal.bencher.JMHVersion

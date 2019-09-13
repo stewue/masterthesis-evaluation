@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation.history
+package ch.uzh.ifi.seal.smr.soa.analysis.history
 
 import org.eclipse.jgit.api.Git
 import org.eclipse.jgit.api.ResetCommand

@@ -1,13 +1,13 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation
+package ch.uzh.ifi.seal.smr.soa.analysis
 
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.JdtBenchFinder
 import ch.uzh.ifi.seal.bencher.execution.ConfigBasedConfigurator
 import ch.uzh.ifi.seal.bencher.execution.unsetExecConfig
-import ch.uzh.ifi.seal.smr.soa.evaluation.EvaluationHelper.convertResult
-import ch.uzh.ifi.seal.smr.soa.evaluation.history.HistoryManager
-import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaSourceVersionExtractor
-import ch.uzh.ifi.seal.smr.soa.evaluation.java.JavaTargetVersionExtractor
-import ch.uzh.ifi.seal.smr.soa.evaluation.jmhversion.JmhSourceCodeVersionExtractor
+import ch.uzh.ifi.seal.smr.soa.analysis.EvaluationHelper.convertResult
+import ch.uzh.ifi.seal.smr.soa.analysis.history.HistoryManager
+import ch.uzh.ifi.seal.smr.soa.analysis.java.JavaSourceVersionExtractor
+import ch.uzh.ifi.seal.smr.soa.analysis.java.JavaTargetVersionExtractor
+import ch.uzh.ifi.seal.smr.soa.analysis.jmhversion.JmhSourceCodeVersionExtractor
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import ch.uzh.ifi.seal.smr.soa.utils.Result
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName

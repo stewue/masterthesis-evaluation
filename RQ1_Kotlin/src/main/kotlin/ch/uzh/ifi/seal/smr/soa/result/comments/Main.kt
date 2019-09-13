@@ -1,11 +1,16 @@
 package ch.uzh.ifi.seal.smr.soa.result.comments
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
+import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import java.io.File
+
+private val output = mutableListOf<ResComment>()
 
 fun main() {
     val comments = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\comments\\current-commit-comments.csv")
     val history = File("D:\\mp\\history-all.csv")
+    val outputFile = File("D:\\mp\\out.csv").toPath()
 
     val allBenchmarks = CsvResultParser(history).getList()
 
@@ -14,6 +19,8 @@ fun main() {
         val find = allBenchmarks.filter { it.project == project && it.className == className && it.benchmarkName == benchmarkName }
 
         val found = find.isNotEmpty()
-        println("$found;$project;$className;$benchmarkName")
+        output.add(ResComment(found, project, className, benchmarkName))
     }
+
+    OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResComment::class.java))
 }

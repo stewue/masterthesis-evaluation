@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation
+package ch.uzh.ifi.seal.smr.soa.analysis
 
 enum class Status {
     BOTH_SET,

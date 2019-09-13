@@ -98,3 +98,5 @@ val jmhDate = mapOf(
         JMHVersion(0, 2) to 1385856000,
         JMHVersion(0, 1) to 1383264000
 )
+
+const val yearInSeconds = 31536000.0

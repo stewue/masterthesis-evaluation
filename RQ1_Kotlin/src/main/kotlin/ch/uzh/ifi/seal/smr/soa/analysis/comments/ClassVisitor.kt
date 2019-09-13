@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation.comments
+package ch.uzh.ifi.seal.smr.soa.analysis.comments
 
 import ch.uzh.ifi.seal.bencher.analysis.finder.jdt.FullyQualifiedNameHelper
 import org.eclipse.jdt.core.dom.ASTVisitor

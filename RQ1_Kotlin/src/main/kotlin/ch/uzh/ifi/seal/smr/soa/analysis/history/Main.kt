@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation.history
+package ch.uzh.ifi.seal.smr.soa.analysis.history
 
 import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
 import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName

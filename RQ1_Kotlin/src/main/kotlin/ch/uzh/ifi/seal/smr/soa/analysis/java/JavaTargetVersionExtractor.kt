@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.evaluation.java
+package ch.uzh.ifi.seal.smr.soa.analysis.java
 
 import java.io.File
 
