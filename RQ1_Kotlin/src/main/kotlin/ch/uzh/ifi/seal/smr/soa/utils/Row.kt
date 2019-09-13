@@ -60,5 +60,11 @@ class Row {
     @CsvBindByPosition(position = 17)
     var javaSource: String? = null
 
+    @CsvBindByPosition(position = 18)
+    var firstBenchmarkFound: Int? = null
+
+    @CsvBindByPosition(position = 19)
+    var lastCommit: Int? = null
+
     constructor()
 }
