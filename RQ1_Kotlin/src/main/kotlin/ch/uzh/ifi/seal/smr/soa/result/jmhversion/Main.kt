@@ -14,13 +14,11 @@ fun main() {
 
 private fun jmhVersion(items: List<Row>) {
     val list = items
+            .filter{
+                it.mainRepo == true
+            }
             .map {
-                val key = convertJmhVersionWithoutPatch(it.jmhVersion)
-                if (key == null) {
-                    null
-                } else {
-                    key
-                }
+                convertJmhVersionWithoutPatch(it.jmhVersion)
             }
             .filterNotNull()
             .groupingBy { it }
