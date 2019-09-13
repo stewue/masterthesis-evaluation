@@ -10,16 +10,17 @@ class ResJmhVersionChange {
     var benchmarks: Int = 0
 
     @CsvBindByPosition(position = 2)
-    var time: Double = 0.0
+    var numberOfChanges: Int = 0
 
     @CsvBindByPosition(position = 3)
-    var useJmhSince: Double = 0.0
+    var averageChangeTime: Double = 0.0
 
     constructor()
-    constructor(project: String, benchmarks: Int, time: Double, useJmhSince: Double) {
+    constructor(project: String, benchmarks: Int, numberOfChanges: Int, averageChangeTime: Double) {
         this.project = project
         this.benchmarks = benchmarks
-        this.time = time
-        this.useJmhSince = useJmhSince
+        this.numberOfChanges = numberOfChanges
+        this.averageChangeTime = averageChangeTime
     }
+
 }

@@ -6,6 +6,7 @@ import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import java.io.File
+import kotlin.math.round
 
 private val output = mutableListOf<ResJmhVersionChange>()
 
@@ -33,8 +34,20 @@ fun main() {
     println("How often was jJmhVersion changed if project uses jmh over a year (add jmh as new dependency does not count)")
     println(averageChanged(minUsed(final, yearInSeconds.toInt())))
 
-    //output.add(ResJmhVersionChange(item.project, count, timeDiff, useJmhSince))
+    var sum = 0.0
+    var counter = 0
+    final.forEach {(project, triple) ->
+        if(triple.first > 0) {
+            val averageChangeTime = round(triple.third / (triple.first + 1).toDouble() / yearInSeconds * 100) / 100
+            output.add(ResJmhVersionChange(project, triple.second, triple.first, averageChangeTime))
+            sum += averageChangeTime
+            counter++
+        }
+    }
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResJmhVersionChange::class.java))
+
+    println("Average time between two changes in years")
+    println(sum / counter)
 }
 
 fun minUsed(list: List<Pair<String, Triple<Int, Int, Int>>>, minInSeconds: Int): List<Pair<String, Triple<Int, Int, Int>>> {
