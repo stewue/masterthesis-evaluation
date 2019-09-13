@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.soa.datapreparation.firstbenchmark
+package ch.uzh.ifi.seal.smr.soa.datapreparation.firstbenchmarkfound
 
 import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
@@ -19,8 +19,15 @@ fun main() {
             }
             .toMap()
 
+    val lastCommit = items.groupBy { it.project }
+            .map { (project, list) ->
+                project to list.map { it.commitTime!! }.max()!!
+            }
+            .toMap()
+
     projects.forEach {
         it.firstBenchmarkFound = firstFound[it.project]
+        it.lastCommit = lastCommit[it.project]
     }
 
     OpenCSVWriter.write(outFile, projects)
