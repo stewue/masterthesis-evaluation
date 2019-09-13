@@ -1,77 +1,26 @@
 package ch.uzh.ifi.seal.smr.soa.analysis.comments
 
-import ch.uzh.ifi.seal.smr.soa.analysis.history.HistoryManager
-import ch.uzh.ifi.seal.smr.soa.utils.disableSystemErr
-import ch.uzh.ifi.seal.smr.soa.utils.toFileSystemName
-import org.apache.logging.log4j.LogManager
-import org.eclipse.jdt.core.dom.*
-import org.eclipse.jgit.api.Git
+import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
+import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import java.io.File
-import kotlin.system.exitProcess
 
-private val log = LogManager.getLogger()
+private val output = mutableListOf<ResComment>()
 
-fun main(args: Array<String>) {
-    disableSystemErr()
+fun main() {
+    val comments = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\comments\\current-commit-comments.csv")
+    val history = File("D:\\mp\\history-all.csv")
+    val outputFile = File("D:\\mp\\out.csv").toPath()
 
-    if (args.size != 3) {
-        log.error("Needed arguments: inputFile inputDir outputFile")
-        exitProcess(-1)
+    val allBenchmarks = CsvResultParser(history).getList()
+
+    comments.forEachLine { comment ->
+        val (project, _, className, benchmarkName) = comment.split(";")
+        val find = allBenchmarks.filter { it.project == project && it.className == className && it.benchmarkName == benchmarkName }
+
+        val found = find.isNotEmpty()
+        output.add(ResComment(found, project, className, benchmarkName))
     }
 
-    val inputFile = File(args[0])
-    val inputDir = args[1]
-    val outputFile = File(args[2])
-
-    inputFile.forEachLine { project ->
-        val dir = File(inputDir + project.toFileSystemName)
-        if (dir.exists()) {
-            log.info("[$project] evaluation started")
-            processProject(project, dir, outputFile)
-        } else {
-            log.warn("[$project] repo does not exist -> evaluation skipped")
-        }
-    }
-}
-
-private fun processProject(project: String, sourceDir: File, outputFile: File) {
-    HistoryManager.getRepo(sourceDir).use { repository ->
-        Git(repository).use { git ->
-            HistoryManager.resetToBranch(git)
-        }
-    }
-
-    val filePaths = sourceDir.walkTopDown().filter { f ->
-        f.isFile && f.extension == "java"
-    }.map { it.absolutePath }.toList().toTypedArray()
-
-    parse(project, sourceDir, filePaths, outputFile)
-}
-
-private fun parse(project: String, sourceDirectory: File, filePaths: Array<String>, outputFile: File) {
-    val parser = ASTParser.newParser(AST.JLS11)
-    parser.setKind(ASTParser.K_COMPILATION_UNIT)
-    parser.setEnvironment(arrayOf<String>(), arrayOf(sourceDirectory.absolutePath), arrayOf("UTF-8"), true)
-    parser.setResolveBindings(true)
-    parser.setBindingsRecovery(true)
-    parser.createASTs(filePaths, null, arrayOf(), object : FileASTRequestor() {
-        override fun acceptAST(sourceFilePath: String, javaUnit: CompilationUnit) {
-            val comments = javaUnit.commentList as List<ASTNode>
-            val text = File(sourceFilePath).readLines()
-            val className = sourceFilePath.substringAfter(sourceDirectory.absolutePath).substring(1)
-            val cv = CommentVisitor(javaUnit, text, className, project)
-
-            comments.forEach {
-                it.accept(cv)
-            }
-
-            val classVisitor = ClassVisitor()
-            javaUnit.accept(classVisitor)
-            val fqnClass = classVisitor.fullyQualifiedClassName
-
-            cv.methodNames.forEach {
-                outputFile.appendText("$project;$className;$fqnClass;$it\n")
-            }
-        }
-    }, null)
+    OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResComment::class.java))
 }
