@@ -66,6 +66,11 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
                 throw RuntimeException("Could not retrieve hashes: ${hashes.left().get()}")
             }
 
+            val allNumberOfLines = finder.methodNumberOfLines()
+            if (allNumberOfLines.isLeft()) {
+                throw RuntimeException("Could not retrieve number of lines: ${allNumberOfLines.left().get()}")
+            }
+
             val so = finder.stateObj()
             if (hashes.isLeft()) {
                 throw RuntimeException("Could not retrieve stateObj: ${hashes.left().get()}")
@@ -88,9 +93,10 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
                 val configBench = cb.getValue(bench)
                 val configClass = cc.toList().filter { bench.clazz == it.first.name }.first().second
                 val hash = hashes.right().get().getValue(bench)
+                val numberOfLines = allNumberOfLines.right().get().getValue(bench)
                 val jmhParamSource = finder.jmhParamSource(bench)
 
-                val item = convertResult(project, commitId, commitTime, jmhVersion, javaTarget, javaSource, bench, config, configBench, configClass, jmhParamSource, hash, stateObjects)
+                val item = convertResult(project, commitId, commitTime, jmhVersion, javaTarget, javaSource, bench, config, configBench, configClass, jmhParamSource, hash, numberOfLines, stateObjects)
                 results.add(item)
             }
 

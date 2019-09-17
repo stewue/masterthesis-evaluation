@@ -19,7 +19,6 @@ class CommentVisitor(private var compilationUnit: CompilationUnit, private val s
     }
 
     override fun visit(node: BlockComment): Boolean {
-        node.parent
         val startLineNumber = compilationUnit.getLineNumber(node.startPosition) - 1
         val endLineNumber = compilationUnit.getLineNumber(node.startPosition + node.length) - 1
 

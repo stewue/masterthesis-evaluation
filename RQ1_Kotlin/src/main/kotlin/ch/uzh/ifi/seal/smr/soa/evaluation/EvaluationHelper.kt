@@ -11,7 +11,7 @@ import org.funktionale.option.Option
 import java.util.concurrent.TimeUnit
 
 object EvaluationHelper {
-    fun convertResult(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, bench: Benchmark, ec: ExecutionConfiguration, b: ExecutionConfiguration, c: ExecutionConfiguration, jmhParamSource: Map<String, String>, hash: ByteArray, stateObjects: Map<String, Map<String, MutableList<String>>>): Result {
+    fun convertResult(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, bench: Benchmark, ec: ExecutionConfiguration, b: ExecutionConfiguration, c: ExecutionConfiguration, jmhParamSource: Map<String, String>, hash: ByteArray, numberOfLines: Int, stateObjects: Map<String, Map<String, MutableList<String>>>): Result {
         return Result(
                 project = project,
                 commitId = commitId,
@@ -74,7 +74,8 @@ object EvaluationHelper {
                 jmhParamCountArgument = jmhParamCountArgument(bench.params, jmhParamSource),
                 returnType = returnType(bench.returnType),
                 partOfGroup = bench.group != null,
-                methodHash = hash.convertToString
+                methodHash = hash.convertToString,
+                numberOfLines = numberOfLines
         )
     }
 
