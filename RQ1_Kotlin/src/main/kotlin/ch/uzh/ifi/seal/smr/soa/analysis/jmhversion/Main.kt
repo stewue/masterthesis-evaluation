@@ -15,7 +15,7 @@ fun main() {
     val items = CsvProjectParser(file).getList()
 
     val list = items
-            .filter{
+            .filter {
                 it.mainRepo == true
             }
             .map {

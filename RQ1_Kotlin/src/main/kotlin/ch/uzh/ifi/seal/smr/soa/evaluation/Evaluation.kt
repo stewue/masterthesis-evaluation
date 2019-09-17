@@ -107,7 +107,7 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
         }
     }
 
-    private fun stateObjectToSourceCodeFqns(input: Map<String, Map<String, MutableList<String>>>): Map<String, Map<String, MutableList<String>>>{
+    private fun stateObjectToSourceCodeFqns(input: Map<String, Map<String, MutableList<String>>>): Map<String, Map<String, MutableList<String>>> {
         return input.map { (fqn, values) ->
             fqn.replace("$", ".") to values
         }.toMap()

@@ -1,8 +1,8 @@
 package ch.uzh.ifi.seal.smr.soa.analysis.isdefaultvalue
 
-import ch.uzh.ifi.seal.bencher.JMHVersion
 import ch.uzh.ifi.seal.bencher.execution.ExecutionConfiguration
 import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
+import ch.uzh.ifi.seal.smr.soa.analysis.jmh120
 import ch.uzh.ifi.seal.smr.soa.analysis.percentage
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
 import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
@@ -76,5 +76,3 @@ private fun analyzeMode(all: Set<Result>) {
             isDefaultValuePercentage = percentage(onlyThrptUsed.size, someModeSet.size)
     ))
 }
-
-private val jmh120 = JMHVersion(major = 1, minor = 20)

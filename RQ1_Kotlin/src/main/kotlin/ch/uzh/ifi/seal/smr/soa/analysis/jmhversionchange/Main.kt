@@ -36,8 +36,8 @@ fun main() {
 
     var sum = 0.0
     var counter = 0
-    final.forEach {(project, triple) ->
-        if(triple.first > 0) {
+    final.forEach { (project, triple) ->
+        if (triple.first > 0) {
             val averageChangeTime = round(triple.third / (triple.first + 1).toDouble() / yearInSeconds * 100) / 100
             output.add(ResJmhVersionChange(project, triple.second, triple.first, averageChangeTime))
             sum += averageChangeTime

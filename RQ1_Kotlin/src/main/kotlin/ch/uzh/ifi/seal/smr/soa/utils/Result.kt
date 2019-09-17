@@ -1,6 +1,8 @@
 package ch.uzh.ifi.seal.smr.soa.utils
 
 import ch.uzh.ifi.seal.bencher.JMHVersion
+import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
+import ch.uzh.ifi.seal.smr.soa.analysis.jmh120
 import ch.uzh.ifi.seal.smr.soa.evaluation.Status
 import com.opencsv.bean.CsvBindByPosition
 
@@ -191,8 +193,12 @@ class Result {
     @CsvBindByPosition(position = 61)
     lateinit var methodHash: String
 
+    @CsvBindByPosition(position = 62)
+    var numberOfLines: Int? = null
+
+
     constructor()
-    constructor(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, className: String, benchmarkName: String, warmupIterations: Int?, warmupIterationsClass: Int?, warmupIterationsMethod: Int?, warmupTime: Long?, warmupTimeClass: Long?, warmupTimeMethod: Long?, warmupTimeStatus: Status, warmupTimeStatusClass: Status, warmupTimeStatusMethod: Status, measurementIterations: Int?, measurementIterationsClass: Int?, measurementIterationsMethod: Int?, measurementTime: Long?, measurementTimeClass: Long?, measurementTimeMethod: Long?, measurementTimeStatus: Status, measurementTimeStatusClass: Status, measurementTimeStatusMethod: Status, forks: Int?, forksClass: Int?, forksMethod: Int?, warmupForks: Int?, warmupForksClass: Int?, warmupForksMethod: Int?, modeIsThroughput: Boolean?, modeIsThroughputClass: Boolean?, modeIsThroughputMethod: Boolean?, modeIsAverageTime: Boolean?, modeIsAverageTimeClass: Boolean?, modeIsAverageTimeMethod: Boolean?, modeIsSampleTime: Boolean?, modeIsSampleTimeClass: Boolean?, modeIsSampleTimeMethod: Boolean?, modeIsSingleShotTime: Boolean?, modeIsSingleShotTimeClass: Boolean?, modeIsSingleShotTimeMethod: Boolean?, parametrizationCombinations: Int, paramString: String?, paramCount: Int, paramCountStateObject: Int, paramCountStateObjectWithoutJmhParam: Int, hasBlackhole: Boolean, hasControl: Boolean, hasBenchmarkParams: Boolean, hasIterationParams: Boolean, hasThreadParams: Boolean, jmhParamString: String?, jmhParamPairs: String?, jmhParamCount: Int, jmhParamCountOwnClass: Int, jmhParamCountArgument: Int, returnType: String?, partOfGroup: Boolean, methodHash: String) {
+    constructor(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, className: String, benchmarkName: String, warmupIterations: Int?, warmupIterationsClass: Int?, warmupIterationsMethod: Int?, warmupTime: Long?, warmupTimeClass: Long?, warmupTimeMethod: Long?, warmupTimeStatus: Status, warmupTimeStatusClass: Status, warmupTimeStatusMethod: Status, measurementIterations: Int?, measurementIterationsClass: Int?, measurementIterationsMethod: Int?, measurementTime: Long?, measurementTimeClass: Long?, measurementTimeMethod: Long?, measurementTimeStatus: Status, measurementTimeStatusClass: Status, measurementTimeStatusMethod: Status, forks: Int?, forksClass: Int?, forksMethod: Int?, warmupForks: Int?, warmupForksClass: Int?, warmupForksMethod: Int?, modeIsThroughput: Boolean?, modeIsThroughputClass: Boolean?, modeIsThroughputMethod: Boolean?, modeIsAverageTime: Boolean?, modeIsAverageTimeClass: Boolean?, modeIsAverageTimeMethod: Boolean?, modeIsSampleTime: Boolean?, modeIsSampleTimeClass: Boolean?, modeIsSampleTimeMethod: Boolean?, modeIsSingleShotTime: Boolean?, modeIsSingleShotTimeClass: Boolean?, modeIsSingleShotTimeMethod: Boolean?, parametrizationCombinations: Int, paramString: String?, paramCount: Int, paramCountStateObject: Int, paramCountStateObjectWithoutJmhParam: Int, hasBlackhole: Boolean, hasControl: Boolean, hasBenchmarkParams: Boolean, hasIterationParams: Boolean, hasThreadParams: Boolean, jmhParamString: String?, jmhParamPairs: String?, jmhParamCount: Int, jmhParamCountOwnClass: Int, jmhParamCountArgument: Int, returnType: String?, partOfGroup: Boolean, methodHash: String, numberOfLines: Int) {
         this.project = project
         this.commitId = commitId
         this.commitTime = commitTime
@@ -255,6 +261,7 @@ class Result {
         this.returnType = returnType
         this.partOfGroup = partOfGroup
         this.methodHash = methodHash
+        this.numberOfLines = numberOfLines
     }
 
     fun sameConfig(o: Result): Boolean {
@@ -268,5 +275,74 @@ class Result {
                 modeIsAverageTime == o.modeIsAverageTime &&
                 modeIsSampleTime == o.modeIsSampleTime &&
                 modeIsSingleShotTime == o.modeIsSingleShotTime
+    }
+
+    fun calcExecutionTime(): Double {
+        return calcWarmupTime() + calcMeasurementTime()
+    }
+
+    fun calcWarmupTime(): Double {
+        val a = forksOrDefault()
+        val b = warmupIterationsOrDefault()
+        val c = warmupTimeOrDefault()
+        val warmupTimeForMeasurementForks = forksOrDefault() * warmupIterationsOrDefault() * warmupTimeOrDefault()
+        val timeForMeasurementForks = warmupForksOrDefault() * (warmupIterationsOrDefault() * warmupTimeOrDefault() + measurementIterationsOrDefault() * measurementTimeOrDefault())
+        return warmupTimeForMeasurementForks + timeForMeasurementForks
+    }
+
+    fun calcMeasurementTime(): Double {
+        return forksOrDefault() * measurementIterationsOrDefault() * measurementTimeOrDefault()
+    }
+
+    private fun warmupIterationsOrDefault() = if (warmupIterations == null) {
+        defaultExecConfig(jmhVersion!!).warmupIterations
+    } else {
+        warmupIterations!!
+    }
+
+    private fun warmupTimeOrDefault(): Double = if (warmupTime == null) {
+        if (jmhVersion!!.compareTo(jmh120) == 1) {
+            10.0
+        } else {
+            1.0
+        }
+    } else {
+        warmupTime!! / 1000000000.0
+    }
+
+    private fun measurementIterationsOrDefault() = if (measurementIterations == null) {
+        defaultExecConfig(jmhVersion!!).measurementIterations
+    } else {
+        measurementIterations!!
+    }
+
+    private fun measurementTimeOrDefault(): Double = if (measurementTime == null) {
+        if (jmhVersion!!.compareTo(jmh120) == 1) {
+            10.0
+        } else {
+            1.0
+        }
+    } else {
+        measurementTime!! / 1000000000.0
+    }
+
+    private fun forksOrDefault() = if (forks == null) {
+        defaultExecConfig(jmhVersion!!).forks
+    } else {
+        if (forks!! == 0) {
+            1
+        } else {
+            forks!!
+        }
+    }
+
+    private fun warmupForksOrDefault() = if (warmupForks == null) {
+        defaultExecConfig(jmhVersion!!).warmupForks
+    } else {
+        warmupForks!!
+    }
+
+    fun onlySingleShot(): Boolean {
+        return modeIsSingleShotTime == true && modeIsThroughput != true && modeIsAverageTime != true && modeIsSampleTime != true
     }
 }

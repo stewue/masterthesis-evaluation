@@ -67,4 +67,24 @@ class Row {
     var lastCommit: Int? = null
 
     constructor()
+
+    fun getGroup(): Group {
+        return if (numberOfBenchmarks == null || numberOfContributors == null || stars == null || numberOfCommits == null) {
+            throw IllegalArgumentException("numberOfBenchmarks, numberOfContributors, stars and numberOfCommits cannot be null")
+        } else {
+            if (numberOfBenchmarks!! >= 25) {
+                if (numberOfContributors!! >= 5 && stars!! >= 50 && numberOfCommits!! >= 100) {
+                    Group.POPULAR_MANY
+                } else {
+                    Group.POPULAR_FEW
+                }
+            } else {
+                if (numberOfContributors!! >= 5 && stars!! >= 50 && numberOfCommits!! >= 100) {
+                    Group.NOT_POPULAR_MANY
+                } else {
+                    Group.NOT_POPULAR_FEW
+                }
+            }
+        }
+    }
 }

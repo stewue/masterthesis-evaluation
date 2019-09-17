@@ -100,3 +100,5 @@ val jmhDate = mapOf(
 )
 
 const val yearInSeconds = 31536000.0
+
+val jmh120 = JMHVersion(major = 1, minor = 20)
