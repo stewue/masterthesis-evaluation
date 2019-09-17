@@ -14,6 +14,8 @@ class CustomColumnPositionMappingStrategy<T> : ColumnPositionMappingStrategy<T>(
             return ConverterJmhVersion()
         } else if (elementType == Status::class.java) {
             return ConvertStatus()
+        } else if (elementType == Group::class.java) {
+            return ConvertGroup()
         } else {
             return super.determineConverter(field, elementType, locale, customConverter)
         }
@@ -41,6 +43,18 @@ private class ConvertStatus : AbstractCsvConverter() {
             "BOTH_UNSET" -> Status.BOTH_UNSET
             "TIME_SET" -> Status.TIME_SET
             "UNIT_SET" -> Status.UNIT_SET
+            else -> null
+        }
+    }
+}
+
+private class ConvertGroup : AbstractCsvConverter() {
+    override fun convertToRead(value: String?): Any? {
+        return when (value) {
+            "POPULAR_FEW" -> Group.POPULAR_FEW
+            "POPULAR_MANY" -> Group.POPULAR_MANY
+            "NOT_POPULAR_FEW" -> Group.NOT_POPULAR_FEW
+            "NOT_POPULAR_MANY" -> Group.NOT_POPULAR_MANY
             else -> null
         }
     }

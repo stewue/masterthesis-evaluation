@@ -17,3 +17,10 @@ fun Result.onlyModeChanged(): Boolean {
     return warmupIterations == null && warmupTime == null && measurementIterations == null && measurementTime == null &&
             forks == null && warmupForks == null
 }
+
+
+fun Collection<Double>.median(): Double {
+    return sorted().let {
+        (it[it.size / 2] + it[(it.size - 1) / 2]) / 2
+    }
+}
