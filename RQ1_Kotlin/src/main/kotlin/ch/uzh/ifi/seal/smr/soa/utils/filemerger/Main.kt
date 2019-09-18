@@ -6,15 +6,15 @@ import java.nio.file.StandardOpenOption.READ
 import java.nio.file.StandardOpenOption.WRITE
 
 fun main() {
-    /*val inputDir = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\projects\\current")
+    val inputDir = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\results")
     val mergedFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\out.csv")
 
-    oneOutputFile(inputDir, mergedFile)*/
-
+    oneOutputFile(inputDir, mergedFile)
+/*
     val inputDir = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\project-history\\results-1")
     val outputDir = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\project-history\\out")
 
-    mergePerProject(inputDir, outputDir)
+    mergePerProject(inputDir, outputDir)*/
 }
 
 private fun oneOutputFile(inputDir: File, outputFile: File) {
