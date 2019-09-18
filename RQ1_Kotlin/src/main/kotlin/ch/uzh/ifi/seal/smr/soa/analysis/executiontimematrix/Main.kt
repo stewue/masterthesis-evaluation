@@ -10,10 +10,10 @@ import java.io.File
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\executiontime.csv")
     val all = CsvResExecutionTimeParser(file).getList().filter { it.onlySingleShot == false && it.onlyModeChanged == false }
-    doGroup(all, Group.POPULAR_MANY)
-    doGroup(all, Group.POPULAR_FEW)
-    doGroup(all, Group.NOT_POPULAR_MANY)
-    doGroup(all, Group.NOT_POPULAR_FEW)
+    doGroup(all, Group.PROFESSIONAL_MANY)
+    doGroup(all, Group.PROFESSIONAL_FEW)
+    doGroup(all, Group.NOT_PROFESSIONAL_MANY)
+    doGroup(all, Group.NOT_PROFESSIONAL_FEW)
 
     println("ALL")
     matrix(all)

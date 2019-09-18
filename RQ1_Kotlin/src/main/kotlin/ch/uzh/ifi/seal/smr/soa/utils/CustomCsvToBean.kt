@@ -51,10 +51,10 @@ private class ConvertStatus : AbstractCsvConverter() {
 private class ConvertGroup : AbstractCsvConverter() {
     override fun convertToRead(value: String?): Any? {
         return when (value) {
-            "POPULAR_FEW" -> Group.POPULAR_FEW
-            "POPULAR_MANY" -> Group.POPULAR_MANY
-            "NOT_POPULAR_FEW" -> Group.NOT_POPULAR_FEW
-            "NOT_POPULAR_MANY" -> Group.NOT_POPULAR_MANY
+            "POPULAR_FEW" -> Group.PROFESSIONAL_FEW
+            "POPULAR_MANY" -> Group.PROFESSIONAL_MANY
+            "NOT_POPULAR_FEW" -> Group.NOT_PROFESSIONAL_FEW
+            "NOT_POPULAR_MANY" -> Group.NOT_PROFESSIONAL_MANY
             else -> null
         }
     }

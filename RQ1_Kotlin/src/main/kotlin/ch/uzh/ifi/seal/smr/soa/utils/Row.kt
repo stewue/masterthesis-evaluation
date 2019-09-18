@@ -74,15 +74,15 @@ class Row {
         } else {
             if (numberOfBenchmarks!! >= 25) {
                 if (numberOfContributors!! >= 5 && stars!! >= 50 && numberOfCommits!! >= 100) {
-                    Group.POPULAR_MANY
+                    Group.PROFESSIONAL_MANY
                 } else {
-                    Group.POPULAR_FEW
+                    Group.PROFESSIONAL_FEW
                 }
             } else {
                 if (numberOfContributors!! >= 5 && stars!! >= 50 && numberOfCommits!! >= 100) {
-                    Group.NOT_POPULAR_MANY
+                    Group.NOT_PROFESSIONAL_MANY
                 } else {
-                    Group.NOT_POPULAR_FEW
+                    Group.NOT_PROFESSIONAL_FEW
                 }
             }
         }
