@@ -19,15 +19,8 @@ fun main() {
             }
             .toMap()
 
-    val lastCommit = items.groupBy { it.project }
-            .map { (project, list) ->
-                project to list.map { it.commitTime!! }.max()!!
-            }
-            .toMap()
-
     projects.forEach {
         it.firstBenchmarkFound = firstFound[it.project]
-        it.lastCommit = lastCommit[it.project]
     }
 
     OpenCSVWriter.write(outFile, projects)
