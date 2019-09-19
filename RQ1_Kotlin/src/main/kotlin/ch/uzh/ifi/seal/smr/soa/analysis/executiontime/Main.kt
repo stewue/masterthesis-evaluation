@@ -31,6 +31,7 @@ fun main() {
                 measurementTime = it.calcMeasurementTime(),
                 onlyModeChanged = it.onlyModeChanged(),
                 onlySingleShot = it.onlySingleShot(),
+                measurementWarmupRatio = it.calcMeasurementTime() / it.calcWarmupTime(),
                 group = projects.first { i -> it.project == i.project }.getGroup()
         )
         output.add(res)

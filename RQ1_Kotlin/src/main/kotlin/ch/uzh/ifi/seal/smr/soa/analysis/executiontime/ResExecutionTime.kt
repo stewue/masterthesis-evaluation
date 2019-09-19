@@ -51,10 +51,13 @@ class ResExecutionTime {
     var onlySingleShot: Boolean = false
 
     @CsvBindByPosition(position = 15)
+    var measurementWarmupRatio: Double = 0.0
+
+    @CsvBindByPosition(position = 16)
     lateinit var group: Group
 
     constructor()
-    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimeDefault: Long, executionTime: Double, warmupTimeDefault: Long, warmupTime: Double, measurementTimeDefault: Long, measurementTime: Double, onlyModeChanged: Boolean, onlySingleShot: Boolean, group: Group) {
+    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimeDefault: Long, executionTime: Double, warmupTimeDefault: Long, warmupTime: Double, measurementTimeDefault: Long, measurementTime: Double, onlyModeChanged: Boolean, onlySingleShot: Boolean, measurementWarmupRatio: Double, group: Group) {
         this.project = project
         this.className = className
         this.jmhVersion = jmhVersion
@@ -70,6 +73,7 @@ class ResExecutionTime {
         this.measurementTimePercentage = measurementTime / measurementTimeDefault.toDouble()
         this.onlyModeChanged = onlyModeChanged
         this.onlySingleShot = onlySingleShot
+        this.measurementWarmupRatio = measurementWarmupRatio
         this.group = group
     }
 }

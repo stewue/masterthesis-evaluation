@@ -39,10 +39,10 @@ private class ConverterJmhVersion : AbstractCsvConverter() {
 private class ConvertStatus : AbstractCsvConverter() {
     override fun convertToRead(value: String?): Any? {
         return when (value) {
-            "BOTH_SET" -> Status.BOTH_SET
-            "BOTH_UNSET" -> Status.BOTH_UNSET
-            "TIME_SET" -> Status.TIME_SET
-            "UNIT_SET" -> Status.UNIT_SET
+            Status.BOTH_SET.name -> Status.BOTH_SET
+            Status.BOTH_UNSET.name -> Status.BOTH_UNSET
+            Status.TIME_SET.name -> Status.TIME_SET
+            Status.UNIT_SET.name -> Status.UNIT_SET
             else -> null
         }
     }
@@ -51,10 +51,10 @@ private class ConvertStatus : AbstractCsvConverter() {
 private class ConvertGroup : AbstractCsvConverter() {
     override fun convertToRead(value: String?): Any? {
         return when (value) {
-            "POPULAR_FEW" -> Group.PROFESSIONAL_FEW
-            "POPULAR_MANY" -> Group.PROFESSIONAL_MANY
-            "NOT_POPULAR_FEW" -> Group.NOT_PROFESSIONAL_FEW
-            "NOT_POPULAR_MANY" -> Group.NOT_PROFESSIONAL_MANY
+            Group.PROFESSIONAL_FEW.name -> Group.PROFESSIONAL_FEW
+            Group.PROFESSIONAL_MANY.name -> Group.PROFESSIONAL_MANY
+            Group.NOT_PROFESSIONAL_FEW.name -> Group.NOT_PROFESSIONAL_FEW
+            Group.NOT_PROFESSIONAL_MANY.name -> Group.NOT_PROFESSIONAL_MANY
             else -> null
         }
     }
