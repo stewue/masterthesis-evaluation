@@ -1,5 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.analysis.featuresperproject
 
+import ch.uzh.ifi.seal.smr.soa.utils.Group
 import com.opencsv.bean.CsvBindByPosition
 
 class ResFeaturesProject {
@@ -45,10 +46,26 @@ class ResFeaturesProject {
     @CsvBindByPosition(position = 13)
     var benchmarkIsInnerClassPercentage: Double? = null
 
-    // TODO execution time
-    constructor()
+    @CsvBindByPosition(position = 14)
+    var stars: Int? = null
 
-    constructor(project: String, numberOfBenchmarks: Int?, avgNumberOfBenchmarksPerClass: Double?, avgNumberOfBenchmarksPerFile: Double?, parametrizationUsedPercentage: Double?, groupsUsedPercentage: Double?, blackholeUsedPercentage: Double?, controlUsedPercentage: Double?, hasStateObjectsWithJmhParamsPercentage: Double?, hasStateObjectsWithoutJmhParamsPercentage: Double?, returnTypeUsedPercentage: Double?, returnTypeOrBlackholeUsedPercentage: Double?, nothingSetPercentage: Double?, benchmarkIsInnerClassPercentage: Double?) {
+    @CsvBindByPosition(position = 15)
+    var forks: Int? = null
+
+    @CsvBindByPosition(position = 16)
+    var watchers: Int? = null
+
+    @CsvBindByPosition(position = 17)
+    var numberOfCommits: Int? = null
+
+    @CsvBindByPosition(position = 18)
+    var numberOfContributors: Int? = null
+
+    @CsvBindByPosition(position = 19)
+    lateinit var group: Group
+
+    constructor()
+    constructor(project: String, numberOfBenchmarks: Int?, avgNumberOfBenchmarksPerClass: Double?, avgNumberOfBenchmarksPerFile: Double?, parametrizationUsedPercentage: Double?, groupsUsedPercentage: Double?, blackholeUsedPercentage: Double?, controlUsedPercentage: Double?, hasStateObjectsWithJmhParamsPercentage: Double?, hasStateObjectsWithoutJmhParamsPercentage: Double?, returnTypeUsedPercentage: Double?, returnTypeOrBlackholeUsedPercentage: Double?, nothingSetPercentage: Double?, benchmarkIsInnerClassPercentage: Double?, stars: Int?, forks: Int?, watchers: Int?, numberOfCommits: Int?, numberOfContributors: Int?, group: Group) {
         this.project = project
         this.numberOfBenchmarks = numberOfBenchmarks
         this.avgNumberOfBenchmarksPerClass = avgNumberOfBenchmarksPerClass
@@ -63,5 +80,11 @@ class ResFeaturesProject {
         this.returnTypeOrBlackholeUsedPercentage = returnTypeOrBlackholeUsedPercentage
         this.nothingSetPercentage = nothingSetPercentage
         this.benchmarkIsInnerClassPercentage = benchmarkIsInnerClassPercentage
+        this.stars = stars
+        this.forks = forks
+        this.watchers = watchers
+        this.numberOfCommits = numberOfCommits
+        this.numberOfContributors = numberOfContributors
+        this.group = group
     }
 }

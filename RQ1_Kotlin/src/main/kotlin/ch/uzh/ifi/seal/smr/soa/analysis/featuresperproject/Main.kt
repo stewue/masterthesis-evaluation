@@ -3,6 +3,8 @@ package ch.uzh.ifi.seal.smr.soa.analysis.featuresperproject
 import ch.uzh.ifi.seal.smr.soa.utils.*
 import java.io.File
 
+private val projectFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
+private val projects = CsvProjectParser(projectFile).getList()
 private val output = mutableListOf<ResFeaturesProject>()
 
 fun main() {
@@ -19,6 +21,7 @@ fun main() {
 }
 
 private fun processProject(project: String, list: List<Result>) {
+    val p = projects.first { it.project == project }
     val numberOfBenchmarks = list.size
     output.add(ResFeaturesProject(
             project = project,
@@ -58,6 +61,12 @@ private fun processProject(project: String, list: List<Result>) {
             returnTypeUsedPercentage = list.filter { !it.returnType.isNullOrBlank() }.size.toDouble() / numberOfBenchmarks,
             returnTypeOrBlackholeUsedPercentage = list.filter { !it.returnType.isNullOrBlank() || it.hasBlackhole }.size.toDouble() / numberOfBenchmarks,
             nothingSetPercentage = list.nothingSet().size.toDouble() / numberOfBenchmarks,
-            benchmarkIsInnerClassPercentage = list.filter { it.className.contains("$") }.size.toDouble() / numberOfBenchmarks
+            benchmarkIsInnerClassPercentage = list.filter { it.className.contains("$") }.size.toDouble() / numberOfBenchmarks,
+            stars = p.stars,
+            forks = p.forks,
+            watchers = p.watchers,
+            numberOfCommits = p.numberOfCommits,
+            numberOfContributors = p.numberOfContributors,
+            group = p.getGroup()
     ))
 }
