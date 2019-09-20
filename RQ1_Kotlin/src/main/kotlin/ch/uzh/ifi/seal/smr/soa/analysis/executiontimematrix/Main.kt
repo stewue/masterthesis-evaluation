@@ -9,14 +9,20 @@ import java.io.File
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\executiontime.csv")
-    val all = CsvResExecutionTimeParser(file).getList().filter { it.onlySingleShot == false && it.onlyModeChanged == false }
-    doGroup(all, Group.PROFESSIONAL_MANY)
-    doGroup(all, Group.PROFESSIONAL_FEW)
-    doGroup(all, Group.NOT_PROFESSIONAL_MANY)
-    doGroup(all, Group.NOT_PROFESSIONAL_FEW)
+    val all = CsvResExecutionTimeParser(file).getList()
+    val somethingChanged = all.filter { it.onlySingleShot == false && it.onlyModeChanged == false }
+
+    println("something changed: ${somethingChanged.size} (${percentageString(somethingChanged.size, all.size)}%)")
+    println("")
+
+    doGroup(somethingChanged, Group.PROFESSIONAL_MANY)
+    doGroup(somethingChanged, Group.PROFESSIONAL_FEW)
+    doGroup(somethingChanged, Group.NOT_PROFESSIONAL_MANY)
+    doGroup(somethingChanged, Group.NOT_PROFESSIONAL_FEW)
 
     println("ALL")
-    matrix(all)
+    matrix(somethingChanged)
+    println("")
 }
 
 private fun doGroup(all: Collection<ResExecutionTime>, group: Group) {
