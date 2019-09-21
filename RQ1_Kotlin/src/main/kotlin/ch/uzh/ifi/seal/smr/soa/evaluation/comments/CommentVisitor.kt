@@ -36,7 +36,7 @@ class CommentVisitor(private var compilationUnit: CompilationUnit, private val s
 
             var currentLineNumber = lineNumber
             while (currentLineNumber < source.size) {
-                val currentLine = source[currentLineNumber].replace("//", "").replace("/*", "").trim()
+                val currentLine = source[currentLineNumber]
 
                 if (currentLine.contains("public")) {
                     val name = currentLine.substringBefore('(').substringAfterLast(' ')
