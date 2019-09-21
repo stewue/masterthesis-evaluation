@@ -282,12 +282,9 @@ class Result {
     }
 
     fun calcWarmupTime(): Double {
-        val a = forksOrDefault()
-        val b = warmupIterationsOrDefault()
-        val c = warmupTimeOrDefault()
         val warmupTimeForMeasurementForks = forksOrDefault() * warmupIterationsOrDefault() * warmupTimeOrDefault()
-        val timeForMeasurementForks = warmupForksOrDefault() * (warmupIterationsOrDefault() * warmupTimeOrDefault() + measurementIterationsOrDefault() * measurementTimeOrDefault())
-        return warmupTimeForMeasurementForks + timeForMeasurementForks
+        val timeForWarmupForks = warmupForksOrDefault() * (warmupIterationsOrDefault() * warmupTimeOrDefault() + measurementIterationsOrDefault() * measurementTimeOrDefault())
+        return warmupTimeForMeasurementForks + timeForWarmupForks
     }
 
     fun calcMeasurementTime(): Double {

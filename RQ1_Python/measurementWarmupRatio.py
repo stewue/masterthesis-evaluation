@@ -25,15 +25,15 @@ largerWeights = [np.ones(len(largerAll.values)) / len(largerAll.values), np.ones
 colors = ['red', 'blue', 'green']
 labels = ['All', 'Professional', 'Non professional']
 
-plt.hist(largerArray, bins=20, range=[1,10], color=colors, weights=largerWeights, label=labels)
+plt.hist(largerArray, bins=10, range=[1,10], color=colors, weights=largerWeights, label=labels)
 plt.xticks(np.arange(1, 10.1, step=1))
 
-#plt.hist(smallerArray, bins=20, range=[0,1], color=colors, weights=smallerWeights)
+#plt.hist(smallerArray, bins=10, range=[0,1], color=colors, weights=smallerWeights, label=labels)
 #plt.xticks(np.arange(0, 1.1, step=0.1))
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.legend()
 plt.ylabel('percentage')
 plt.xlabel('measurementWarmupRatio')
-plt.show()
-#plt.savefig('export.png')
+#plt.show()
+plt.savefig('export.png')
