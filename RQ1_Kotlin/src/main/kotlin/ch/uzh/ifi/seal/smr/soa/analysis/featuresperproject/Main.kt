@@ -66,7 +66,6 @@ private fun processProject(project: String, list: List<Result>) {
             forks = p.forks,
             watchers = p.watchers,
             numberOfCommits = p.numberOfCommits,
-            numberOfContributors = p.numberOfContributors,
-            group = p.getGroup()
+            numberOfContributors = p.numberOfContributors
     ))
 }

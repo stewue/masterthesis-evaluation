@@ -1,6 +1,5 @@
 package ch.uzh.ifi.seal.smr.soa.analysis.featuresperproject
 
-import ch.uzh.ifi.seal.smr.soa.utils.Group
 import com.opencsv.bean.CsvBindByPosition
 
 class ResFeaturesProject {
@@ -61,11 +60,8 @@ class ResFeaturesProject {
     @CsvBindByPosition(position = 18)
     var numberOfContributors: Int? = null
 
-    @CsvBindByPosition(position = 19)
-    lateinit var group: Group
-
     constructor()
-    constructor(project: String, numberOfBenchmarks: Int?, avgNumberOfBenchmarksPerClass: Double?, avgNumberOfBenchmarksPerFile: Double?, parametrizationUsedPercentage: Double?, groupsUsedPercentage: Double?, blackholeUsedPercentage: Double?, controlUsedPercentage: Double?, hasStateObjectsWithJmhParamsPercentage: Double?, hasStateObjectsWithoutJmhParamsPercentage: Double?, returnTypeUsedPercentage: Double?, returnTypeOrBlackholeUsedPercentage: Double?, nothingSetPercentage: Double?, benchmarkIsInnerClassPercentage: Double?, stars: Int?, forks: Int?, watchers: Int?, numberOfCommits: Int?, numberOfContributors: Int?, group: Group) {
+    constructor(project: String, numberOfBenchmarks: Int?, avgNumberOfBenchmarksPerClass: Double?, avgNumberOfBenchmarksPerFile: Double?, parametrizationUsedPercentage: Double?, groupsUsedPercentage: Double?, blackholeUsedPercentage: Double?, controlUsedPercentage: Double?, hasStateObjectsWithJmhParamsPercentage: Double?, hasStateObjectsWithoutJmhParamsPercentage: Double?, returnTypeUsedPercentage: Double?, returnTypeOrBlackholeUsedPercentage: Double?, nothingSetPercentage: Double?, benchmarkIsInnerClassPercentage: Double?, stars: Int?, forks: Int?, watchers: Int?, numberOfCommits: Int?, numberOfContributors: Int?) {
         this.project = project
         this.numberOfBenchmarks = numberOfBenchmarks
         this.avgNumberOfBenchmarksPerClass = avgNumberOfBenchmarksPerClass
@@ -85,6 +81,5 @@ class ResFeaturesProject {
         this.watchers = watchers
         this.numberOfCommits = numberOfCommits
         this.numberOfContributors = numberOfContributors
-        this.group = group
     }
 }

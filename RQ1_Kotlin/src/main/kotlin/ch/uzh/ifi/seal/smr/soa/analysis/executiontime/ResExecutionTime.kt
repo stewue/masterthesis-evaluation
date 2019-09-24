@@ -1,7 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.analysis.executiontime
 
 import ch.uzh.ifi.seal.bencher.JMHVersion
-import ch.uzh.ifi.seal.smr.soa.utils.Group
 import com.opencsv.bean.CsvBindByPosition
 
 class ResExecutionTime {
@@ -53,11 +52,8 @@ class ResExecutionTime {
     @CsvBindByPosition(position = 15)
     var measurementWarmupRatio: Double = 0.0
 
-    @CsvBindByPosition(position = 16)
-    lateinit var group: Group
-
     constructor()
-    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimeDefault: Long, executionTime: Double, warmupTimeDefault: Long, warmupTime: Double, measurementTimeDefault: Long, measurementTime: Double, onlyModeChanged: Boolean, onlySingleShot: Boolean, measurementWarmupRatio: Double, group: Group) {
+    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimeDefault: Long, executionTime: Double, warmupTimeDefault: Long, warmupTime: Double, measurementTimeDefault: Long, measurementTime: Double, onlyModeChanged: Boolean, onlySingleShot: Boolean, measurementWarmupRatio: Double) {
         this.project = project
         this.className = className
         this.jmhVersion = jmhVersion
@@ -74,6 +70,5 @@ class ResExecutionTime {
         this.onlyModeChanged = onlyModeChanged
         this.onlySingleShot = onlySingleShot
         this.measurementWarmupRatio = measurementWarmupRatio
-        this.group = group
     }
 }

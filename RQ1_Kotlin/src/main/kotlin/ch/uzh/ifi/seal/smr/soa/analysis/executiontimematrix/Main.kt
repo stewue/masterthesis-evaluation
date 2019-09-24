@@ -3,7 +3,6 @@ package ch.uzh.ifi.seal.smr.soa.analysis.executiontimematrix
 import ch.uzh.ifi.seal.smr.soa.analysis.executiontime.ResExecutionTime
 import ch.uzh.ifi.seal.smr.soa.analysis.percentageString
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResExecutionTimeParser
-import ch.uzh.ifi.seal.smr.soa.utils.Group
 import ch.uzh.ifi.seal.smr.soa.utils.median
 import java.io.File
 
@@ -13,23 +12,11 @@ fun main() {
     val somethingChanged = all.filter { it.onlySingleShot == false && it.onlyModeChanged == false }
 
     println("something changed: ${somethingChanged.size} (${percentageString(somethingChanged.size, all.size)}%)")
-    println("")
 
-    doGroup(somethingChanged, Group.PROFESSIONAL_MANY)
-    doGroup(somethingChanged, Group.PROFESSIONAL_FEW)
-    doGroup(somethingChanged, Group.NOT_PROFESSIONAL_MANY)
-    doGroup(somethingChanged, Group.NOT_PROFESSIONAL_FEW)
-
-    println("ALL")
     matrix(somethingChanged)
     println("")
 }
 
-private fun doGroup(all: Collection<ResExecutionTime>, group: Group) {
-    println("~~~$group~~~")
-    matrix(all.filter { it.group == group })
-    println("")
-}
 
 private fun matrix(all: Collection<ResExecutionTime>) {
     val elwl = all.filter { it.executionTimePercentage < 1 && it.warmupTimePercentage < 1 }.size
