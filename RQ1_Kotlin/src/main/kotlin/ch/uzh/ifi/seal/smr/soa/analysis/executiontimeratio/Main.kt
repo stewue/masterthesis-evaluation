@@ -9,14 +9,14 @@ fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\executiontime.csv")
     val all = CsvResExecutionTimeParser(file).getList().filter { !it.onlySingleShot && !it.onlyModeChanged }
 
-    println("ALL")
+    println("All")
     matrixTotal(all)
     println("")
     println("Per Fork")
     matrixMeasurementFork(all)
     println("")
     println("Per Fork if different")
-    matrixMeasurementFork(all.filter { it.measurementWarmupRatio != it.measurementWarmupRatioPerMeasurementFork })
+    matrixMeasurementFork(all.filter { it.hasWarmupForks })
 }
 
 private fun matrixTotal(all: Collection<ResExecutionTime>) {

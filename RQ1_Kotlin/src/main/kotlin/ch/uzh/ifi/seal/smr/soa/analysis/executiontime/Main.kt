@@ -32,7 +32,8 @@ fun main() {
                 onlyModeChanged = it.onlyModeChanged(),
                 onlySingleShot = it.onlySingleShot(),
                 measurementWarmupRatio = it.calcMeasurementTime() / it.calcWarmupTime(),
-                measurementWarmupRatioPerMeasurementFork = it.calcMeasurementTime() / it.calcWarmupTimePerMeasurementFork()
+                measurementWarmupRatioPerMeasurementFork = it.calcMeasurementTime() / it.calcWarmupTimePerMeasurementFork(),
+                hasWarmupForks = it.warmupForks != null && it.warmupForks!! > 0
         )
         output.add(res)
     }
