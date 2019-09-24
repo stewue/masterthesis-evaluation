@@ -10,13 +10,29 @@ fun main() {
     val all = CsvResExecutionTimeParser(file).getList().filter { !it.onlySingleShot && !it.onlyModeChanged }
 
     println("ALL")
-    matrix(all)
+    matrixTotal(all)
+    println("")
+    println("Per Fork")
+    matrixMeasurementFork(all)
+    println("")
+    println("Per Fork if different")
+    matrixMeasurementFork(all.filter { it.measurementWarmupRatio != it.measurementWarmupRatioPerMeasurementFork })
 }
 
-private fun matrix(all: Collection<ResExecutionTime>) {
+private fun matrixTotal(all: Collection<ResExecutionTime>) {
     val h = all.filter { it.measurementWarmupRatio > 1 }
     val e = all.filter { it.measurementWarmupRatio == 1.0 }
     val s = all.filter { it.measurementWarmupRatio < 1 }
+
+    println("execution time is proportionally larger: ${h.size} (${percentageString(h.size, all.size)})")
+    println("same ratio: ${e.size} (${percentageString(e.size, all.size)})")
+    println("warmup time is proportionally larger: ${s.size} (${percentageString(s.size, all.size)})")
+}
+
+private fun matrixMeasurementFork(all: Collection<ResExecutionTime>) {
+    val h = all.filter { it.measurementWarmupRatioPerMeasurementFork > 1 }
+    val e = all.filter { it.measurementWarmupRatioPerMeasurementFork == 1.0 }
+    val s = all.filter { it.measurementWarmupRatioPerMeasurementFork < 1 }
 
     println("execution time is proportionally larger: ${h.size} (${percentageString(h.size, all.size)})")
     println("same ratio: ${e.size} (${percentageString(e.size, all.size)})")
