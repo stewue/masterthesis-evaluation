@@ -17,5 +17,5 @@ selected = data[
      'hasStateObjectsWithoutJmhParams', 'hasStateObjectsWithoutJmhParamsPercentage', 'stars', 'forks', 'watchers',
      'numberOfCommits', 'numberOfContributors', 'numberOfBenchmarks']]
 
-corr = selected.corr()
+corr = selected.corr('spearman')
 print(corr.to_csv(index=False))

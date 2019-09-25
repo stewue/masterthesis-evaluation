@@ -6,5 +6,5 @@ pd.set_option('display.width', 1000)
 
 data = pd.read_csv('D:\\mp\\corr.csv')
 
-corr = data.corr()
+corr = data.corr('spearman')
 print(corr.to_csv(index=False))
