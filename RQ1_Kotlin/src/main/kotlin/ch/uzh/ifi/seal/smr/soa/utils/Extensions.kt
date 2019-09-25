@@ -13,3 +13,15 @@ val ByteArray.convertToString: String
 
 val String.outerClass: String
     inline get() = this.substringBefore('#')
+
+fun Boolean?.toInt(): Int? {
+    return this?.toInt()
+}
+
+fun Boolean.toInt(): Int {
+    return if (this) {
+        1
+    } else {
+        0
+    }
+}
