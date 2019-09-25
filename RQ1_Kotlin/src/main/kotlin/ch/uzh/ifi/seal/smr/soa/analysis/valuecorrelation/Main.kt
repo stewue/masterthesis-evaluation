@@ -6,10 +6,24 @@ import ch.uzh.ifi.seal.smr.soa.utils.*
 import java.io.File
 
 fun main() {
-    val resultFile = File("D:\\mp\\corr3.csv")
-    val all = CsvResultParser(resultFile).getList()
+    val inputFile = File("D:\\mp\\current-merged-isMain.csv")
+    val resultFile = File("D:\\mp\\corr.csv")
+    val all = CsvResultParser(inputFile).getList()
 
-    all.filter { it.jmhVersion != null && !it.nothingSet() }.forEach {
+    //val mapped = alsoDefaultValues(all)
+    val mapped = onlySetValues(all)
+
+    OpenCSVWriter.write(resultFile.toPath(), mapped, CustomMappingStrategy(ResValueCorrelation::class.java))
+}
+
+private fun onlySetValues(all: Set<Result>): List<ResValueCorrelation> {
+    return all.filter { it.jmhVersion != null && !it.nothingSet() }.map {
+        ResValueCorrelation(it.warmupIterations, it.warmupTime, it.measurementIterations, it.measurementTime, it.forks, it.warmupForks)
+    }
+}
+
+private fun alsoDefaultValues(all: Set<Result>): List<ResValueCorrelation> {
+    return all.filter { it.jmhVersion != null && !it.nothingSet() }.map {
         if (it.warmupIterations == null) {
             it.warmupIterations = defaultExecConfig(it.jmhVersion!!).warmupIterations
         }
@@ -41,7 +55,8 @@ fun main() {
         if (it.warmupForks == null) {
             it.warmupForks = defaultExecConfig(it.jmhVersion!!).warmupForks
         }
-    }
 
-    OpenCSVWriter.write(resultFile.toPath(), all, CustomMappingStrategy(Result::class.java))
+        ResValueCorrelation(it.warmupIterations, it.warmupTime, it.measurementIterations, it.measurementTime, it.forks, it.warmupForks)
+    }
 }
+
