@@ -7,7 +7,7 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
 
-class CsvProjectParser(file: File) : CsvParser<Row>(file, Row::class.java, false)
+class CsvProjectParser(file: File) : CsvParser<Row>(file, Row::class.java, true)
 class CsvResultParser(file: File) : CsvParser<Result>(file, Result::class.java, false)
 class CsvResExecutionTimeParser(file: File) : CsvParser<ResExecutionTime>(file, ResExecutionTime::class.java, true)
 

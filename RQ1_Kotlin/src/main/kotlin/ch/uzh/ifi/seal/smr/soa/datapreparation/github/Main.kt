@@ -1,5 +1,6 @@
 package ch.uzh.ifi.seal.smr.soa.datapreparation.github
 
+import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
 import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import ch.uzh.ifi.seal.smr.soa.utils.Row
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -56,7 +57,7 @@ fun main() {
         res.add(item)
     }
 
-    OpenCSVWriter.write(outFile, res)
+    OpenCSVWriter.write(outFile, res, CustomMappingStrategy(Row::class.java))
 }
 
 private fun getNumberOfCommits(name: String): Int {
