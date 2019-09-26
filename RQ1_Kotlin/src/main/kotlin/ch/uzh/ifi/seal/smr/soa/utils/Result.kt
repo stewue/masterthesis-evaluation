@@ -50,13 +50,13 @@ class Result {
     var warmupTimeMethod: Long? = null
 
     @CsvBindByPosition(position = 14)
-    lateinit var warmupTimeStatus: Status
+    var warmupTimeStatus: Status? = null
 
     @CsvBindByPosition(position = 15)
-    lateinit var warmupTimeStatusClass: Status
+    var warmupTimeStatusClass: Status? = null
 
     @CsvBindByPosition(position = 16)
-    lateinit var warmupTimeStatusMethod: Status
+    var warmupTimeStatusMethod: Status? = null
 
     @CsvBindByPosition(position = 17)
     var measurementIterations: Int? = null
@@ -77,13 +77,13 @@ class Result {
     var measurementTimeMethod: Long? = null
 
     @CsvBindByPosition(position = 23)
-    lateinit var measurementTimeStatus: Status
+    var measurementTimeStatus: Status? = null
 
     @CsvBindByPosition(position = 24)
-    lateinit var measurementTimeStatusClass: Status
+    var measurementTimeStatusClass: Status? = null
 
     @CsvBindByPosition(position = 25)
-    lateinit var measurementTimeStatusMethod: Status
+    var measurementTimeStatusMethod: Status? = null
 
     @CsvBindByPosition(position = 26)
     var forks: Int? = null
@@ -197,7 +197,7 @@ class Result {
     var numberOfLines: Int? = null
 
     constructor()
-    constructor(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, className: String, benchmarkName: String, warmupIterations: Int?, warmupIterationsClass: Int?, warmupIterationsMethod: Int?, warmupTime: Long?, warmupTimeClass: Long?, warmupTimeMethod: Long?, warmupTimeStatus: Status, warmupTimeStatusClass: Status, warmupTimeStatusMethod: Status, measurementIterations: Int?, measurementIterationsClass: Int?, measurementIterationsMethod: Int?, measurementTime: Long?, measurementTimeClass: Long?, measurementTimeMethod: Long?, measurementTimeStatus: Status, measurementTimeStatusClass: Status, measurementTimeStatusMethod: Status, forks: Int?, forksClass: Int?, forksMethod: Int?, warmupForks: Int?, warmupForksClass: Int?, warmupForksMethod: Int?, modeIsThroughput: Boolean?, modeIsThroughputClass: Boolean?, modeIsThroughputMethod: Boolean?, modeIsAverageTime: Boolean?, modeIsAverageTimeClass: Boolean?, modeIsAverageTimeMethod: Boolean?, modeIsSampleTime: Boolean?, modeIsSampleTimeClass: Boolean?, modeIsSampleTimeMethod: Boolean?, modeIsSingleShotTime: Boolean?, modeIsSingleShotTimeClass: Boolean?, modeIsSingleShotTimeMethod: Boolean?, parametrizationCombinations: Int, paramString: String?, paramCount: Int, paramCountStateObject: Int, paramCountStateObjectWithoutJmhParam: Int, hasBlackhole: Boolean, hasControl: Boolean, hasBenchmarkParams: Boolean, hasIterationParams: Boolean, hasThreadParams: Boolean, jmhParamString: String?, jmhParamPairs: String?, jmhParamCount: Int, jmhParamCountOwnClass: Int, jmhParamCountArgument: Int, returnType: String?, partOfGroup: Boolean, methodHash: String, numberOfLines: Int) {
+    constructor(project: String, commitId: String?, commitTime: Int?, jmhVersion: JMHVersion?, javaTarget: String?, javaSource: String?, className: String, benchmarkName: String, warmupIterations: Int?, warmupIterationsClass: Int?, warmupIterationsMethod: Int?, warmupTime: Long?, warmupTimeClass: Long?, warmupTimeMethod: Long?, warmupTimeStatus: Status?, warmupTimeStatusClass: Status?, warmupTimeStatusMethod: Status?, measurementIterations: Int?, measurementIterationsClass: Int?, measurementIterationsMethod: Int?, measurementTime: Long?, measurementTimeClass: Long?, measurementTimeMethod: Long?, measurementTimeStatus: Status?, measurementTimeStatusClass: Status?, measurementTimeStatusMethod: Status?, forks: Int?, forksClass: Int?, forksMethod: Int?, warmupForks: Int?, warmupForksClass: Int?, warmupForksMethod: Int?, modeIsThroughput: Boolean?, modeIsThroughputClass: Boolean?, modeIsThroughputMethod: Boolean?, modeIsAverageTime: Boolean?, modeIsAverageTimeClass: Boolean?, modeIsAverageTimeMethod: Boolean?, modeIsSampleTime: Boolean?, modeIsSampleTimeClass: Boolean?, modeIsSampleTimeMethod: Boolean?, modeIsSingleShotTime: Boolean?, modeIsSingleShotTimeClass: Boolean?, modeIsSingleShotTimeMethod: Boolean?, parametrizationCombinations: Int, paramString: String?, paramCount: Int, paramCountStateObject: Int, paramCountStateObjectWithoutJmhParam: Int, hasBlackhole: Boolean, hasControl: Boolean, hasBenchmarkParams: Boolean, hasIterationParams: Boolean, hasThreadParams: Boolean, jmhParamString: String?, jmhParamPairs: String?, jmhParamCount: Int, jmhParamCountOwnClass: Int, jmhParamCountArgument: Int, returnType: String?, partOfGroup: Boolean, methodHash: String, numberOfLines: Int) {
         this.project = project
         this.commitId = commitId
         this.commitTime = commitTime
