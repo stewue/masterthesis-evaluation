@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-def create_df(col):
+def create_df(col, data):
     cleaned = data[np.logical_not(np.isnan(data[col]))]
     return pd.DataFrame({
             "name":col,
@@ -29,23 +29,23 @@ print(corr.to_csv(index=False))
 print("------------")
 
 df = pd.DataFrame({})
-df = df.append(create_df('modeIsThroughput'), ignore_index = True)
-df = df.append(create_df('modeIsAverageTime'), ignore_index = True)
-df = df.append(create_df('modeIsSampleTime'), ignore_index = True)
-df = df.append(create_df('modeIsSingleShotTime'), ignore_index = True)
+df = df.append(create_df('modeIsThroughput', data), ignore_index = True)
+df = df.append(create_df('modeIsAverageTime', data), ignore_index = True)
+df = df.append(create_df('modeIsSampleTime', data), ignore_index = True)
+df = df.append(create_df('modeIsSingleShotTime', data), ignore_index = True)
 
 print(df.to_csv(index=False))
 
 print("------------")
 
 df = pd.DataFrame({})
-df = df.append(create_df('nothingSet'), ignore_index = True)
-df = df.append(create_df('warmupIterationsDefault'), ignore_index = True)
-df = df.append(create_df('warmupTimeDefault'), ignore_index = True)
-df = df.append(create_df('measurementIterationsDefault'), ignore_index = True)
-df = df.append(create_df('measurementTimeDefault'), ignore_index = True)
-df = df.append(create_df('forksDefault'), ignore_index = True)
-df = df.append(create_df('warmupForksDefault'), ignore_index = True)
-df = df.append(create_df('modeDefault'), ignore_index = True)
+df = df.append(create_df('nothingSet', data), ignore_index = True)
+df = df.append(create_df('warmupIterationsDefault', data), ignore_index = True)
+df = df.append(create_df('warmupTimeDefault', data), ignore_index = True)
+df = df.append(create_df('measurementIterationsDefault', data), ignore_index = True)
+df = df.append(create_df('measurementTimeDefault', data), ignore_index = True)
+df = df.append(create_df('forksDefault', data), ignore_index = True)
+df = df.append(create_df('warmupForksDefault', data), ignore_index = True)
+df = df.append(create_df('modeDefault', data), ignore_index = True)
 
 print(df.to_csv(index=False))
