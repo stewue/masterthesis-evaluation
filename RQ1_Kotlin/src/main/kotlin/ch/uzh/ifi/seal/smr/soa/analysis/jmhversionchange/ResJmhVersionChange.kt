@@ -13,10 +13,10 @@ class ResJmhVersionChange {
     var numberOfChanges: Int = 0
 
     @CsvBindByPosition(position = 3)
-    var averageChangeTime: Double = 0.0
+    var averageChangeTime: Double? = null
 
     constructor()
-    constructor(project: String, benchmarks: Int, numberOfChanges: Int, averageChangeTime: Double) {
+    constructor(project: String, benchmarks: Int, numberOfChanges: Int, averageChangeTime: Double?) {
         this.project = project
         this.benchmarks = benchmarks
         this.numberOfChanges = numberOfChanges

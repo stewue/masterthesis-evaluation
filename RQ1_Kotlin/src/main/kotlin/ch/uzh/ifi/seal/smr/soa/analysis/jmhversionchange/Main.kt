@@ -42,6 +42,8 @@ fun main() {
             output.add(ResJmhVersionChange(project, triple.second, triple.first, averageChangeTime))
             sum += averageChangeTime
             counter++
+        }else{
+            output.add(ResJmhVersionChange(project, triple.second, triple.first, null))
         }
     }
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResJmhVersionChange::class.java))
