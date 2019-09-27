@@ -37,13 +37,15 @@ fun main() {
     var sum = 0.0
     var counter = 0
     final.forEach { (project, triple) ->
+        val p = projects.first { it.project == project }
+        val useJmhSince = round((p.lastCommit!! - p.firstBenchmarkFound!!) / yearInSeconds * 100) / 100.0
         if (triple.first > 0) {
             val averageChangeTime = round(triple.third / (triple.first + 1).toDouble() / yearInSeconds * 100) / 100
-            output.add(ResJmhVersionChange(project, triple.second, triple.first, averageChangeTime))
+            output.add(ResJmhVersionChange(project, triple.second, triple.first, averageChangeTime, useJmhSince))
             sum += averageChangeTime
             counter++
         }else{
-            output.add(ResJmhVersionChange(project, triple.second, triple.first, null))
+            output.add(ResJmhVersionChange(project, triple.second, triple.first, null, useJmhSince))
         }
     }
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResJmhVersionChange::class.java))
