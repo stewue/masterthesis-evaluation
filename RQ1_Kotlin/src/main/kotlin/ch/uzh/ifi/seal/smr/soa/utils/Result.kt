@@ -264,16 +264,20 @@ class Result {
     }
 
     fun sameConfig(o: Result): Boolean {
+        return sameConfigWithoutMode(o) &&
+                modeIsThroughput == o.modeIsThroughput &&
+                modeIsAverageTime == o.modeIsAverageTime &&
+                modeIsSampleTime == o.modeIsSampleTime &&
+                modeIsSingleShotTime == o.modeIsSingleShotTime
+    }
+
+    fun sameConfigWithoutMode(o: Result): Boolean {
         return warmupIterations == o.warmupIterations &&
                 warmupTime == o.warmupTime &&
                 measurementIterations == o.measurementIterations &&
                 measurementTime == o.measurementTime &&
                 forks == o.forks &&
-                warmupForks == o.warmupForks &&
-                modeIsThroughput == o.modeIsThroughput &&
-                modeIsAverageTime == o.modeIsAverageTime &&
-                modeIsSampleTime == o.modeIsSampleTime &&
-                modeIsSingleShotTime == o.modeIsSingleShotTime
+                warmupForks == o.warmupForks
     }
 
     fun calcExecutionTime(): Double {
@@ -306,7 +310,7 @@ class Result {
             1.0
         }
     } else {
-        warmupTime!! / 1000000000.0
+        warmupTime!!.toSecond()
     }
 
     private fun measurementIterationsOrDefault() = if (measurementIterations == null) {
@@ -322,7 +326,7 @@ class Result {
             1.0
         }
     } else {
-        measurementTime!! / 1000000000.0
+        measurementTime!!.toSecond()
     }
 
     private fun forksOrDefault() = if (forks == null) {

@@ -1,6 +1,7 @@
 package ch.uzh.ifi.seal.smr.soa.utils
 
 import ch.uzh.ifi.seal.smr.soa.analysis.executiontime.ResExecutionTime
+import ch.uzh.ifi.seal.smr.soa.analysis.jmh121update.ResJmh121Update
 import com.opencsv.bean.CsvToBean
 import com.opencsv.bean.CsvToBeanBuilder
 import java.io.BufferedReader
@@ -10,6 +11,7 @@ import java.io.FileReader
 class CsvProjectParser(file: File) : CsvParser<Row>(file, Row::class.java, true)
 class CsvResultParser(file: File) : CsvParser<Result>(file, Result::class.java, false)
 class CsvResExecutionTimeParser(file: File) : CsvParser<ResExecutionTime>(file, ResExecutionTime::class.java, true)
+class CsvResJmh121Update(file: File) : CsvParser<ResJmh121Update>(file, ResJmh121Update::class.java, true)
 
 open class CsvParser<T>(file: File, private val clazz: Class<T>, private val skipHeader: Boolean) {
 

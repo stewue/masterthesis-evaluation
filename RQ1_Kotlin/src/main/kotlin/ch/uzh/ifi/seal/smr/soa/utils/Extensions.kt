@@ -25,3 +25,7 @@ fun Boolean.toInt(): Int {
         0
     }
 }
+
+fun Long.toSecond(): Double {
+    return this / 1000000000.0
+}
