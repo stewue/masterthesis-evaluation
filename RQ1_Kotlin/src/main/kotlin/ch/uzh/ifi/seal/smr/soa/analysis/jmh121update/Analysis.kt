@@ -1,57 +1,146 @@
 package ch.uzh.ifi.seal.smr.soa.analysis.jmh121update
 
+import ch.uzh.ifi.seal.bencher.execution.defaultExecConfig
+import ch.uzh.ifi.seal.smr.soa.analysis.jmh120
+import ch.uzh.ifi.seal.smr.soa.analysis.jmh121
 import ch.uzh.ifi.seal.smr.soa.analysis.percentageString
 import ch.uzh.ifi.seal.smr.soa.utils.CsvResJmh121Update
-import ch.uzh.ifi.seal.smr.soa.utils.median
 import java.io.File
 import kotlin.reflect.KMutableProperty1
 
-fun main (){
+private val groupValues: MutableMap<Group, MutableMap<String, Int>> = Group.values().map { it to mutableMapOf<String, Int>() }.toMap().toMutableMap()
+
+fun main() {
     val fileHistory = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\jmh121update.csv")
 
-    val items = CsvResJmh121Update(fileHistory).getList()
-    val differentConfig = items.filter { !it.sameConfig }
+    val all = CsvResJmh121Update(fileHistory).getList().toList()
+    val differentConfig = all.filter { !it.sameConfig }
 
-    println("Different config: ${differentConfig.size} (${percentageString(differentConfig.size, items.size)})")
+    println("Different config: ${differentConfig.size} (${percentageString(differentConfig.size, all.size)})")
     println("")
 
-    val differentWarmupIterations = items.filter { it.warmupIterationsOldDefault == true }
-    val differentWarmupTime = items.filter { it.warmupTimeOldDefault == true }
-    val differentMeasurementIterations = items.filter { it.measurementIterationsOldDefault == true }
-    val differentMeasurementTime = items.filter { it.measurementTimeOldDefault == true }
-    val differentForks = items.filter { it.forksOldDefault == true }
+    println("& warmupIterations & warmupTime & measurementIterations & measurementTime & forks")
+    generateOutput("warmupIterations", all, ResJmh121Update::warmupIterationsPre, ResJmh121Update::warmupIterationsPost, defaultExecConfig(jmh120).warmupIterations, defaultExecConfig(jmh121).warmupIterations)
+    generateOutput("warmupTime", all, ResJmh121Update::warmupTimePre, ResJmh121Update::warmupTimePost, 1.0, 10.0)
+    generateOutput("measurementIterations", all, ResJmh121Update::measurementIterationsPre, ResJmh121Update::measurementIterationsPost, defaultExecConfig(jmh120).measurementIterations, defaultExecConfig(jmh121).measurementIterations)
+    generateOutput("measurementTime", all, ResJmh121Update::measurementTimePre, ResJmh121Update::measurementTimePost, 1.0, 10.0)
+    generateOutput("forks", all, ResJmh121Update::forksPre, ResJmh121Update::forksPost, defaultExecConfig(jmh120).forks, defaultExecConfig(jmh121).forks)
 
-    println("WarmupIterations changed to old default value: ${differentWarmupIterations.size} (${percentageString(differentWarmupIterations.size, differentConfig.size)})")
-    println("WarmupTime changed to old default value: ${differentWarmupTime.size} (${percentageString(differentWarmupTime.size, differentConfig.size)})")
-    println("MeasurementIterations changed to old default value: ${differentMeasurementIterations.size} (${percentageString(differentMeasurementIterations.size, differentConfig.size)})")
-    println("MeasurementTime changed to old default value: ${differentMeasurementTime.size} (${percentageString(differentMeasurementTime.size, differentConfig.size)})")
-    println("Forks changed to old default value: ${differentForks.size} (${percentageString(differentForks.size, differentConfig.size)})")
-    println("")
-
-    val iterationsOneChanged = items.filter { it.iterationsOneChanged == true }
-    val timeOneChanged = items.filter { it.timeOneChanged == true }
-    val bothChanged = items.filter { it.iterationsOneChanged == true && it.timeOneChanged == true }
-
-    println("iterations changed: ${iterationsOneChanged.size} (${percentageString(iterationsOneChanged.size, differentConfig.size)})")
-    println("time changed: ${timeOneChanged.size} (${percentageString(timeOneChanged.size, differentConfig.size)})")
-    println("both changed: ${bothChanged.size} (${percentageString(bothChanged.size, differentConfig.size)})")
-    println("")
-
-    helper("WarmupIterations", ResJmh121Update::warmupIterationsDifference, items)
-    helper("WarmupTime", ResJmh121Update::warmupTimeDifference, items)
-    helper("MeasurementIterations", ResJmh121Update::measurementIterationsDifference, items)
-    helper("MeasurementTime", ResJmh121Update::measurementTimeDifference, items)
-    helper("Forks", ResJmh121Update::forksDifference, items)
+    printOutput()
 }
 
-private fun helper(title: String, property: KMutableProperty1<ResJmh121Update, out Number?>, items: Collection<ResJmh121Update>){
-    val difference = items.map {property.get(it)?.toDouble() }.filterNotNull()
-    val larger = difference.filter{ it > 0 }.count()
-    val smaller = difference.filter{ it < 0 }.count()
-    val same = difference.filter{ it == 0.0 }.count()
-    print("$title: median=${difference.median()}, ")
-    print("total=${difference.size}, ")
-    print("larger=$larger (${percentageString(larger, difference.size)}), ")
-    print("smaller=$smaller (${percentageString(smaller, difference.size)}), ")
-    println("same=$same (${percentageString(same, difference.size)}), ")
+private fun getGroup(oldValue: Number?, newValue: Number?, oldDefaultValue: Number, newDefaultValue: Number): Triple<Group, Number, Number> {
+    val oldValueWithDefault = oldValue ?: oldDefaultValue
+    val newValueWithDefault = newValue ?: newDefaultValue
+
+    val first = if (newValueWithDefault == oldDefaultValue) {
+        if (oldValue == newValue) {
+            Group.OLD_DEFAULT_ALREADY_SET_BEFORE
+        } else {
+            Group.TO_OLD_DEFAULT
+        }
+    } else if (oldValueWithDefault == newDefaultValue && newValueWithDefault == newDefaultValue) {
+        if (newValue == null) {
+            Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION
+        } else {
+            Group.ALREADY_NEW_DEFAULT
+        }
+    } else if (oldValueWithDefault == oldDefaultValue && newValueWithDefault == newDefaultValue) {
+        if (oldValue == null && newValue == null) {
+            Group.DEFAULT_DEFAULT
+        } else {
+            Group.DEFAULT_DEFAULT_MANUAL
+        }
+    } else if (oldValueWithDefault != oldDefaultValue && newValueWithDefault != newDefaultValue && oldValueWithDefault != newValueWithDefault) {
+        Group.RANDOM_TO_RANDOM
+    } else if (oldValueWithDefault == oldDefaultValue && newValueWithDefault != newDefaultValue) {
+        Group.DEFAULT_TO_RANDOM
+    } else if (oldValueWithDefault != oldDefaultValue && newValueWithDefault == newDefaultValue) {
+        Group.RANDOM_TO_DEFAULT
+    } else {
+        Group.SAME_RANDOM
+    }
+
+    return Triple(first, oldValueWithDefault, newValueWithDefault)
+}
+
+private fun generateOutput(title: String, all: List<ResJmh121Update>, propertyOld: KMutableProperty1<ResJmh121Update, out Number?>, propertyNew: KMutableProperty1<ResJmh121Update, out Number?>, oldDefaultValue: Number, newDefaultValue: Number) {
+    val grouped = all.map { getGroup(propertyOld.get(it), propertyNew.get(it), oldDefaultValue, newDefaultValue) }.map { it.first }.groupingBy { it }.eachCount().toMutableMap()
+
+    val allCount = grouped.map { it.value }.sum()
+
+    Group.values().forEach { group ->
+        val count = grouped[group] ?: 0
+        groupValues.getValue(group)[title] = count
+        //groupValues[group] = groupValues.getValue(group) + " & $count (${percentageString(count, allCount)})".replace("%", "\\%")
+    }
+}
+
+private fun printOutput() {
+    println("\\textbf{active changed}" + getBoldLine(listOf(Group.TO_OLD_DEFAULT, Group.RANDOM_TO_RANDOM, Group.DEFAULT_TO_RANDOM, Group.RANDOM_TO_DEFAULT, Group.DEFAULT_DEFAULT_MANUAL, Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION)) + " \\\\")
+    println("changed to old default" + getLine(Group.TO_OLD_DEFAULT) + " \\\\")
+    println("Random -> Random" + getLine(Group.RANDOM_TO_RANDOM) + " \\\\")
+    println("Default -> Random" + getLine(Group.DEFAULT_TO_RANDOM) + " \\\\")
+    println("Random -> Default" + getLine(Group.RANDOM_TO_DEFAULT) + " \\\\")
+    println("Default -> Default" + getLine(Group.DEFAULT_DEFAULT_MANUAL) + " \\\\")
+    println("new default already set rem" + getLine(Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION) + " \\\\")
+    println("\\hline")
+    println("\\textbf{passive changed}" + getBoldLine(listOf(Group.DEFAULT_DEFAULT)) + " \\\\")
+    println("no annotation present" + getLine(Group.DEFAULT_DEFAULT) + " \\\\")
+    println("\\hline")
+    println("\\textbf{not changed}" + getBoldLine(listOf(Group.OLD_DEFAULT_ALREADY_SET_BEFORE, Group.ALREADY_NEW_DEFAULT, Group.SAME_RANDOM)) + " \\\\")
+    println("old default already set" + getLine(Group.OLD_DEFAULT_ALREADY_SET_BEFORE) + " \\\\")
+    println("new default already set" + getLine(Group.ALREADY_NEW_DEFAULT) + " \\\\")
+    println("same random" + getLine(Group.SAME_RANDOM) + " \\\\")
+}
+
+private fun getLine(group: Group): String {
+    val map = groupValues.getValue(group)
+
+    var ret = getCellNormal(map, "warmupIterations")
+    ret += getCellNormal(map, "warmupTime")
+    ret += getCellNormal(map, "measurementIterations")
+    ret += getCellNormal(map, "measurementTime")
+    ret += getCellNormal(map, "forks")
+
+    return ret
+}
+
+private fun getCellNormal(map: Map<String, Int>, column: String): String {
+    val count = map.getValue(column)
+    val countAll = groupValues.map { it.value.getValue(column) }.sum()
+    return getCell(count, countAll)
+}
+
+private fun getBoldLine(groups: List<Group>): String {
+    var ret = getBoldCell(groups, "warmupIterations")
+    ret += getBoldCell(groups, "warmupTime")
+    ret += getBoldCell(groups, "measurementIterations")
+    ret += getBoldCell(groups, "measurementTime")
+    ret += getBoldCell(groups, "forks")
+
+    return ret
+}
+
+private fun getBoldCell(groups: List<Group>, column: String): String {
+    val count = groupValues.filter { groups.contains(it.key) }.map { it.value.getValue(column) }.sum()
+    val countAll = groupValues.map { it.value.getValue(column) }.sum()
+
+    return getCell(count, countAll, true)
+}
+
+private fun getCell(count: Int, allCount: Int, bold: Boolean = false): String {
+    var ret = " & "
+
+    if (bold) {
+        ret += "\\textbf{"
+    }
+
+    ret += "$count (${percentageString(count, allCount)})".replace("%", "\\%")
+
+    if (bold) {
+        ret += "}"
+    }
+
+    return ret
 }

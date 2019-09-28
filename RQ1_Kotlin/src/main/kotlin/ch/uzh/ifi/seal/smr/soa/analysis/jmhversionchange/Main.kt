@@ -44,7 +44,7 @@ fun main() {
             output.add(ResJmhVersionChange(project, triple.second, triple.first, averageChangeTime, useJmhSince))
             sum += averageChangeTime
             counter++
-        }else{
+        } else {
             output.add(ResJmhVersionChange(project, triple.second, triple.first, null, useJmhSince))
         }
     }

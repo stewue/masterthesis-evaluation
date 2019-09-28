@@ -12,12 +12,13 @@ fun main() {
     val items = CsvResultParser(fileHistory).getList()
     val output = mutableListOf<ResJavaVersionChange>()
 
-    val changed = items.filter{!it.javaTarget.isNullOrBlank() || !it.javaTarget.isNullOrBlank()}
-            .map { it.project to if(it.javaTarget == null){
-                it.javaSource
-            }else{
-                it.javaTarget
-            }
+    val changed = items.filter { !it.javaTarget.isNullOrBlank() || !it.javaTarget.isNullOrBlank() }
+            .map {
+                it.project to if (it.javaTarget == null) {
+                    it.javaSource
+                } else {
+                    it.javaTarget
+                }
             }
             .distinct()
             .groupBy { it.first }
