@@ -7,7 +7,7 @@ import java.io.File
 import kotlin.reflect.KMutableProperty1
 
 fun main() {
-    val file = File("D:\\merged-current-commit.csv")
+    val file = File("D:\\mp\\current-merged-isMain.csv")
     val items = CsvResultParser(file).getList()
 
     analyze(items, "warmupIterations", Result::warmupIterations)
