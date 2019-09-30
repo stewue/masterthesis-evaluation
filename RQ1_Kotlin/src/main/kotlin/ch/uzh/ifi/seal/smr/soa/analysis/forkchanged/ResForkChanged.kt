@@ -16,16 +16,16 @@ class ResForkChanged {
     var sameConfig: Boolean? = null
 
     @CsvBindByPosition(position = 4)
-    var sameCode: Boolean = false
+    var sameCode: Boolean? = null
 
     @CsvBindByPosition(position = 5)
     var bothSame: Boolean? = null
 
     @CsvBindByPosition(position = 6)
-    var neverSameBenchmark: Boolean = true
+    var neverSameBenchmark: Boolean = false
 
     constructor()
-    constructor(project: String, className: String, benchmarkName: String, sameConfig: Boolean?, sameCode: Boolean, bothSame: Boolean?, neverSameBenchmark: Boolean) {
+    constructor(project: String, className: String, benchmarkName: String, sameConfig: Boolean?, sameCode: Boolean?, bothSame: Boolean?, neverSameBenchmark: Boolean) {
         this.project = project
         this.className = className
         this.benchmarkName = benchmarkName
