@@ -16,7 +16,7 @@ valuesYounger, baseYounger = np.histogram(younger, bins=[0,1,2,3,4,5,10,27], wei
 x = np.arange(7)
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-label = ('0', '1', '2', '3', '4', '5-9', '10+')
+label = ('0', '1', '2', '3', '4', '5-9', '10-27')
 plt.bar(x, valuesOlder, label="Older")
 plt.bar(x, valuesYounger, label="Younger", bottom=valuesOlder)
 plt.legend()
