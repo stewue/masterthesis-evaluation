@@ -12,18 +12,18 @@ def update(df):
         return df['parametrizationCombinations']
 
 updated = data.apply(update,axis=1)
-values = updated[updated > 0]
+values = updated[updated > 1]
 
-valuesAll, base = np.histogram(values, bins=30, range=[1,30], weights=np.ones(len(values)) / len(values))
+valuesAll, base = np.histogram(values, bins=29, range=[2,30], weights=np.ones(len(values)) / len(values))
 cumulativeAll = np.cumsum(valuesAll)
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.plot(base[:-1], cumulativeAll, label="all")
-plt.xticks([1,5,10,15,20,25,30])
+plt.xticks([2,5,10,15,20,25,30])
 plt.ylim(0,1)
 plt.yticks(np.arange(0,1.1,0.1))
-plt.xlabel('numberOfParametrizationCombinations')
-plt.ylabel('cumulativePercentage')
+plt.xlabel('# parametrization combinations')
+plt.ylabel('cumulative probability')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.png')

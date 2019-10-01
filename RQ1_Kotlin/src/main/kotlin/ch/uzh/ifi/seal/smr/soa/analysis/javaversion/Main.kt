@@ -1,7 +1,5 @@
-package ch.uzh.ifi.seal.smr.soa.analysis.jmhversion
+package ch.uzh.ifi.seal.smr.soa.analysis.javaversion
 
-import ch.uzh.ifi.seal.bencher.JMHVersion
-import ch.uzh.ifi.seal.smr.soa.analysis.jmhDate
 import ch.uzh.ifi.seal.smr.soa.analysis.yearInSeconds
 import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
 import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
@@ -9,7 +7,7 @@ import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import java.io.File
 import kotlin.math.round
 
-private val output = mutableListOf<ResJmhVersion>()
+private val output = mutableListOf<ResJavaVersion>()
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
@@ -19,10 +17,14 @@ fun main() {
 
     val list = items
             .filter {
-                it.mainRepo == true
+                it.mainRepo == true && (!it.javaTarget.isNullOrBlank() || !it.javaSource.isNullOrBlank())
             }
             .map {
-                val version = convertJmhVersionWithoutPatch(it.jmhVersion)
+                val version = if(it.javaTarget.isNullOrBlank()){
+                     it.javaSource!!
+                }else{
+                    it.javaTarget
+                }
                 val useJmhSince = if (it.lastCommit == null || it.firstBenchmarkFound == null) {
                     0.0
                 } else {
@@ -31,38 +33,23 @@ fun main() {
 
                 Pair(version, useJmhSince)
             }
-            .filter { it.first != null }
 
     val shortLived = list.filter { it.second < 1 }
             .map { it.first }
-            .filterNotNull()
             .groupingBy { it }
             .eachCount()
 
     val longLived = list.filter { it.second >= 1 }
             .map { it.first }
-            .filterNotNull()
             .groupingBy { it }
             .eachCount()
 
-    val versions = jmhDate.toList().filter { it.first.patch == 0 }.reversed()
-
-    versions.forEach { (version, _) ->
+    val versions = listOf("1.5", "1.6", "1.7", "1.8", "9", "10", "11", "12")
+    versions.forEach { version ->
         val short = shortLived[version] ?: 0
         val long = longLived[version] ?: 0
-        output.add(ResJmhVersion(version, short + long, short, long))
+        output.add(ResJavaVersion(version, short + long, short, long))
     }
 
-    OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResJmhVersion::class.java))
-}
-
-private fun convertJmhVersionWithoutPatch(input: String?): JMHVersion? {
-    return if (input == null || input.isNullOrBlank()) {
-        null
-    } else {
-        val list = input.split(".")
-        val major = list[0].toInt()
-        val minor = list[1].toInt()
-        JMHVersion(major, minor)
-    }
+    OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResJavaVersion::class.java))
 }

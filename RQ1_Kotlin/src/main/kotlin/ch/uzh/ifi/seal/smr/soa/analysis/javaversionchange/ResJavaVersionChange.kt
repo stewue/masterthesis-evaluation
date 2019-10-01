@@ -4,15 +4,18 @@ import com.opencsv.bean.CsvBindByPosition
 
 class ResJavaVersionChange {
     @CsvBindByPosition(position = 0)
-    lateinit var project: String
+    var count: Int = 0
 
     @CsvBindByPosition(position = 1)
-    var numberOfChanges: Int = 0
+    var numberOfChangesShortLived: Int = 0
+
+    @CsvBindByPosition(position = 2)
+    var numberOfChangesLongLived: Int = 0
 
     constructor()
-    constructor(project: String, numberOfChanges: Int) {
-        this.project = project
-        this.numberOfChanges = numberOfChanges
+    constructor(count: Int, numberOfChangesShortLived: Int, numberOfChangesLongLived: Int) {
+        this.count = count
+        this.numberOfChangesShortLived = numberOfChangesShortLived
+        this.numberOfChangesLongLived = numberOfChangesLongLived
     }
-
 }

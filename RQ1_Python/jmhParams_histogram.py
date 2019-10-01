@@ -13,7 +13,8 @@ x = ["1", "2", "3", "4", "5", "6", "7-10"]
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.bar(x, valuesAll)
-plt.xlabel('numberOfJmhParams')
+plt.ylabel("probability")
+plt.xlabel('# JMH parameters')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.png')

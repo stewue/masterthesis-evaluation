@@ -1,11 +1,10 @@
-package ch.uzh.ifi.seal.smr.soa.analysis.jmhversion
+package ch.uzh.ifi.seal.smr.soa.analysis.javaversion
 
-import ch.uzh.ifi.seal.bencher.JMHVersion
 import com.opencsv.bean.CsvBindByPosition
 
-class ResJmhVersion {
+class ResJavaVersion {
     @CsvBindByPosition(position = 0)
-    lateinit var version: JMHVersion
+    lateinit var version: String
 
     @CsvBindByPosition(position = 1)
     var count: Int = 0
@@ -17,7 +16,7 @@ class ResJmhVersion {
     var countLongLived: Int = 0
 
     constructor()
-    constructor(version: JMHVersion, count: Int, countShortLived: Int, countLongLived: Int) {
+    constructor(version: String, count: Int, countShortLived: Int, countLongLived: Int) {
         this.version = version
         this.count = count
         this.countShortLived = countShortLived

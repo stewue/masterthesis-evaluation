@@ -1,19 +1,20 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
 from matplotlib.ticker import PercentFormatter
 
-data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\javaversionchange.csv')
+data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\javaversionchange.csv', dtype={'version' : 'str'})
 
-values = data['numberOfChanges']
-valuesAll, base = np.histogram(values, bins=[0,1,2,3,4,5], weights=np.ones(len(values)) / len(values))
-x = np.arange(5)
+allCount = data['numberOfChangesLongLived'].sum() + data['numberOfChangesShortLived'].sum()
 
+numberOfChangesLongLived = data['numberOfChangesLongLived'] / allCount
+numberOfChangesShortLived = data['numberOfChangesShortLived'] / allCount
+
+plt.bar(data['count'], numberOfChangesLongLived, label="long-lived", color="orange")
+plt.bar(data['count'], numberOfChangesShortLived, label="short-lived",  color="green", bottom=numberOfChangesLongLived)
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-label = ('0', '1', '2', '3', '4')
-plt.bar(x, valuesAll)
-plt.xticks(x, label)
-plt.xlabel('numberOfJavaVersionChanges')
+plt.xlabel('# Java version updates')
+plt.ylabel('probability')
+plt.legend()
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.png')
