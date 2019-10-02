@@ -26,3 +26,7 @@ plt.xlabel('# JMH Version Updates')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.png')
+
+print("long-lived avg: " + str(np.average(older)))
+print("long-lived median: " + str(np.median(older)))
+print("long-lived 75%: " + str(np.percentile(older, 75)))
