@@ -40,9 +40,24 @@ private fun analyzeMode(all: Set<Result>) {
     val notDefault = all.filter {
         it.modeIsThroughput == true || it.modeIsAverageTime == true || it.modeIsSampleTime == true || it.modeIsSingleShotTime == true
     }.toSet()
+
+    val bothAnnotationsUsedSameValue = notDefault.filter {
+        it.modeIsThroughputClass == it.modeIsThroughputMethod && it.modeIsAverageTimeClass == it.modeIsAverageTimeMethod &&
+                it.modeIsSampleTimeClass == it.modeIsSampleTimeMethod && it.modeIsSingleShotTimeClass == it.modeIsSingleShotTimeMethod
+    }
+
+    val bothAnnotationsUsedDifferentValue = notDefault.filter {
+        (it.modeIsThroughputClass != null && it.modeIsThroughputMethod != null && it.modeIsThroughputClass != it.modeIsThroughputMethod) ||
+                (it.modeIsAverageTimeClass != null && it.modeIsAverageTimeMethod != null && it.modeIsAverageTimeClass != it.modeIsAverageTimeMethod) ||
+                (it.modeIsSampleTimeClass != null && it.modeIsSampleTimeMethod != null && it.modeIsSampleTimeClass != it.modeIsSampleTimeMethod) ||
+                (it.modeIsSingleShotTimeClass != null && it.modeIsSingleShotTimeMethod != null && it.modeIsSingleShotTimeClass != it.modeIsSingleShotTimeMethod)
+    }
+
     output.add(ResAnnotationPresent(
             name = "mode",
-            annotationPresentPercentage = percentage(notDefault.size, all.size)
+            annotationPresentPercentage = percentage(notDefault.size, all.size),
+            bothAnnotationsUsedSameValue = bothAnnotationsUsedSameValue.size,
+            bothAnnotationsUsedDifferentValue = bothAnnotationsUsedDifferentValue.size
     ))
 
     analyzeSingleMode(notDefault, "throughput", Result::modeIsThroughput, Result::modeIsThroughputClass, Result::modeIsThroughputMethod)

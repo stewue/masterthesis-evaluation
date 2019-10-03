@@ -6,7 +6,7 @@
 "measurementTime","27.67","3455","93.28","245","6.61","3","0.08","1","0.03",""
 "forks","41.97","5173","92.08","445","7.92","0","0.0","0","0.0",""
 "warmupForks","1.34","68","37.78","112","62.22","0","0.0","0","0.0",""
-"mode","66.44","","","","","","","","",""
+"mode","66.44","","","","","11","","28","",""
 "mode->throughput","38.49","2557","74.7","847","24.74","0","0.0","19","0.56","annotationPresentPercentage = throughput is used / BenchmarkMode annotation exists"
 "mode->average","52.97","3916","83.12","784","16.64","11","0.23","28","0.59","annotationPresentPercentage = average is used / BenchmarkMode annotation exists"
 "mode->sample","8.61","358","46.74","404","52.74","0","0.0","4","0.52","annotationPresentPercentage = sample is used / BenchmarkMode annotation exists"

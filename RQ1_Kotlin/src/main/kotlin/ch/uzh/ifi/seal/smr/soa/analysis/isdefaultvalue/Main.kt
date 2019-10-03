@@ -22,6 +22,12 @@ fun main() {
 
     output.add(ResIsDefault("${all.size} benchmarks has a jmh version"))
 
+    val pre120 = all.filter{ it.jmhVersion!!.compareTo(jmh120) < 0 }
+    output.add(ResIsDefault("${pre120.size} benchmarks has jmh version 1.20 or ealier"))
+
+    val post120 = all.filter{ it.jmhVersion!!.compareTo(jmh120) == 1 }
+    output.add(ResIsDefault("${post120.size} benchmarks has jmh version 1.21"))
+
     analyze(all, "warmupIterations", Result::warmupIterations, ExecutionConfiguration::warmupIterations)
     analyze(all, "warmupTime", Result::warmupTime, ExecutionConfiguration::warmupTime)
     analyze(all, "measurementIterations", Result::measurementIterations, ExecutionConfiguration::measurementIterations)
@@ -48,14 +54,22 @@ private fun analyze(all: Set<Result>, title: String, property: KMutableProperty1
     }
 
     val post120 = isDefault.filter { it.jmhVersion!!.compareTo(jmh120) == 1 }
+    val pre120 = isDefault.filter { it.jmhVersion!!.compareTo(jmh120) < 1 }
+
+    val allPost120 = hasValue.filter { it.jmhVersion!!.compareTo(jmh120) == 1 }
+    val allPre120 = hasValue.filter { it.jmhVersion!!.compareTo(jmh120) < 1 }
 
     output.add(ResIsDefault(
             name = title,
             annotationPresent = hasValue.size,
-            isDefaultValue = isDefault.size,
-            isDefaultValuePercentage = percentage(isDefault.size, hasValue.size),
-            isDefaultValueIn121 = post120.size,
-            isDefaultValueIn121Percentage = percentage(post120.size, isDefault.size)
+            defaultValuePresent = isDefault.size,
+            defaultValuePresentPercentage = percentage(isDefault.size, hasValue.size),
+            annotationPresentPre121 = allPre120.size,
+            defaultValuePresentPre121 = pre120.size,
+            defaultValuePresentPre121Percentage = percentage(pre120.size, allPre120.size),
+            annotationPresentPost121 = allPost120.size,
+            defaultValuePresentPost121 = post120.size,
+            defaultValuePresentPost121Percentage = percentage(post120.size, allPost120.size)
     ))
 }
 
@@ -69,10 +83,22 @@ private fun analyzeMode(all: Set<Result>) {
         it.modeIsThroughput == true && it.modeIsAverageTime != true && it.modeIsSampleTime != true && it.modeIsSingleShotTime != true
     }
 
+    val post120 = onlyThrptUsed.filter { it.jmhVersion!!.compareTo(jmh120) == 1 }
+    val pre120 = onlyThrptUsed.filter { it.jmhVersion!!.compareTo(jmh120) < 1 }
+
+    val allPost120 = someModeSet.filter { it.jmhVersion!!.compareTo(jmh120) == 1 }
+    val allPre120 = someModeSet.filter { it.jmhVersion!!.compareTo(jmh120) < 1 }
+
     output.add(ResIsDefault(
             name = "mode",
             annotationPresent = someModeSet.size,
-            isDefaultValue = onlyThrptUsed.size,
-            isDefaultValuePercentage = percentage(onlyThrptUsed.size, someModeSet.size)
+            defaultValuePresent = onlyThrptUsed.size,
+            defaultValuePresentPercentage = percentage(onlyThrptUsed.size, someModeSet.size),
+            annotationPresentPre121 = allPre120.size,
+            defaultValuePresentPre121 = pre120.size,
+            defaultValuePresentPre121Percentage = percentage(pre120.size, allPre120.size),
+            annotationPresentPost121 = allPost120.size,
+            defaultValuePresentPost121 = post120.size,
+            defaultValuePresentPost121Percentage = percentage(post120.size, allPost120.size)
     ))
 }
