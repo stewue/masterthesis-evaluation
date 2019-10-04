@@ -77,15 +77,15 @@ private fun generateOutput(title: String, all: List<ResJmh121Update>, propertyOl
 
 private fun printOutput() {
     println("\\textbf{active change}" + getBoldLine(listOf(Group.TO_OLD_DEFAULT, Group.RANDOM_TO_RANDOM, Group.DEFAULT_TO_RANDOM, Group.RANDOM_TO_DEFAULT, Group.DEFAULT_DEFAULT_MANUAL, Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION)) + " \\\\")
-    println("n\\textsubscript{\\phantom{x}} \$\\rightarrow\$ d\\textsubscript{o}" + getLine(Group.TO_OLD_DEFAULT) + " \\\\")
+    println("\\phantom{xx} \$\\rightarrow\$ d\\textsubscript{o}" + getLine(Group.TO_OLD_DEFAULT) + " \\\\")
     println("u\\textsubscript{1} \$\\rightarrow\$ u\\textsubscript{2}" + getLine(Group.RANDOM_TO_RANDOM) + " \\\\")
     println("d\\textsubscript{o} \$\\rightarrow\$ u\\textsubscript{2}" + getLine(Group.DEFAULT_TO_RANDOM) + " \\\\")
     println("u\\textsubscript{1} \$\\rightarrow\$ d\\textsubscript{n}" + getLine(Group.RANDOM_TO_DEFAULT) + " \\\\")
     println("d\\textsubscript{o} \$\\rightarrow\$ d\\textsubscript{n}" + getLine(Group.DEFAULT_DEFAULT_MANUAL) + " \\\\")
-    println("d\\textsubscript{n} \$\\rightarrow\$ n" + getLine(Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION) + " \\\\")
+    println("d\\textsubscript{n} \$\\rightarrow\$" + getLine(Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION) + " \\\\")
     println("\\hline")
     println("\\textbf{passive change}" + getBoldLine(listOf(Group.DEFAULT_DEFAULT)) + " \\\\")
-    println("n\\textsubscript{\\phantom{x}} \$\\rightarrow\$ n" + getLine(Group.DEFAULT_DEFAULT) + " \\\\")
+    println("\\phantom{xx} \$\\rightarrow\$" + getLine(Group.DEFAULT_DEFAULT) + " \\\\")
     println("\\hline")
     println("\\textbf{no change}" + getBoldLine(listOf(Group.OLD_DEFAULT_ALREADY_SET_BEFORE, Group.ALREADY_NEW_DEFAULT, Group.SAME_RANDOM)) + " \\\\")
     println("d\\textsubscript{o} \$\\rightarrow\$ d\\textsubscript{o}" + getLine(Group.OLD_DEFAULT_ALREADY_SET_BEFORE) + " \\\\")

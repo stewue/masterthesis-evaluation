@@ -1,13 +1,12 @@
 package ch.uzh.ifi.seal.smr.soa.analysis.hash
 
-import ch.uzh.ifi.seal.smr.soa.utils.CsvProjectParser
-import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
-import ch.uzh.ifi.seal.smr.soa.utils.Result
-import ch.uzh.ifi.seal.smr.soa.utils.toGithubName
+import ch.uzh.ifi.seal.smr.soa.utils.*
 import java.io.File
 
 private val projectFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
 private val projects = CsvProjectParser(projectFile).getList()
+private val output = mutableListOf<ResHashChanged>()
+private val outputFile = File("D:\\mp\\out.csv").toPath()
 
 fun main() {
     val file = File("D:\\mp\\history-per-project")
@@ -15,17 +14,12 @@ fun main() {
     file.walkTopDown().forEach {
         if (it.isFile) {
             val changes = processProject(it)
-            val added = changes.filter { it.type == ChangeType.ADDED }
-            val updated = changes.filter { it.type == ChangeType.UPDATED }
-            val addedSame = changes.filter { it.type == ChangeType.ADDED_SAME }
-            val removed = changes.filter { it.type == ChangeType.REMOVED }
-            val removedAddedLater = changes.filter { it.type == ChangeType.REMOVED_ADDED_LATER }
-            val differentConfig = changes.filter { it.configChanged }
-
-            //println("${it.nameWithoutExtension.toGithubName};${added.size};${updated.size};${addedSame.size};${removed.size};${removedAddedLater.size};${differentConfig.size}")
-            analyzeConfigChange(it.nameWithoutExtension.toGithubName, changes)
+            //analyzeConfigChange(it.nameWithoutExtension.toGithubName, changes)
+            analyzeCodeChange(it.nameWithoutExtension.toGithubName, changes)
         }
     }
+
+    OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResHashChanged::class.java))
 }
 
 private fun processProject(inputFile: File): List<Change> {
@@ -94,21 +88,22 @@ private fun processProject(inputFile: File): List<Change> {
 private fun analyzeCodeChange(project: String, changes: List<Change>) {
     val grouped = changes.groupBy { it.benchmark }
     grouped.forEach { (benchmarkName, changeList) ->
-        val first = changeList.first()
-        if (first.type != ChangeType.ADDED) {
-            throw IllegalArgumentException("First change should be always ADDED")
-        }
-
-        val last = changeList.last()
-        if (last.type != ChangeType.REMOVED && last.type != ChangeType.EXISTING) {
-            throw IllegalArgumentException("Last change should be always REMOVED or EXISTING")
-        }
+//        val first = changeList.first()
+//        if (first.type != ChangeType.ADDED) {
+//            throw IllegalArgumentException("First change should be always ADDED")
+//        }
+//
+//        val last = changeList.last()
+//        if (last.type != ChangeType.REMOVED && last.type != ChangeType.EXISTING) {
+//            throw IllegalArgumentException("Last change should be always REMOVED or EXISTING")
+//        }
 
         val filtered = changeList.filter { it.type == ChangeType.UPDATED }
 
-        filtered.forEach { change ->
-            println("$project;$benchmarkName;${lin(first.commitTime, last.commitTime, change.commitTime)}")
-        }
+        output.add(ResHashChanged(project, benchmarkName, filtered.size))
+//        filtered.forEach { change ->
+//            println("$project;$benchmarkName;${lin(first.commitTime, last.commitTime, change.commitTime)}")
+//        }
     }
 
 }
@@ -117,9 +112,7 @@ private fun analyzeConfigChange(project: String, changes: List<Change>) {
     val grouped = changes.groupBy { it.benchmark }
     grouped.forEach { (benchmarkName, changeList) ->
         val filtered = changeList.filter { it.configChanged }
-        if (filtered.isNotEmpty()) {
-            println("$project;$benchmarkName;${filtered.size}")
-        }
+        output.add(ResHashChanged(project, benchmarkName, filtered.size))
     }
 }
 
