@@ -72,26 +72,25 @@ private fun generateOutput(title: String, all: List<ResJmh121Update>, propertyOl
     Group.values().forEach { group ->
         val count = grouped[group] ?: 0
         groupValues.getValue(group)[title] = count
-        //groupValues[group] = groupValues.getValue(group) + " & $count (${percentageString(count, allCount)})".replace("%", "\\%")
     }
 }
 
 private fun printOutput() {
-    println("\\textbf{active changed}" + getBoldLine(listOf(Group.TO_OLD_DEFAULT, Group.RANDOM_TO_RANDOM, Group.DEFAULT_TO_RANDOM, Group.RANDOM_TO_DEFAULT, Group.DEFAULT_DEFAULT_MANUAL, Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION)) + " \\\\")
-    println("changed to old default" + getLine(Group.TO_OLD_DEFAULT) + " \\\\")
-    println("Random -> Random" + getLine(Group.RANDOM_TO_RANDOM) + " \\\\")
-    println("Default -> Random" + getLine(Group.DEFAULT_TO_RANDOM) + " \\\\")
-    println("Random -> Default" + getLine(Group.RANDOM_TO_DEFAULT) + " \\\\")
-    println("Default -> Default" + getLine(Group.DEFAULT_DEFAULT_MANUAL) + " \\\\")
-    println("new default already set rem" + getLine(Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION) + " \\\\")
+    println("\\textbf{active change}" + getBoldLine(listOf(Group.TO_OLD_DEFAULT, Group.RANDOM_TO_RANDOM, Group.DEFAULT_TO_RANDOM, Group.RANDOM_TO_DEFAULT, Group.DEFAULT_DEFAULT_MANUAL, Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION)) + " \\\\")
+    println("n\\textsubscript{\\phantom{x}} \$\\rightarrow\$ d\\textsubscript{o}" + getLine(Group.TO_OLD_DEFAULT) + " \\\\")
+    println("u\\textsubscript{1} \$\\rightarrow\$ u\\textsubscript{2}" + getLine(Group.RANDOM_TO_RANDOM) + " \\\\")
+    println("d\\textsubscript{o} \$\\rightarrow\$ u\\textsubscript{2}" + getLine(Group.DEFAULT_TO_RANDOM) + " \\\\")
+    println("u\\textsubscript{1} \$\\rightarrow\$ d\\textsubscript{n}" + getLine(Group.RANDOM_TO_DEFAULT) + " \\\\")
+    println("d\\textsubscript{o} \$\\rightarrow\$ d\\textsubscript{n}" + getLine(Group.DEFAULT_DEFAULT_MANUAL) + " \\\\")
+    println("d\\textsubscript{n} \$\\rightarrow\$ n" + getLine(Group.ALREADY_NEW_DEFAULT_REMOVED_ANNOTATION) + " \\\\")
     println("\\hline")
-    println("\\textbf{passive changed}" + getBoldLine(listOf(Group.DEFAULT_DEFAULT)) + " \\\\")
-    println("no annotation present" + getLine(Group.DEFAULT_DEFAULT) + " \\\\")
+    println("\\textbf{passive change}" + getBoldLine(listOf(Group.DEFAULT_DEFAULT)) + " \\\\")
+    println("n\\textsubscript{\\phantom{x}} \$\\rightarrow\$ n" + getLine(Group.DEFAULT_DEFAULT) + " \\\\")
     println("\\hline")
-    println("\\textbf{not changed}" + getBoldLine(listOf(Group.OLD_DEFAULT_ALREADY_SET_BEFORE, Group.ALREADY_NEW_DEFAULT, Group.SAME_RANDOM)) + " \\\\")
-    println("old default already set" + getLine(Group.OLD_DEFAULT_ALREADY_SET_BEFORE) + " \\\\")
-    println("new default already set" + getLine(Group.ALREADY_NEW_DEFAULT) + " \\\\")
-    println("same random" + getLine(Group.SAME_RANDOM) + " \\\\")
+    println("\\textbf{no change}" + getBoldLine(listOf(Group.OLD_DEFAULT_ALREADY_SET_BEFORE, Group.ALREADY_NEW_DEFAULT, Group.SAME_RANDOM)) + " \\\\")
+    println("d\\textsubscript{o} \$\\rightarrow\$ d\\textsubscript{o}" + getLine(Group.OLD_DEFAULT_ALREADY_SET_BEFORE) + " \\\\")
+    println("d\\textsubscript{n} \$\\rightarrow\$ d\\textsubscript{n}" + getLine(Group.ALREADY_NEW_DEFAULT) + " \\\\")
+    println("u\\textsubscript{1} \$\\rightarrow$ u\\textsubscript{1}" + getLine(Group.SAME_RANDOM) + " \\\\")
 }
 
 private fun getLine(group: Group): String {
@@ -136,7 +135,15 @@ private fun getCell(count: Int, allCount: Int, bold: Boolean = false): String {
         ret += "\\textbf{"
     }
 
-    ret += "$count (${percentageString(count, allCount)})".replace("%", "\\%")
+    ret += "$count"
+
+    if (bold) {
+        ret += "} & \\textbf{"
+    }else{
+        ret += " & "
+    }
+
+    ret += "(${percentageString(count, allCount)})".replace("%", "\\%")
 
     if (bold) {
         ret += "}"

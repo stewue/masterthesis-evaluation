@@ -15,8 +15,10 @@ cumulativeAll = np.cumsum(largerAll)
 plt.plot(base[:-1], cumulativeAll, label="all")
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-plt.ylabel('probability')
+plt.ylabel('cumulative probability')
 plt.xlabel('measurementWarmupRatio')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.png')
+
+print(len(largerArray))

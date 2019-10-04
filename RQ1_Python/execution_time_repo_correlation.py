@@ -1,4 +1,15 @@
 import pandas as pd
+from correlation_helper import spearman, dfOutput
+
+def spearman_correlation_repo_meta(name, col, data):
+    return pd.DataFrame({
+        "name": name,
+        "stars": spearman(data, col, 'stars'),
+        "forks": spearman(data, col, 'forks'),
+        "watchers": spearman(data, col, 'watchers'),
+        "numberOfCommits": spearman(data, col, 'numberOfCommits'),
+        "numberOfContributors": spearman(data, col, 'numberOfContributors')
+    })
 
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
@@ -8,8 +19,8 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 
 data['measurementWarmupRatio'] = pd.to_numeric(data['measurementWarmupRatio'], 'coerce')
 
-selected = data[['executionTimePercentage', 'warmupTimePercentage', 'measurementTimePercentage', 'measurementWarmupRatio',
-                 'stars', 'forks', 'watchers', 'numberOfCommits', 'numberOfContributors', 'numberOfBenchmarks']]
+df = pd.DataFrame({})
+df = df.append(spearman_correlation_repo_meta('used execution time', 'executionTimePercentage', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('measurementWarmupRatio', 'measurementWarmupRatio', data), ignore_index=True)
 
-corr = selected.corr('spearman').round(2)
-print(corr.to_csv(index=False))
+print(dfOutput(df))
