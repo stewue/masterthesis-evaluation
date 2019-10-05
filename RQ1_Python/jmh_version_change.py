@@ -22,7 +22,7 @@ plt.bar(x, valuesYounger, label="short-lived",  color="green", bottom=valuesOlde
 plt.legend()
 plt.xticks(x, label)
 plt.ylabel('probability')
-plt.xlabel('# JMH Version Updates')
+plt.xlabel('# JMH version updates')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.png')
