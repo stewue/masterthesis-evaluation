@@ -19,7 +19,7 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 
 df = pd.DataFrame({})
 df = df.append(spearman_correlation_repo_meta('avg. \# benchmarks per class', 'avgNumberOfBenchmarksPerClass', data), ignore_index = True)
-df = df.append(spearman_correlation_repo_meta('parametrization used', 'parametrizationUsedPercentage', data), ignore_index = True)
+df = df.append(spearman_correlation_repo_meta('parameterization used', 'parameterizationUsedPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('groups used', 'groupsUsedPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('blackhole used', 'blackholeUsedPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('state object without JMH Parameters used', 'hasStateObjectsWithoutJmhParamsPercentage', data), ignore_index = True)

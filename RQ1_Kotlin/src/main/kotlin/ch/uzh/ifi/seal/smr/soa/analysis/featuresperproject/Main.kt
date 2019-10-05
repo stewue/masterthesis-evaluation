@@ -28,8 +28,8 @@ private fun processProject(project: String, list: List<Result>) {
             numberOfBenchmarks = numberOfBenchmarks,
             avgNumberOfBenchmarksPerClass = numberOfBenchmarks / list.groupBy { it.className }.count().toDouble(),
             avgNumberOfBenchmarksPerFile = numberOfBenchmarks / list.groupBy { it.className.substringBefore("$") }.count().toDouble(),
-            parametrizationUsedPercentage = list.map {
-                if (it.parametrizationCombinations > 1) {
+            parameterizationUsedPercentage = list.map {
+                if (it.parameterizationCombinations > 1) {
                     1
                 } else {
                     0

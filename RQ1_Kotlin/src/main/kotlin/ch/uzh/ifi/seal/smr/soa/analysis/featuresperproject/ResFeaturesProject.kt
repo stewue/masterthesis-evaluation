@@ -16,7 +16,7 @@ class ResFeaturesProject {
     var avgNumberOfBenchmarksPerFile: Double? = null
 
     @CsvBindByPosition(position = 4)
-    var parametrizationUsedPercentage: Double? = null
+    var parameterizationUsedPercentage: Double? = null
 
     @CsvBindByPosition(position = 5)
     var groupsUsedPercentage: Double? = null
@@ -61,12 +61,12 @@ class ResFeaturesProject {
     var numberOfContributors: Int? = null
 
     constructor()
-    constructor(project: String, numberOfBenchmarks: Int?, avgNumberOfBenchmarksPerClass: Double?, avgNumberOfBenchmarksPerFile: Double?, parametrizationUsedPercentage: Double?, groupsUsedPercentage: Double?, blackholeUsedPercentage: Double?, controlUsedPercentage: Double?, hasStateObjectsWithJmhParamsPercentage: Double?, hasStateObjectsWithoutJmhParamsPercentage: Double?, returnTypeUsedPercentage: Double?, returnTypeOrBlackholeUsedPercentage: Double?, nothingSetPercentage: Double?, benchmarkIsInnerClassPercentage: Double?, stars: Int?, forks: Int?, watchers: Int?, numberOfCommits: Int?, numberOfContributors: Int?) {
+    constructor(project: String, numberOfBenchmarks: Int?, avgNumberOfBenchmarksPerClass: Double?, avgNumberOfBenchmarksPerFile: Double?, parameterizationUsedPercentage: Double?, groupsUsedPercentage: Double?, blackholeUsedPercentage: Double?, controlUsedPercentage: Double?, hasStateObjectsWithJmhParamsPercentage: Double?, hasStateObjectsWithoutJmhParamsPercentage: Double?, returnTypeUsedPercentage: Double?, returnTypeOrBlackholeUsedPercentage: Double?, nothingSetPercentage: Double?, benchmarkIsInnerClassPercentage: Double?, stars: Int?, forks: Int?, watchers: Int?, numberOfCommits: Int?, numberOfContributors: Int?) {
         this.project = project
         this.numberOfBenchmarks = numberOfBenchmarks
         this.avgNumberOfBenchmarksPerClass = avgNumberOfBenchmarksPerClass
         this.avgNumberOfBenchmarksPerFile = avgNumberOfBenchmarksPerFile
-        this.parametrizationUsedPercentage = parametrizationUsedPercentage
+        this.parameterizationUsedPercentage = parameterizationUsedPercentage
         this.groupsUsedPercentage = groupsUsedPercentage
         this.blackholeUsedPercentage = blackholeUsedPercentage
         this.controlUsedPercentage = controlUsedPercentage

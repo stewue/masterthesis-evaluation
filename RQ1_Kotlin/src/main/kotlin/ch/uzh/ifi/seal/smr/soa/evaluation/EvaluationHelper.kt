@@ -57,7 +57,7 @@ object EvaluationHelper {
                 modeIsSingleShotTime = mode(ec.mode, unsetExecConfig.mode, "SingleShotTime"),
                 modeIsSingleShotTimeClass = mode(c.mode, unsetExecConfig.mode, "SingleShotTime"),
                 modeIsSingleShotTimeMethod = mode(b.mode, unsetExecConfig.mode, "SingleShotTime"),
-                parametrizationCombinations = bench.parameterizedBenchmarks().size,
+                parameterizationCombinations = bench.parameterizedBenchmarks().size,
                 paramString = paramString(bench.params),
                 paramCount = bench.params.size,
                 paramCountStateObject = paramCountStateObject(bench.params, stateObjects),

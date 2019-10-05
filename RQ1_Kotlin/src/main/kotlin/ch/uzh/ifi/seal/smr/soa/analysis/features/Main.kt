@@ -30,9 +30,9 @@ fun main() {
     val hasGroup = returnCountMap(all, Result::partOfGroup)[true] ?: 0
     output.add(ResKeyValue("Benchmark is part of a group", "$hasGroup (${percentageString(hasGroup, all.size)})"))
 
-    val hasNoParametrization = returnCountMap(all, Result::parametrizationCombinations)[1] ?: 0
-    val hasParametrization = all.size - hasNoParametrization
-    output.add(ResKeyValue("Benchmark has parametrization", "$hasParametrization (${percentageString(hasParametrization, all.size)})"))
+    val hasNoParameterization = returnCountMap(all, Result::parameterizationCombinations)[1] ?: 0
+    val hasParameterization = all.size - hasNoParameterization
+    output.add(ResKeyValue("Benchmark has parameterization", "$hasParameterization (${percentageString(hasParameterization, all.size)})"))
 
     params(all)
     avgBenchsAndInnerClassBenchs(all)

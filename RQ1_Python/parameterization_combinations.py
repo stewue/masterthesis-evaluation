@@ -9,7 +9,7 @@ def update(df):
     if df['jmhParamCount'] == 0:
         return 0
     else:
-        return df['parametrizationCombinations']
+        return df['parameterizationCombinations']
 
 updated = data.apply(update,axis=1)
 values = updated[updated > 1]
@@ -22,7 +22,7 @@ plt.plot(base[:-1], cumulativeAll, label="all")
 plt.xticks([2,5,10,15,20,25,30])
 plt.ylim(0,1)
 plt.yticks(np.arange(0,1.1,0.1))
-plt.xlabel('# parametrization combinations')
+plt.xlabel('# parameterization combinations')
 plt.ylabel('cumulative probability')
 plt.tight_layout()
 #plt.show()
