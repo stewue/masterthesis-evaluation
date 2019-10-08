@@ -58,8 +58,11 @@ class ResExecutionTime {
     @CsvBindByPosition(position = 17)
     var hasWarmupForks: Boolean = false
 
+    @CsvBindByPosition(position = 18)
+    var parameterizationCombinations: Int = 0
+
     constructor()
-    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimeDefault: Long, executionTime: Double, warmupTimeDefault: Long, warmupTime: Double, measurementTimeDefault: Long, measurementTime: Double, onlyModeChanged: Boolean, onlySingleShot: Boolean, measurementWarmupRatio: Double, measurementWarmupRatioPerMeasurementFork: Double, hasWarmupForks: Boolean) {
+    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimeDefault: Long, executionTime: Double, warmupTimeDefault: Long, warmupTime: Double, measurementTimeDefault: Long, measurementTime: Double, onlyModeChanged: Boolean, onlySingleShot: Boolean, measurementWarmupRatio: Double, measurementWarmupRatioPerMeasurementFork: Double, hasWarmupForks: Boolean, parameterizationCombinations: Int) {
         this.project = project
         this.className = className
         this.jmhVersion = jmhVersion
@@ -78,5 +81,6 @@ class ResExecutionTime {
         this.measurementWarmupRatio = measurementWarmupRatio
         this.measurementWarmupRatioPerMeasurementFork = measurementWarmupRatioPerMeasurementFork
         this.hasWarmupForks = hasWarmupForks
+        this.parameterizationCombinations = parameterizationCombinations
     }
 }

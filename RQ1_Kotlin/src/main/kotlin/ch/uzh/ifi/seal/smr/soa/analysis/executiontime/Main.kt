@@ -5,16 +5,13 @@ import ch.uzh.ifi.seal.smr.soa.analysis.jmh120
 import ch.uzh.ifi.seal.smr.soa.utils.*
 import java.io.File
 
-
 private val output = mutableListOf<ResExecutionTime>()
 
 fun main() {
     val resultFile = File("D:\\mp\\current-merged-isMain.csv")
-    val projectFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
     val outputFile = File("D:\\mp\\out.csv").toPath()
 
     val all = CsvResultParser(resultFile).getList()
-    val projects = CsvProjectParser(projectFile).getList()
 
     val filtered = all.filter { it.jmhVersion != null }
     filtered.forEach {
@@ -33,7 +30,8 @@ fun main() {
                 onlySingleShot = it.onlySingleShot(),
                 measurementWarmupRatio = it.calcMeasurementTime() / it.calcWarmupTime(),
                 measurementWarmupRatioPerMeasurementFork = it.calcMeasurementTime() / it.calcWarmupTimePerMeasurementFork(),
-                hasWarmupForks = it.warmupForks != null && it.warmupForks!! > 0
+                hasWarmupForks = it.warmupForks != null && it.warmupForks!! > 0,
+                parameterizationCombinations = it.parameterizationCombinations
         )
         output.add(res)
     }

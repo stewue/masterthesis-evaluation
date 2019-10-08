@@ -14,7 +14,7 @@ fun main() {
 
     benchmarks.forEach { b ->
         val p = projects.first { it.project == b.project }
-        output.add(ResBenchmarkRepoCorrelation(b.project, b.className, b.benchmarkName, b.warmupIterations, b.warmupTime, b.measurementIterations, b.measurementTime, b.forks, b.warmupForks, b.modeIsThroughput.toInt(), b.modeIsAverageTime.toInt(), b.modeIsSampleTime.toInt(), b.modeIsSingleShotTime.toInt(), p.stars!!, p.forks!!, p.watchers!!, p.numberOfCommits!!, p.numberOfContributors!!, p.numberOfBenchmarks!!, b.nothingSet().toInt()))
+        output.add(ResBenchmarkRepoCorrelation(b.project, b.className, b.benchmarkName, b.warmupIterations, b.warmupTime, b.measurementIterations, b.measurementTime, b.forks, b.warmupForks, b.modeIsThroughput.toInt(), b.modeIsAverageTime.toInt(), b.modeIsSampleTime.toInt(), b.modeIsSingleShotTime.toInt(), p.stars!!, p.forks!!, p.watchers!!, p.numberOfCommits!!, p.numberOfContributors!!, p.numberOfBenchmarks!!, b.nothingSet().toInt(), b.parameterizationCombinations))
     }
 
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResBenchmarkRepoCorrelation::class.java))

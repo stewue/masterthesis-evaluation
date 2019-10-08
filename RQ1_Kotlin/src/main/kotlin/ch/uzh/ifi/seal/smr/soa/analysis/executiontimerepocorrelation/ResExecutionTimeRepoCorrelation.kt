@@ -46,7 +46,10 @@ class ResExecutionTimeRepoCorrelation {
     @CsvBindByPosition(position = 13)
     var numberOfBenchmarks: Int
 
-    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimePercentage: Double, warmupTimePercentage: Double, measurementTimePercentage: Double, measurementWarmupRatio: Double, stars: Int, forks: Int, watchers: Int, numberOfCommits: Int, numberOfContributors: Int, numberOfBenchmarks: Int) {
+    @CsvBindByPosition(position = 14)
+    var parameterizationCombinations: Int
+
+    constructor(project: String, className: String, jmhVersion: JMHVersion, benchmarkName: String, executionTimePercentage: Double, warmupTimePercentage: Double, measurementTimePercentage: Double, measurementWarmupRatio: Double, stars: Int, forks: Int, watchers: Int, numberOfCommits: Int, numberOfContributors: Int, numberOfBenchmarks: Int, parameterizationCombinations: Int) {
         this.project = project
         this.className = className
         this.jmhVersion = jmhVersion
@@ -61,5 +64,6 @@ class ResExecutionTimeRepoCorrelation {
         this.numberOfCommits = numberOfCommits
         this.numberOfContributors = numberOfContributors
         this.numberOfBenchmarks = numberOfBenchmarks
+        this.parameterizationCombinations = parameterizationCombinations
     }
 }

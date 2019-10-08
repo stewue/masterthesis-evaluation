@@ -85,7 +85,10 @@ class ResBenchmarkRepoCorrelation {
     @CsvBindByPosition(position = 26)
     var nothingSet: Int
 
-    constructor(project: String, className: String, benchmarkName: String, warmupIterations: Int?, warmupTime: Long?, measurementIterations: Int?, measurementTime: Long?, forks: Int?, warmupForks: Int?, modeIsThroughput: Int?, modeIsAverageTime: Int?, modeIsSampleTime: Int?, modeIsSingleShotTime: Int?, stars: Int, projectForks: Int, watchers: Int, numberOfCommits: Int, numberOfContributors: Int, numberOfBenchmarks: Int, nothingSet: Int) {
+    @CsvBindByPosition(position = 27)
+    var parameterizationCombinations: Int
+
+    constructor(project: String, className: String, benchmarkName: String, warmupIterations: Int?, warmupTime: Long?, measurementIterations: Int?, measurementTime: Long?, forks: Int?, warmupForks: Int?, modeIsThroughput: Int?, modeIsAverageTime: Int?, modeIsSampleTime: Int?, modeIsSingleShotTime: Int?, stars: Int, projectForks: Int, watchers: Int, numberOfCommits: Int, numberOfContributors: Int, numberOfBenchmarks: Int, nothingSet: Int, parameterizationCombinations: Int) {
         this.project = project
         this.className = className
         this.benchmarkName = benchmarkName
@@ -113,5 +116,6 @@ class ResBenchmarkRepoCorrelation {
         this.numberOfContributors = numberOfContributors
         this.numberOfBenchmarks = numberOfBenchmarks
         this.nothingSet = nothingSet
+        this.parameterizationCombinations = parameterizationCombinations
     }
 }

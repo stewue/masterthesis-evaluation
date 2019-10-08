@@ -18,7 +18,7 @@ fun main() {
     executionTime.forEach { e ->
         if (!e.onlySingleShot && !e.onlyModeChanged) {
             val p = projects.first { it.project == e.project }
-            output.add(ResExecutionTimeRepoCorrelation(e.project, e.className, e.jmhVersion, e.benchmarkName, e.executionTimePercentage, e.warmupTimePercentage, e.measurementTimePercentage, e.measurementWarmupRatio, p.stars!!, p.forks!!, p.watchers!!, p.numberOfCommits!!, p.numberOfContributors!!, p.numberOfBenchmarks!!))
+            output.add(ResExecutionTimeRepoCorrelation(e.project, e.className, e.jmhVersion, e.benchmarkName, e.executionTimePercentage, e.warmupTimePercentage, e.measurementTimePercentage, e.measurementWarmupRatio, p.stars!!, p.forks!!, p.watchers!!, p.numberOfCommits!!, p.numberOfContributors!!, p.numberOfBenchmarks!!, e.parameterizationCombinations))
         }
     }
 

@@ -8,7 +8,8 @@ def spearman_correlation_repo_meta(name, col, data):
         "forks": spearman(data, col, 'forks'),
         "watchers": spearman(data, col, 'watchers'),
         "numberOfCommits": spearman(data, col, 'numberOfCommits'),
-        "numberOfContributors": spearman(data, col, 'numberOfContributors')
+        "numberOfContributors": spearman(data, col, 'numberOfContributors'),
+        "parameterizationCombinations": spearman(data, col, 'parameterizationCombinations')
     })
 
 pd.set_option('display.max_rows', 500)
