@@ -19,3 +19,6 @@ plt.xlabel('# benchmarks')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.png')
+
+print("average: " + str(np.average(filter2)))
+print("median: " + str(np.median(filter2)))
