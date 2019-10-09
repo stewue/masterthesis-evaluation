@@ -19,7 +19,7 @@ fun main() {
 
     val list = items
             .filter {
-                it.mainRepo == true
+                it.mainRepo == true && it.numberOfBenchmarks!! > 0
             }
             .map {
                 convertJmhVersionWithoutPatch(it.jmhVersion)
@@ -41,7 +41,7 @@ fun main() {
             difference = 1.0
         }
 
-        val count = list.getValue(current.first)
+        val count = list.getOrDefault(current.first, 0)
         val normalizedCount = count / difference
         output.add(ResJmhVersionNormalized(current.first, normalizedCount))
     }

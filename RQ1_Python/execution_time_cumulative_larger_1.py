@@ -13,7 +13,7 @@ cumulativeAll = np.cumsum(valuesAll)
 plt.plot(base[:-1], cumulativeAll, label="all")
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-plt.xlabel('used execution time in proportion to the default execution time')
+plt.xlabel('executionTimeRatio')
 plt.ylabel('cumulative probability')
 plt.xscale('log')
 plt.tight_layout()

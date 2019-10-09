@@ -26,12 +26,16 @@ fun main() {
 
     val final = changed.toList().map { (project, count) ->
         val p = projects.find { it.project == project }!!
-        val numberOfBenchmarks = p.numberOfBenchmarks!!
-        val useJmhSince = p.lastCommit!! - p.firstBenchmarkFound!!
-        project to Triple(count - 1, numberOfBenchmarks, useJmhSince)
-    }
+        if (p.numberOfBenchmarks!! == 0) {
+            null
+        } else {
+            val numberOfBenchmarks = p.numberOfBenchmarks!!
+            val useJmhSince = p.lastCommit!! - p.firstBenchmarkFound!!
+            project to Triple(count - 1, numberOfBenchmarks, useJmhSince)
+        }
+    }.filterNotNull()
 
-    println("How often was jJmhVersion changed if project uses jmh over a year (add jmh as new dependency does not count)")
+    println("How often was JmhVersion changed if project uses jmh over a year (add jmh as new dependency does not count)")
     println(averageChanged(minUsed(final, yearInSeconds.toInt())))
 
     var sum = 0.0

@@ -29,8 +29,11 @@ fun main() {
                 val timeDiff = round((item.commitTime!! - jmhVersionDate) / yearInSeconds * 100) / 100.0
 
                 val project = projects.find { it.project == item.project }!!
-                val useJmhSince = round((project.lastCommit!! - project.firstBenchmarkFound!!) / yearInSeconds * 100) / 100.0
-                output.add(ResJmhVersionAge(item.project, count, timeDiff, useJmhSince))
+
+                if(project.numberOfBenchmarks!! > 0) {
+                    val useJmhSince = round((project.lastCommit!! - project.firstBenchmarkFound!!) / yearInSeconds * 100) / 100.0
+                    output.add(ResJmhVersionAge(item.project, count, timeDiff, useJmhSince))
+                }
             }
 
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResJmhVersionAge::class.java))

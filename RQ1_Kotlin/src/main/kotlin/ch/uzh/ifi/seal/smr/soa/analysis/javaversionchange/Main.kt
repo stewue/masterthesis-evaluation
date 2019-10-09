@@ -36,16 +36,18 @@ fun main() {
 
         val p = projects.first { it.project == project }
 
-        val useJmhSince = if (p.lastCommit == null || p.firstBenchmarkFound == null) {
-            0.0
-        } else {
-            round((p.lastCommit!! - p.firstBenchmarkFound!!) / yearInSeconds * 100) / 100.0
-        }
+        if (p.numberOfBenchmarks!! > 0) {
+            val useJmhSince = if (p.lastCommit == null || p.firstBenchmarkFound == null) {
+                0.0
+            } else {
+                round((p.lastCommit!! - p.firstBenchmarkFound!!) / yearInSeconds * 100) / 100.0
+            }
 
-        if (useJmhSince >= 1) {
-            longLived[changeCount] = longLived.getOrDefault(changeCount, 0) + 1
-        } else {
-            shortLived[changeCount] = shortLived.getOrDefault(changeCount, 0) + 1
+            if (useJmhSince >= 1) {
+                longLived[changeCount] = longLived.getOrDefault(changeCount, 0) + 1
+            } else {
+                shortLived[changeCount] = shortLived.getOrDefault(changeCount, 0) + 1
+            }
         }
     }
 

@@ -8,8 +8,8 @@ def spearman_correlation_repo_meta(name, col, data):
         "forks": spearman(data, col, 'forks'),
         "watchers": spearman(data, col, 'watchers'),
         "numberOfCommits": spearman(data, col, 'numberOfCommits'),
-        "numberOfContributors": spearman(data, col, 'numberOfContributors')#,
-        #"parameterizationCombinations": spearman(data, col, 'parameterizationCombinations')
+        "numberOfContributors": spearman(data, col, 'numberOfContributors'),
+        "parameterizationCombinations": spearman(data, col, 'parameterizationCombinations')
     })
 
 pd.set_option('display.max_rows', 500)
@@ -21,7 +21,7 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 data['measurementWarmupRatio'] = pd.to_numeric(data['measurementWarmupRatio'], 'coerce')
 
 df = pd.DataFrame({})
-df = df.append(spearman_correlation_repo_meta('\\makecell[cl]{used execution time compared \\\\ to the default execution time}', 'executionTimePercentage', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('$executionTimeRatio$', 'executionTimePercentage', data), ignore_index=True)
 df = df.append(spearman_correlation_repo_meta('$measurementWarmupRatio$', 'measurementWarmupRatio', data), ignore_index=True)
 
 print(dfOutput(df))

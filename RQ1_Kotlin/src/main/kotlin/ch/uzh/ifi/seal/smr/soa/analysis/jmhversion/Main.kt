@@ -19,7 +19,7 @@ fun main() {
 
     val list = items
             .filter {
-                it.mainRepo == true
+                it.mainRepo == true && it.numberOfBenchmarks!! > 0
             }
             .map {
                 val version = convertJmhVersionWithoutPatch(it.jmhVersion)

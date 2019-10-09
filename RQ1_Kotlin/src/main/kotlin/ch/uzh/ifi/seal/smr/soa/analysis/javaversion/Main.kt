@@ -17,7 +17,7 @@ fun main() {
 
     val list = items
             .filter {
-                it.mainRepo == true && (!it.javaTarget.isNullOrBlank() || !it.javaSource.isNullOrBlank())
+                it.mainRepo == true && it.numberOfBenchmarks!! > 0 && (!it.javaTarget.isNullOrBlank() || !it.javaSource.isNullOrBlank())
             }
             .map {
                 val version = if(it.javaTarget.isNullOrBlank()){
