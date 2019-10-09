@@ -8,12 +8,12 @@ def spearman(data, col1, col2):
     res = stats.spearmanr(cleaned2[col1], cleaned2[col2])
     corr = str("{0:.2f}".format(res.correlation))
     pvalue = res.pvalue
-    extra = ""
+    extra = "\\phantom{**}"
 
     if pvalue < 0.01:
         extra = "**"
     elif pvalue < 0.05:
-        extra = "*"
+        extra = "*\\phantom{*}"
 
     return ["\correlationColor{" + corr + "}" + extra]
 
@@ -21,12 +21,12 @@ def pointbiserialr(data, col1, col2):
     res = stats.pointbiserialr(data[col1], data[col2])
     corr = str("{0:.2f}".format(res.correlation))
     pvalue = res.pvalue
-    extra = ""
+    extra = "\\phantom{**}"
 
-    if pvalue < 0.01 :
+    if pvalue < 0.01:
         extra = "**"
-    elif pvalue < 0.05 :
-        extra = "*"
+    elif pvalue < 0.05:
+        extra = "*\\phantom{*}"
 
     return ["\correlationColor{" + corr + "}" + extra]
 

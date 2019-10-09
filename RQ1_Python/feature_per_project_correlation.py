@@ -22,7 +22,7 @@ df = df.append(spearman_correlation_repo_meta('average number of benchmarks per 
 df = df.append(spearman_correlation_repo_meta('parameterization used', 'parameterizationUsedPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('groups used', 'groupsUsedPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('blackhole used', 'blackholeUsedPercentage', data), ignore_index = True)
-df = df.append(spearman_correlation_repo_meta('state object without JMH Parameters used', 'hasStateObjectsWithoutJmhParamsPercentage', data), ignore_index = True)
+df = df.append(spearman_correlation_repo_meta('state object without \\acs{JMH} Parameters used', 'hasStateObjectsWithoutJmhParamsPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('return type used', 'returnTypeUsedPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('return type or blackhole used', 'returnTypeOrBlackholeUsedPercentage', data), ignore_index = True)
 df = df.append(spearman_correlation_repo_meta('number of benchmarks', 'numberOfBenchmarks', data), ignore_index = True)

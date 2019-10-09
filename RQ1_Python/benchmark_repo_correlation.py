@@ -2,11 +2,6 @@ import pandas as pd
 import numpy as np
 from correlation_helper import pointbiserialr, spearman, dfOutput
 
-
-def point_correlation_repo_meta_extra(col, data):
-    return point_correlation_repo_meta(col, col, data)
-
-
 def point_correlation_repo_meta(name, col, data):
     cleaned = data[np.logical_not(np.isnan(data[col]))]
     return pd.DataFrame({
@@ -19,9 +14,9 @@ def point_correlation_repo_meta(name, col, data):
     })
 
 
-def spearman_correlation_repo_meta(col, data):
+def spearman_correlation_repo_meta(name, col, data):
     return pd.DataFrame({
-        "name": col,
+        "name": name,
         "stars": spearman(data, col, 'stars'),
         "projectForks": spearman(data, col, 'projectForks'),
         "watchers": spearman(data, col, 'watchers'),
@@ -38,22 +33,22 @@ data = pd.read_csv(
     'C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\benchmarkrepocorrelation.csv')
 
 df = pd.DataFrame({})
-df = df.append(spearman_correlation_repo_meta('warmupIterations', data), ignore_index=True)
-df = df.append(spearman_correlation_repo_meta('warmupTime', data), ignore_index=True)
-df = df.append(spearman_correlation_repo_meta('measurementIterations', data), ignore_index=True)
-df = df.append(spearman_correlation_repo_meta('measurementTime', data), ignore_index=True)
-df = df.append(spearman_correlation_repo_meta('forks', data), ignore_index=True)
-df = df.append(spearman_correlation_repo_meta('warmupForks', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('warmup iterations', 'warmupIterations', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('warmup time', 'warmupTime', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('measurement iterations', 'measurementIterations', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('measurement time', 'measurementTime', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('forks', 'forks', data), ignore_index=True)
+df = df.append(spearman_correlation_repo_meta('warmup forks', 'warmupForks', data), ignore_index=True)
 
 print(dfOutput(df))
 
 print("------------")
 
 df = pd.DataFrame({})
-df = df.append(point_correlation_repo_meta_extra('modeIsThroughput', data), ignore_index=True)
-df = df.append(point_correlation_repo_meta_extra('modeIsAverageTime', data), ignore_index=True)
-df = df.append(point_correlation_repo_meta_extra('modeIsSampleTime', data), ignore_index=True)
-df = df.append(point_correlation_repo_meta_extra('modeIsSingleShotTime', data), ignore_index=True)
+df = df.append(point_correlation_repo_meta('mode is throughput', 'modeIsThroughput', data), ignore_index=True)
+df = df.append(point_correlation_repo_meta('mode is average time', 'modeIsAverageTime', data), ignore_index=True)
+df = df.append(point_correlation_repo_meta('mode is sample time', 'modeIsSampleTime', data), ignore_index=True)
+df = df.append(point_correlation_repo_meta('mode is singleshot', 'modeIsSingleShotTime', data), ignore_index=True)
 
 print(dfOutput(df))
 
