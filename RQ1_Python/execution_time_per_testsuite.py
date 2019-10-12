@@ -11,7 +11,6 @@ grouped = data.groupby('project')
 # all
 array = []
 for project, benchmarks in grouped:
-    print(project + " -> " + str(benchmarks['totalTime'].sum()))
     array.append(benchmarks['totalTime'].sum()/60)
 
 all, base = np.histogram(array, bins=11, range=[0,12], weights=np.ones(len(array)) / len(array))
@@ -43,5 +42,6 @@ plt.savefig('export.png')
 # #plt.show()
 # plt.savefig('export.png')
 
+print("min: " + str(np.min(array)))
 print("max: " + str(np.max(array)))
 print("median: " + str(np.median(array)))

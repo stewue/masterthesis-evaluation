@@ -10,7 +10,6 @@ grouped = data.groupby('project')
 
 array = []
 for project, benchmarks in grouped:
-    print(project + " -> " + str(benchmarks['totalTime'].sum()))
     array.append(benchmarks['totalTime'].sum()/60)
 
 print("max: " + str(np.max(array)))
