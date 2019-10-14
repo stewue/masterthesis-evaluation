@@ -13,7 +13,6 @@ object HistoryManager {
     fun sampleCommits(repository: Repository, git: Git): List<Pair<Int, RevCommit>> {
         val ret = mutableListOf<Pair<Int, RevCommit>>()
         val commits = git.log().add(repository.resolve(repository.fullBranch)).call().toList()
-        val commits2 = git.log().all().call().toList()
         commits.sortedByDescending {
             it.commitTime
         }

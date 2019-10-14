@@ -9,7 +9,7 @@ import java.net.URL
 import java.nio.charset.Charset
 
 fun main() {
-    val input = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Code\\Evaluation\\State_of_Practise_Code\\src\\main\\kotlin\\ch\\uzh\\ifi\\seal\\smr\\soa\\mavencentral\\input.txt")
+    val input = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Kotlin\\src\\main\\kotlin\\ch\\uzh\\ifi\\seal\\smr\\soa\\datapreparation\\mavencentral\\input.txt")
 
     input.forEachLine {
         val (groupId, artifactId) = it.split("/", limit = 2)

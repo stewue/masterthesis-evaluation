@@ -32,18 +32,3 @@ apptik/rxHub
 linkedin/pinot
 linkedin/gobblin
 druid-io/druid
-
-removed because they are forks of popular repos
------------------------------------------------
-jacek-lewandowski/jmh-jl (jmh-core)
-msteindorfer/jmh (jmh-core)
-chenshu/jmh-example (jmh-examples)
-dmlloyd/openjdk-modules (kopie der openjdk9)
-
-manually set the parent repo
-----------------------------
-goldmansachs/gs-collections
-dotCMS/log4j
-yrcourage/netty
-joansmith/netty
-akarnokd/rxjava2-backport
