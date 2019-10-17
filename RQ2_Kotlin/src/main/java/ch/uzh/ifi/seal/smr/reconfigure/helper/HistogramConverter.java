@@ -6,16 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HistogramConverter {
-    public static List<Double> toArray(List<Pair<Double, Long>> input){
+    public static List<Double> toArray(List<HistogramItem> input){
         List<Double> out = new ArrayList<>();
 
         for(int i=0; i<input.size(); i++){
-            Pair<Double, Long> pair = input.get(i);
-            double value = pair.getKey();
-            long count = pair.getValue();
+            HistogramItem item = input.get(i);
 
-            for(int j=0; j<count; j++){
-                out.add(value);
+            for(int j=0; j<item.getCount(); j++){
+                out.add(item.getValue());
             }
         }
 
