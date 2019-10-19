@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.util.List;
 
 public class OpenCSVWriter {
-    public static void write(File outputFile, List<Input> input){
+    public static <T> void write(File outputFile, List<T> input, CustomMappingStrategy mapping){
         try {
             if (!outputFile.exists()) {
                 outputFile.createNewFile();
@@ -21,12 +21,12 @@ public class OpenCSVWriter {
 
             Writer writer = Files.newBufferedWriter(outputFile.toPath());
 
-            StatefulBeanToCsvBuilder<Input> builder = new StatefulBeanToCsvBuilder<Input>(writer)
+            StatefulBeanToCsvBuilder<T> builder = new StatefulBeanToCsvBuilder<T>(writer)
                     .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER)
                     .withSeparator(';')
-                    .withMappingStrategy(new CustomMappingStrategy(Input.class));
+                    .withMappingStrategy(mapping);
 
-            StatefulBeanToCsv<Input> beanToCsv = builder.build();
+            StatefulBeanToCsv<T> beanToCsv = builder.build();
             beanToCsv.write(input);
 
             writer.close();

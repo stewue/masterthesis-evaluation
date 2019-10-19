@@ -71,7 +71,7 @@ public class CI {
                 list.add(histogramList.get(i).toInput());
             }
 
-            OpenCSVWriter.write(tmpFile, list);
+            OpenCSVWriter.write(tmpFile, list, new CustomMappingStrategy<>(Input.class));
             return tmpFile.getAbsolutePath();
         }catch (IOException e){
             e.printStackTrace();

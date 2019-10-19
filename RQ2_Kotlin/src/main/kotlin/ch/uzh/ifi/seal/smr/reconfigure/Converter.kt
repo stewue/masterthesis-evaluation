@@ -1,11 +1,6 @@
 package ch.uzh.ifi.seal.smr.reconfigure
 
 import ch.uzh.ifi.seal.bencher.jmhResults.JMHResultTransformer
-import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramConverter
-import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem
-import ch.uzh.ifi.seal.smr.reconfigure.helper.OutlierDetector
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.ci.CI
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.COV
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
