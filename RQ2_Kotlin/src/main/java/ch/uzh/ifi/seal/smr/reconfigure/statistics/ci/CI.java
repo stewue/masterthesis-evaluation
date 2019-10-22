@@ -20,6 +20,7 @@ public class CI {
 
     private double lower;
     private double upper;
+    private double statisticMetric;
 
     public CI(List<HistogramItem> histogramList) {
         this.histogramList = histogramList;
@@ -35,14 +36,15 @@ public class CI {
     public void run(){
         String file = getTmpFile();
         try {
-            Process process = Runtime.getRuntime().exec(paToolPath + " -bs " + bootstrapSimulations + " -sig " + significanceLevel + " -st " + statistic + " " + file);
+            Process process = Runtime.getRuntime().exec(paToolPath + " -om -bs " + bootstrapSimulations + " -sig " + significanceLevel + " -st " + statistic + " " + file);
             String inputString = IOUtils.toString(process.getInputStream(), Charset.defaultCharset());
             String errorString = IOUtils.toString(process.getErrorStream(), Charset.defaultCharset());
             String output = (inputString + "\n" + errorString).trim();
             String line = getFirstLine(output);
             String [] parts = line.split(";");
-            lower = Double.parseDouble(parts[3]);
-            upper = Double.parseDouble(parts[4]);
+            statisticMetric = Double.parseDouble(parts[3]);
+            lower = Double.parseDouble(parts[4]);
+            upper = Double.parseDouble(parts[5]);
         }catch (IOException e ){
             e.printStackTrace();
         }
@@ -86,5 +88,9 @@ public class CI {
 
     public double getUpper() {
         return upper;
+    }
+
+    public double getStatisticMetric() {
+        return statisticMetric;
     }
 }
