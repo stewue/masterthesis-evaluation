@@ -1,41 +1,38 @@
 package ch.uzh.ifi.seal.smr.reconfigure
 
-import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramConverter
 import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem
 import ch.uzh.ifi.seal.smr.reconfigure.helper.OutlierDetector
 import ch.uzh.ifi.seal.smr.reconfigure.statistics.COV
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.ci.CI
-import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics
+import ch.uzh.ifi.seal.smr.reconfigure.statistics.Sampler
 import java.io.File
-
-fun main(){
-    val folder = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\log4j2\\")
-
-    folder.walk().forEach {
-        if(it.isFile){
-            evalBenchmark(it)
-        }
-    }
-}
+import kotlin.math.abs
+import kotlin.math.round
 
 //fun main(){
-//    //evalBenchmark(File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\log4j2\\;;org.apache.logging.log4j.perf.jmh.AsyncAppenderLog4j1Benchmark.throughput9Params;.csv"))
-//    val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\out500.csv")
-//    val list = CsvLineParser(file).getList()
-//    evaluation(list)
-//    println("")
+//    val folder = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\log4j2\\")
+//
+//    folder.walk().forEach {
+//        if(it.isFile){
+//            evalBenchmark(it)
+//        }
+//    }
 //}
 
-private fun evalBenchmark(file: File){
-    val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
-    val key = CsvLineKey(project,commit, benchmark, params)
+fun main() {
+    val file = File("D:\\rq2\\out100.csv")
     val list = CsvLineParser(file).getList()
-    print(key.output())
     evaluation(list)
-    println("")
 }
 
-private fun evaluation(list: Collection<CsvLine>){
+//private fun evalBenchmark(file: File){
+//    val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
+//    val key = CsvLineKey(project,commit, benchmark, params)
+//    val list = CsvLineParser(file).getList()
+//    println(key.output())
+//    evaluation(list)
+//}
+
+private fun evaluation(list: Collection<CsvLine>) {
     val histogram = mutableMapOf<Int, MutableList<HistogramItem>>()
 
     list.forEach {
@@ -47,26 +44,40 @@ private fun evaluation(list: Collection<CsvLine>){
         iterationList.add(it.getHistogramItem())
     }
 
-    val allInlier = mutableListOf<Double>()
-    val all = mutableListOf<HistogramItem>()
-    histogram.forEach { (_, iterationList) ->
-        all.addAll(iterationList)
-        val iterationArray = HistogramConverter.toArray(iterationList)
-        val od = OutlierDetector(10.0, iterationArray)
-        od.run()
-        val inlier = od.inlier
-        allInlier.addAll(inlier)
-        //print(";" + COV.of(allInlier))
-        //println("")
+    val sampleSize = 1000
 
-        val median = HistogramConverter.toArray(all).median()
-        val filtered = all.filter { it.value < median * 10 }
-        val ci = CI(filtered)
-        ci.run()
-        print(";${(ci.upper - ci.lower)/HistogramConverter.toArray(filtered).median()}")
-        //println(";${ci.lower};${ci.upper};${HistogramConverter.toArray(filtered).median()}")
+    val sampledHistogram = histogram.map { (iteration, list) ->
+        val od = OutlierDetector(10.0, list)
+        od.run()
+        val sample = Sampler(od.inlier).getSample(sampleSize)
+        Pair(iteration, sample)
+    }.toMap()
+
+    val all = mutableListOf<HistogramItem>()
+
+    val covs = mutableMapOf<Int, Double>()
+    sampledHistogram.forEach { (iteration, iterationList) ->
+        all.addAll(iterationList)
+        val cov = COV(all, 0.0)
+        covs[iteration] = cov.value
+
+        if (iteration >= 5) {
+            val i1 = covs.getValue(iteration - 1) - cov.value
+            val i2 = covs.getValue(iteration - 2) - cov.value
+            val i3 = covs.getValue(iteration - 3) - cov.value
+            val i4 = covs.getValue(iteration - 4) - cov.value
+
+            println("${roundDelta(i1)} / ${roundDelta(i2)} / ${roundDelta(i3)} / ${roundDelta(i4)}")
+
+            // TODO absolut or relative change rate?
+            if(abs(i1) < 0.005 && abs(i2) < 0.005 && abs(i3) < 0.005 && abs(i4) < 0.005){
+                println("iteration: $iteration -> ${cov.value}")
+                return
+            }
+        }
     }
-    //print(";" + allInlier.median())
 }
 
-fun List<Double>.median() = sorted().let { (it[it.size / 2] + it[(it.size - 1) / 2]) / 2 }
+private fun roundDelta(value: Double): Double {
+    return round(value * 10000) / 10000
+}
