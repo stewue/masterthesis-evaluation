@@ -1,16 +1,32 @@
 package ch.uzh.ifi.seal.smr.reconfigure
 
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.ci.CustomMappingStrategy
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.ci.OpenCSVWriter
 import java.io.File
 
-fun main(){
-    val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\log4j2.csv")
-    val list = CsvLineParser(file).getList()
-    val grouped = list.groupBy { it.getKey() }
+fun main() {
+    val file = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second.csv")
 
-    grouped.forEach { (key, list) ->
-        val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\log4j2\\${key.output()}.csv")
-        OpenCSVWriter.write(file,list, CustomMappingStrategy<CsvLine>(CsvLine::class.java))
+    var keyLast: String? = null
+    var list = mutableListOf<String>()
+    file.forEachLine {
+        if (it == "project;commit;benchmark;params;instance;trial;fork;iteration;mode;unit;value_count;value") {
+            return@forEachLine
+        }
+        val splits = it.split(";")
+
+        val project = splits[0]
+        val commit = splits[1]
+        val benchmark = splits[2]
+        val params = splits[3]
+        val key = "$project;$commit;$benchmark;$params"
+
+        if (key != keyLast && keyLast != null) {
+            val file = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second\\${keyLast}.csv")
+            file.writeText(list.joinToString(separator = "\n"))
+            list = mutableListOf()
+        }
+        list.add(it)
+        keyLast = key
     }
+
+    File("D:\\rq2\\pre\\log4j2_100_iterations_1_second\\${keyLast}.csv").writeText(list.joinToString(separator = "\n"))
 }
