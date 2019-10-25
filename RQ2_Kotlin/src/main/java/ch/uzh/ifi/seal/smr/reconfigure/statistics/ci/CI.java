@@ -4,6 +4,7 @@ import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -67,13 +68,14 @@ public class CI {
     private String getTmpFile (){
         try {
             File tmpFile = File.createTempFile(UUID.randomUUID().toString(), ".csv");
-            List<Input> list = new ArrayList<>();
+            FileWriter fw = new FileWriter(tmpFile);
 
             for (int i = 0; i < histogramList.size(); i++) {
-                list.add(histogramList.get(i).toInput());
+                HistogramItem hi = histogramList.get(i);
+                fw.append(";;;;;0;" + hi.getFork() + ";" + hi.getIteration() + ";;;" + hi.getCount() + ";" + hi.getValue() + "\n");
             }
 
-            OpenCSVWriter.write(tmpFile, list, new CustomMappingStrategy<>(Input.class));
+            fw.flush();
             return tmpFile.getAbsolutePath();
         }catch (IOException e){
             e.printStackTrace();

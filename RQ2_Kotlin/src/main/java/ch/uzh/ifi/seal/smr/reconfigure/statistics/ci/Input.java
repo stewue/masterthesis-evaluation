@@ -55,8 +55,8 @@ public class Input {
         this.trial = 0;
         this.fork = fork;
         this.iteration = iteration;
-        this.mode = "a";
-        this.unit = "b";
+        this.mode = "";
+        this.unit = "";
         this.value_count = value_count;
         this.value = value;
     }

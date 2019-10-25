@@ -8,23 +8,42 @@ import umontreal.iro.lecuyer.gof.KernelDensity
 import umontreal.iro.lecuyer.probdist.EmpiricalDist
 import umontreal.iro.lecuyer.probdist.NormalDist
 import java.io.File
+import java.io.FileWriter
 import kotlin.streams.toList
 
+private val output = FileWriter(File("D:\\outputString.csv"))
 
-fun main() {
-    val file = File("D:\\rq2\\out100.csv")
+fun main(){
+    val folder = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second\\")
+
+    folder.walk().forEach {
+        if(it.isFile){
+            evalBenchmark(it)
+        }
+    }
+
+    output.flush()
+}
+
+private fun evalBenchmark(file: File){
+    val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
+    val key = CsvLineKey(project,commit, benchmark, params)
     val list = CsvLineParser(file).getList().map { it.getHistogramItem() }
+    output.append(key.output())
+    evaluation(list)
+    output.appendln("")
+}
 
+private fun evaluation(list: List<HistogramItem>) {
     val sample = mutableMapOf<Int, List<Double>>()
     val range = mutableMapOf<Int, Pair<Double, Double>>()
 
     sample[1] = getSample(list.filter { it.iteration == 1 })
     range[1] = getRange(sample.getValue(1))
 
-    for (i in 2..50) {
+    for (i in 2..10) {
         sample[i] = getSample(list.filter { it.iteration <= i })
         range[i] = getRange(sample.getValue(i))
-
         val sample1 = sample.getValue(i - 1)
         val sample2 = sample.getValue(i)
 
@@ -34,11 +53,7 @@ fun main() {
         val max = Math.max(range1.second, range2.second)
 
         val p = getPValue(sample1, sample2, min, max)
-        println(p)
-//        if(p > 0.9){
-//            println("iteration: $i")
-//            return
-//        }
+        output.append(";$p")
     }
 }
 

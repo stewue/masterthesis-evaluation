@@ -31,10 +31,6 @@ public class HistogramItem {
         return count;
     }
 
-    public Input toInput(){
-        return new Input(fork, iteration, count, value);
-    }
-
     public HistogramItem single(){
         return new HistogramItem(fork, iteration, value, 1);
     }
