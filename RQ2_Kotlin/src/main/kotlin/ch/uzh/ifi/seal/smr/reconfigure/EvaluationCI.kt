@@ -6,8 +6,6 @@ import ch.uzh.ifi.seal.smr.reconfigure.statistics.Sampler
 import ch.uzh.ifi.seal.smr.reconfigure.statistics.ci.CI
 import java.io.File
 import java.io.FileWriter
-import kotlin.math.abs
-import kotlin.math.round
 
 //fun main() {
 //    val file = File("D:\\rq2\\out100.csv")
@@ -18,11 +16,11 @@ import kotlin.math.round
 private val output = FileWriter(File("D:\\outputString.csv"))
 private val output2 = FileWriter(File("D:\\outputString2.csv"))
 
-fun main(){
-    val folder = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second\\")
+fun main() {
+    val folder = File("D:\\rq2\\pre\\log4j2_10_iterations_10_seconds\\")
 
     folder.walk().forEach {
-        if(it.isFile){
+        if (it.isFile) {
             evalBenchmark(it)
         }
     }
@@ -30,9 +28,9 @@ fun main(){
     output.flush()
 }
 
-private fun evalBenchmark(file: File){
+private fun evalBenchmark(file: File) {
     val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
-    val key = CsvLineKey(project,commit, benchmark, params)
+    val key = CsvLineKey(project, commit, benchmark, params)
     val list = CsvLineParser(file).getList()
     output.append(key.output())
     output2.append(key.output())
@@ -67,19 +65,31 @@ private fun evaluation(list: Collection<CsvLine>) {
         all.addAll(iterationList)
         val ci = CI(all)
         ci.run()
-        val relativeWidth = (ci.upper -ci.lower) / ci.statisticMetric
+        val relativeWidth = (ci.upper - ci.lower) / ci.statisticMetric
 
         relativeWidths[iteration] = relativeWidth
         output2.append(";$relativeWidth")
 
         if (iteration >= 5) {
-            val i1 = relativeWidths.getValue(iteration - 1) - relativeWidth
-            val i2 = relativeWidths.getValue(iteration - 2) - relativeWidth
-            val i3 = relativeWidths.getValue(iteration - 3) - relativeWidth
-            val i4 = relativeWidths.getValue(iteration - 4) - relativeWidth
+            val i1 = Math.abs(relativeWidths.getValue(iteration - 1) - relativeWidth)
+            val i2 = Math.abs(relativeWidths.getValue(iteration - 2) - relativeWidth)
+            val i3 = Math.abs(relativeWidths.getValue(iteration - 3) - relativeWidth)
+            val i4 = Math.abs(relativeWidths.getValue(iteration - 4) - relativeWidth)
 
-            val max = Math.max(Math.max(Math.abs(i1), Math.abs(i2)), Math.max(Math.abs(i3), Math.abs(i4)))
+            val max = getMax(listOf(i1, i2, i3, i4))
             output.append(";$max")
         }
     }
+}
+
+private fun getMax(list: List<Double>): Double {
+    var max = list.first()
+
+    list.forEach {
+        if (it > max) {
+            max = it
+        }
+    }
+
+    return max
 }
