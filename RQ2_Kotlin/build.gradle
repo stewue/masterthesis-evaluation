@@ -5,8 +5,8 @@ buildscript {
     ext.math3_version = '3.6.1'
     ext.shadow_version = "5.0.0"
     ext.log4j2_version = "2.11.1"
+    ext.smile_version = "1.5.3"
     ext.bencher_version = "1.0-SNAPSHOT"
-    ext.umontreal_version = "2.5"
     ext.junit_version = "5.3.1"
 
     repositories {
@@ -48,7 +48,7 @@ dependencies {
     compile("org.apache.logging.log4j:log4j-api:$log4j2_version")
     compile("org.apache.logging.log4j:log4j-core:$log4j2_version")
     compile("ch.uzh.ifi.seal:bencher:$bencher_version")
-    compile("ca.umontreal.iro:ssj:$umontreal_version")
+    compile("com.github.haifengl:smile-math:$smile_version")
 
     testImplementation(
             "org.junit.jupiter:junit-jupiter-api:$junit_version",

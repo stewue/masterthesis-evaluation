@@ -26,6 +26,7 @@ fun main() {
     }
 
     output.flush()
+    output2.flush()
 }
 
 private fun evalBenchmark(file: File) {

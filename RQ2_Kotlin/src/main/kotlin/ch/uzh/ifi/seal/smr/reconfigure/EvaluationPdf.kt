@@ -3,17 +3,19 @@ package ch.uzh.ifi.seal.smr.reconfigure
 import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem
 import org.apache.commons.math3.distribution.EnumeratedDistribution
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics
-import org.apache.commons.math3.stat.inference.KolmogorovSmirnovTest
-import umontreal.iro.lecuyer.gof.KernelDensity
-import umontreal.iro.lecuyer.probdist.EmpiricalDist
-import umontreal.iro.lecuyer.probdist.NormalDist
 import java.io.File
 import java.io.FileWriter
 import kotlin.streams.toList
+import smile.math.Math
+import smile.stat.distribution.KernelDensity
+import java.io.OutputStream
+import java.io.PrintStream
 
 private val output = FileWriter(File("D:\\outputString.csv"))
+private val output2 = FileWriter(File("D:\\outputString2.csv"))
 
 fun main(){
+    disableSystemErr()
     val folder = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second\\")
 
     folder.walk().forEach {
@@ -23,6 +25,7 @@ fun main(){
     }
 
     output.flush()
+    output2.flush()
 }
 
 private fun evalBenchmark(file: File){
@@ -30,8 +33,10 @@ private fun evalBenchmark(file: File){
     val key = CsvLineKey(project,commit, benchmark, params)
     val list = CsvLineParser(file).getList().map { it.getHistogramItem() }
     output.append(key.output())
+    output2.append(key.output())
     evaluation(list)
     output.appendln("")
+    output2.appendln("")
 }
 
 private fun evaluation(list: List<HistogramItem>) {
@@ -41,7 +46,9 @@ private fun evaluation(list: List<HistogramItem>) {
     sample[1] = getSample(list.filter { it.iteration == 1 })
     range[1] = getRange(sample.getValue(1))
 
-    for (i in 2..10) {
+    val ps = mutableMapOf<Int, Double>()
+
+    for (i in 2..100) {
         sample[i] = getSample(list.filter { it.iteration <= i })
         range[i] = getRange(sample.getValue(i))
         val sample1 = sample.getValue(i - 1)
@@ -53,14 +60,26 @@ private fun evaluation(list: List<HistogramItem>) {
         val max = Math.max(range1.second, range2.second)
 
         val p = getPValue(sample1, sample2, min, max)
+        ps[i] = p
+
         output.append(";$p")
+
+        if(i >= 6){
+            val i1 = Math.abs(ps.getValue(i - 1) - p)
+            val i2 = Math.abs(ps.getValue(i - 2) - p)
+            val i3 = Math.abs(ps.getValue(i - 3) - p)
+            val i4 = Math.abs(ps.getValue(i - 4) - p)
+
+            val max = getMax(listOf(i1, i2, i3, i4))
+            output2.append(";$max")
+        }
     }
 }
 
 private fun getSample(list: List<HistogramItem>): List<Double> {
     val distributionPairs = list.stream().map { org.apache.commons.math3.util.Pair(it.value, it.count.toDouble()) }.toList()
     val ed = EnumeratedDistribution<Double>(distributionPairs)
-    val sample = ed.sample(10000).toList().toMutableList() as MutableList<Double>
+    val sample = ed.sample(1000).toList().toMutableList() as MutableList<Double>
     sample.sortBy { it }
     return sample
 }
@@ -89,13 +108,39 @@ private fun getPValue(sample1: List<Double>, sample2: List<Double>, min: Double,
     val pdf1 = getPDF(sample1, yArray)
     val pdf2 = getPDF(sample2, yArray)
 
-    val l12 = Math.pow(2.0, -1 * KolmogorovSmirnovTest().kolmogorovSmirnovStatistic(pdf1, pdf2))
-    val l21 = Math.pow(2.0, -1 * KolmogorovSmirnovTest().kolmogorovSmirnovStatistic(pdf2, pdf1))
-
-    return l12 * l21
+    val x2 = Math.KullbackLeiblerDivergence(pdf1, pdf2)
+    val x3 = Math.KullbackLeiblerDivergence(pdf2, pdf1)
+    val product = Math.pow(2.0, -x2) * Math.pow(2.0, -x3)
+    return product
 }
 
 private fun getPDF(sample: List<Double>, y: DoubleArray): DoubleArray {
-    val array = sample.toDoubleArray()
-    return KernelDensity.computeDensity(EmpiricalDist(array), NormalDist(), y)
+    val kd = KernelDensity(sample.toDoubleArray())
+
+    val estimated = y.map{
+        kd.p(it)
+    }
+
+    val total = estimated.sum()
+    return estimated.map{
+        it / total
+    }.toDoubleArray()
+}
+
+private fun disableSystemErr() {
+    System.setErr(PrintStream(object : OutputStream() {
+        override fun write(b: Int) {}
+    }))
+}
+
+private fun getMax(list: List<Double>): Double {
+    var max = list.first()
+
+    list.forEach {
+        if (it > max) {
+            max = it
+        }
+    }
+
+    return max
 }

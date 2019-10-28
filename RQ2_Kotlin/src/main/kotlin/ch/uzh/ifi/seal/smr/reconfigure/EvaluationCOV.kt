@@ -10,9 +10,10 @@ import kotlin.math.abs
 import kotlin.math.round
 
 private val output = FileWriter(File("D:\\outputString.csv"))
+private val output2 = FileWriter(File("D:\\outputString2.csv"))
 
 fun main(){
-    val folder = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second\\")
+    val folder = File("D:\\rq2\\pre\\rxjava_100_iterations_1_second\\")
 
     folder.walk().forEach {
         if(it.isFile){
@@ -34,8 +35,11 @@ private fun evalBenchmark(file: File){
     val key = CsvLineKey(project,commit, benchmark, params)
     val list = CsvLineParser(file).getList()
     output.append(key.output())
+    output2.append(key.output())
     evaluation(list)
     output.appendln("")
+    output2.appendln("")
+    output2.flush()
 }
 
 private fun evaluation(list: Collection<CsvLine>) {
@@ -67,25 +71,33 @@ private fun evaluation(list: Collection<CsvLine>) {
         val cov = COV(all, 0.0)
         covs[iteration] = cov.value
 
-        output.append(";${cov.value}")
+        output2.append(";${cov.value}")
 
-//        if (iteration >= 5) {
-//            val i1 = covs.getValue(iteration - 1) - cov.value
-//            val i2 = covs.getValue(iteration - 2) - cov.value
-//            val i3 = covs.getValue(iteration - 3) - cov.value
-//            val i4 = covs.getValue(iteration - 4) - cov.value
-//
-//            print("${roundDelta(i1)} / ${roundDelta(i2)} / ${roundDelta(i3)} / ${roundDelta(i4)}")
-//
-//            // TODO absolut or relative change rate?
-//            if(abs(i1) < 0.005 && abs(i2) < 0.005 && abs(i3) < 0.005 && abs(i4) < 0.005){
-//                println("iteration: $iteration -> ${cov.value}")
-//                return
-//            }
-//        }
+        if (iteration >= 5) {
+            try {
+                val i1 = Math.abs(covs.getValue(iteration - 1) - cov.value)
+                val i2 = Math.abs(covs.getValue(iteration - 2) - cov.value)
+                val i3 = Math.abs(covs.getValue(iteration - 3) - cov.value)
+                val i4 = Math.abs(covs.getValue(iteration - 4) - cov.value)
+                val max = getMax(listOf(i1, i2, i3, i4))
+                output.append(";$max")
+            }
+            catch (e:Exception){
+                e.printStackTrace()
+            }
+
+        }
     }
 }
 
-private fun roundDelta(value: Double): Double {
-    return round(value * 10000) / 10000
+private fun getMax(list: List<Double>): Double {
+    var max = list.first()
+
+    list.forEach {
+        if (it > max) {
+            max = it
+        }
+    }
+
+    return max
 }
