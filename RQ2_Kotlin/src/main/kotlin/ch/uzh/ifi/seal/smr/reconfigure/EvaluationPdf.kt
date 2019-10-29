@@ -48,7 +48,7 @@ private fun evaluation(list: List<HistogramItem>) {
 
     val ps = mutableMapOf<Int, Double>()
 
-    for (i in 2..100) {
+    for (i in 2..10) {
         sample[i] = getSample(list.filter { it.iteration <= i })
         range[i] = getRange(sample.getValue(i))
         val sample1 = sample.getValue(i - 1)

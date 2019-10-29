@@ -22,6 +22,7 @@ fun main(){
     }
 
     output.flush()
+    output2.flush()
 }
 
 //fun main() {
