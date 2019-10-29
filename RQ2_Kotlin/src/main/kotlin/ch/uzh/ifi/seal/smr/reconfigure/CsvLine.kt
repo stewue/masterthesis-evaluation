@@ -62,7 +62,7 @@ class CsvLine {
         return CsvLineKey(project, commit, benchmark, params)
     }
 
-    fun getHistogramItem(): HistogramItem{
+    fun getHistogramItem(): HistogramItem {
         return HistogramItem(fork, iteration, value, value_count)
     }
 }

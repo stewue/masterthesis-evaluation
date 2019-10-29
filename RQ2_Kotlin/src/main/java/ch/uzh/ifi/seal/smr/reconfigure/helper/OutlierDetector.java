@@ -8,7 +8,7 @@ import java.util.List;
 public class OutlierDetector {
     private double outlierFactor;
     private List<HistogramItem> input;
-    private double [] inputRaw;
+    private double[] inputRaw;
 
     private double q1;
     private double q3;
@@ -25,21 +25,21 @@ public class OutlierDetector {
         this.inputRaw = ListToArray.toPrimitive(HistogramHelper.toArray(input));
     }
 
-    public void run(){
+    public void run() {
         DescriptiveStatistics ds = new DescriptiveStatistics(inputRaw);
         q1 = ds.getPercentile(25.0);
         q3 = ds.getPercentile(75.0);
-        iqr = q3 -q1;
+        iqr = q3 - q1;
 
         max = q3 + outlierFactor * iqr;
         min = q1 - outlierFactor * iqr;
 
-        for(int i=0; i<input.size(); i++){
+        for (int i = 0; i < input.size(); i++) {
             double value = input.get(i).getValue();
 
-            if(value <= max && value >= min){
+            if (value <= max && value >= min) {
                 inlier.add(input.get(i));
-            }else{
+            } else {
                 outlier.add(input.get(i));
             }
         }

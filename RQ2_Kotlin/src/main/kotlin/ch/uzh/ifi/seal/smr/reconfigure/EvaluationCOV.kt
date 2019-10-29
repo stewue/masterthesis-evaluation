@@ -6,17 +6,15 @@ import ch.uzh.ifi.seal.smr.reconfigure.statistics.COV
 import ch.uzh.ifi.seal.smr.reconfigure.statistics.Sampler
 import java.io.File
 import java.io.FileWriter
-import kotlin.math.abs
-import kotlin.math.round
 
 private val output = FileWriter(File("D:\\outputString.csv"))
 private val output2 = FileWriter(File("D:\\outputString2.csv"))
 
-fun main(){
-    val folder = File("D:\\rq2\\pre\\rxjava_100_iterations_1_second\\")
+fun main() {
+    val folder = File("D:\\rq2\\pre\\rxjava_10_iterations_10_seconds\\")
 
     folder.walk().forEach {
-        if(it.isFile){
+        if (it.isFile) {
             evalBenchmark(it)
         }
     }
@@ -31,9 +29,9 @@ fun main(){
 //    evaluation(list)
 //}
 
-private fun evalBenchmark(file: File){
+private fun evalBenchmark(file: File) {
     val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
-    val key = CsvLineKey(project,commit, benchmark, params)
+    val key = CsvLineKey(project, commit, benchmark, params)
     val list = CsvLineParser(file).getList()
     output.append(key.output())
     output2.append(key.output())
@@ -82,8 +80,7 @@ private fun evaluation(list: Collection<CsvLine>) {
                 val i4 = Math.abs(covs.getValue(iteration - 4) - cov.value)
                 val max = getMax(listOf(i1, i2, i3, i4))
                 output.append(";$max")
-            }
-            catch (e:Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
 

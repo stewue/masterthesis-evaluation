@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.util.List;
 
 public class OpenCSVWriter {
-    public static <T> void write(File outputFile, List<T> input, CustomMappingStrategy mapping){
+    public static <T> void write(File outputFile, List<T> input, CustomMappingStrategy mapping) {
         try {
             if (!outputFile.exists()) {
                 outputFile.createNewFile();
@@ -30,7 +30,7 @@ public class OpenCSVWriter {
             beanToCsv.write(input);
 
             writer.close();
-        }catch (IOException | CsvRequiredFieldEmptyException | CsvDataTypeMismatchException e){
+        } catch (IOException | CsvRequiredFieldEmptyException | CsvDataTypeMismatchException e) {
             e.printStackTrace();
         }
     }

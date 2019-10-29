@@ -33,7 +33,7 @@ public class CI {
         this.statistic = statistic;
     }
 
-    public void run(){
+    public void run() {
         String file = getTmpFile();
         try {
             Process process = Runtime.getRuntime().exec(paToolPath + " -om -bs " + bootstrapSimulations + " -sig " + significanceLevel + " -st " + statistic + " " + file);
@@ -41,22 +41,22 @@ public class CI {
             String errorString = IOUtils.toString(process.getErrorStream(), Charset.defaultCharset());
             String output = (inputString + "\n" + errorString).trim();
             String line = getFirstLine(output);
-            String [] parts = line.split(";");
+            String[] parts = line.split(";");
             statisticMetric = Double.parseDouble(parts[3]);
             lower = Double.parseDouble(parts[4]);
             upper = Double.parseDouble(parts[5]);
-        }catch (IOException e ){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private String getFirstLine(String input){
-        String [] lines = input.split("\n");
+    private String getFirstLine(String input) {
+        String[] lines = input.split("\n");
 
-        for(int i=0; i<lines.length; i++){
+        for (int i = 0; i < lines.length; i++) {
             String line = lines[i].trim();
 
-            if(!line.startsWith("#") && !line.isEmpty()){
+            if (!line.startsWith("#") && !line.isEmpty()) {
                 return line;
             }
         }
@@ -64,7 +64,7 @@ public class CI {
         return null;
     }
 
-    private String getTmpFile (){
+    private String getTmpFile() {
         try {
             File tmpFile = File.createTempFile(UUID.randomUUID().toString(), ".csv");
             FileWriter fw = new FileWriter(tmpFile);
@@ -76,7 +76,7 @@ public class CI {
 
             fw.flush();
             return tmpFile.getAbsolutePath();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

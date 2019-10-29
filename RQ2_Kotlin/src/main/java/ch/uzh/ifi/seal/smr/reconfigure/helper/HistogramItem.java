@@ -1,7 +1,5 @@
 package ch.uzh.ifi.seal.smr.reconfigure.helper;
 
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.ci.Input;
-
 public class HistogramItem {
     private final int fork;
     private final int iteration;
@@ -31,7 +29,7 @@ public class HistogramItem {
         return count;
     }
 
-    public HistogramItem single(){
+    public HistogramItem single() {
         return new HistogramItem(fork, iteration, value, 1);
     }
 }

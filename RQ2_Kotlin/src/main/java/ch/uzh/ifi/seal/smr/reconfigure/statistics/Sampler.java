@@ -15,9 +15,9 @@ public class Sampler {
         this.items = items;
     }
 
-    public List<HistogramItem> getSample(int size){
-        HistogramItem [] output = new HistogramItem[size];
-        List<Pair<HistogramItem, Double>> distributionPairs = items.parallelStream().map( it -> new Pair<>(it.single(), (double) it.getCount() )).collect(Collectors.toList());
+    public List<HistogramItem> getSample(int size) {
+        HistogramItem[] output = new HistogramItem[size];
+        List<Pair<HistogramItem, Double>> distributionPairs = items.parallelStream().map(it -> new Pair<>(it.single(), (double) it.getCount())).collect(Collectors.toList());
         EnumeratedDistribution ed = new EnumeratedDistribution<>(distributionPairs);
         ed.sample(size, output);
         return Arrays.asList(output);

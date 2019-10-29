@@ -15,8 +15,8 @@ public class CustomMappingStrategy<T> extends ColumnPositionMappingStrategy<T> {
         super.generateHeader(bean);
         int numColumns = findMaxFieldIndex();
 
-        String [] ret = new String[numColumns+1];
-        for(int i=0; i<=numColumns; i++){
+        String[] ret = new String[numColumns + 1];
+        for (int i = 0; i <= numColumns; i++) {
             ret[i] = findField(i).getField().getName();
         }
 

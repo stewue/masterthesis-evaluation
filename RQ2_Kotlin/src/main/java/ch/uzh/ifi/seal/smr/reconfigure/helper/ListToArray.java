@@ -11,7 +11,7 @@ public class ListToArray {
         return result;
     }
 
-    public static double[] toPrimitive(List<Double> input){
+    public static double[] toPrimitive(List<Double> input) {
         return toPrimitive(input.toArray(new Double[0]));
     }
 }
