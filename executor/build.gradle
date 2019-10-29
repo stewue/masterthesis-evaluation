@@ -1,6 +1,8 @@
 buildscript {
     // version variables
     ext.kotlin_version = "1.3.41"
+    ext.log4j2_version = "2.11.1"
+    ext.opencsv_version = '4.3.2'
     ext.shadow_version = "5.0.0"
 
     repositories {
@@ -23,7 +25,7 @@ apply(plugin: "com.github.johnrengelman.shadow")
 
 sourceCompatibility = 1.8
 
-mainClassName = 'ch.uzh.ifi.seal.smr.reconfigure.MainKt'
+mainClassName = 'ch.uzh.ifi.seal.smr.executor.MainKt'
 
 repositories {
     mavenCentral()
@@ -34,6 +36,9 @@ repositories {
 dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
     compile("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
+    compile("org.apache.logging.log4j:log4j-api:$log4j2_version")
+    compile("org.apache.logging.log4j:log4j-core:$log4j2_version")
+    compile("com.opencsv:opencsv:$opencsv_version")
 }
 
 compileKotlin {
@@ -47,5 +52,5 @@ shadowJar {
     manifest {
         attributes 'Main-Class': "$mainClassName"
     }
-    archiveName = "evaluation.jar"
+    archiveName = "executor.jar"
 }
