@@ -92,7 +92,11 @@ private fun getRange(list: List<Double>): Pair<Double, Double> {
     val iqr = q3 - q1
 
     val max = q3 + outlierFactor * iqr
-    val min = q1 - outlierFactor * iqr
+    var min = q1 - outlierFactor * iqr
+
+    if (min < 0) {
+        min = 0.0
+    }
     return Pair(min, max)
 }
 
@@ -108,23 +112,19 @@ private fun getPValue(sample1: List<Double>, sample2: List<Double>, min: Double,
     val pdf1 = getPDF(sample1, yArray)
     val pdf2 = getPDF(sample2, yArray)
 
-    val x2 = Math.KullbackLeiblerDivergence(pdf1, pdf2)
-    val x3 = Math.KullbackLeiblerDivergence(pdf2, pdf1)
-    val product = Math.pow(2.0, -x2) * Math.pow(2.0, -x3)
+    val kld1 = continuousKullbackLeiblerDivergence(pdf1, pdf2, step)
+    val kld2 = continuousKullbackLeiblerDivergence(pdf2, pdf1, step)
+
+    val product = Math.pow(2.0, -kld1) * Math.pow(2.0, -kld2)
     return product
 }
 
-private fun getPDF(sample: List<Double>, y: DoubleArray): DoubleArray {
+private fun getPDF(sample: List<Double>, y: DoubleArray): List<Double> {
     val kd = KernelDensity(sample.toDoubleArray())
 
-    val estimated = y.map {
+    return y.map {
         kd.p(it)
     }
-
-    val total = estimated.sum()
-    return estimated.map {
-        it / total
-    }.toDoubleArray()
 }
 
 private fun disableSystemErr() {
@@ -143,4 +143,22 @@ private fun getMax(list: List<Double>): Double {
     }
 
     return max
+}
+
+private fun continuousKullbackLeiblerDivergence(p: List<Double>, q: List<Double>, width: Double): Double {
+    var intersection = false
+    var kl = 0.0
+
+    for (i in p.indices) {
+        if (p[i] != 0.0 && q[i] != 0.0) {
+            intersection = true
+            kl += p[i] * Math.log(p[i] / q[i]) * width
+        }
+    }
+
+    return if (intersection) {
+        kl
+    } else {
+        java.lang.Double.POSITIVE_INFINITY
+    }
 }
