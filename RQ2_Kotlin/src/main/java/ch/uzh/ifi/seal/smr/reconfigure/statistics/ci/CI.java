@@ -13,7 +13,7 @@ import java.util.UUID;
 public class CI {
     private List<HistogramItem> histogramList;
 
-    private final String paToolPath = "D:\\pa\\pa.exe";
+    private String paToolPath;
     private int bootstrapSimulations = 1000;
     private double significanceLevel = 0.01;
     private String statistic = "mean";
@@ -24,6 +24,7 @@ public class CI {
 
     public CI(List<HistogramItem> histogramList) {
         this.histogramList = histogramList;
+        executable();
     }
 
     public CI(List<HistogramItem> histogramList, int bootstrapSimulations, double significanceLevel, String statistic) {
@@ -31,6 +32,11 @@ public class CI {
         this.bootstrapSimulations = bootstrapSimulations;
         this.significanceLevel = significanceLevel;
         this.statistic = statistic;
+        executable();
+    }
+
+    private void executable() {
+        paToolPath = CIHelper.getInstance().getPath();
     }
 
     public void run() {
