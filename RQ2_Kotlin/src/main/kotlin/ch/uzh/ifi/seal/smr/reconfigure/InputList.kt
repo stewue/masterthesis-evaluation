@@ -14,7 +14,11 @@ fun main() {
     bf.right().get().forEach {
         it.parameterizedBenchmarks().forEach {
             val params = it.jmhParams.map { "${it.first}=${it.second}" }.joinToString("&")
-            println("${it.clazz}.${it.name};$params")
+            if(it.group == null){
+                println("${it.clazz}.${it.name};$params")
+            }else{
+                println("${it.clazz}.${it.group};$params")
+            }
         }
     }
 }
