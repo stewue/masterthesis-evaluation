@@ -23,3 +23,5 @@ fun getMin(list: List<Double>): Double {
 
     return min
 }
+
+fun List<Double>.median() = sorted().let { (it[it.size / 2] + it[(it.size - 1) / 2]) / 2 }
