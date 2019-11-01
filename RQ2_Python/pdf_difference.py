@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.ticker import PercentFormatter
 
-data = pd.read_csv('C:\\Users\\stewue\\Documents\\pdf_difference.csv', delimiter=';')
+data = pd.read_csv('D:\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\pdf_difference.csv', delimiter=';')
 
 filtered10 = data[np.logical_not(np.isnan(data['i10']))]
 all10 = filtered10['i10']
@@ -24,7 +24,7 @@ plt.xlabel('p-value')
 plt.ylabel('cumulative probability')
 plt.xlim(0.95, 1)
 #plt.xscale('log')
-plt.yscale('log')
+#plt.yscale('log')
 plt.legend()
 plt.tight_layout()
 #plt.show()

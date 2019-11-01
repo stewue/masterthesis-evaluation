@@ -72,7 +72,7 @@ public class CI {
 
     private String getTmpFile() {
         try {
-            File tmpFile = File.createTempFile(UUID.randomUUID().toString(), ".csv");
+            File tmpFile = File.createTempFile("reconfigure", ".csv");
             FileWriter fw = new FileWriter(tmpFile);
 
             for (int i = 0; i < histogramList.size(); i++) {

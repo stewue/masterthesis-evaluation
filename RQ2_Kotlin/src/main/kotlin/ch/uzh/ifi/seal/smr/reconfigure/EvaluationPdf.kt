@@ -35,6 +35,8 @@ private fun evalBenchmark(file: File) {
     evaluation(list)
     output.appendln("")
     output2.appendln("")
+    output.flush()
+    output2.flush()
 }
 
 private fun evaluation(list: List<HistogramItem>) {
@@ -57,12 +59,12 @@ private fun evaluation(list: List<HistogramItem>) {
         output.append(";$p")
 
         if (i >= 6) {
-            val i1 = Math.abs(ps.getValue(i - 1) - p)
-            val i2 = Math.abs(ps.getValue(i - 2) - p)
-            val i3 = Math.abs(ps.getValue(i - 3) - p)
-            val i4 = Math.abs(ps.getValue(i - 4) - p)
+            val p1 = ps.getValue(i - 1)
+            val p2 = ps.getValue(i - 2)
+            val p3 = ps.getValue(i - 3)
+            val p4 = ps.getValue(i - 4)
 
-            val max = getMax(listOf(i1, i2, i3, i4))
+            val max = getMin(listOf(p1, p2, p3, p4, p))
             output2.append(";$max")
         }
     }

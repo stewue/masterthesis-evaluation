@@ -87,15 +87,3 @@ private fun evaluation(list: Collection<CsvLine>) {
         }
     }
 }
-
-private fun getMax(list: List<Double>): Double {
-    var max = list.first()
-
-    list.forEach {
-        if (it > max) {
-            max = it
-        }
-    }
-
-    return max
-}

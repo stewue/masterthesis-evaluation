@@ -38,6 +38,9 @@ private fun evalBenchmark(file: File) {
     evaluation(list)
     output.appendln("")
     output2.appendln("")
+
+    output.flush()
+    output2.flush()
 }
 
 private fun evaluation(list: Collection<CsvLine>) {
@@ -66,6 +69,7 @@ private fun evaluation(list: Collection<CsvLine>) {
         all.addAll(iterationList)
         val ci = CI(all)
         ci.run()
+        deleteTmp()
         val relativeWidth = (ci.upper - ci.lower) / ci.statisticMetric
 
         relativeWidths[iteration] = relativeWidth
@@ -83,14 +87,11 @@ private fun evaluation(list: Collection<CsvLine>) {
     }
 }
 
-private fun getMax(list: List<Double>): Double {
-    var max = list.first()
-
-    list.forEach {
-        if (it > max) {
-            max = it
+private fun deleteTmp(){
+    val tmp = File(System.getProperty("java.io.tmpdir"))
+    tmp.listFiles().forEach {
+        if(it.name.startsWith("reconfigure")){
+            it.delete()
         }
     }
-
-    return max
 }
