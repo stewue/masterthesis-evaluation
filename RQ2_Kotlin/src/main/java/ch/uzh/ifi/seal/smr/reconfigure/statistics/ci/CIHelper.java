@@ -31,7 +31,6 @@ public class CIHelper {
     private void copyExecutableToTmpFolder() {
         String executableName = executableName();
         tempFile = Paths.get(System.getProperty("java.io.tmpdir"), executableName).toFile();
-        tempFile.deleteOnExit();
 
         ClassLoader classLoader = getClass().getClassLoader();
 
