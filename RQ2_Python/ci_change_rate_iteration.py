@@ -1,6 +1,6 @@
 import pandas as pd
 
-data = pd.read_csv('C:\\Users\\stewue\\Documents\\ci_change_rate_100_iterations_1_second.csv', delimiter=';')
+data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\ci_change_rate_100_iterations_1_second.csv', delimiter=';')
 data['project'] = data['project'].fillna('')
 data['commit'] = data['commit'].fillna('')
 data['benchmark'] = data['benchmark'].fillna('')
