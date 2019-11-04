@@ -9,45 +9,32 @@ import java.io.OutputStream
 import java.io.PrintStream
 import kotlin.streams.toList
 
-private val output = FileWriter(File("D:\\outputString.csv"))
-private val output2 = FileWriter(File("D:\\outputString2.csv"))
+private val outputPdf = FileWriter(File("/home/user/stefan-masterthesis/outputPdf.csv"))
+private val outputPdfMin = FileWriter(File("/home/user/stefan-masterthesis/outputPdfMin.csv"))
 
-fun main() {
-    disableSystemErr()
-    val folder = File("D:\\rq2\\pre\\log4j2_10_iterations_10_seconds\\")
-
-    folder.walk().forEach {
-        if (it.isFile) {
-            evalBenchmark(it)
-        }
-    }
-
-    output.flush()
-    output2.flush()
-}
-
-private fun evalBenchmark(file: File) {
+fun evalBenchmarkPdf(file: File) {
     val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
     val key = CsvLineKey(project, commit, benchmark, params)
     val list = CsvLineParser(file).getList().map { it.getHistogramItem() }
-    output.append(key.output())
-    output2.append(key.output())
+    outputPdf.append(key.output())
+    outputPdfMin.append(key.output())
     evaluation(list)
-    output.appendln("")
-    output2.appendln("")
-    output.flush()
-    output2.flush()
+    outputPdf.appendln("")
+    outputPdfMin.appendln("")
+    outputPdf.flush()
+    outputPdfMin.flush()
 }
 
 private fun evaluation(list: List<HistogramItem>) {
     val sample = mutableMapOf<Int, List<Double>>()
-    val range = mutableMapOf<Int, Pair<Double, Double>>()
 
     sample[1] = getSample(list.filter { it.iteration == 1 })
 
     val ps = mutableMapOf<Int, Double>()
 
-    for (i in 2..10) {
+    val count = list.map{it.iteration}.distinct().size
+
+    for (i in 2..count) {
         sample[i] = getSample(list.filter { it.iteration <= i })
         val sample1 = sample.getValue(i - 1)
         val sample2 = sample.getValue(i)
@@ -56,7 +43,7 @@ private fun evaluation(list: List<HistogramItem>) {
         val p = pdf.value
         ps[i] = p
 
-        output.append(";$p")
+        outputPdf.append(";$p")
 
         if (i >= 6) {
             val p1 = ps.getValue(i - 1)
@@ -65,7 +52,7 @@ private fun evaluation(list: List<HistogramItem>) {
             val p4 = ps.getValue(i - 4)
 
             val max = getMin(listOf(p1, p2, p3, p4, p))
-            output2.append(";$max")
+            outputPdfMin.append(";$max")
         }
     }
 }
@@ -78,7 +65,7 @@ private fun getSample(list: List<HistogramItem>): List<Double> {
     return sample
 }
 
-private fun disableSystemErr() {
+fun disableSystemErr() {
     System.setErr(PrintStream(object : OutputStream() {
         override fun write(b: Int) {}
     }))
