@@ -7,14 +7,12 @@ import org.openjdk.jmh.reconfigure.statistics.Sampler
 import org.openjdk.jmh.reconfigure.statistics.ci.RelativeCiWidthByMean
 import java.io.File
 import java.io.FileWriter
+import java.nio.file.Paths
 
-private val outputCiChange = FileWriter(File("/home/user/stefan-masterthesis/outputCiChange.csv"))
-private val outputCi = FileWriter(File("/home/user/stefan-masterthesis/outputCi.csv"))
+private val outputCiChange = FileWriter(Paths.get(outputDirectory, "outputCiChange.csv").toFile())
+private val outputCi = FileWriter(Paths.get(outputDirectory, "outputCi.csv").toFile())
 
-fun evalBenchmarkCi(file: File) {
-    val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
-    val key = CsvLineKey(project, commit, benchmark, params)
-    val list = CsvLineParser(file).getList()
+fun evalBenchmarkCi(key: CsvLineKey, list: Collection<CsvLine>) {
     outputCiChange.append(key.output())
     outputCi.append(key.output())
     evaluation(list)

@@ -4,22 +4,19 @@ import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.statistics.divergence.Divergence
 import org.apache.commons.math3.distribution.EnumeratedDistribution
 import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE
-import java.io.File
 import java.io.FileWriter
 import java.io.OutputStream
 import java.io.PrintStream
+import java.nio.file.Paths
 import kotlin.streams.toList
 
-private val outputDivergence = FileWriter(File("/home/user/stefan-masterthesis/outputDivergence.csv"))
-private val outputDivergenceMin = FileWriter(File("/home/user/stefan-masterthesis/outputDivergenceMin.csv"))
+private val outputDivergence = FileWriter(Paths.get(outputDirectory, "outputDivergence.csv").toFile())
+private val outputDivergenceMin = FileWriter(Paths.get(outputDirectory, "outputDivergenceMin.csv").toFile())
 
-fun evalBenchmarkDivergence(file: File) {
-    val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
-    val key = CsvLineKey(project, commit, benchmark, params)
-    val list = CsvLineParser(file).getList().map { it.getHistogramItem() }
+fun evalBenchmarkDivergence(key: CsvLineKey, list: Collection<CsvLine>) {
     outputDivergence.append(key.output())
     outputDivergenceMin.append(key.output())
-    evaluation(list)
+    evaluation(list.map{ it.getHistogramItem() })
     outputDivergence.appendln("")
     outputDivergenceMin.appendln("")
     outputDivergence.flush()
