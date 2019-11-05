@@ -6,8 +6,6 @@ val outputDirectory = "D:\\"
 //val outputDirectory = "/home/user/stefan-masterthesis/"
 
 fun main() {
-    disableSystemErr()
-
     val folder = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second")
 
     folder.walk().forEach {
@@ -17,8 +15,8 @@ fun main() {
             val list = CsvLineParser(it).getList()
 
 //            evalBenchmarkCOV(key, list)
-            evalBenchmarkCiPercentage(key, list)
-//            evalBenchmarkDivergence(key, list)
+//            evalBenchmarkCiPercentage(key, list)
+            evalBenchmarkDivergence(key, list)
         }
     }
 }
