@@ -3,6 +3,7 @@ package ch.uzh.ifi.seal.smr.reconfigure
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.statistics.pdf.PDF
 import org.apache.commons.math3.distribution.EnumeratedDistribution
+import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE
 import java.io.File
 import java.io.FileWriter
 import java.io.OutputStream
@@ -60,7 +61,7 @@ private fun evaluation(list: List<HistogramItem>) {
 private fun getSample(list: List<HistogramItem>): List<Double> {
     val distributionPairs = list.stream().map { org.apache.commons.math3.util.Pair(it.value, it.count.toDouble()) }.toList()
     val ed = EnumeratedDistribution<Double>(distributionPairs)
-    val sample = ed.sample(1000).toList().toMutableList() as MutableList<Double>
+    val sample = ed.sample(SAMPLE_SIZE).toList().toMutableList() as MutableList<Double>
     sample.sortBy { it }
     return sample
 }

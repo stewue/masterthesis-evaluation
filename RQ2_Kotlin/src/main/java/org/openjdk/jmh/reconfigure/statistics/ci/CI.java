@@ -9,13 +9,15 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.List;
 
+import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.*;
+
 public class CI {
     private List<HistogramItem> histogramList;
 
     private String paToolPath;
-    private int bootstrapSimulations = 1000;
-    private double significanceLevel = 0.01;
-    private String statistic = "mean";
+    private final int bootstrapSimulations;
+    private final double significanceLevel;
+    private final String statistic;
 
     private double lower;
     private double upper;
@@ -23,6 +25,9 @@ public class CI {
 
     public CI(List<HistogramItem> histogramList) {
         this.histogramList = histogramList;
+        this.bootstrapSimulations = CI_BOOTSTRAP_SIMULATIONS;
+        this.significanceLevel = CI_SIGNIFICANCE_LEVEL;
+        this.statistic = CI_STATISTIC;
         executable();
     }
 

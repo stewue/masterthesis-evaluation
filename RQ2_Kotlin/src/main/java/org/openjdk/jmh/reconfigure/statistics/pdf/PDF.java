@@ -8,10 +8,10 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PDF implements StatisticalEvaluation {
-    private final double outlierFactor = 1.5;
-    private final int numberOfPoints = 1000;
+import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.DIVERGENCE_NUMBER_OF_POINTS;
+import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.RANGE_OUTLIER_FACTOR;
 
+public class PDF implements StatisticalEvaluation {
     private List<Double> before;
     private List<Double> after;
     private double threshold;
@@ -29,8 +29,8 @@ public class PDF implements StatisticalEvaluation {
         double max = range.getRight();
 
         List<Double> y = new ArrayList<>();
-        double step = (max - min) / (numberOfPoints - 1);
-        for (int i = 0; i < numberOfPoints; i++) {
+        double step = (max - min) / (DIVERGENCE_NUMBER_OF_POINTS - 1);
+        for (int i = 0; i < DIVERGENCE_NUMBER_OF_POINTS; i++) {
             y.add(min + i * step);
         }
 
@@ -64,8 +64,8 @@ public class PDF implements StatisticalEvaluation {
         double q3 = ds.getPercentile(75.0);
         double iqr = q3 - q1;
 
-        double max = q3 + outlierFactor * iqr;
-        double min = q1 - outlierFactor * iqr;
+        double max = q3 + RANGE_OUTLIER_FACTOR * iqr;
+        double min = q1 - RANGE_OUTLIER_FACTOR * iqr;
 
         if (min < 0) {
             min = 0.0;

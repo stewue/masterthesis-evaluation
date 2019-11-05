@@ -3,6 +3,8 @@ package ch.uzh.ifi.seal.smr.reconfigure
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.helper.OutlierDetector
 import org.openjdk.jmh.reconfigure.statistics.COV
+import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.OUTLIER_FACTOR
+import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE
 import org.openjdk.jmh.reconfigure.statistics.Sampler
 import java.io.File
 import java.io.FileWriter
@@ -35,12 +37,10 @@ private fun evaluation(list: Collection<CsvLine>) {
         iterationList.add(it.getHistogramItem())
     }
 
-    val sampleSize = 1000
-
     val sampledHistogram = histogram.map { (iteration, list) ->
-        val od = OutlierDetector(10.0, list)
+        val od = OutlierDetector(OUTLIER_FACTOR, list)
         od.run()
-        val sample = Sampler(od.inlier).getSample(sampleSize)
+        val sample = Sampler(od.inlier).getSample(SAMPLE_SIZE)
         Pair(iteration, sample)
     }.toMap()
 
