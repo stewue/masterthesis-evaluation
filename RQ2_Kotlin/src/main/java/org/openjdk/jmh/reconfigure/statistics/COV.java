@@ -9,11 +9,9 @@ import java.util.List;
 
 public class COV implements StatisticalEvaluation {
     private List<Double> list;
-    private double threshold;
 
-    public COV(List<HistogramItem> list, double threshold) {
+    public COV(List<HistogramItem> list) {
         this.list = HistogramHelper.toArray(list);
-        this.threshold = threshold;
     }
 
     @Override
@@ -21,10 +19,5 @@ public class COV implements StatisticalEvaluation {
         double[] array = ListToArray.toPrimitive(list);
         DescriptiveStatistics ds = new DescriptiveStatistics(array);
         return ds.getStandardDeviation() / ds.getMean();
-    }
-
-    @Override
-    public double getThreshold() {
-        return threshold;
     }
 }

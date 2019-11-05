@@ -40,7 +40,7 @@ private fun evaluation(list: List<HistogramItem>) {
         val sample1 = sample.getValue(i - 1)
         val sample2 = sample.getValue(i)
 
-        val p = Divergence(sample1, sample2, 0.99).value
+        val p = Divergence(sample1, sample2).value
         ps[i] = p
 
         outputDivergence.append(";$p")

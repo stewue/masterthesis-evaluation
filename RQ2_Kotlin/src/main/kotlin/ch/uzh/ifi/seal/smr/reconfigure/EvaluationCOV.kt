@@ -49,7 +49,7 @@ private fun evaluation(list: Collection<CsvLine>) {
     val covs = mutableMapOf<Int, Double>()
     sampledHistogram.forEach { (iteration, iterationList) ->
         all.addAll(iterationList)
-        val cov = COV(all, 0.0)
+        val cov = COV(all)
         covs[iteration] = cov.value
 
         outputCov.append(";${cov.value}")

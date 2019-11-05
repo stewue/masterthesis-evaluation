@@ -14,12 +14,10 @@ import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.RANGE_
 public class Divergence implements StatisticalEvaluation {
     private List<Double> before;
     private List<Double> after;
-    private double threshold;
 
-    public Divergence(List<Double> before, List<Double> after, double threshold) {
+    public Divergence(List<Double> before, List<Double> after) {
         this.before = before;
         this.after = after;
-        this.threshold = threshold;
     }
 
     @Override
@@ -41,11 +39,6 @@ public class Divergence implements StatisticalEvaluation {
         double kldAfter = KullbackLeiblerDivergence.continuous(pdfAfter, pdfBefore, step);
 
         return Math.pow(2.0, -kldBefore) * Math.pow(2.0, -kldAfter);
-    }
-
-    @Override
-    public double getThreshold() {
-        return threshold;
     }
 
     private Pair<Double, Double> getRange() {
