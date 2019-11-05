@@ -1,7 +1,7 @@
 package org.openjdk.jmh.reconfigure.statistics.divergence;
 
 import org.openjdk.jmh.reconfigure.helper.ListToArray;
-import org.openjdk.jmh.reconfigure.statistics.StatisticalEvaluation;
+import org.openjdk.jmh.reconfigure.statistics.Statistic;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.DIVERGENCE_NUMBER_OF_POINTS;
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.RANGE_OUTLIER_FACTOR;
 
-public class Divergence implements StatisticalEvaluation {
+public class Divergence implements Statistic {
     private List<Double> before;
     private List<Double> after;
 

@@ -1,13 +1,13 @@
 package org.openjdk.jmh.reconfigure.statistics.ci;
 
 import org.openjdk.jmh.reconfigure.helper.HistogramItem;
-import org.openjdk.jmh.reconfigure.statistics.StatisticalEvaluation;
+import org.openjdk.jmh.reconfigure.statistics.Statistic;
 
 import java.util.List;
 
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.*;
 
-public class RelativeCiWidthByMean implements StatisticalEvaluation {
+public class RelativeCiWidthByMean implements Statistic {
     private List<HistogramItem> histogramList;
 
     public RelativeCiWidthByMean(List<HistogramItem> histogramList) {

@@ -7,7 +7,7 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 import java.util.List;
 
-public class COV implements StatisticalEvaluation {
+public class COV implements Statistic {
     private List<Double> list;
 
     public COV(List<HistogramItem> list) {
