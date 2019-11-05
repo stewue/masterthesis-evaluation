@@ -1,21 +1,15 @@
 package ch.uzh.ifi.seal.smr.reconfigure
 
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
-import org.openjdk.jmh.reconfigure.helper.OutlierDetector
-import org.openjdk.jmh.reconfigure.statistics.COV
-import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.OUTLIER_FACTOR
-import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE
-import org.openjdk.jmh.reconfigure.statistics.Sampler
-import java.io.File
+import org.openjdk.jmh.reconfigure.statistics.evaluation.CovEvaluation
+import org.openjdk.jmh.runner.Defaults.RECONFIGURE_COV_THRESHOLD
 import java.io.FileWriter
+import java.nio.file.Paths
 
-private val outputCovChange = FileWriter(File("/home/user/stefan-masterthesis/outputCovChange.csv"))
-private val outputCov = FileWriter(File("/home/user/stefan-masterthesis/outputCov.csv"))
+private val outputCovChange = FileWriter(Paths.get(outputDirectory, "outputCovChange.csv").toFile())
+private val outputCov = FileWriter(Paths.get(outputDirectory, "outputCov.csv").toFile())
 
-fun evalBenchmarkCOV(file: File) {
-    val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
-    val key = CsvLineKey(project, commit, benchmark, params)
-    val list = CsvLineParser(file).getList()
+fun evalBenchmarkCOV(key: CsvLineKey, list: Collection<CsvLine>) {
     outputCovChange.append(key.output())
     outputCov.append(key.output())
     evaluation(list)
@@ -37,35 +31,14 @@ private fun evaluation(list: Collection<CsvLine>) {
         iterationList.add(it.getHistogramItem())
     }
 
-    val sampledHistogram = histogram.map { (iteration, list) ->
-        val od = OutlierDetector(OUTLIER_FACTOR, list)
-        od.run()
-        val sample = Sampler(od.inlier).getSample(SAMPLE_SIZE)
-        Pair(iteration, sample)
-    }.toMap()
+    val evaluation = CovEvaluation(RECONFIGURE_COV_THRESHOLD)
 
-    val all = mutableListOf<HistogramItem>()
+    histogram.forEach { (iteration, list) ->
+        evaluation.addIteration(list)
+        val delta = evaluation.calculateVariability()
+        val currentCov = evaluation.getCovOfIteration(iteration)
 
-    val covs = mutableMapOf<Int, Double>()
-    sampledHistogram.forEach { (iteration, iterationList) ->
-        all.addAll(iterationList)
-        val cov = COV(all)
-        covs[iteration] = cov.value
-
-        outputCov.append(";${cov.value}")
-
-        if (iteration >= 5) {
-            try {
-                val i1 = Math.abs(covs.getValue(iteration - 1) - cov.value)
-                val i2 = Math.abs(covs.getValue(iteration - 2) - cov.value)
-                val i3 = Math.abs(covs.getValue(iteration - 3) - cov.value)
-                val i4 = Math.abs(covs.getValue(iteration - 4) - cov.value)
-                val max = getMax(listOf(i1, i2, i3, i4))
-                outputCovChange.append(";$max")
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-
-        }
+        outputCov.append(";$currentCov")
+        outputCovChange.append(";$delta")
     }
 }
