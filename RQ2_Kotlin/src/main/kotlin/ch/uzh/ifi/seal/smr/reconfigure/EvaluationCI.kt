@@ -4,7 +4,7 @@ package ch.uzh.ifi.seal.smr.reconfigure
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE
 import org.openjdk.jmh.reconfigure.statistics.Sampler
-import org.openjdk.jmh.reconfigure.statistics.ci.CI
+import org.openjdk.jmh.reconfigure.statistics.ci.RelativeCiWidthByMean
 import java.io.File
 import java.io.FileWriter
 
@@ -47,10 +47,10 @@ private fun evaluation(list: Collection<CsvLine>) {
     val relativeWidths = mutableMapOf<Int, Double>()
     sampledHistogram.forEach { (iteration, iterationList) ->
         all.addAll(iterationList)
-        val ci = CI(all)
-        ci.run()
+        val rcwm = RelativeCiWidthByMean(all)
+
+        val relativeWidth = rcwm.value
         deleteTmp()
-        val relativeWidth = (ci.upper - ci.lower) / ci.statisticMetric
 
         relativeWidths[iteration] = relativeWidth
         outputCi.append(";$relativeWidth")

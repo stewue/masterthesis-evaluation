@@ -23,14 +23,6 @@ public class CI {
     private double upper;
     private double statisticMetric;
 
-    public CI(List<HistogramItem> histogramList) {
-        this.histogramList = histogramList;
-        this.bootstrapSimulations = CI_BOOTSTRAP_SIMULATIONS;
-        this.significanceLevel = CI_SIGNIFICANCE_LEVEL;
-        this.statistic = CI_STATISTIC;
-        executable();
-    }
-
     public CI(List<HistogramItem> histogramList, int bootstrapSimulations, double significanceLevel, String statistic) {
         this.histogramList = histogramList;
         this.bootstrapSimulations = bootstrapSimulations;
