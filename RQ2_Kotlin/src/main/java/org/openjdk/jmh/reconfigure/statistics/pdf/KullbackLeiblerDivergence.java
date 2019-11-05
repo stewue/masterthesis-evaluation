@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics.pdf;
+package org.openjdk.jmh.reconfigure.statistics.pdf;
 
 public class KullbackLeiblerDivergence {
     public static double continuous(double[] x, double[] y, double width) {

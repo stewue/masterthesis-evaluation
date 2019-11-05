@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.smr.reconfigure
 
-import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.pdf.PDF
+import org.openjdk.jmh.reconfigure.helper.HistogramItem
+import org.openjdk.jmh.reconfigure.statistics.pdf.PDF
 import org.apache.commons.math3.distribution.EnumeratedDistribution
 import java.io.File
 import java.io.FileWriter

@@ -1,6 +1,6 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics.ci;
+package org.openjdk.jmh.reconfigure.statistics.ci;
 
-import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem;
+import org.openjdk.jmh.reconfigure.helper.HistogramItem;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;

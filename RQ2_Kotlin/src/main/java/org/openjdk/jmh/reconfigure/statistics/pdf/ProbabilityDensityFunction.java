@@ -1,6 +1,6 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics.pdf;
+package org.openjdk.jmh.reconfigure.statistics.pdf;
 
-import ch.uzh.ifi.seal.smr.reconfigure.helper.ListToArray;
+import org.openjdk.jmh.reconfigure.helper.ListToArray;
 import smile.stat.distribution.KernelDensity;
 
 import java.util.ArrayList;

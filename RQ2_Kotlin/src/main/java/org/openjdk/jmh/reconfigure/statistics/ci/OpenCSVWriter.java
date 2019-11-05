@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics.ci;
+package org.openjdk.jmh.reconfigure.statistics.ci;
 
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.StatefulBeanToCsv;

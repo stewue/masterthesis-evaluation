@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics.ci;
+package org.openjdk.jmh.reconfigure.statistics.ci;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.SystemUtils;

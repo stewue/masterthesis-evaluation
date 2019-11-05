@@ -1,7 +1,7 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics.pdf;
+package org.openjdk.jmh.reconfigure.statistics.pdf;
 
-import ch.uzh.ifi.seal.smr.reconfigure.helper.ListToArray;
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.StatisticalEvaluation;
+import org.openjdk.jmh.reconfigure.helper.ListToArray;
+import org.openjdk.jmh.reconfigure.statistics.StatisticalEvaluation;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 

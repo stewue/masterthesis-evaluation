@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics;
+package org.openjdk.jmh.reconfigure.statistics;
 
 public interface StatisticalEvaluation {
     double getValue();

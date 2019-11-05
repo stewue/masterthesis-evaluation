@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure.helper;
+package org.openjdk.jmh.reconfigure.helper;
 
 public class HistogramItem {
     private final int fork;

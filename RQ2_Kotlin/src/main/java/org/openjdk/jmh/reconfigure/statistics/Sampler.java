@@ -1,6 +1,6 @@
-package ch.uzh.ifi.seal.smr.reconfigure.statistics;
+package org.openjdk.jmh.reconfigure.statistics;
 
-import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem;
+import org.openjdk.jmh.reconfigure.helper.HistogramItem;
 import org.apache.commons.math3.distribution.EnumeratedDistribution;
 import org.apache.commons.math3.util.Pair;
 

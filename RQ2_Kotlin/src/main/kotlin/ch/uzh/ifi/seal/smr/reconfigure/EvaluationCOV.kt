@@ -1,9 +1,9 @@
 package ch.uzh.ifi.seal.smr.reconfigure
 
-import ch.uzh.ifi.seal.smr.reconfigure.helper.HistogramItem
-import ch.uzh.ifi.seal.smr.reconfigure.helper.OutlierDetector
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.COV
-import ch.uzh.ifi.seal.smr.reconfigure.statistics.Sampler
+import org.openjdk.jmh.reconfigure.helper.HistogramItem
+import org.openjdk.jmh.reconfigure.helper.OutlierDetector
+import org.openjdk.jmh.reconfigure.statistics.COV
+import org.openjdk.jmh.reconfigure.statistics.Sampler
 import java.io.File
 import java.io.FileWriter
 
