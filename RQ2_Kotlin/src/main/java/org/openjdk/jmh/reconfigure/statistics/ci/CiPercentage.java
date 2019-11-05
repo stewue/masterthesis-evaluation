@@ -7,10 +7,10 @@ import java.util.List;
 
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.*;
 
-public class RelativeCiWidthByMean implements Statistic {
+public class CiPercentage implements Statistic {
     private List<HistogramItem> histogramList;
 
-    public RelativeCiWidthByMean(List<HistogramItem> histogramList) {
+    public CiPercentage(List<HistogramItem> histogramList) {
         this.histogramList = histogramList;
     }
 
