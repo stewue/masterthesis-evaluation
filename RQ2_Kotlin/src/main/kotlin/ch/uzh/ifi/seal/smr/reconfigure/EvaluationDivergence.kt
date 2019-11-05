@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.smr.reconfigure
 
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
-import org.openjdk.jmh.reconfigure.statistics.pdf.PDF
+import org.openjdk.jmh.reconfigure.statistics.divergence.Divergence
 import org.apache.commons.math3.distribution.EnumeratedDistribution
 import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE
 import java.io.File
@@ -10,20 +10,20 @@ import java.io.OutputStream
 import java.io.PrintStream
 import kotlin.streams.toList
 
-private val outputPdf = FileWriter(File("/home/user/stefan-masterthesis/outputPdf.csv"))
-private val outputPdfMin = FileWriter(File("/home/user/stefan-masterthesis/outputPdfMin.csv"))
+private val outputDivergence = FileWriter(File("/home/user/stefan-masterthesis/outputDivergence.csv"))
+private val outputDivergenceMin = FileWriter(File("/home/user/stefan-masterthesis/outputDivergenceMin.csv"))
 
-fun evalBenchmarkPdf(file: File) {
+fun evalBenchmarkDivergence(file: File) {
     val (project, commit, benchmark, params) = file.nameWithoutExtension.split(";")
     val key = CsvLineKey(project, commit, benchmark, params)
     val list = CsvLineParser(file).getList().map { it.getHistogramItem() }
-    outputPdf.append(key.output())
-    outputPdfMin.append(key.output())
+    outputDivergence.append(key.output())
+    outputDivergenceMin.append(key.output())
     evaluation(list)
-    outputPdf.appendln("")
-    outputPdfMin.appendln("")
-    outputPdf.flush()
-    outputPdfMin.flush()
+    outputDivergence.appendln("")
+    outputDivergenceMin.appendln("")
+    outputDivergence.flush()
+    outputDivergenceMin.flush()
 }
 
 private fun evaluation(list: List<HistogramItem>) {
@@ -40,11 +40,10 @@ private fun evaluation(list: List<HistogramItem>) {
         val sample1 = sample.getValue(i - 1)
         val sample2 = sample.getValue(i)
 
-        val pdf = PDF(sample1, sample2, 0.99)
-        val p = pdf.value
+        val p = Divergence(sample1, sample2, 0.99).value
         ps[i] = p
 
-        outputPdf.append(";$p")
+        outputDivergence.append(";$p")
 
         if (i >= 6) {
             val p1 = ps.getValue(i - 1)
@@ -53,7 +52,7 @@ private fun evaluation(list: List<HistogramItem>) {
             val p4 = ps.getValue(i - 4)
 
             val max = getMin(listOf(p1, p2, p3, p4, p))
-            outputPdfMin.append(";$max")
+            outputDivergenceMin.append(";$max")
         }
     }
 }

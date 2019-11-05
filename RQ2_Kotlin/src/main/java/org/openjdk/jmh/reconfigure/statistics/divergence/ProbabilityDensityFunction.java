@@ -1,4 +1,4 @@
-package org.openjdk.jmh.reconfigure.statistics.pdf;
+package org.openjdk.jmh.reconfigure.statistics.divergence;
 
 import org.openjdk.jmh.reconfigure.helper.ListToArray;
 import smile.stat.distribution.KernelDensity;

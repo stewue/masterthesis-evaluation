@@ -1,4 +1,4 @@
-package org.openjdk.jmh.reconfigure.statistics.pdf;
+package org.openjdk.jmh.reconfigure.statistics.divergence;
 
 import org.openjdk.jmh.reconfigure.helper.ListToArray;
 import org.openjdk.jmh.reconfigure.statistics.StatisticalEvaluation;
@@ -11,12 +11,12 @@ import java.util.List;
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.DIVERGENCE_NUMBER_OF_POINTS;
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.RANGE_OUTLIER_FACTOR;
 
-public class PDF implements StatisticalEvaluation {
+public class Divergence implements StatisticalEvaluation {
     private List<Double> before;
     private List<Double> after;
     private double threshold;
 
-    public PDF(List<Double> before, List<Double> after, double threshold) {
+    public Divergence(List<Double> before, List<Double> after, double threshold) {
         this.before = before;
         this.after = after;
         this.threshold = threshold;

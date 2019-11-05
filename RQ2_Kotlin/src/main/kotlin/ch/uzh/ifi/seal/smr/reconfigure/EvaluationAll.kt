@@ -11,7 +11,7 @@ fun main() {
         if (it.isFile) {
             evalBenchmarkCOV(it)
             evalBenchmarkCi(it)
-            evalBenchmarkPdf(it)
+            evalBenchmarkDivergence(it)
         }
     }
 }

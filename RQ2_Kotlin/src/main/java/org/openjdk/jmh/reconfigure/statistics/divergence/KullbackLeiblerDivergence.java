@@ -1,4 +1,4 @@
-package org.openjdk.jmh.reconfigure.statistics.pdf;
+package org.openjdk.jmh.reconfigure.statistics.divergence;
 
 public class KullbackLeiblerDivergence {
     public static double continuous(double[] x, double[] y, double width) {
