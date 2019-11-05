@@ -2,6 +2,7 @@ package ch.uzh.ifi.seal.smr.reconfigure
 
 
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
+import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE
 import org.openjdk.jmh.reconfigure.statistics.Sampler
 import org.openjdk.jmh.reconfigure.statistics.ci.CI
 import java.io.File
@@ -36,10 +37,8 @@ private fun evaluation(list: Collection<CsvLine>) {
         iterationList.add(it.getHistogramItem())
     }
 
-    val sampleSize = 1000
-
     val sampledHistogram = histogram.map { (iteration, list) ->
-        val sample = Sampler(list).getSample(sampleSize)
+        val sample = Sampler(list).getSample(SAMPLE_SIZE)
         Pair(iteration, sample)
     }.toMap()
 
