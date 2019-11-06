@@ -32,4 +32,14 @@ public class HistogramItem {
     public HistogramItem single() {
         return new HistogramItem(fork, iteration, value, 1);
     }
+
+    @Override
+    public String toString() {
+        return "HistogramItem{" +
+                "fork=" + fork +
+                ", iteration=" + iteration +
+                ", value=" + value +
+                ", count=" + count +
+                '}';
+    }
 }
