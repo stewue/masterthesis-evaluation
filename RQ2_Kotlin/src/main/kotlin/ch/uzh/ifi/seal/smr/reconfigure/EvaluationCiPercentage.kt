@@ -7,16 +7,12 @@ import java.io.File
 import java.io.FileWriter
 import java.nio.file.Paths
 
-private val outputCiChange = FileWriter(Paths.get(outputDirectory, "outputCiChange.csv").toFile())
 private val outputCi = FileWriter(Paths.get(outputDirectory, "outputCi.csv").toFile())
 
 fun evalBenchmarkCiPercentage(key: CsvLineKey, list: Collection<CsvLine>) {
-    outputCiChange.append(key.output())
     outputCi.append(key.output())
     evaluation(list)
-    outputCiChange.appendln("")
     outputCi.appendln("")
-    outputCiChange.flush()
     outputCi.flush()
 }
 
@@ -36,11 +32,10 @@ private fun evaluation(list: Collection<CsvLine>) {
 
     histogram.forEach { (iteration, list) ->
         evaluation.addIteration(list)
-        val delta = evaluation.calculateVariability()
+        evaluation.calculateVariability()
         val currentCiPercentage = evaluation.getCiPercentageOfIteration(iteration)
 
         outputCi.append(";$currentCiPercentage")
-        outputCiChange.append(";$delta")
         deleteTmp()
     }
 }

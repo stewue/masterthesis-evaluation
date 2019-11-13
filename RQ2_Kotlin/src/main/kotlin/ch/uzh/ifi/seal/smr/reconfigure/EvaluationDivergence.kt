@@ -8,26 +8,21 @@ import java.io.FileWriter
 import java.nio.file.Paths
 
 private val outputDivergence = FileWriter(Paths.get(outputDirectory, "outputDivergence.csv").toFile())
-private val outputDivergenceMin = FileWriter(Paths.get(outputDirectory, "outputDivergenceMin.csv").toFile())
 
 fun evalBenchmarkDivergence(key: CsvLineKey, list: Collection<CsvLine>) {
     outputDivergence.append(key.output())
-    outputDivergenceMin.append(key.output())
     evaluation(list.map{ it.getHistogramItem() })
     outputDivergence.appendln("")
-    outputDivergenceMin.appendln("")
     outputDivergence.flush()
-    outputDivergenceMin.flush()
 }
 
 private fun evaluation(list: List<HistogramItem>) {
     val evaluation = DivergenceEvaluation(RECONFIGURE_KLD_THRESHOLD)
     list.groupBy{ it.iteration }.forEach { (iteration, list) ->
         evaluation.addIteration(list)
-        val min = evaluation.calculateVariability()
+        evaluation.calculateVariability()
         val currentPValue = evaluation.getPValueOfIteration(iteration)
 
         outputDivergence.append(";$currentPValue")
-        outputDivergenceMin.append(";$min")
     }
 }
