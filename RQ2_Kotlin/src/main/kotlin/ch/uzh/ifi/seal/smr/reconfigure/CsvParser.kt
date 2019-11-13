@@ -8,6 +8,7 @@ import java.io.File
 import java.io.FileReader
 
 class CsvLineParser(file: File) : CsvParser<CsvLine>(file, CsvLine::class.java, true)
+class CsvResultItemParser(file: File) : CsvParser<CsvResultItem>(file, CsvResultItem::class.java, false)
 
 open class CsvParser<T>(file: File, private val clazz: Class<T>, private val skipHeader: Boolean) {
 
