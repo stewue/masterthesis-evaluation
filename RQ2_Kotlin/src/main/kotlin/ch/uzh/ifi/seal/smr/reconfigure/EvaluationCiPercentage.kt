@@ -17,26 +17,31 @@ fun evalBenchmarkCiPercentage(key: CsvLineKey, list: Collection<CsvLine>) {
 }
 
 private fun evaluation(list: Collection<CsvLine>) {
-    val histogram = mutableMapOf<Int, MutableList<HistogramItem>>()
+    val histogram = mutableMapOf<Int, MutableMap<Int, MutableList<HistogramItem>>>()
 
     list.forEach {
-        if (histogram[it.iteration] == null) {
-            histogram[it.iteration] = mutableListOf()
+        if (histogram[it.fork] == null) {
+            histogram[it.fork] = mutableMapOf()
         }
 
-        val iterationList = histogram.getValue(it.iteration)
+        if (histogram.getValue(it.fork)[it.iteration] == null) {
+            histogram.getValue(it.fork)[it.iteration] = mutableListOf()
+        }
+
+        val iterationList = histogram.getValue(it.fork).getValue(it.iteration)
         iterationList.add(it.getHistogramItem())
     }
 
-    val evaluation = CiPercentageEvaluation(Defaults.RECONFIGURE_CI_THRESHOLD)
+    histogram.forEach { (_, map) ->
+        val evaluation = CiPercentageEvaluation(Defaults.RECONFIGURE_CI_THRESHOLD)
+        map.forEach { (iteration, list) ->
+            evaluation.addIteration(list)
+            evaluation.calculateVariability()
+            val currentCiPercentage = evaluation.getCiPercentageOfIteration(iteration)
 
-    histogram.forEach { (iteration, list) ->
-        evaluation.addIteration(list)
-        evaluation.calculateVariability()
-        val currentCiPercentage = evaluation.getCiPercentageOfIteration(iteration)
-
-        outputCi.append(";$currentCiPercentage")
-        deleteTmp()
+            outputCi.append(";$currentCiPercentage")
+            deleteTmp()
+        }
     }
 }
 

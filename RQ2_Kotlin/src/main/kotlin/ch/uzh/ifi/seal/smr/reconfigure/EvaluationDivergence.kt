@@ -16,16 +16,19 @@ fun evalBenchmarkDivergence(key: CsvLineKey, list: Collection<CsvLine>) {
 }
 
 private fun evaluation(list: List<HistogramItem>) {
-    val evaluation = DivergenceEvaluation(RECONFIGURE_KLD_THRESHOLD)
-    list.groupBy { it.iteration }.forEach { (iteration, list) ->
-        evaluation.addIteration(list)
-        evaluation.calculateVariability()
-        val currentPValue = evaluation.getPValueOfIteration(iteration)
+    list.groupBy { it.fork }.forEach{ (_, iterationList) ->
+        val evaluation = DivergenceEvaluation(RECONFIGURE_KLD_THRESHOLD)
+        iterationList.groupBy { it.iteration }.forEach { (iteration, list) ->
+            evaluation.addIteration(list)
+            evaluation.calculateVariability()
+            val currentPValue = evaluation.getPValueOfIteration(iteration)
 
-        if (currentPValue == null) {
-            outputDivergence.append(";")
-        } else {
-            outputDivergence.append(";$currentPValue")
+            if (currentPValue == null) {
+                outputDivergence.append(";")
+            } else {
+                outputDivergence.append(";$currentPValue")
+            }
         }
     }
+
 }
