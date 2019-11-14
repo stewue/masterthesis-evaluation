@@ -4,24 +4,29 @@ import ch.uzh.ifi.seal.smr.reconfigure.CsvResultItemParser
 import java.io.File
 import java.io.FileWriter
 
-private val input = File("D:\\outputPdfChange.csv")
-private val output = FileWriter(File("D:\\outputPdfReached.csv"))
+private val input = File("D:\\outputDivergenceChange.csv")
+private val output = FileWriter(File("D:\\outputDivergenceReached.csv"))
 
 private fun main() {
     val threshold = 0.97
-    output.append("project;commit;benchmark;params;reached\n")
+    output.append("project;commit;benchmark;params;f1;f2;f3;f4;f5\n")
     CsvResultItemParser(input).getList().forEach {
         val map = it.getMap()
 
-        var reached = Int.MAX_VALUE
-        for (i in 6 until 101) {
-            val value = map.getValue(i)
-            if(value > threshold){
-                reached = i
-                break
+        output.append(it.getKey().output())
+        for (f in 1 until 6) {
+            var reached = Int.MAX_VALUE
+            val iterationMap = map.getValue(f)
+            for (i in 6 until 101) {
+                val value = iterationMap.getValue(i)
+                if (value > threshold) {
+                    reached = i
+                    break
+                }
             }
+            output.append(";" + reached)
         }
-        output.append(it.getKey().output() + ";" + reached + "\n")
+        output.append("\n")
         output.flush()
     }
 }
