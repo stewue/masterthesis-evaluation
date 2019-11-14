@@ -10,8 +10,8 @@ fun main() {
 
     folder.walk().forEach {
         if (it.isFile) {
-            val (project, commit, benchmark, params) = it.nameWithoutExtension.split(";")
-            val key = CsvLineKey(project, commit, benchmark, params)
+            val (project, benchmark, params) = it.nameWithoutExtension.split("#")
+            val key = CsvLineKey(project, "", benchmark, params)
             val list = CsvLineParser(it).getList()
 
 //            evalBenchmarkCOV(key, list)
