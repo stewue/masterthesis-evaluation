@@ -1,5 +1,7 @@
-package ch.uzh.ifi.seal.smr.reconfigure
+package ch.uzh.ifi.seal.smr.reconfigure.D_variability_single
 
+import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineKey
+import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineParser
 import java.io.File
 
 val outputDirectory = "D:\\"

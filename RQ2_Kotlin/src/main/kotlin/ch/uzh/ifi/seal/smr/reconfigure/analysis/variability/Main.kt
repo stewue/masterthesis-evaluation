@@ -1,6 +1,6 @@
 package ch.uzh.ifi.seal.smr.reconfigure.analysis.variability
 
-import ch.uzh.ifi.seal.smr.reconfigure.CsvLineParser
+import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineParser
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.helper.OutlierDetector
 import org.openjdk.jmh.reconfigure.statistics.COV

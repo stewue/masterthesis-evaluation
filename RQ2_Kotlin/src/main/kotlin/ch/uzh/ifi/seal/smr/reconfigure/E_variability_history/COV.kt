@@ -1,6 +1,6 @@
-package ch.uzh.ifi.seal.smr.reconfigure.change
+package ch.uzh.ifi.seal.smr.reconfigure.E_variability_history
 
-import ch.uzh.ifi.seal.smr.reconfigure.CsvResultItemParser
+import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItemParser
 import java.io.File
 import java.io.FileWriter
 import java.util.*

@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure
+package ch.uzh.ifi.seal.smr.reconfigure.utils
 
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import com.opencsv.bean.CsvBindByPosition

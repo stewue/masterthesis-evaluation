@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure
+package ch.uzh.ifi.seal.smr.reconfigure.utils
 
 data class CsvLineKey(
         val project: String,

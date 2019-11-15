@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure
+package ch.uzh.ifi.seal.smr.reconfigure.A_benchmark_list
 
 import ch.uzh.ifi.seal.bencher.analysis.finder.asm.AsmBenchFinder
 import java.io.File

@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure
+package ch.uzh.ifi.seal.smr.reconfigure.C_json_to_csv
 
 import ch.uzh.ifi.seal.bencher.jmhResults.JMHResultTransformer
 import java.io.File
