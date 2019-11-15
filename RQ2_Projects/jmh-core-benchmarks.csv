@@ -87,8 +87,6 @@ jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.raw;;java;~/
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.benchmark_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.benchmark_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.group_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.group_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.group_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.group_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.thread_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelInvocationBench.thread_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
@@ -96,8 +94,6 @@ jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.raw;;java;~/t
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.benchmark_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.benchmark_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.group_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.group_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.group_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.group_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.thread_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelIterationBench.thread_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
@@ -105,8 +101,6 @@ jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.raw;;java;~/thesi
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.benchmark_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.benchmark_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.group_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.group_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.group_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.group_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.thread_setup;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jmh-core-benchmarks;org.openjdk.jmh.benchmarks.LevelTrialBench.thread_teardown;;java;~/thesis/rq2/jmh-core-benchmarks.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
