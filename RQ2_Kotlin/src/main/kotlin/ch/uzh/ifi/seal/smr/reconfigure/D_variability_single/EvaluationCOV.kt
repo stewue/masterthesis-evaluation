@@ -2,13 +2,18 @@ package ch.uzh.ifi.seal.smr.reconfigure.D_variability_single
 
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLine
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineKey
+import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItem.Companion.header
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.statistics.evaluation.CovEvaluation
 import org.openjdk.jmh.runner.Defaults.RECONFIGURE_COV_THRESHOLD
 import java.io.FileWriter
 import java.nio.file.Paths
 
-private val outputCov = FileWriter(Paths.get(outputDirectory, "outputCov.csv").toFile())
+private val outputCov = FileWriter(Paths.get(outputDirectory, "outputCovSingle.csv").toFile())
+
+fun csvheaderCov(){
+    outputCov.append(header)
+}
 
 fun evalBenchmarkCOV(key: CsvLineKey, list: Collection<CsvLine>) {
     outputCov.append(key.output())

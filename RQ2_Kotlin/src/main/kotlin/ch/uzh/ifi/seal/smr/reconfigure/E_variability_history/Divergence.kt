@@ -1,14 +1,17 @@
 package ch.uzh.ifi.seal.smr.reconfigure.E_variability_history
 
+import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItem
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItemParser
 import java.io.File
 import java.io.FileWriter
 import java.util.*
 
-private val input = File("D:\\outputDivergence.csv")
-private val output = FileWriter(File("D:\\outputDivergenceChange.csv"))
+private val input = File("D:\\outputDivergenceSingle.csv")
+private val output = FileWriter(File("D:\\outputDivergenceHistory.csv"))
 
 private fun main() {
+    output.append(CsvResultItem.header)
+
     CsvResultItemParser(input).getList().forEach {
         val map = it.getMap()
 

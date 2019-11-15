@@ -2,6 +2,7 @@ package ch.uzh.ifi.seal.smr.reconfigure.D_variability_single
 
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLine
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineKey
+import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItem.Companion.header
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.statistics.evaluation.CiPercentageEvaluation
 import org.openjdk.jmh.runner.Defaults
@@ -9,7 +10,11 @@ import java.io.File
 import java.io.FileWriter
 import java.nio.file.Paths
 
-private val outputCi = FileWriter(Paths.get(outputDirectory, "outputCi.csv").toFile())
+private val outputCi = FileWriter(Paths.get(outputDirectory, "outputCiSingle.csv").toFile())
+
+fun csvheaderCi(){
+    outputCi.append(header)
+}
 
 fun evalBenchmarkCiPercentage(key: CsvLineKey, list: Collection<CsvLine>) {
     outputCi.append(key.output())

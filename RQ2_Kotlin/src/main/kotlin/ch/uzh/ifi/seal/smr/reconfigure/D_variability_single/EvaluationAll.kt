@@ -8,7 +8,11 @@ val outputDirectory = "D:\\"
 //val outputDirectory = "/home/user/stefan-masterthesis/"
 
 fun main() {
-    val folder = File("D:\\rq2\\pre\\log4j2_100_iterations_1_second")
+    val folder = File("D:\\rq2\\results\\csv-jenetics")
+
+//    csvheaderCov()
+    csvheaderCi()
+//    csvheaderDivergence()
 
     folder.walk().forEach {
         if (it.isFile) {
