@@ -18,6 +18,10 @@ public class COV implements Statistic {
     public double getValue() {
         double[] array = ListToArray.toPrimitive(list);
         DescriptiveStatistics ds = new DescriptiveStatistics(array);
-        return ds.getStandardDeviation() / ds.getMean();
+        if(ds.getMean() == 0){
+            return 0;
+        }else{
+            return ds.getStandardDeviation() / ds.getMean();
+        }
     }
 }
