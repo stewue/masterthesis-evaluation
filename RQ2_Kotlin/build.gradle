@@ -30,7 +30,7 @@ apply(plugin: "com.github.johnrengelman.shadow")
 
 sourceCompatibility = 1.8
 
-mainClassName = 'ch.uzh.ifi.seal.smr.reconfigure.EvaluationAllKt'
+mainClassName = 'ch.uzh.ifi.seal.smr.reconfigure.ProcessKt'
 
 repositories {
     mavenCentral()

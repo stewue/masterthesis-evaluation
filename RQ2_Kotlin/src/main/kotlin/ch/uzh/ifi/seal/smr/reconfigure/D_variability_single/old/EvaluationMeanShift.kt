@@ -64,7 +64,7 @@ private fun evaluation(list: Collection<CsvLine>) {
     val means = mutableMapOf<Int, Double>()
     sampledHistogram.forEach { (iteration, iterationList) ->
         all.addAll(iterationList)
-        val mean = iterationList.map{ it.value }.average()
+        val mean = iterationList.map { it.value }.average()
         means[iteration] = mean
 
         output2.append(";$mean")

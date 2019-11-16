@@ -1,7 +1,7 @@
 package ch.uzh.ifi.seal.smr.reconfigure.utils
 
-import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import com.opencsv.bean.CsvBindByPosition
+import org.openjdk.jmh.reconfigure.helper.HistogramItem
 
 class CsvLine {
     @CsvBindByPosition(position = 0)

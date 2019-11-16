@@ -64,7 +64,7 @@ private fun evaluation(list: Collection<CsvLine>) {
     val medians = mutableMapOf<Int, Double>()
     sampledHistogram.forEach { (iteration, iterationList) ->
         all.addAll(iterationList)
-        val median = iterationList.map{ it.value }.median()
+        val median = iterationList.map { it.value }.median()
         medians[iteration] = median
 
         output2.append(";$median")

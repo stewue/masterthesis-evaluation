@@ -9,8 +9,8 @@ import java.nio.file.Paths
 fun main() {
     val inputFolder = File("D:\\rq2\\results\\results-jenetics")
     val outputFolder = File("D:\\rq2\\results\\csv-jenetics")
-    inputFolder.walk().forEach {inputFile ->
-        if(inputFile.isFile){
+    inputFolder.walk().forEach { inputFile ->
+        if (inputFile.isFile) {
             val outputFile = Paths.get(outputFolder.absolutePath, inputFile.nameWithoutExtension + ".csv").toFile()
 
             val parser = JMHResultTransformer(inStream = FileInputStream(inputFile), outStream = FileOutputStream(outputFile), trial = 0, commit = "", project = "", instance = "")
