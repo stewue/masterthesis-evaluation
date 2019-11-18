@@ -10,4 +10,6 @@ public interface StatisticalEvaluation {
     double getThreshold();
 
     Double calculateVariability();
+
+    int getIterationNumber();
 }

@@ -87,4 +87,9 @@ public class DivergenceEvaluation implements StatisticalEvaluation {
             }
         }));
     }
+
+    @Override
+    public int getIterationNumber() {
+        return sampleUntilIteration.size();
+    }
 }

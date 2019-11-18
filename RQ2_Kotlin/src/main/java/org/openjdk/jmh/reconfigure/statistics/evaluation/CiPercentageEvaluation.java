@@ -83,4 +83,9 @@ public class CiPercentageEvaluation implements StatisticalEvaluation {
             return ciPercentagePerIteration.get(iteration);
         }
     }
+
+    @Override
+    public int getIterationNumber() {
+        return sampleInIteration.size();
+    }
 }

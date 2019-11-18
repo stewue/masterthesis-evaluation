@@ -68,4 +68,9 @@ public class CovEvaluation implements StatisticalEvaluation {
             return covPerIteration.get(iteration);
         }
     }
+
+    @Override
+    public int getIterationNumber() {
+        return samplePerIteration.size();
+    }
 }
