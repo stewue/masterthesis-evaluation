@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.List;
 
-import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.*;
-
 public class CI {
     private List<HistogramItem> histogramList;
 
@@ -18,16 +16,18 @@ public class CI {
     private final int bootstrapSimulations;
     private final double significanceLevel;
     private final String statistic;
+    private final int ciInvocationSamples;
 
     private double lower;
     private double upper;
     private double statisticMetric;
 
-    public CI(List<HistogramItem> histogramList, int bootstrapSimulations, double significanceLevel, String statistic) {
+    public CI(List<HistogramItem> histogramList, int bootstrapSimulations, double significanceLevel, String statistic, int ciInvocationSamples) {
         this.histogramList = histogramList;
         this.bootstrapSimulations = bootstrapSimulations;
         this.significanceLevel = significanceLevel;
         this.statistic = statistic;
+        this.ciInvocationSamples = ciInvocationSamples;
         executable();
     }
 
@@ -38,7 +38,7 @@ public class CI {
     public void run() {
         String file = getTmpFile();
         try {
-            Process process = Runtime.getRuntime().exec(paToolPath + " -om -bs " + bootstrapSimulations + " -sig " + significanceLevel + " -st " + statistic + " " + file);
+            Process process = Runtime.getRuntime().exec(paToolPath + " -om -bs " + bootstrapSimulations + " -is " + ciInvocationSamples + " -sig " + significanceLevel + " -st " + statistic + " " + file);
             String inputString = IOUtils.toString(process.getInputStream(), Charset.defaultCharset());
             String errorString = IOUtils.toString(process.getErrorStream(), Charset.defaultCharset());
             String output = (inputString + "\n" + errorString).trim();
