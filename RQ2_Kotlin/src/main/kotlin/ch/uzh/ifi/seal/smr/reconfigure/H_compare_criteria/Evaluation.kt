@@ -1,13 +1,13 @@
 package ch.uzh.ifi.seal.smr.reconfigure.H_compare_criteria
 
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineParser
+import org.openjdk.jmh.reconfigure.helper.HistogramHelper
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.helper.OutlierDetector
-import org.openjdk.jmh.reconfigure.statistics.COV
 import org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.OUTLIER_FACTOR
 import org.openjdk.jmh.reconfigure.statistics.Sampler
 import org.openjdk.jmh.reconfigure.statistics.ci.CiPercentage
-import org.openjdk.jmh.reconfigure.statistics.divergence.Divergence
+import org.openjdk.jmh.reconfigure.statistics.ci.CiRatio
 import java.io.File
 import java.io.OutputStream
 import java.io.PrintStream
@@ -85,29 +85,64 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
 
         csvInput.walk().forEach {
             if (it.isFile) {
-                val name = it.nameWithoutExtension
-                val all = CsvLineParser(it).getList().map { it.getHistogramItem() }
+                try {
+                    val name = it.nameWithoutExtension
+                    val all = CsvLineParser(it).getList().map { it.getHistogramItem() }
 
-                val defaultItems = all.filter { it.iteration > 50 }
-                val covItems = getItems(all, reachedForkCov.getValue(name), reachedIterationCov.getValue(name))
-                val ciItems = getItems(all, reachedForkCi.getValue(name), reachedIterationCi.getValue(name))
-                val kldItems = getItems(all, reachedForkDivergence.getValue(name), reachedIterationDivergence.getValue(name))
+                    val defaultItems = all.filter { it.iteration > 50 }
+                    val covItems = getItems(all, reachedForkCov.getValue(name), reachedIterationCov.getValue(name))
+                    val ciItems = getItems(all, reachedForkCi.getValue(name), reachedIterationCi.getValue(name))
+                    val kldItems = getItems(all, reachedForkDivergence.getValue(name), reachedIterationDivergence.getValue(name))
 
-                val covDefault = cov(defaultItems)
-                val covCov = cov(covItems)
-                val covCi = cov(ciItems)
-                val covKld = cov(kldItems)
+                    val ciDefault = ci(defaultItems)
+                    val ciCov = ci(covItems)
+                    val ciCi = ci(ciItems)
+                    val ciKld = ci(kldItems)
 
-                val ciDefault = ci(defaultItems)
-                val ciCov = ci(covItems)
-                val ciCi = ci(ciItems)
-                val ciKld = ci(kldItems)
+                    println("${ciCov / ciDefault};${ciCi / ciDefault};${ciKld / ciDefault}")
 
-                val kldCov = kld(covItems, defaultItems)
-                val kldCi = kld(ciItems, defaultItems)
-                val kldKld = kld(kldItems, defaultItems)
+                    val defaultSample = Sampler(defaultItems).getSample(10000)
+                    val covSample = Sampler(covItems).getSample(10000)
+                    val ciSample = Sampler(ciItems).getSample(10000)
+                    val kldSample = Sampler(kldItems).getSample(10000)
 
-                println("${Math.abs(covCov - covDefault)};${Math.abs(covCi - covDefault)};${Math.abs(covKld - covDefault)};${ciCov / ciDefault};${ciCi / ciDefault};${ciKld / ciDefault};$kldCov;$kldCi;$kldKld")
+                    val defaultSampleDouble = HistogramHelper.toArray(defaultSample)
+                    val covSampleDouble = HistogramHelper.toArray(covSample)
+                    val ciSampleDouble = HistogramHelper.toArray(ciSample)
+                    val kldSampleDouble = HistogramHelper.toArray(kldSample)
+
+                    val effectSizeCov = CliffDeltaTest(defaultSampleDouble, covSampleDouble).effectSize
+                    val effectSizeCi = CliffDeltaTest(defaultSampleDouble, ciSampleDouble).effectSize
+                    val effectSizeKld = CliffDeltaTest(defaultSampleDouble, kldSampleDouble).effectSize
+
+                    println("${Math.abs(effectSizeCov)};${Math.abs(effectSizeCi)};${Math.abs(effectSizeKld)}")
+
+                    val wilcoxonCov = WilcoxonRankSumTest(defaultSampleDouble, covSampleDouble).pValue
+                    val wilcoxonCi = WilcoxonRankSumTest(defaultSampleDouble, ciSampleDouble).pValue
+                    val wilcoxonKld = WilcoxonRankSumTest(defaultSampleDouble, kldSampleDouble).pValue
+
+                    println("$wilcoxonCov;$wilcoxonCi;$wilcoxonKld")
+
+                    val odDefault = OutlierDetector(OUTLIER_FACTOR, defaultSample)
+                    val odCov = OutlierDetector(OUTLIER_FACTOR, covSample)
+                    val odCi = OutlierDetector(OUTLIER_FACTOR, ciSample)
+                    val odKld = OutlierDetector(OUTLIER_FACTOR, kldSample)
+                    odDefault.run()
+                    odCov.run()
+                    odCi.run()
+                    odKld.run()
+
+                    val ciRatioCov = CiRatio(odDefault.inlier, odCov.inlier, 10000, 0.01, "mean", -1)
+                    val ciRatioCi = CiRatio(odDefault.inlier, odCi.inlier, 10000, 0.01, "mean", -1)
+                    val ciRatioKld = CiRatio(odDefault.inlier, odKld.inlier, 10000, 0.01, "mean", -1)
+                    ciRatioCov.run()
+                    ciRatioCi.run()
+                    ciRatioKld.run()
+
+                    println("${ciRatioCov.lower > 1 || ciRatioCov.upper < 1};${ciRatioCi.lower > 1 || ciRatioCi.upper < 1};${ciRatioKld.lower > 1 || ciRatioKld.upper < 1}")
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
         }
     }
@@ -125,12 +160,6 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
             }
         }
         return all
-    }
-
-    private fun cov(items: List<HistogramItem>): Double {
-        val od = OutlierDetector(OUTLIER_FACTOR, items)
-        od.run()
-        return COV(od.inlier).value
     }
 
     private fun ci(items: List<HistogramItem>): Double {
@@ -154,14 +183,7 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
             }
         }
 
-        return CiPercentage(sample).value
-    }
-
-    private fun kld(new: List<HistogramItem>, default: List<HistogramItem>): Double {
-        val sampleNew = Sampler(new).getSample(1000).map { it.value }
-        val sampleDefault = Sampler(default).getSample(1000).map { it.value }
-
-        return Divergence(sampleNew, sampleDefault).value
+        return CiPercentage(sample, 10000).value
     }
 
     private fun disableSystemErr() {
