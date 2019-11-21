@@ -20,7 +20,7 @@ class COV(outputDir: String) {
             for (f in 1 until 6) {
                 val iterationMap = map.getValue(f)
                 output.append(";;;;")
-                for (i in 5 until 101) {
+                for (i in 5 until 51) {
                     val current = iterationMap.getValue(i)
                     val delta1 = iterationMap.getValue(i - 1) - current
                     val delta2 = iterationMap.getValue(i - 2) - current

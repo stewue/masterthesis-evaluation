@@ -10,9 +10,6 @@ public class OutlierDetector {
     private List<HistogramItem> input;
     private double[] inputRaw;
 
-    private double q1;
-    private double q3;
-    private double iqr;
     private double min;
     private double max;
 
@@ -41,18 +38,6 @@ public class OutlierDetector {
                 outlier.add(input.get(i));
             }
         }
-    }
-
-    public double getQ1() {
-        return q1;
-    }
-
-    public double getQ3() {
-        return q3;
-    }
-
-    public double getIqr() {
-        return iqr;
     }
 
     public double getMin() {

@@ -20,7 +20,7 @@ class Divergence(outputDir: String) {
             for (f in 1 until 6) {
                 val iterationMap = map.getValue(f)
                 output.append(";;;;;")
-                for (i in 6 until 101) {
+                for (i in 6 until 51) {
                     val delta0 = iterationMap.getValue(i)
                     val delta1 = iterationMap.getValue(i - 1)
                     val delta2 = iterationMap.getValue(i - 2)

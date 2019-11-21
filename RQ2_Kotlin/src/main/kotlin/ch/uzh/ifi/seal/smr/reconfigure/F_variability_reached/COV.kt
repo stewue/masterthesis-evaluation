@@ -17,7 +17,7 @@ class COV(outputDir: String, private val threshold: Double = 0.01) {
             for (f in 1 until 6) {
                 var reached = Int.MAX_VALUE
                 val iterationMap = map.getValue(f)
-                for (i in 5 until 101) {
+                for (i in 5 until 51) {
                     val value = iterationMap.getValue(i)
                     if (value < threshold) {
                         reached = i

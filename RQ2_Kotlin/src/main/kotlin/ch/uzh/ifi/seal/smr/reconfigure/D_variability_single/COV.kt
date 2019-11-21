@@ -42,11 +42,13 @@ class COV(outputDir: String) {
         histogram.forEach { (_, map) ->
             val evaluation = CovEvaluation(RECONFIGURE_COV_THRESHOLD)
             map.forEach { (iteration, list) ->
-                evaluation.addIteration(list)
-                evaluation.calculateVariability()
-                val currentCov = evaluation.getCovOfIteration(iteration)
+                if(iteration <= 50) {
+                    evaluation.addIteration(list)
+                    evaluation.calculateVariability()
+                    val currentCov = evaluation.getCovOfIteration(iteration)
 
-                outputCov.append(";$currentCov")
+                    outputCov.append(";$currentCov")
+                }
             }
         }
     }

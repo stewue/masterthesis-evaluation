@@ -29,31 +29,7 @@ public class CiPercentageEvaluation implements StatisticalEvaluation {
         List<HistogramItem> sample = new Sampler(allMeasurements).getSample(CI_SAMPLE_SIZE);
         OutlierDetector od = new OutlierDetector(OUTLIER_FACTOR, sample);
         od.run();
-        List<HistogramItem> result = od.getInlier();
-
-        Collections.sort(result, new Comparator<HistogramItem>() {
-
-            @Override
-            public int compare(final HistogramItem item1, final HistogramItem item2) {
-                int diffFork = item1.getFork() - item2.getFork();
-                if(diffFork > 0){
-                    return 1;
-                }else if(diffFork < 0){
-                    return -1;
-                }else{
-                    int diffIteration = item1.getIteration() - item2.getIteration();
-                    if(diffIteration > 0){
-                        return 1;
-                    }else if(diffIteration < 0){
-                        return -1;
-                    }else{
-                        return 0;
-                    }
-                }
-            }
-
-        });
-        sampleInIteration.put(iteration, result);
+        sampleInIteration.put(iteration, od.getInlier());
     }
 
     @Override

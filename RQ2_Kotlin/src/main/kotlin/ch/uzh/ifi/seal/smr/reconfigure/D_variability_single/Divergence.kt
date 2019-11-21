@@ -28,14 +28,16 @@ class Divergence(outputDir: String) {
         list.groupBy { it.fork }.forEach { (_, iterationList) ->
             val evaluation = DivergenceEvaluation(RECONFIGURE_KLD_THRESHOLD)
             iterationList.groupBy { it.iteration }.forEach { (iteration, list) ->
-                evaluation.addIteration(list)
-                evaluation.calculateVariability()
-                val currentPValue = evaluation.getPValueOfIteration(iteration)
+                if(iteration <= 50) {
+                    evaluation.addIteration(list)
+                    evaluation.calculateVariability()
+                    val currentPValue = evaluation.getPValueOfIteration(iteration)
 
-                if (currentPValue == null) {
-                    outputDivergence.append(";")
-                } else {
-                    outputDivergence.append(";$currentPValue")
+                    if (currentPValue == null) {
+                        outputDivergence.append(";")
+                    } else {
+                        outputDivergence.append(";$currentPValue")
+                    }
                 }
             }
         }

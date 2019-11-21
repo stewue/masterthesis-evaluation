@@ -20,7 +20,7 @@ class CiPercentage(outputDir: String) {
             for (f in 1 until 6) {
                 val iterationMap = map.getValue(f)
                 output.append(";;;;")
-                for (i in 5 until 101) {
+                for (i in 5 until 51) {
                     val width0 = iterationMap.getValue(i)
                     val width1 = iterationMap.getValue(i - 1)
                     val width2 = iterationMap.getValue(i - 2)
