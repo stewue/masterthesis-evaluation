@@ -1,6 +1,7 @@
 package ch.uzh.ifi.seal.smr.reconfigure.G_variability_total
 
-import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineParser
+import ch.uzh.ifi.seal.smr.reconfigure.utils.getHistogramItems
+import ch.uzh.ifi.seal.smr.reconfigure.utils.untilIteration60
 import org.openjdk.jmh.reconfigure.statistics.evaluation.CovEvaluation
 import java.io.FileWriter
 import java.nio.file.Paths
@@ -33,7 +34,7 @@ class COV(private val csvInput: String, outputDir: String, private val threshold
             output.append("$project;$commit;$benchmark;$params;$threshold")
 
             val file = Paths.get(csvInput, "$project#$benchmark#$params.csv").toFile()
-            val list = CsvLineParser(file).getList()
+            val list = getHistogramItems(file, untilIteration60)
 
             val evaluation = CovEvaluation(threshold)
             var previousValue = 0.0
@@ -44,7 +45,7 @@ class COV(private val csvInput: String, outputDir: String, private val threshold
                     reachedFork = 50
                 }
 
-                val measurements = list.filter { it.fork == f && it.iteration > reachedFork && it.iteration <= reachedFork + 10 }.map { it.getHistogramItem() }
+                val measurements = list.filter { it.fork == f && it.iteration > reachedFork && it.iteration <= reachedFork + 10 }
                 evaluation.addIteration(measurements)
                 evaluation.calculateVariability()
                 val currentCov = evaluation.getCovOfIteration(f)

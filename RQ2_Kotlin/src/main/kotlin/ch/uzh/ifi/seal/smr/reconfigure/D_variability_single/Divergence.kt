@@ -1,6 +1,5 @@
 package ch.uzh.ifi.seal.smr.reconfigure.D_variability_single
 
-import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLine
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineKey
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItem.Companion.header
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
@@ -16,18 +15,17 @@ class Divergence(outputDir: String) {
         outputDivergence.append(header)
     }
 
-
-    fun run(key: CsvLineKey, list: Collection<CsvLine>) {
+    fun run(key: CsvLineKey, histogram: MutableMap<Int, MutableMap<Int, MutableList<HistogramItem>>>) {
         outputDivergence.append(key.output())
-        evaluation(list.map { it.getHistogramItem() })
+        evaluation(histogram)
         outputDivergence.appendln("")
         outputDivergence.flush()
     }
 
-    private fun evaluation(list: List<HistogramItem>) {
-        list.groupBy { it.fork }.forEach { (_, iterationList) ->
+    private fun evaluation(histogram: MutableMap<Int, MutableMap<Int, MutableList<HistogramItem>>>) {
+        histogram.forEach { (_, map) ->
             val evaluation = DivergenceEvaluation(RECONFIGURE_KLD_THRESHOLD)
-            iterationList.groupBy { it.iteration }.forEach { (iteration, list) ->
+            map.forEach { (iteration, list) ->
                 if(iteration <= 50) {
                     evaluation.addIteration(list)
                     evaluation.calculateVariability()

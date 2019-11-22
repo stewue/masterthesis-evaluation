@@ -1,6 +1,7 @@
 package ch.uzh.ifi.seal.smr.reconfigure.G_variability_total
 
-import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineParser
+import ch.uzh.ifi.seal.smr.reconfigure.utils.getHistogramItems
+import ch.uzh.ifi.seal.smr.reconfigure.utils.untilIteration60
 import org.openjdk.jmh.reconfigure.statistics.evaluation.CiPercentageEvaluation
 import java.io.FileWriter
 import java.nio.file.Paths
@@ -34,7 +35,7 @@ class CiPercentage(private val csvInput: String, outputDir: String, private val 
             output.append("$project;$commit;$benchmark;$params;$threshold")
 
             val file = Paths.get(csvInput, "$project#$benchmark#$params.csv").toFile()
-            val list = CsvLineParser(file).getList()
+            val list = getHistogramItems(file, untilIteration60)
 
             val evaluation = CiPercentageEvaluation(threshold)
             var thresholdReached = Int.MAX_VALUE
@@ -44,7 +45,7 @@ class CiPercentage(private val csvInput: String, outputDir: String, private val 
                     reachedFork = 50
                 }
 
-                val measurements = list.filter { it.fork == f && it.iteration > reachedFork && it.iteration <= reachedFork + 10 }.map { it.getHistogramItem() }
+                val measurements = list.filter { it.fork == f && it.iteration > reachedFork && it.iteration <= reachedFork + 10 }
                 evaluation.addIteration(measurements)
                 evaluation.calculateVariability()
                 val currentValue = evaluation.getCiPercentageOfIteration(f)

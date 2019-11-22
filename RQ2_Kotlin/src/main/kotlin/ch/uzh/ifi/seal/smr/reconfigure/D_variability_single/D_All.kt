@@ -1,7 +1,9 @@
 package ch.uzh.ifi.seal.smr.reconfigure.D_variability_single
 
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineKey
-import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineParser
+import ch.uzh.ifi.seal.smr.reconfigure.utils.getHistogramItems
+import ch.uzh.ifi.seal.smr.reconfigure.utils.untilIteration50
+import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import java.io.File
 
 class D_All(private val csvInput: File, private val outputDir: String) {
@@ -18,11 +20,25 @@ class D_All(private val csvInput: File, private val outputDir: String) {
             if (it.isFile) {
                 val (project, benchmark, params) = it.nameWithoutExtension.split("#")
                 val key = CsvLineKey(project, "", benchmark, params)
-                val list = CsvLineParser(it).getList()
+                val list = getHistogramItems(it, untilIteration50)
 
-                cov.run(key, list)
-                ci.run(key, list)
-                divergence.run(key, list)
+                val histogram = mutableMapOf<Int, MutableMap<Int, MutableList<HistogramItem>>>()
+                list.forEach { item ->
+                    if (histogram[item.fork] == null) {
+                        histogram[item.fork] = mutableMapOf()
+                    }
+
+                    if (histogram.getValue(item.fork)[item.iteration] == null) {
+                        histogram.getValue(item.fork)[item.iteration] = mutableListOf()
+                    }
+
+                    val iterationList = histogram.getValue(item.fork).getValue(item.iteration)
+                    iterationList.add(item)
+                }
+
+                cov.run(key, histogram)
+                ci.run(key, histogram)
+                divergence.run(key, histogram)
                 println("D: ${it.absolutePath} processed")
             }
         }

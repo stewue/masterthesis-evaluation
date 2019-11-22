@@ -1,6 +1,5 @@
 package ch.uzh.ifi.seal.smr.reconfigure.D_variability_single
 
-import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLine
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineKey
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItem.Companion.header
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
@@ -17,29 +16,14 @@ class CiPercentage(outputDir: String) {
         outputCi.append(header)
     }
 
-    fun run(key: CsvLineKey, list: Collection<CsvLine>) {
+    fun run(key: CsvLineKey, histogram: MutableMap<Int, MutableMap<Int, MutableList<HistogramItem>>>) {
         outputCi.append(key.output())
-        evaluation(list)
+        evaluation(histogram)
         outputCi.appendln("")
         outputCi.flush()
     }
 
-    private fun evaluation(list: Collection<CsvLine>) {
-        val histogram = mutableMapOf<Int, MutableMap<Int, MutableList<HistogramItem>>>()
-
-        list.forEach {
-            if (histogram[it.fork] == null) {
-                histogram[it.fork] = mutableMapOf()
-            }
-
-            if (histogram.getValue(it.fork)[it.iteration] == null) {
-                histogram.getValue(it.fork)[it.iteration] = mutableListOf()
-            }
-
-            val iterationList = histogram.getValue(it.fork).getValue(it.iteration)
-            iterationList.add(it.getHistogramItem())
-        }
-
+    private fun evaluation(histogram: MutableMap<Int, MutableMap<Int, MutableList<HistogramItem>>>) {
         histogram.forEach { (_, map) ->
             val evaluation = CiPercentageEvaluation(Defaults.RECONFIGURE_CI_THRESHOLD)
             map.forEach { (iteration, list) ->

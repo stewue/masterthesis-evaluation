@@ -1,6 +1,7 @@
 package ch.uzh.ifi.seal.smr.reconfigure.H_compare_criteria
 
-import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvLineParser
+import ch.uzh.ifi.seal.smr.reconfigure.utils.all
+import ch.uzh.ifi.seal.smr.reconfigure.utils.getHistogramItems
 import org.openjdk.jmh.reconfigure.helper.HistogramHelper
 import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import org.openjdk.jmh.reconfigure.helper.OutlierDetector
@@ -38,12 +39,11 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
             if (it.isFile) {
                 try {
                     val name = it.nameWithoutExtension
-                    val all = CsvLineParser(it).getList().map { it.getHistogramItem() }
+                    val all = getHistogramItems(it, all)
 
                     val (project, benchmark, params) = name.split("#")
 
                     output.append("$project;;$benchmark;$params")
-
 
                     // construct dynamic stopping dataset
                     val defaultItems = all.filter { it.iteration > 50 }
@@ -111,7 +111,7 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
         }
     }
 
-    private fun getItems(items: List<HistogramItem>, fork: Int, iterations: Map<Int, Int>): List<HistogramItem> {
+    private fun getItems(items: Collection<HistogramItem>, fork: Int, iterations: Map<Int, Int>): List<HistogramItem> {
         val all = mutableListOf<HistogramItem>()
         iterations.forEach { f, reached ->
             if (f <= fork) {

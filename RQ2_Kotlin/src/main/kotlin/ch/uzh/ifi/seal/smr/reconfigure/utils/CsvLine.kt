@@ -40,7 +40,6 @@ class CsvLine {
     @CsvBindByPosition(position = 11)
     var value: Double = 0.0
 
-
     constructor(project: String, commit: String, benchmark: String, params: String, instance: String, trial: Int, fork: Int, iteration: Int, mode: String, unit: String, value_count: Long, value: Double) {
         this.project = project
         this.commit = commit
