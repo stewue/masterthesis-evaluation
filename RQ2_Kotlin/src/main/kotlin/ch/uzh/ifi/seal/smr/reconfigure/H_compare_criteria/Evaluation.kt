@@ -18,11 +18,12 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
     private val header = "project;commit;benchmark;params;threshold;f2;f3;f4;f5;reachedForks;reachedF1;reachedF2;reachedF3;reachedF4;reachedF5"
 
     fun run() {
-        println("commit;;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioLowerCov;ratioUpperCov;ratioLowerCi;ratioUpperCi;ratioLowerKld;ratioUpperKld")
         val inputCov = Paths.get(outputDir, "outputCovTotal.csv").toFile()
         val inputCi = Paths.get(outputDir, "outputCiTotal.csv").toFile()
         val inputDivergence = Paths.get(outputDir, "outputDivergenceTotal.csv").toFile()
         val output = FileWriter(Paths.get(outputDir, "variability.csv").toFile())
+
+        output.append("project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioLowerCov;ratioUpperCov;ratioLowerCi;ratioUpperCi;ratioLowerKld;ratioUpperKld\n")
 
         val reachedForkCov = mutableMapOf<String, Int>()
         val reachedIterationCov = mutableMapOf<String, MutableMap<Int, Int>>()
@@ -81,7 +82,6 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
 
                     output.append(";$ciDefault;$ciCov;$ciCi;$ciKld")
 
-
                     val effectSizeCov = CliffDeltaTest(defaultSampleDouble, covSampleDouble).effectSize
                     val effectSizeCi = CliffDeltaTest(defaultSampleDouble, ciSampleDouble).effectSize
                     val effectSizeKld = CliffDeltaTest(defaultSampleDouble, kldSampleDouble).effectSize
@@ -102,7 +102,7 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
                     ciRatioKld.run()
 
                     output.append(";${ciRatioCov.lower};${ciRatioCov.upper};${ciRatioCi.lower};${ciRatioCi.upper};${ciRatioKld.lower};${ciRatioKld.upper}")
-                    output.append("")
+                    output.append("\n")
                     output.flush()
                 } catch (e: Exception) {
                     e.printStackTrace()
