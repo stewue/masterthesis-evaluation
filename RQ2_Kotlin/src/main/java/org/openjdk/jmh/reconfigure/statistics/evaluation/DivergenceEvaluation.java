@@ -1,7 +1,5 @@
 package org.openjdk.jmh.reconfigure.statistics.evaluation;
 
-import org.apache.commons.math3.distribution.EnumeratedDistribution;
-import org.apache.commons.math3.util.Pair;
 import org.openjdk.jmh.reconfigure.helper.HistogramHelper;
 import org.openjdk.jmh.reconfigure.helper.HistogramItem;
 import org.openjdk.jmh.reconfigure.statistics.divergence.Divergence;
@@ -9,7 +7,6 @@ import org.openjdk.jmh.reconfigure.statistics.divergence.Divergence;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE;
 
@@ -42,13 +39,13 @@ public class DivergenceEvaluation implements StatisticalEvaluation {
 
     @Override
     public Double calculateVariability() {
-        if(sampleUntilIteration.size() < 6){
+        if (sampleUntilIteration.size() < 6) {
             return null;
-        }else{
+        } else {
             List<Double> pvalues = new ArrayList<>();
             int currentIteration = sampleUntilIteration.size();
 
-            for(int i=0; i<=4; i++){
+            for (int i = 0; i <= 4; i++) {
                 Double pvalue = getPValueOfIteration(currentIteration - i);
                 pvalues.add(pvalue);
             }
@@ -57,31 +54,36 @@ public class DivergenceEvaluation implements StatisticalEvaluation {
         }
     }
 
-    public Double getPValueOfIteration(int iteration){
-        if(pValuePerIteration.get(iteration) == null){
+    public Double getPValueOfIteration(int iteration) {
+        if (pValuePerIteration.get(iteration) == null) {
             List<Double> currentSample = sampleUntilIteration.get(iteration);
             List<Double> previousSample = sampleUntilIteration.get(iteration - 1);
-            if(currentSample == null || previousSample == null){
+            if (currentSample == null || previousSample == null) {
                 return null;
-            }else{
+            } else {
                 double pValue = new Divergence(currentSample, previousSample).getValue();
                 pValuePerIteration.put(iteration, pValue);
                 return pValue;
             }
-        }else{
+        } else {
             return pValuePerIteration.get(iteration);
         }
     }
 
     private List<Double> getSample(List<Double> list) {
-        ArrayList<Pair<Double, Double>> distributionPairs = list.stream().map(it -> new Pair<Double, Double>(it, 1.0)).collect(Collectors.toCollection(ArrayList<Pair<Double, Double>>::new));
-        EnumeratedDistribution ed = new EnumeratedDistribution<Double>(distributionPairs);
-        List<Double> sample = new ArrayList<Double>((List<Double>)(List<?>) Arrays.asList(ed.sample(SAMPLE_SIZE)));
+        Random random = new Random();
+        List<Double> sample = new ArrayList<>();
+
+        for (int i = 0; i < SAMPLE_SIZE; i++) {
+            Double d = list.get(random.nextInt(list.size()));
+            sample.add(d);
+        }
+
         Collections.sort(sample);
         return sample;
     }
 
-    private void disableSystemErr (){
+    private void disableSystemErr() {
         System.setErr(new PrintStream(new OutputStream() {
             public void write(int b) {
             }
