@@ -1,7 +1,7 @@
 Missing;Ignored;Status;project;Benchmarks;Parameterization Combination;stars;forks;watchers;jmhVersion;commit;jdk;area
 ;;In Progresss;ReactiveX/RxJava;217;1304;40183;6750;2366;1.2;17a8eef0f660f58deed7f7ee399915a61ce404d6;1.8;asynchronous, event-based programing
 38;;Done;jmh-jdk-microbenchmarks;994;1381;;;;1.21;d0fab231915f;1.8;jdk
-0;2;Done;apache/logging-log4j2;358;511;783;482;76;1.19;ac121e22d763d6b5391fad9e39d5efbeb79ccfac;13;logging
+0;3;Done;apache/logging-log4j2;358;511;783;482;76;1.19;ac121e22d763d6b5391fad9e39d5efbeb79ccfac;13;logging
 0;;Done;jmh-core-benchmarks;110;110;;;;1.21;a07e91499e97;1.8;jmh
 0;;Done;raphw/byte-buddy;39;39;2930;373;139;1.16;c24319ae581137e9a55071b22e38b1aa6aa3f51d;1.8;bytecode
 0;;Done;JCTools/JCTools;60;148;2012;296;188;1.21;19cbaae4501c310ce3afb1a7443187e244888310;1.8;concurrency
