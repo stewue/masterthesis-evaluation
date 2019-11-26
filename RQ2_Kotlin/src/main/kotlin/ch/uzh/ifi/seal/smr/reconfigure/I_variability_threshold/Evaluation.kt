@@ -71,10 +71,18 @@ fun main() {
         print(";${effectSizeCi > effectSizeThreshold && wilcoxonCi < pvalue}")
         print(";${effectSizeKld > effectSizeThreshold && wilcoxonKld < pvalue}")
 
-        print(";${ratioLowerCov > 1 || ratioUpperCov < 1}")
-        print(";${ratioLowerCi > 1 || ratioUpperCi < 1}")
-        print(";${ratioLowerKld > 1 || ratioUpperKld < 1}")
+        print(";${ciRatioPercentage(ratioLowerCov, ratioUpperCov)}")
+        print(";${ciRatioPercentage(ratioLowerCi, ratioUpperCi)}")
+        print(";${ciRatioPercentage(ratioLowerKld, ratioUpperKld)}")
 
         println("")
+    }
+}
+
+private fun ciRatioPercentage(lower: Double, upper: Double): Double{
+    return when {
+        lower > 1 -> lower - 1
+        upper < 1 -> 1 - upper
+        else -> 0.0
     }
 }
