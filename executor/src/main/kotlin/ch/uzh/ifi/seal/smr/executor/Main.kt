@@ -33,7 +33,7 @@ fun main(args: Array<String>) {
             return@forEach
         }
 
-        val outputFile = Paths.get(outputDir, "${it.project}#${it.benchmark}#${it.params}.json").toFile()
+        val outputFile = Paths.get(outputDir, "${it.project}#${it.benchmark}#${it.params.replace("/", "_")}.json").toFile()
         val params = if(it.params.isBlank()){
             ""
         }else{
