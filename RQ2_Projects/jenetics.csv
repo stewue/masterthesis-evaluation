@@ -21,10 +21,6 @@ jenetics;io.jenetics.ProbabilitySelectorIndexOfPerf.serialIndexOf40;;java;~/thes
 jenetics;io.jenetics.ProbabilitySelectorIndexOfPerf.serialIndexOf80;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jenetics;io.jenetics.ProbabilitySelectorIndexOfPerf.serialIndexOf160;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jenetics;io.jenetics.ProbabilitySelectorIndexOfPerf.serialIndexOf250;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jenetics;io.jenetics.util.RandomEnginePerf$Base.nextInt;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jenetics;io.jenetics.util.RandomEnginePerf$Base.nextLong;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jenetics;io.jenetics.util.RandomEnginePerf$Base.nextFloat;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-jenetics;io.jenetics.util.RandomEnginePerf$Base.nextDouble;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jenetics;io.jenetics.util.SeqPerf.array_get;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jenetics;io.jenetics.util.SeqPerf.array_set;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 jenetics;io.jenetics.util.SeqPerf.array_forLoop;;java;~/thesis/rq2/jenetics.jar;-bm sample -f 5 -i 100 -wi 0 -r 1

@@ -307,7 +307,6 @@ log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.baseline;;~/jdk-13/
 log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.test01_getCallerClassNameFromStackTrace;;~/jdk-13/bin/java;~/thesis/rq2/log4j2.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.test02_getCallerClassNameFromThreadStackTrace;;~/jdk-13/bin/java;~/thesis/rq2/log4j2.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.test03_getCallerClassNameReflectively;;~/jdk-13/bin/java;~/thesis/rq2/log4j2.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
-log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.test05_getStackTraceClassForClassName;;~/jdk-13/bin/java;~/thesis/rq2/log4j2.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.test06_getThreadStackTraceClassForClassName;;~/jdk-13/bin/java;~/thesis/rq2/log4j2.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.test07_getReflectiveCallerClassUtility;;~/jdk-13/bin/java;~/thesis/rq2/log4j2.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
 log4j2;org.apache.logging.log4j.perf.jmh.ReflectionBenchmark.test09_getMessageUsingNew;;~/jdk-13/bin/java;~/thesis/rq2/log4j2.jar;-bm sample -f 5 -i 100 -wi 0 -r 1
