@@ -136,7 +136,7 @@ private fun parseInput(input: File, reachedIteration: MutableMap<String, Int>) {
     }
 }
 
-private fun ciRatioPercentage(lower: Double, upper: Double): Double{
+private fun ciRatioPercentage(lower: Double, upper: Double): Double {
     return when {
         lower > 1 -> lower - 1
         upper < 1 -> 1 - upper

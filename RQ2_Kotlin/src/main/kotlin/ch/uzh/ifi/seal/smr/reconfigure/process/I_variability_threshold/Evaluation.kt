@@ -8,7 +8,7 @@ fun main() {
 
     println("project;commit;benchmark;params;absMeanShiftCov;absMeanShiftCi;absMeanShiftKld;ciWidthDefault;ciWidthCov;ciWidthCi;ciWidthKld;ciChangeCov;ciChangeCi;ciChangeKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;effectSizeAndWilcoxonCov;effectSizeAndWilcoxonCi;effectSizeAndWilcoxonKld;ciRatioCov;ciRatioCi;ciRatioKld")
     file.forEachLine {
-        if (it == "project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioLowerCov;ratioUpperCov;ratioLowerCi;ratioUpperCi;ratioLowerKld;ratioUpperKld") {
+        if (it == "project;commit;benchmark;params;effectSize5;effectSize10;effectSize15;effectSize20;effectSize25;wilcoxon5;wilcoxon10;wilcoxon15;wilcoxon20;wilcoxon25;ciRatio5;ciRatio10;ciRatio15;ciRatio20;ciRatio25") {
             return@forEachLine
         }
 
