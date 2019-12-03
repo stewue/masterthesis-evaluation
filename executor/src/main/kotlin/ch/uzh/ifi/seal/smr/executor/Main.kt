@@ -41,7 +41,12 @@ fun main(args: Array<String>) {
         }
         // $ at end of benchmark name is end anchor of regex
         val cmd = "$javaPathAbsolute -jar $jarFileAbsolute ${it.benchmark}$ $params ${it.arguments} $constantArguments -rff $outputFile"
+
+        val start = System.currentTimeMillis()
         executeCommand(cmd)
+        val end = System.currentTimeMillis()
+
+        println("${it.project};${it.benchmark};${it.params};${(end-start)/1000.0}")
 
         if(!outputFile.exists()){
             log.error("Result of benchmark ${it.benchmark} with the JMH params ${it.params} is not in output file")
