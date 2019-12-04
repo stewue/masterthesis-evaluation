@@ -2,6 +2,7 @@ package ch.uzh.ifi.seal.smr.executor
 
 import org.apache.logging.log4j.LogManager
 import java.io.File
+import java.io.FileWriter
 import java.nio.file.Paths
 import kotlin.system.exitProcess
 
@@ -19,6 +20,8 @@ fun main(args: Array<String>) {
 //    log4j2;org.apache.logging.log4j.message.ParameterFormatterBenchmark.latency3ParamsV2;a=b&c=d;~/jdk-13/bin/java;~/thesis/log4j2.jar;-bm sample -f 1 -i 100 -wi 0 -r 1
     val inputFile = File(args[0])
     val outputDir = args[1]
+
+    val output = FileWriter(Paths.get(outputDir, "executionTime.csv").toFile())
 
     val units = CsvUnitParser(inputFile).getList()
 
@@ -46,7 +49,8 @@ fun main(args: Array<String>) {
         executeCommand(cmd)
         val end = System.currentTimeMillis()
 
-        println("${it.project};${it.benchmark};${it.params};${(end-start)/1000.0}")
+        output.appendln("${it.project};${it.benchmark};${it.params};${(end-start)/1000.0}")
+        output.flush()
 
         if(!outputFile.exists()){
             log.error("Result of benchmark ${it.benchmark} with the JMH params ${it.params} is not in output file")
