@@ -2,14 +2,14 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-# data = pd.read_csv('D:\\rq2\\pre\\mean.csv', delimiter=";")
-#
-# abs = np.abs(data['percentage'] - 1)
-# corr = stats.spearmanr(abs, data['mean'])
-# print("p: " + str(corr.pvalue))
-# print("correlation: " + str(corr.correlation))
+data = pd.read_csv('D:\\rq2\\pre\\mean.csv', delimiter=";")
 
-data2 = pd.read_csv('D:\\rq2\\pre\\mean2.csv', delimiter=";")
+abs = np.abs(data['percentage'] - 1)
+corr = stats.spearmanr(abs, data['mean'])
+print("p: " + str(corr.pvalue))
+print("correlation: " + str(corr.correlation))
+
+data2 = pd.read_csv('D:\\rq2\\pre\\combined.csv', delimiter=";")
 
 corrCov = stats.spearmanr(data2['percentage'], data2['cov'])
 print("COV")

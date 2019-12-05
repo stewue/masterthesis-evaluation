@@ -22,7 +22,7 @@ fun main() {
         val outputDir = "/home/user/stefan-masterthesis/stop/tmp"
 
     val inputDivergence = Paths.get(outputDir, "outputDivergenceTotal.csv").toFile()
-    val output = FileWriter(Paths.get(outputDir, "variability.csv").toFile())
+    val output = FileWriter(Paths.get(outputDir, "tests.csv").toFile())
 
     output.append("project;commit;benchmark;params;effectSize5;effectSize10;effectSize15;effectSize20;effectSize25;wilcoxon5;wilcoxon10;wilcoxon15;wilcoxon20;wilcoxon25;ciRatio5;ciRatio10;ciRatio15;ciRatio20;ciRatio25\n")
 
@@ -41,7 +41,6 @@ fun main() {
                 output.append("$project;;$benchmark;$params")
 
                 // construct dynamic stopping dataset
-                val defaultItems = all.filter { it.iteration > 50 }
                 val items5 = getItems(all, reachedIterationDivergence.getValue(name), 5)
                 val items10 = getItems(all, reachedIterationDivergence.getValue(name), 10)
                 val items15 = getItems(all, reachedIterationDivergence.getValue(name), 15)
@@ -50,7 +49,6 @@ fun main() {
                 val items50 = getItems(all, reachedIterationDivergence.getValue(name), 50)
 
                 // sample
-                val defaultSample = Sampler(defaultItems).getSample(10000)
                 val sample5 = Sampler(items5).getSample(10000)
                 val sample10 = Sampler(items10).getSample(10000)
                 val sample15 = Sampler(items15).getSample(10000)
@@ -59,14 +57,12 @@ fun main() {
                 val sample50 = Sampler(items50).getSample(10000)
 
                 // outlier detector
-                val odDefault = OutlierDetector(OUTLIER_FACTOR, defaultSample)
                 val od5 = OutlierDetector(OUTLIER_FACTOR, sample5)
                 val od10 = OutlierDetector(OUTLIER_FACTOR, sample10)
                 val od15 = OutlierDetector(OUTLIER_FACTOR, sample15)
                 val od20 = OutlierDetector(OUTLIER_FACTOR, sample20)
                 val od25 = OutlierDetector(OUTLIER_FACTOR, sample25)
                 val od50 = OutlierDetector(OUTLIER_FACTOR, sample50)
-                odDefault.run()
                 od5.run()
                 od10.run()
                 od15.run()
@@ -74,7 +70,6 @@ fun main() {
                 od25.run()
                 od50.run()
 
-                val defaultSampleDouble = HistogramHelper.toArray(odDefault.inlier)
                 val sampleDouble5 = HistogramHelper.toArray(od5.inlier)
                 val sampleDouble10 = HistogramHelper.toArray(od10.inlier)
                 val sampleDouble15 = HistogramHelper.toArray(od15.inlier)
