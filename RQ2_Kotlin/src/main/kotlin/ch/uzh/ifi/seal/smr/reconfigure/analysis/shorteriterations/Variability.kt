@@ -1,4 +1,4 @@
-package ch.uzh.ifi.seal.smr.reconfigure.analysis.iterations
+package ch.uzh.ifi.seal.smr.reconfigure.analysis.shorteriterations
 
 import ch.uzh.ifi.seal.smr.reconfigure.utils.all
 import ch.uzh.ifi.seal.smr.reconfigure.utils.getHistogramItems
