@@ -1,0 +1,13 @@
+﻿project;benchmarks;meanChangeRateCov;meanChangeRateCi;meanChangeRateDivergence;CiWidthSmallDefault;combinationNotSignificantCov;combinationNotSignificantCi;combinationNotSignificantDivergence;ciRatioNotSignificantCov;ciRatioNotSignificantCi;ciRatioNotSignificantDivergence
+byte-buddy;39;0.065;0.017;0.034;0.282;0.513;0.154;0.385;0.564;0.154;0.436
+jctools;148;0.033;0.024;0.054;0.209;0.223;0.169;0.108;0.284;0.243;0.284
+jenetics;40;0.011;0.007;0.008;0.400;0.200;0.150;0.100;0.125;0.050;0.050
+jmh-core-benchmarks;110;0.008;0.007;0.004;0.591;0.327;0.373;0.155;0.036;0.036;0.036
+jmh-jdk-microbenchmarks;1381;0.043;0.015;0.028;0.540;0.373;0.278;0.238;0.221;0.114;0.179
+log4j2;510;0.025;0.010;0.014;0.251;0.284;0.200;0.120;0.249;0.171;0.224
+protostuff;31;0.011;0.007;0.006;0.387;0.194;0.226;0.065;0.129;0.032;0.065
+rxjava;1282;0.023;0.011;0.012;0.647;0.406;0.324;0.205;0.193;0.085;0.107
+squidlib;367;0.027;0.020;0.021;0.403;0.390;0.324;0.245;0.207;0.215;0.193
+zipkin;61;0.016;0.007;0.010;0.361;0.279;0.230;0.049;0.131;0.180;0.066
+;;;;;;;;;;;
+;;0.031;0.014;0.020;0.506;0.364;0.282;0.201;0.212;0.124;0.161
