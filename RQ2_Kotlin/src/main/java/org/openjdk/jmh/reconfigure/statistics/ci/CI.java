@@ -1,7 +1,7 @@
 package org.openjdk.jmh.reconfigure.statistics.ci;
 
-import org.openjdk.jmh.reconfigure.helper.HistogramItem;
 import org.apache.commons.io.IOUtils;
+import org.openjdk.jmh.reconfigure.helper.HistogramItem;
 
 import java.io.File;
 import java.io.FileWriter;

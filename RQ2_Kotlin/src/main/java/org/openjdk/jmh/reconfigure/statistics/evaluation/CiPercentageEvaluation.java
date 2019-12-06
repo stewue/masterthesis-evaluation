@@ -39,14 +39,14 @@ public class CiPercentageEvaluation implements StatisticalEvaluation {
 
     @Override
     public Double calculateVariability() {
-        if(sampleInIteration.size() < 5){
+        if (sampleInIteration.size() < 5) {
             return null;
-        }else{
+        } else {
             List<Double> deltas = new ArrayList<>();
             int currentIteration = sampleInIteration.size();
             double currentCiPercentage = getCiPercentageOfIteration(currentIteration);
 
-            for(int i=1; i<=4; i++){
+            for (int i = 1; i <= 4; i++) {
                 double ciPercentage = getCiPercentageOfIteration(currentIteration - i);
                 double delta = Math.abs(ciPercentage - currentCiPercentage);
                 deltas.add(delta);
@@ -56,12 +56,12 @@ public class CiPercentageEvaluation implements StatisticalEvaluation {
         }
     }
 
-    public double getCiPercentageOfIteration(int iteration){
-        if(ciPercentagePerIteration.get(iteration) == null){
+    public double getCiPercentageOfIteration(int iteration) {
+        if (ciPercentagePerIteration.get(iteration) == null) {
             double ciPercentage = new CiPercentage(sampleInIteration.get(iteration)).getValue();
             ciPercentagePerIteration.put(iteration, ciPercentage);
             return ciPercentage;
-        }else{
+        } else {
             return ciPercentagePerIteration.get(iteration);
         }
     }

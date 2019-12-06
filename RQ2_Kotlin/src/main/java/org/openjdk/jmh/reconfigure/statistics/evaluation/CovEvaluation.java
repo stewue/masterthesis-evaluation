@@ -37,14 +37,14 @@ public class CovEvaluation implements StatisticalEvaluation {
 
     @Override
     public Double calculateVariability() {
-        if(samplePerIteration.size() < 5){
+        if (samplePerIteration.size() < 5) {
             return null;
-        }else{
+        } else {
             List<Double> deltas = new ArrayList<>();
             int currentIteration = samplePerIteration.size();
             double currentCov = getCovOfIteration(currentIteration);
 
-            for(int i=1; i<=4; i++){
+            for (int i = 1; i <= 4; i++) {
                 double cov = getCovOfIteration(currentIteration - i);
                 double delta = Math.abs(cov - currentCov);
                 deltas.add(delta);
@@ -54,17 +54,17 @@ public class CovEvaluation implements StatisticalEvaluation {
         }
     }
 
-    public double getCovOfIteration(int iteration){
-        if(covPerIteration.get(iteration) == null){
+    public double getCovOfIteration(int iteration) {
+        if (covPerIteration.get(iteration) == null) {
             List<HistogramItem> all = new ArrayList<>();
-            for(int i=1; i<=iteration; i++){
+            for (int i = 1; i <= iteration; i++) {
                 all.addAll(samplePerIteration.get(i));
             }
 
             double cov = new COV(all).getValue();
             covPerIteration.put(iteration, cov);
             return cov;
-        }else{
+        } else {
             return covPerIteration.get(iteration);
         }
     }

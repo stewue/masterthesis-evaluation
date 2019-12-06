@@ -1,9 +1,9 @@
 package org.openjdk.jmh.reconfigure.statistics.divergence;
 
-import org.openjdk.jmh.reconfigure.helper.ListToArray;
-import org.openjdk.jmh.reconfigure.statistics.Statistic;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+import org.openjdk.jmh.reconfigure.helper.ListToArray;
+import org.openjdk.jmh.reconfigure.statistics.Statistic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class Divergence implements Statistic {
         double min = range.getLeft();
         double max = range.getRight();
 
-        if(min == max){
+        if (min == max) {
             return 1.0;
         }
 

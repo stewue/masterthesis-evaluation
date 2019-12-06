@@ -1,8 +1,8 @@
 package org.openjdk.jmh.reconfigure.statistics;
 
-import org.openjdk.jmh.reconfigure.helper.HistogramItem;
 import org.apache.commons.math3.distribution.EnumeratedDistribution;
 import org.apache.commons.math3.util.Pair;
+import org.openjdk.jmh.reconfigure.helper.HistogramItem;
 
 import java.util.Arrays;
 import java.util.List;
