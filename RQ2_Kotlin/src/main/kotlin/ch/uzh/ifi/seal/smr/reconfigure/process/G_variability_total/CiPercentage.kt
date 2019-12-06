@@ -37,7 +37,7 @@ class CiPercentage(private val csvInput: String, outputDir: String, private val 
             val file = Paths.get(csvInput, "$project#$benchmark#$params.csv").toFile()
             val list = getHistogramItems(file, untilIteration60)
 
-            val evaluation = CiPercentageEvaluation(threshold)
+            val evaluation = CiPercentageEvaluation.getForkInstance(threshold)
             var thresholdReached = Int.MAX_VALUE
             for (f in 1 until 6) {
                 var reachedFork = reached.getValue(f)

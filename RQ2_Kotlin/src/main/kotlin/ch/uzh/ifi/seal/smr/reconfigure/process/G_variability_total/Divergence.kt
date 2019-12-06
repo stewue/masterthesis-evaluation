@@ -36,7 +36,7 @@ class Divergence(private val csvInput: String, outputDir: String, private val th
             val file = Paths.get(csvInput, "$project#$benchmark#$params.csv").toFile()
             val list = getHistogramItems(file, untilIteration60)
 
-            val evaluation = DivergenceEvaluation(threshold)
+            val evaluation = DivergenceEvaluation.getForkInstance(threshold)
             var thresholdReached = Int.MAX_VALUE
             for (f in 1 until 6) {
                 var reachedFork = reached.getValue(f)

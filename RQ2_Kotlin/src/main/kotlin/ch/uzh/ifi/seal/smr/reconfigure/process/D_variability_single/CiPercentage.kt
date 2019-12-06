@@ -25,7 +25,7 @@ class CiPercentage(outputDir: String) {
 
     private fun evaluation(histogram: MutableMap<Int, MutableMap<Int, MutableList<HistogramItem>>>) {
         histogram.forEach { (_, map) ->
-            val evaluation = CiPercentageEvaluation(Defaults.RECONFIGURE_CI_THRESHOLD)
+            val evaluation = CiPercentageEvaluation.getIterationInstance(Defaults.RECONFIGURE_CI_THRESHOLD)
             map.forEach { (iteration, list) ->
                 if(iteration <= 50) {
                     evaluation.addIteration(list)

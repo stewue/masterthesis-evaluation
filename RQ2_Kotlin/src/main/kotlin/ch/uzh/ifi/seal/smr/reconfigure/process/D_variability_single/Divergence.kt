@@ -24,7 +24,7 @@ class Divergence(outputDir: String) {
 
     private fun evaluation(histogram: MutableMap<Int, MutableMap<Int, MutableList<HistogramItem>>>) {
         histogram.forEach { (_, map) ->
-            val evaluation = DivergenceEvaluation(RECONFIGURE_KLD_THRESHOLD)
+            val evaluation = DivergenceEvaluation.getIterationInstance(RECONFIGURE_KLD_THRESHOLD)
             map.forEach { (iteration, list) ->
                 if(iteration <= 50) {
                     evaluation.addIteration(list)

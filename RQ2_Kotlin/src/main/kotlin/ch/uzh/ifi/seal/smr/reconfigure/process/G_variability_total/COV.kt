@@ -36,7 +36,7 @@ class COV(private val csvInput: String, outputDir: String, private val threshold
             val file = Paths.get(csvInput, "$project#$benchmark#$params.csv").toFile()
             val list = getHistogramItems(file, untilIteration60)
 
-            val evaluation = CovEvaluation(threshold)
+            val evaluation = CovEvaluation.getForkInstance(threshold)
             var previousValue = 0.0
             var thresholdReached = Int.MAX_VALUE
             for (f in 1 until 6) {

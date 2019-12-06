@@ -12,14 +12,24 @@ import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE
 
 public class DivergenceEvaluation implements StatisticalEvaluation {
     private double threshold;
+    private double historySize;
 
     private List<Double> allMeasurements = new ArrayList<>();
     private Map<Integer, List<Double>> sampleUntilIteration = new HashMap<>();
     private Map<Integer, Double> pValuePerIteration = new HashMap<>();
 
-    public DivergenceEvaluation(double threshold) {
+    private DivergenceEvaluation(double threshold, int historySize) {
         this.threshold = threshold;
+        this.historySize = historySize;
         disableSystemErr();
+    }
+
+    public static DivergenceEvaluation getIterationInstance(double threshold) {
+        return new DivergenceEvaluation(threshold, 6);
+    }
+
+    public static DivergenceEvaluation getForkInstance(double threshold) {
+        return new DivergenceEvaluation(threshold, 2);
     }
 
     @Override
@@ -39,13 +49,13 @@ public class DivergenceEvaluation implements StatisticalEvaluation {
 
     @Override
     public Double calculateVariability() {
-        if (sampleUntilIteration.size() < 6) {
+        if (sampleUntilIteration.size() < historySize) {
             return null;
         } else {
             List<Double> pvalues = new ArrayList<>();
             int currentIteration = sampleUntilIteration.size();
 
-            for (int i = 0; i <= 4; i++) {
+            for (int i = 0; i <= historySize - 2; i++) {
                 Double pvalue = getPValueOfIteration(currentIteration - i);
                 pvalues.add(pvalue);
             }
@@ -93,5 +103,10 @@ public class DivergenceEvaluation implements StatisticalEvaluation {
     @Override
     public int getIterationNumber() {
         return sampleUntilIteration.size();
+    }
+
+    @Override
+    public boolean stableEnvironment(Double value) {
+        return value != null && value > threshold;
     }
 }

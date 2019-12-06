@@ -24,7 +24,7 @@ class COV(outputDir: String) {
 
     private fun evaluation(histogram: MutableMap<Int, MutableMap<Int, MutableList<HistogramItem>>>) {
         histogram.forEach { (_, map) ->
-            val evaluation = CovEvaluation(RECONFIGURE_COV_THRESHOLD)
+            val evaluation = CovEvaluation.getIterationInstance(RECONFIGURE_COV_THRESHOLD)
             map.forEach { (iteration, list) ->
                 if(iteration <= 50) {
                     evaluation.addIteration(list)
