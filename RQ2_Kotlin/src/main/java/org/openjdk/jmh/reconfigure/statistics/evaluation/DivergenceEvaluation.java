@@ -2,12 +2,15 @@ package org.openjdk.jmh.reconfigure.statistics.evaluation;
 
 import org.openjdk.jmh.reconfigure.helper.HistogramHelper;
 import org.openjdk.jmh.reconfigure.helper.HistogramItem;
+import org.openjdk.jmh.reconfigure.helper.OutlierDetector;
+import org.openjdk.jmh.reconfigure.statistics.Sampler;
 import org.openjdk.jmh.reconfigure.statistics.divergence.Divergence;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.*;
 
+import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.OUTLIER_FACTOR;
 import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE;
 
 public class DivergenceEvaluation implements StatisticalEvaluation {
@@ -34,12 +37,16 @@ public class DivergenceEvaluation implements StatisticalEvaluation {
 
     @Override
     public void addIteration(List<HistogramItem> list) {
+        OutlierDetector od = new OutlierDetector(OUTLIER_FACTOR, list);
+        od.run();
+        List<HistogramItem> sample = new Sampler(od.getInlier()).getSample(SAMPLE_SIZE);
+
         int iteration = sampleUntilIteration.size() + 1;
-        List<Double> newValues = HistogramHelper.toArray(list);
+        List<Double> newValues = HistogramHelper.toArray(sample);
         allMeasurements.addAll(newValues);
 
-        List<Double> sample = getSample(allMeasurements);
-        sampleUntilIteration.put(iteration, sample);
+        List<Double> sampleUntil = getSample(allMeasurements);
+        sampleUntilIteration.put(iteration, sampleUntil);
     }
 
     @Override
