@@ -1,4 +1,4 @@
-﻿project;benchmarks;meanChangeRateCov;meanChangeRateCi;meanChangeRateDivergence;CiWidthSmallDefault;combinationNotSignificantCov;combinationNotSignificantCi;combinationNotSignificantDivergence;ciRatioNotSignificantCov;ciRatioNotSignificantCi;ciRatioNotSignificantDivergence
+﻿project;benchmarks;meanChangeRateCov;meanChangeRateCi;meanChangeRateDivergence;CiWidthSmallDefault;combinationSignificantCov;combinationSignificantCi;combinationSignificantDivergence;ciRatioSignificantCov;ciRatioSignificantCi;ciRatioSignificantDivergence
 byte-buddy;39;0.065;0.017;0.034;0.282;0.513;0.154;0.385;0.564;0.154;0.436
 jctools;148;0.033;0.024;0.054;0.209;0.223;0.169;0.108;0.284;0.243;0.284
 jenetics;40;0.011;0.007;0.008;0.400;0.200;0.150;0.100;0.125;0.050;0.050
