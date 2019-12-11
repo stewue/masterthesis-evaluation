@@ -1,10 +1,11 @@
 package ch.uzh.ifi.seal.smr.reconfigure.analysis.avgiterationandforks
 
+import ch.uzh.ifi.seal.smr.reconfigure.utils.std
 import java.io.File
 import java.nio.file.Paths
 
 fun main() {
-    println("project;benchmarks;avgReachedForkCov;avgReachedIterationCov;perForkNotStableCov;perIterationNotStableCov;avgReachedForkCi;avgReachedIterationCi;perForkNotStableCi;perIterationNotStableCi;avgReachedForkDivergence;avgReachedIterationDivergence;perForkNotStableDivergence;perIterationNotStableDivergence")
+    println("project;benchmarks;avgReachedForkCov;stdReachedForkCov;avgReachedIterationCov;stdReachedIterationCov;perForkNotStableCov;perIterationNotStableCov;avgReachedForkCi;stdReachedForkCi;avgReachedIterationCi;stdReachedIterationCi;perForkNotStableCi;perIterationNotStableCi;avgReachedForkDivergence;stdReachedForkDivergence;avgReachedIterationDivergence;stdReachedIterationDivergence;perForkNotStableDivergence;perIterationNotStableDivergence")
     val input = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\")
     input.list().forEach {
         val folder = Paths.get(input.absolutePath, it).toFile()
@@ -35,7 +36,6 @@ private fun run(file: File, printSize: Boolean = false) {
         }
 
         val parts = it.split(";")
-
 
         reachedFork.add(getForkValue(parts[9].toInt()))
 
@@ -69,14 +69,16 @@ private fun run(file: File, printSize: Boolean = false) {
     }
 
     val avgReachedFork = reachedFork.average()
+    val stdReachedFork = reachedFork.map { it.toDouble() }.std()
     val avgReachedIteration = reachedIteration.average()
+    val stdReachedIteration = reachedIteration.map { it.toDouble() }.std()
     val perForkNotStable = forkNotStable / counter
     val perIterationNotStable = iterationNotStable / (counter * 5)
 
     if (printSize) {
         print(";$counter")
     }
-    print(";$avgReachedFork;$avgReachedIteration;$perForkNotStable;$perIterationNotStable")
+    print(";$avgReachedFork;$stdReachedFork;$avgReachedIteration;$stdReachedIteration;$perForkNotStable;$perIterationNotStable")
 }
 
 private fun getForkValue(value: Int): Int {
