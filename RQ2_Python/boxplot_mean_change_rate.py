@@ -6,7 +6,7 @@ def convert(data):
     convered = data.to_numpy()
     return convered[np.logical_not(np.isnan(convered))]
 
-data = pd.read_csv('D:\\test.csv', delimiter=";")
+data = pd.read_csv('D:\\boxplotmeanchangerate.csv', delimiter=";")
 
 labels = []
 labelIndex = []

@@ -7,7 +7,7 @@ fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\")
 
     file.walk().forEach {
-        if (it.isFile && it.name == "variability.csv") {
+        if (it.isFile && it.name == "variability.csv" && it.parent != file.absolutePath) {
             val name = it.parentFile.name
             eval(name, it)
         }
@@ -18,9 +18,9 @@ fun main() {
 private fun eval(name: String, file: File) {
     var counter = 0.0
 
-    var meanChangeRateCov = mutableListOf<Double>()
-    var meanChangeRateCi = mutableListOf<Double>()
-    var meanChangeRateDivergence = mutableListOf<Double>()
+    val meanChangeRateCov = mutableListOf<Double>()
+    val meanChangeRateCi = mutableListOf<Double>()
+    val meanChangeRateDivergence = mutableListOf<Double>()
 
     var ciWidthSmallerDefault = 0
 
