@@ -26,7 +26,7 @@ class Divergence(outputDir: String) {
                     val delta2 = iterationMap.getValue(i - 2)
                     val delta3 = iterationMap.getValue(i - 3)
                     val delta4 = iterationMap.getValue(i - 4)
-                    val value = Collections.min(mutableListOf(delta0, delta1, delta2, delta3, delta4))
+                    val value = mutableListOf(delta0, delta1, delta2, delta3, delta4).average()
                     output.append(";$value")
                 }
             }

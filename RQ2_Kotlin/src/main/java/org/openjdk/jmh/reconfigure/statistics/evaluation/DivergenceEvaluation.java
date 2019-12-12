@@ -67,7 +67,7 @@ public class DivergenceEvaluation implements StatisticalEvaluation {
                 pvalues.add(pvalue);
             }
 
-            return Collections.min(pvalues);
+            return pvalues.stream().mapToDouble(it -> it).average().orElse(0.0);
         }
     }
 
