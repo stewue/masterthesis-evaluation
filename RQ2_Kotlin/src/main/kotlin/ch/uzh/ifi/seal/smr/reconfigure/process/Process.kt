@@ -12,6 +12,9 @@ fun main() {
 //    val outputDir = "D:\\tmp"
         val csvInput = File("/home/user/stefan-masterthesis/statistics/csv-jenetics")
     val outputDir = "/home/user/stefan-masterthesis/statistics/tmp"
+//
+//    val csvInput = File("/mnt/evo860/home/stefanwuersten/thesis/statistics/csv")
+//    val outputDir = "/mnt/evo860/home/stefanwuersten/thesis/statistics/tmp"
 
     val d = D_All(csvInput, outputDir)
     d.run()
