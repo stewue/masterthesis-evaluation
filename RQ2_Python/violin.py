@@ -3,16 +3,16 @@ import seaborn as sns
 import pandas as pd
 
 data = {'x': [
-        'different', 'different', 'different', 'different', 'different', 'different', 'different', 'different', 'different', 'different',
-        'different', 'different', 'different', 'different', 'different', 'different', 'different', 'different', 'different', 'different',
-        'same', 'same', 'same', 'same', 'same', 'same', 'same', 'same', 'same', 'same',
-        'same', 'same', 'same', 'same', 'same', 'same', 'same', 'same', 'same', 'same'
+        'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A',
+        'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A', 'benchmark A',
+        'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B',
+        'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B', 'benchmark B'
 ],
         'Type': [
-            "before", "before", "before", "before", "before", "before", "before", "before", "before", "before",
-            "after", "after", "after", "after", "after", "after", "after", "after", "after", "after",
-            "before", "before", "before", "before", "before", "before", "before", "before", "before", "before",
-            "after", "after", "after", "after", "after", "after", "after", "after", "after", "after",
+            "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations",
+            "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations",
+            "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations", "performance over the first n iterations",
+            "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations", "performance over the first n + 1 iterations",
         ],
         'y' : [
             100, 90, 80, 95, 110, 105, 103, 97, 100, 110,
@@ -25,6 +25,7 @@ df = pd.DataFrame(data)
 ax = sns.violinplot(x="x", y="y", hue="Type", data=df, split=True)
 ax.axes.get_yaxis().set_visible(False)
 ax.set_xlabel('')
+plt.legend(loc='lower right')
 plt.tight_layout()
-# plt.show()
+#plt.show()
 plt.savefig('export.png')
