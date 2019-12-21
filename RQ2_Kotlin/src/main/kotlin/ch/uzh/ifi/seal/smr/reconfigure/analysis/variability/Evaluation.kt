@@ -6,6 +6,8 @@ import kotlin.math.abs
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\")
 
+    println("project;benchmarks;meanChangeRateCov;meanChangeRateCi;meanChangeRateDivergence;CiWidthSmallDefault;combinationSignificantCov;combinationSignificantCi;combinationSignificantDivergence;ciRatioSignificantCov;ciRatioSignificantCi;ciRatioSignificantDivergence;ciRatioShiftCov;ciRatioShiftCi;ciRatioShiftDivergence")
+
     file.walk().forEach {
         if (it.isFile && it.name == "variability.csv" && it.parent != file.absolutePath) {
             val name = it.parentFile.name
@@ -31,6 +33,10 @@ private fun eval(name: String, file: File) {
     var ciRatioCov = 0
     var ciRatioCi = 0
     var ciRatioDivergence = 0
+
+    val ciRatioListCov = mutableListOf<Double>()
+    val ciRatioListCi = mutableListOf<Double>()
+    val ciRatioListDivergence = mutableListOf<Double>()
 
     file.forEachLine {
         if (it == "project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioLowerCov;ratioUpperCov;ratioLowerCi;ratioUpperCi;ratioLowerKld;ratioUpperKld") {
@@ -80,12 +86,15 @@ private fun eval(name: String, file: File) {
             combinationDivergence++
         }
 
+        ciRatioListCov.add(ciRatioPercentage(ratioLowerCov, ratioUpperCov))
         if (ciRatioPercentage(ratioLowerCov, ratioUpperCov) > 0.01) {
             ciRatioCov++
         }
+        ciRatioListCi.add(ciRatioPercentage(ratioLowerCi, ratioUpperCi))
         if (ciRatioPercentage(ratioLowerCi, ratioUpperCi) > 0.01) {
             ciRatioCi++
         }
+        ciRatioListDivergence.add(ciRatioPercentage(ratioLowerKld, ratioUpperKld))
         if (ciRatioPercentage(ratioLowerKld, ratioUpperKld) > 0.01) {
             ciRatioDivergence++
         }
@@ -93,15 +102,12 @@ private fun eval(name: String, file: File) {
         counter++
     }
 
-    val avgChangeRateCov = meanChangeRateCov.average()
-    val avgChangeRateCi = meanChangeRateCi.average()
-    val avgChangeRateDivergence = meanChangeRateDivergence.average()
-
     print("$name;$counter")
-    print(";$avgChangeRateCov;$avgChangeRateCi;$avgChangeRateDivergence")
+    print(";${meanChangeRateCov.average()};${meanChangeRateCi.average()};${meanChangeRateDivergence.average()}")
     print(";${ciWidthSmallerDefault / counter}")
     print(";${combinationCov / counter};${combinationCi / counter};${combinationDivergence / counter}")
-    println(";${ciRatioCov / counter};${ciRatioCi / counter};${ciRatioDivergence / counter}")
+    print(";${ciRatioCov / counter};${ciRatioCi / counter};${ciRatioDivergence / counter}")
+    println(";${ciRatioListCov.average()};${ciRatioListCi.average()};${ciRatioListDivergence.average()}")
 }
 
 
