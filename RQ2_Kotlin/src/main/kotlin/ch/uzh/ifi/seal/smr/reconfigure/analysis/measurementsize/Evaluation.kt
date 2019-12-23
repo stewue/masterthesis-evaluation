@@ -4,7 +4,7 @@ import java.io.File
 import kotlin.math.abs
 
 fun main() {
-    val input = File("D:\\variability99.csv")
+    val input = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\measurementsize\\measurementsize_allfork.csv")
 
     var counter = 0.0
     var combination5significant = 0
