@@ -1,5 +1,5 @@
 project;Benchmarks;Parameterization Combination;Ignored Parameterization Combinations;stars;forks;watchers;jmhVersion;commit;jdk;area
-ReactiveX/RxJava;217;1282;22;40183;6750;2366;1.2;17a8eef0f660f58deed7f7ee399915a61ce404d6;1.8;asynchronous, event-based programing
+ReactiveX/RxJava;217;1282;22;40183;6750;2366;1.20;17a8eef0f660f58deed7f7ee399915a61ce404d6;1.8;asynchronous, event-based programing
 jmh-jdk-microbenchmarks;994;1381;0;;;;1.21;d0fab231915f;1.8;jdk
 apache/logging-log4j2;358;510;3;783;482;76;1.19;ac121e22d763d6b5391fad9e39d5efbeb79ccfac;13;logging
 jmh-core-benchmarks;110;110;0;;;;1.21;a07e91499e97;1.8;jmh
