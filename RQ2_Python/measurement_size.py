@@ -4,12 +4,12 @@ from matplotlib.ticker import PercentFormatter
 label = [5,10,15,20,25]
 
 # single fork
-# combination = [0.23, 0.18, 0.14, 0.12, 0.09]
-# ciRatio = [0.17, 0.14, 0.12, 0.10, 0.09]
+# combination = [0.233, 0.179, 0.141, 0.116, 0.086]
+# ciRatio = [0.172, 0.137, 0.120, 0.104, 0.094]
 
 # all forks
-combination = [0.14, 0.10, 0.07, 0.05, 0.04]
-ciRatio = [0.13, 0.12, 0.10, 0.10, 0.09]
+combination = [0.143, 0.096, 0.068, 0.053, 0.040]
+ciRatio = [0.135, 0.121, 0.105, 0.103, 0.086]
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.plot(label, combination, label="Wilcoxon + effect size")
