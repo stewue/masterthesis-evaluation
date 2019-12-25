@@ -1,10 +1,15 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from matplotlib.ticker import PercentFormatter
 
-cov = [0.1, 0.2, 0.3, 0.33, 0.5, 0.6, 0.7]
-ci = [0.2, 0.3, 0.31, 0.35, 0.52, 0.62, 0.72]
-divergence = [0.15, 0.22, 0.27, 0.3, 0.47, 0.55, 0.88]
+dataCov = pd.read_csv('D:\\cov.csv', delimiter=";")
+dataCi = pd.read_csv('D:\\ci.csv', delimiter=";")
+dataDivergence = pd.read_csv('D:\\divergence.csv', delimiter=";")
+
+cov = dataCov['time'] / 500
+ci = dataCi['time'] / 500
+divergence = dataDivergence['time'] / 500
 
 valuesCov, baseCov = np.histogram(cov, bins=1000, range=[0, 1], weights=np.ones(len(cov)) / len(cov))
 cumulativeCov = np.cumsum(valuesCov)
