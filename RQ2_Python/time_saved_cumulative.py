@@ -11,20 +11,24 @@ cov = dataCov['time'] / 500
 ci = dataCi['time'] / 500
 divergence = dataDivergence['time'] / 500
 
-valuesCov, baseCov = np.histogram(cov, bins=1000, range=[0, 1], weights=np.ones(len(cov)) / len(cov))
+valuesCov, baseCov = np.histogram(cov, bins=101, range=[0, 1], weights=np.ones(len(cov)) / len(cov))
 cumulativeCov = np.cumsum(valuesCov)
-plt.plot(baseCov[:-1], cumulativeCov, label="COV")
+plt.plot(baseCov[:-1], cumulativeCov, label="CoV")
 
-valuesCi, baseCi = np.histogram(ci, bins=100, range=[0, 1], weights=np.ones(len(ci)) / len(ci))
+valuesCi, baseCi = np.histogram(ci, bins=101, range=[0, 1], weights=np.ones(len(ci)) / len(ci))
 cumulativeCi = np.cumsum(valuesCi)
 plt.plot(baseCi[:-1], cumulativeCi, label="CI")
 
-valuesDivergence, baseDivergence = np.histogram(divergence, bins=100, range=[0, 1], weights=np.ones(len(divergence)) / len(divergence))
+valuesDivergence, baseDivergence = np.histogram(divergence, bins=101, range=[0, 1], weights=np.ones(len(divergence)) / len(divergence))
 cumulativeDivergence = np.cumsum(valuesDivergence)
 plt.plot(baseDivergence[:-1], cumulativeDivergence, label="Divergence")
 
+plt.scatter(0.61, 1, marker="^")
+plt.scatter(0.66, 1, marker="^")
+plt.scatter(0.63, 1, marker="^")
+
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-plt.legend()
+plt.legend(loc='lower right')
 plt.xlabel('Time saved compared to the standard execution')
 plt.xlim(-0.01, 1.01)
 plt.ylim(-0.01, 1.01)
