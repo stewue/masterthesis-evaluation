@@ -21,5 +21,5 @@ plt.xticks(label)
 plt.legend()
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')
 

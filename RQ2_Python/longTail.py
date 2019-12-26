@@ -6,7 +6,7 @@ from pylab import rcParams
 
 rcParams['figure.figsize'] = 6.4, 2.5
 
-data = pd.read_csv('D:\\rq2\\results\\log4j2#org.apache.logging.log4j.perf.jmh.FileAppenderBenchmark.logbackAsyncFile#.csv', delimiter=";")
+data = pd.read_csv('D:\\rq2\\results\\csv-log4j2\\log4j2#org.apache.logging.log4j.perf.jmh.FileAppenderBenchmark.logbackAsyncFile#.csv', delimiter=";")
 
 hist = []
 
@@ -21,4 +21,4 @@ plt.xlabel('incovation time [ns]')
 plt.xticks([0, 0.0000005, 0.000001, 0.0000015, 0.000002], [0, 500, 1000, 1500, 2000])
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')

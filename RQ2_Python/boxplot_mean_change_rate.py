@@ -28,7 +28,7 @@ plt.ylabel("mean change rate")
 plt.xticks(labelIndex, labels, rotation='vertical')
 plt.tight_layout()
 # plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')
 
 print("all median: " + str(np.median(all)))
 filtered = all[all < 0.02]

@@ -11,8 +11,8 @@ plt.hist(percentage, range=[0.75,1.25], bins=50, weights=np.ones(len(percentage)
 plt.ylabel('# benchmarks')
 plt.xlabel('change rate')
 plt.tight_layout()
-plt.show()
-#plt.savefig('export.png')
+#plt.show()
+plt.savefig('export.pdf')
 
 allCount = len(data)
 less1Per = percentage[abs(percentage - 1) < 0.01].size
