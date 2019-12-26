@@ -33,7 +33,7 @@ fun main() {
                 val (project, _, benchmark, params) = name.split(";")
 
                 val items10 = getItems(all10, 5, 10)
-                val items10Pre = getItems(all10, 5, 10)
+                val items10Pre = getItems(all10, 5, 9)
                 val items100 = getItems(all100, 50, 100)
                 val items100Pre = getItems(all100, 50, 90)
 
