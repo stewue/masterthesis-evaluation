@@ -11,11 +11,11 @@ fun main() {
 
         if (folder.isDirectory) {
             val covFile = Paths.get(folder.absolutePath, "outputCovTotal.csv").toFile()
-            run(covFile, 0.01)
+            run(covFile, 0.0088)
 //            val ciFile = Paths.get(folder.absolutePath, "outputCiTotal.csv").toFile()
-//            run(ciFile, 0.2)
+//            run(ciFile, 0.1092)
 //            val divergenceFile = Paths.get(folder.absolutePath, "outputDivergenceTotal.csv").toFile()
-//            run(divergenceFile, 0.05)
+//            run(divergenceFile, 0.0432)
         }
     }
 }
