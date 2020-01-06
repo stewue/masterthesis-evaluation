@@ -18,7 +18,7 @@ plt.ylabel('# projects')
 plt.xlabel('# benchmarks')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')
 
 print("average: " + str(np.average(filter2)))
 print("median: " + str(np.median(filter2)))

@@ -9,12 +9,12 @@ allCount = data['numberOfChangesLongLived'].sum() + data['numberOfChangesShortLi
 numberOfChangesLongLived = data['numberOfChangesLongLived'] / allCount
 numberOfChangesShortLived = data['numberOfChangesShortLived'] / allCount
 
-plt.bar(data['count'], numberOfChangesLongLived, label="long-lived", color="orange")
-plt.bar(data['count'], numberOfChangesShortLived, label="short-lived",  color="green", bottom=numberOfChangesLongLived)
+plt.bar(data['count'], numberOfChangesShortLived, label="short-lived projects",  color="green", bottom=numberOfChangesLongLived)
+plt.bar(data['count'], numberOfChangesLongLived, label="long-lived projects", color="orange")
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.xlabel('# Java version updates')
 plt.ylabel('probability')
 plt.legend()
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')

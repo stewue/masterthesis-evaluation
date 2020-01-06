@@ -16,9 +16,9 @@ plt.plot(base[:-1], cumulativeAll, label="all")
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.ylabel('cumulative probability')
-plt.xlabel('measurementWarmupRatio')
+plt.xlabel('$\mathit{measurementWarmupRatio}$')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')
 
 print(len(largerArray))

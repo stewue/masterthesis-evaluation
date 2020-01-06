@@ -6,7 +6,7 @@ labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 plt.scatter(labels, y)
 plt.ylim(0, 0.3)
 plt.xticks(labels)
-plt.ylabel("stability metric")
+plt.ylabel("CoV")
 plt.xlabel("# iteration")
 plt.tight_layout()
 # plt.show()

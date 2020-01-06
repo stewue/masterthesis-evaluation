@@ -8,22 +8,22 @@ data['totalTime'] = data['executionTime'] * data['parameterizationCombinations']
 
 grouped = data.groupby('project')
 
-# all
+# # all
 array = []
 for project, benchmarks in grouped:
     array.append(benchmarks['totalTime'].sum()/60)
 
-all, base = np.histogram(array, bins=11, range=[0,12], weights=np.ones(len(array)) / len(array))
+all, base = np.histogram(array, bins=1000, range=[0,12], weights=np.ones(len(array)) / len(array))
 cumulative = np.cumsum(all)
 plt.plot(base[:-1], cumulative)
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-plt.xlabel('execution time of test suite [hours]')
+plt.xlabel('execution time [hours]')
 plt.ylabel('cumulative probability')
 plt.xticks(np.arange(0,13,1))
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')
 
 # under 1 hour
 # array = []
@@ -35,12 +35,12 @@ plt.savefig('export.png')
 # plt.plot(base[:-1], cumulative)
 #
 # plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-# plt.xlabel('execution time of test suite [min]')
+# plt.xlabel('execution time [min]')
 # plt.ylabel('cumulative probability')
 # plt.xticks(np.arange(0,61,10))
 # plt.tight_layout()
 # #plt.show()
-# plt.savefig('export.png')
+# plt.savefig('export.pdf')
 
 print("min: " + str(np.min(array)))
 print("max: " + str(np.max(array)))

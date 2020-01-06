@@ -12,14 +12,14 @@ valuesShort, base = np.histogram(short, range=[0,65], bins=65)
 
 label = np.arange(0,65,1)
 
-plt.bar(label, valuesLong, label="long-lived", color="orange")
-plt.bar(label, valuesShort, label="short-lived", color="green", bottom=valuesLong)
+plt.bar(label, valuesShort, label="short-lived projects", color="green", bottom=valuesLong)
+plt.bar(label, valuesLong, label="long-lived projects", color="orange")
 plt.ylabel('# projects')
 plt.xlabel('# sample commits')
 plt.legend()
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.png')
+plt.savefig('export.pdf')
 
 print("short -> avg: " + str(np.average(short).round(1)))
 print("short -> std: " + str(np.std(short).round(1)))

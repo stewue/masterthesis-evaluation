@@ -13,15 +13,15 @@ divergence = dataDivergence['time'] / 500
 
 valuesCov, baseCov = np.histogram(cov, bins=101, range=[0, 1], weights=np.ones(len(cov)) / len(cov))
 cumulativeCov = np.cumsum(valuesCov)
-plt.plot(baseCov[:-1], cumulativeCov, label="CoV")
+plt.plot(baseCov[:-1], cumulativeCov, label="CoV", linestyle="-")
 
 valuesCi, baseCi = np.histogram(ci, bins=101, range=[0, 1], weights=np.ones(len(ci)) / len(ci))
 cumulativeCi = np.cumsum(valuesCi)
-plt.plot(baseCi[:-1], cumulativeCi, label="CI")
+plt.plot(baseCi[:-1], cumulativeCi, label="CI width", linestyle=":")
 
 valuesDivergence, baseDivergence = np.histogram(divergence, bins=101, range=[0, 1], weights=np.ones(len(divergence)) / len(divergence))
 cumulativeDivergence = np.cumsum(valuesDivergence)
-plt.plot(baseDivergence[:-1], cumulativeDivergence, label="Divergence")
+plt.plot(baseDivergence[:-1], cumulativeDivergence, label="Divergence", linestyle="--")
 
 plt.scatter(0.61, 1, marker="^")
 plt.scatter(0.66, 1, marker="^")
