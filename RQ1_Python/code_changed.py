@@ -19,3 +19,8 @@ plt.ylabel('probability')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.pdf')
+
+somewhereChanged = values[values > 0]
+print("at least one code change: " + str(somewhereChanged.size) + " (" + str(somewhereChanged.size / values.size) + "%)")
+print("average code change: " + str(values.mean()))
+print("std code change: " + str(values.std()))

@@ -19,3 +19,8 @@ plt.ylabel('probability')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.pdf')
+
+somewhereChanged = values[values > 0]
+print("at least one configuration change: " + str(somewhereChanged.size) + " (" + str(somewhereChanged.size / values.size) + "%)")
+print("average configuration change: " + str(values.mean()))
+print("std configuration change: " + str(values.std()))
