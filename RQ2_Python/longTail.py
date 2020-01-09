@@ -16,7 +16,7 @@ for index, row in data.iterrows():
             hist.append(row['value'])
 
 plt.hist(hist, bins=50, range=[0, 0.000002], weights=np.ones(len(hist)) / len(hist))
-plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
+plt.gca().yaxis.set_major_formatter(PercentFormatter(1,0))
 plt.xlabel('incovation time [ns]')
 plt.xticks([0, 0.0000005, 0.000001, 0.0000015, 0.000002], [0, 500, 1000, 1500, 2000])
 plt.tight_layout()
