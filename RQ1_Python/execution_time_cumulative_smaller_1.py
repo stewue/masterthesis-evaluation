@@ -19,3 +19,9 @@ plt.xticks(np.arange(0, 1.1, step=0.1))
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.pdf')
+
+s4 = all[all < 0.25]
+print("<0.25: " + str(s4.size / all.size))
+
+s10 = all[all < 0.1]
+print("<0.1: " + str(s10.size / all.size))

@@ -19,3 +19,6 @@ plt.xscale('log')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.pdf')
+
+l10 = all[all > 10]
+print(">10: " + str(l10.size / all.size))

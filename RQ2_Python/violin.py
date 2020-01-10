@@ -23,9 +23,10 @@ data = {'x': [
 df = pd.DataFrame(data)
 
 ax = sns.violinplot(x="x", y="y", hue="Type", data=df, split=True)
-ax.axes.get_yaxis().set_visible(False)
+ax.axes.get_yaxis().set_ticks([])
 ax.set_xlabel('')
 plt.legend(loc='lower right')
+plt.ylabel('invocation time')
 plt.tight_layout()
 #plt.show()
 plt.savefig('export.pdf')

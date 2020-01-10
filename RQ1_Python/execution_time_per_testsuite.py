@@ -45,3 +45,9 @@ plt.savefig('export.pdf')
 print("min: " + str(np.min(array)))
 print("max: " + str(np.max(array)))
 print("median: " + str(np.median(array)))
+
+l3 = list(filter(lambda x: x > 3, array))
+print(">3h: " + str(len(l3)/len(array)))
+
+l12 = list(filter(lambda x: x > 12, array))
+print(">12h: " + str(len(l12)/len(array)))
