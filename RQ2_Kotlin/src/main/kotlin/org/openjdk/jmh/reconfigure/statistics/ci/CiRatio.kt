@@ -5,7 +5,7 @@ import org.openjdk.jmh.reconfigure.helper.HistogramItem
 import java.io.IOException
 import java.nio.charset.Charset
 
-class CiRatio(private val histogramList1: List<HistogramItem>, private val histogramList2: List<HistogramItem>, bootstrapSimulations: Int, significanceLevel: Double, statistic: String, ciInvocationSamples: Int) : CI(listOf(), bootstrapSimulations, significanceLevel, statistic, ciInvocationSamples){
+class CiRatio(private val histogramList1: List<HistogramItem>, private val histogramList2: List<HistogramItem>, bootstrapSimulations: Int, significanceLevel: Double, statistic: String, ciInvocationSamples: Int) : CI(listOf(), bootstrapSimulations, significanceLevel, statistic, ciInvocationSamples) {
 
     override fun run() {
         val file1 = getTmpFile(histogramList1)

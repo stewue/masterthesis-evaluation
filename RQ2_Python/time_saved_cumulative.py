@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 from matplotlib.ticker import PercentFormatter
 
-dataCov = pd.read_csv('D:\\cov.csv', delimiter=";")
-dataCi = pd.read_csv('D:\\ci.csv', delimiter=";")
-dataDivergence = pd.read_csv('D:\\divergence.csv', delimiter=";")
+dataCov = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\cov.csv', delimiter=";")
+dataCi = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\ci.csv', delimiter=";")
+dataDivergence = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\divergence.csv', delimiter=";")
 
 cov = dataCov['time'] / 500
 ci = dataCi['time'] / 500
@@ -36,4 +36,4 @@ plt.ylabel('cumulative probability')
 plt.xticks([0.0, 0.2, 0.4, 0.6, 0.8, 1.0], ["100%", "80%", "60%", "40%", "20%", "0%"])
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\images\\time_saved_cumulative.pdf')

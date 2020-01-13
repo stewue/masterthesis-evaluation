@@ -10,8 +10,8 @@ import java.io.File
 import java.io.FileWriter
 
 fun main() {
-    val csvInput = File("D:\\rq2\\results\\csv-log4j2")
-    val output = FileWriter(File("D:\\defaultvariability.csv"))
+    val csvInput = File("/home/user/stefan-masterthesis/statistics/csv")
+    val output = FileWriter(File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\shorteriterations\\defaultvariability.csv"))
 
     output.appendln("project;commit;benchmark;params;i96Cov;i97Cov;i98Cov;i99Cov;i100Cov;maxDeltaCov;i96Ci;i97Ci;i98Ci;i99Ci;i100Ci;maxDeltaCi;maxCi;i96Divergence;i97Divergence;i98Divergence;i99Divergence;i100Divergence;averageDivergence")
 

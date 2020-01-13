@@ -2,25 +2,30 @@ package ch.uzh.ifi.seal.smr.reconfigure.analysis.avgiterationandforks
 
 import ch.uzh.ifi.seal.smr.reconfigure.utils.std
 import java.io.File
+import java.io.FileWriter
 import java.nio.file.Paths
 
+private val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\avgiterationandforks.csv")
+private val output = FileWriter(outputFile)
+
 fun main() {
-    println("project;benchmarks;avgReachedForkCov;stdReachedForkCov;avgReachedIterationCov;stdReachedIterationCov;perForkNotStableCov;perIterationNotStableCov;avgReachedForkCi;stdReachedForkCi;avgReachedIterationCi;stdReachedIterationCi;perForkNotStableCi;perIterationNotStableCi;avgReachedForkDivergence;stdReachedForkDivergence;avgReachedIterationDivergence;stdReachedIterationDivergence;perForkNotStableDivergence;perIterationNotStableDivergence")
+    output.appendln("project;benchmarks;avgReachedForkCov;stdReachedForkCov;avgReachedIterationCov;stdReachedIterationCov;perForkNotStableCov;perIterationNotStableCov;avgReachedForkCi;stdReachedForkCi;avgReachedIterationCi;stdReachedIterationCi;perForkNotStableCi;perIterationNotStableCi;avgReachedForkDivergence;stdReachedForkDivergence;avgReachedIterationDivergence;stdReachedIterationDivergence;perForkNotStableDivergence;perIterationNotStableDivergence")
     val input = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\")
     input.list().forEach {
         val folder = Paths.get(input.absolutePath, it).toFile()
 
         if (folder.isDirectory) {
-            print(it)
+            output.append(it)
             val covFile = Paths.get(folder.absolutePath, "outputCovTotal.csv").toFile()
             run(covFile, true)
             val ciFile = Paths.get(folder.absolutePath, "outputCiTotal.csv").toFile()
             run(ciFile, false)
             val divergenceFile = Paths.get(folder.absolutePath, "outputDivergenceTotal.csv").toFile()
             run(divergenceFile, false)
-            println("")
+            output.appendln()
         }
     }
+    output.flush()
 }
 
 private fun run(file: File, printSize: Boolean = false) {
@@ -76,9 +81,9 @@ private fun run(file: File, printSize: Boolean = false) {
     val perIterationNotStable = iterationNotStable / (counter * 5)
 
     if (printSize) {
-        print(";$counter")
+        output.append(";$counter")
     }
-    print(";$avgReachedFork;$stdReachedFork;$avgReachedIteration;$stdReachedIteration;$perForkNotStable;$perIterationNotStable")
+    output.append(";$avgReachedFork;$stdReachedFork;$avgReachedIteration;$stdReachedIteration;$perForkNotStable;$perIterationNotStable")
 }
 
 private fun getForkValue(value: Int): Int {
@@ -96,4 +101,3 @@ private fun getIterationValue(value: Int): Int {
         value
     }
 }
-

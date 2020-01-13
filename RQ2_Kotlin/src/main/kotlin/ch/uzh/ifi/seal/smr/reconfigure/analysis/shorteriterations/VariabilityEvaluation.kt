@@ -5,7 +5,7 @@ import java.io.File
 import kotlin.math.abs
 
 fun main() {
-    val input = File("D:\\rq2\\pre\\iterationsNEU.csv")
+    val input = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\shorteriterations\\variability.csv")
     val nrDatapointsThreshold = 25
 
     val covDiffs = mutableListOf<Double>()

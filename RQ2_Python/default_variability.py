@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\pre\\defaultvariability.csv', delimiter=";")
+data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\shorteriterations\\defaultvariability.csv', delimiter=";")
 
 print("---cov---")
 print("avg: " + str(np.average(data['maxDeltaCov'])))

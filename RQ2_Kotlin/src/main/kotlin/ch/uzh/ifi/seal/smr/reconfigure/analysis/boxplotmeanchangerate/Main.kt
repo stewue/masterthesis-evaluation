@@ -1,7 +1,11 @@
 package ch.uzh.ifi.seal.smr.reconfigure.analysis.boxplotmeanchangerate
 
 import java.io.File
+import java.io.FileWriter
 import kotlin.math.abs
+
+private val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\boxplotmeanchangerate.csv")
+private val output = FileWriter(outputFile)
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\")
@@ -18,27 +22,29 @@ fun main() {
     val lastKey = map.keys.last()
 
     map.keys.forEach { key ->
-        print(key)
+        output.append(key)
         if (key != lastKey) {
-            print(";")
+            output.append(";")
         }
     }
-    println("")
+    output.appendln()
 
     val maxLength = map.values.map { it.size }.max()!!
     for (line in 0 until maxLength) {
         map.keys.forEach { key ->
             val list = map.getValue(key)
             if (line < list.size) {
-                print("${list[line]}")
+                output.append("${list[line]}")
             }
 
             if (key != lastKey) {
-                print(";")
+                output.append(";")
             }
         }
-        println("")
+        output.appendln()
     }
+
+    output.flush()
 }
 
 private fun eval(file: File): List<Double> {

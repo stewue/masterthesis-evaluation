@@ -1,26 +1,43 @@
 package ch.uzh.ifi.seal.smr.reconfigure.analysis.time
 
 import java.io.File
+import java.io.FileWriter
 import java.nio.file.Paths
 
+private val outputFileCov = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\cov.csv")
+private val outputFileCi = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\ci.csv")
+private val outputFileDivergence = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\divergence.csv")
+private val outputCov = FileWriter(outputFileCov)
+private val outputCi = FileWriter(outputFileCi)
+private val outputDivergence = FileWriter(outputFileDivergence)
+private val thresholdCov = 0.0088
+private val thresholdCi = 0.1092
+private val thresholdDivergence = 0.0432
+
 fun main() {
-    println("project;commits;benchmarks;params;forks;iteration1;iteration2;iteration3;iteration4;iteration5;time")
+    outputCov.appendln("project;commits;benchmarks;params;forks;iteration1;iteration2;iteration3;iteration4;iteration5;time")
+    outputCi.appendln("project;commits;benchmarks;params;forks;iteration1;iteration2;iteration3;iteration4;iteration5;time")
+    outputDivergence.appendln("project;commits;benchmarks;params;forks;iteration1;iteration2;iteration3;iteration4;iteration5;time")
     val input = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\")
     input.list().forEach {
         val folder = Paths.get(input.absolutePath, it).toFile()
 
         if (folder.isDirectory) {
             val covFile = Paths.get(folder.absolutePath, "outputCovTotal.csv").toFile()
-            run(covFile, 0.0088)
-//            val ciFile = Paths.get(folder.absolutePath, "outputCiTotal.csv").toFile()
-//            run(ciFile, 0.1092)
-//            val divergenceFile = Paths.get(folder.absolutePath, "outputDivergenceTotal.csv").toFile()
-//            run(divergenceFile, 0.0432)
+            run(covFile, thresholdCov, outputCov)
+            val ciFile = Paths.get(folder.absolutePath, "outputCiTotal.csv").toFile()
+            run(ciFile, thresholdCi, outputCi)
+            val divergenceFile = Paths.get(folder.absolutePath, "outputDivergenceTotal.csv").toFile()
+            run(divergenceFile, thresholdDivergence, outputDivergence)
         }
     }
+
+    outputCov.flush()
+    outputCi.flush()
+    outputDivergence.flush()
 }
 
-private fun run(file: File, threshold: Double) {
+private fun run(file: File, threshold: Double, fw: FileWriter) {
     file.forEachLine {
         if (it == "project;commit;benchmark;params;threshold;f2;f3;f4;f5;reachedForks;reachedF1;reachedF2;reachedF3;reachedF4;reachedF5") {
             return@forEachLine
@@ -59,7 +76,7 @@ private fun run(file: File, threshold: Double) {
 
         val totalTime = numberOfWarmupIterations * 1 * (1 + threshold) + forks * 10 * 1
 
-        println("${parts[0]};${parts[1]};${parts[2]};${parts[3]};$forks;$iteration1;$iteration2;$iteration3;$iteration4;$iteration5;$totalTime")
+        fw.appendln("${parts[0]};${parts[1]};${parts[2]};${parts[3]};$forks;$iteration1;$iteration2;$iteration3;$iteration4;$iteration5;$totalTime")
     }
 }
 
@@ -78,4 +95,3 @@ private fun getIterationValue(value: Int): Int {
         value
     }
 }
-

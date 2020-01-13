@@ -7,7 +7,8 @@ import org.openjdk.jmh.reconfigure.statistics.ci.CiPercentage;
 
 import java.util.*;
 
-import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.*;
+import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.OUTLIER_FACTOR;
+import static org.openjdk.jmh.reconfigure.statistics.ReconfigureConstants.SAMPLE_SIZE;
 
 public class CiPercentageEvaluation implements StatisticalEvaluation {
     private double threshold;

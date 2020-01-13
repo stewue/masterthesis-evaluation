@@ -26,7 +26,7 @@ class Divergence(outputDir: String) {
         histogram.forEach { (_, map) ->
             val evaluation = DivergenceEvaluation.getIterationInstance(RECONFIGURE_KLD_THRESHOLD)
             map.forEach { (iteration, list) ->
-                if(iteration <= 50) {
+                if (iteration <= 50) {
                     evaluation.addIteration(list)
                     evaluation.calculateVariability()
                     val currentPValue = evaluation.getPValueOfIteration(iteration)

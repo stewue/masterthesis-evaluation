@@ -4,8 +4,11 @@ import ch.uzh.ifi.seal.bencher.analysis.finder.asm.AsmBenchFinder
 import java.io.File
 
 fun main() {
-    val jar = File("D:\\log4j2.jar")
-    val bf = AsmBenchFinder(jar, "org.apache.logging.log4j").all()
+    val jarPath = "C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Projects\\log4j2.jar"
+    val packageName = "org.apache.logging.log4j"
+
+    val jar = File(jarPath)
+    val bf = AsmBenchFinder(jar, packageName).all()
 
     if (bf.isLeft()) {
         throw RuntimeException(bf.left().get())

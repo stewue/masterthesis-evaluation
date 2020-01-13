@@ -19,7 +19,7 @@ fun main() {
     var ciRatio25significant = 0
 
     input.forEachLine { line ->
-        if(line == "project;commit;benchmark;params;effectSize5;effectSize10;effectSize15;effectSize20;effectSize25;wilcoxon5;wilcoxon10;wilcoxon15;wilcoxon20;wilcoxon25;ciRatio5;ciRatio10;ciRatio15;ciRatio20;ciRatio25"){
+        if (line == "project;commit;benchmark;params;effectSize5;effectSize10;effectSize15;effectSize20;effectSize25;wilcoxon5;wilcoxon10;wilcoxon15;wilcoxon20;wilcoxon25;ciRatio5;ciRatio10;ciRatio15;ciRatio20;ciRatio25") {
             return@forEachLine
         }
 
@@ -40,57 +40,57 @@ fun main() {
         val ciRatio20 = parts[17].toDouble()
         val ciRatio25 = parts[18].toDouble()
 
-        if(checkCombination(effectSize5, wilcoxon5)){
+        if (checkCombination(effectSize5, wilcoxon5)) {
             combination5significant++
         }
-        if(checkCombination(effectSize10, wilcoxon10)){
+        if (checkCombination(effectSize10, wilcoxon10)) {
             combination10significant++
         }
-        if(checkCombination(effectSize15, wilcoxon15)){
+        if (checkCombination(effectSize15, wilcoxon15)) {
             combination15significant++
         }
-        if(checkCombination(effectSize20, wilcoxon20)){
+        if (checkCombination(effectSize20, wilcoxon20)) {
             combination20significant++
         }
-        if(checkCombination(effectSize25, wilcoxon25)){
+        if (checkCombination(effectSize25, wilcoxon25)) {
             combination25significant++
         }
 
-        if(checkCIRatio(ciRatio5)){
+        if (checkCIRatio(ciRatio5)) {
             ciRatio5significant++
         }
-        if(checkCIRatio(ciRatio10)){
+        if (checkCIRatio(ciRatio10)) {
             ciRatio10significant++
         }
-        if(checkCIRatio(ciRatio15)){
+        if (checkCIRatio(ciRatio15)) {
             ciRatio15significant++
         }
-        if(checkCIRatio(ciRatio20)){
+        if (checkCIRatio(ciRatio20)) {
             ciRatio20significant++
         }
-        if(checkCIRatio(ciRatio25)){
+        if (checkCIRatio(ciRatio25)) {
             ciRatio25significant++
         }
 
         counter++
     }
 
-    println("combination5significant: ${combination5significant/counter}")
-    println("combination10significant: ${combination10significant/counter}")
-    println("combination15significant: ${combination15significant/counter}")
-    println("combination20significant: ${combination20significant/counter}")
-    println("combination25significant: ${combination25significant/counter}")
-    println("ciRatio5significant: ${ciRatio5significant/counter}")
-    println("ciRatio10significant: ${ciRatio10significant/counter}")
-    println("ciRatio15significant: ${ciRatio15significant/counter}")
-    println("ciRatio20significant: ${ciRatio20significant/counter}")
-    println("ciRatio25significant: ${ciRatio25significant/counter}")
+    println("combination5significant: ${combination5significant / counter}")
+    println("combination10significant: ${combination10significant / counter}")
+    println("combination15significant: ${combination15significant / counter}")
+    println("combination20significant: ${combination20significant / counter}")
+    println("combination25significant: ${combination25significant / counter}")
+    println("ciRatio5significant: ${ciRatio5significant / counter}")
+    println("ciRatio10significant: ${ciRatio10significant / counter}")
+    println("ciRatio15significant: ${ciRatio15significant / counter}")
+    println("ciRatio20significant: ${ciRatio20significant / counter}")
+    println("ciRatio25significant: ${ciRatio25significant / counter}")
 }
 
-private fun checkCombination (effectSize: Double, wilcoxon: Double): Boolean{
+private fun checkCombination(effectSize: Double, wilcoxon: Double): Boolean {
     return abs(effectSize) > 0.147 && wilcoxon < 0.01
 }
 
-private fun checkCIRatio (ratio: Double): Boolean{
+private fun checkCIRatio(ratio: Double): Boolean {
     return ratio > 0.01
 }

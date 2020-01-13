@@ -2,32 +2,37 @@ package ch.uzh.ifi.seal.smr.reconfigure.analysis.time
 
 import ch.uzh.ifi.seal.smr.reconfigure.utils.std
 import java.io.File
+import java.io.FileWriter
+
+private val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\projects.csv")
+private val output = FileWriter(outputFile)
 
 fun main() {
-    val cov = getTimeSaved(File("D:\\cov.csv"))
-    val ci = getTimeSaved(File("D:\\ci.csv"))
-    val divergence = getTimeSaved(File("D:\\divergence.csv"))
+    val cov = getTimeSaved(File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\cov.csv"))
+    val ci = getTimeSaved(File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\ci.csv"))
+    val divergence = getTimeSaved(File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\time\\divergence.csv"))
 
-    println("project;covMean;covStd;ciMean;ciStd;divergenceMean;divergenceStd")
+    output.appendln("project;covMean;covStd;ciMean;ciStd;divergenceMean;divergenceStd")
     cov.keys.forEach { project ->
-        print(project)
-        print(";${cov.getValue(project).average()}")
-        print(";${cov.getValue(project).std()}")
-        print(";${ci.getValue(project).average()}")
-        print(";${ci.getValue(project).std()}")
-        print(";${divergence.getValue(project).average()}")
-        print(";${divergence.getValue(project).std()}")
-        println("")
+        output.append(project)
+        output.append(";${cov.getValue(project).average()}")
+        output.append(";${cov.getValue(project).std()}")
+        output.append(";${ci.getValue(project).average()}")
+        output.append(";${ci.getValue(project).std()}")
+        output.append(";${divergence.getValue(project).average()}")
+        output.append(";${divergence.getValue(project).std()}")
+        output.appendln("")
     }
 
-    print("total")
-    print(";${cov.values.flatten().average()}")
-    print(";${cov.values.flatten().std()}")
-    print(";${ci.values.flatten().average()}")
-    print(";${ci.values.flatten().std()}")
-    print(";${divergence.values.flatten().average()}")
-    print(";${divergence.values.flatten().std()}")
-    println("")
+    output.append("total")
+    output.append(";${cov.values.flatten().average()}")
+    output.append(";${cov.values.flatten().std()}")
+    output.append(";${ci.values.flatten().average()}")
+    output.append(";${ci.values.flatten().std()}")
+    output.append(";${divergence.values.flatten().average()}")
+    output.append(";${divergence.values.flatten().std()}")
+    output.appendln("")
+    output.flush()
 }
 
 private fun getTimeSaved(file: File): Map<String, List<Double>> {

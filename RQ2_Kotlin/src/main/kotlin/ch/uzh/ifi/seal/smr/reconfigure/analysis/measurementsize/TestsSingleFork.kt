@@ -16,10 +16,8 @@ import java.nio.file.Paths
 import kotlin.math.abs
 
 fun main() {
-//    val csvInput = File("D:\\rq2\\results\\csv-log4j2")
-//    val outputDir = "D:\\tmp"
-        val csvInput = File("/home/user/stefan-masterthesis/statistics/csv-log4j2")
-        val outputDir = "/home/user/stefan-masterthesis/stop/tmp"
+    val csvInput = File("/home/user/stefan-masterthesis/statistics/csv")
+    val outputDir = "/home/user/stefan-masterthesis/statistics/tmp"
 
     val inputDivergence = Paths.get(outputDir, "outputDivergenceTotal.csv").toFile()
     val output = FileWriter(Paths.get(outputDir, "tests.csv").toFile())

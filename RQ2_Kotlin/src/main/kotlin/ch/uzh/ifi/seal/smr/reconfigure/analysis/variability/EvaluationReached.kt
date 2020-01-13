@@ -28,9 +28,9 @@ fun main() {
     changeRate.forEach { (key, value) ->
         val notReachedAfter5Forks = reachedForks.getValue(key) == Int.MAX_VALUE
 
-        if(notReachedAfter5Forks){
+        if (notReachedAfter5Forks) {
             notReached.add(value)
-        }else{
+        } else {
             reached.add(value)
         }
     }

@@ -1,8 +1,7 @@
 import pandas as pd
-import numpy as np
 from scipy import stats
 
-data = pd.read_csv('D:\\invocationtimecorrelation.csv', delimiter=";")
+data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\invocationtimecorrelation.csv', delimiter=";")
 
 corr = stats.spearmanr(data['changeRateCov'], data['meanCov'])
 print("COV")

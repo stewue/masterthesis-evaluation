@@ -1,12 +1,16 @@
 package ch.uzh.ifi.seal.smr.reconfigure.analysis.variability
 
 import java.io.File
+import java.io.FileWriter
 import kotlin.math.abs
+
+private val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\variability.csv")
+private val output = FileWriter(outputFile)
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\")
 
-    println("project;benchmarks;meanChangeRateCov;meanChangeRateCi;meanChangeRateDivergence;CiWidthSmallDefault;combinationSignificantCov;combinationSignificantCi;combinationSignificantDivergence;ciRatioSignificantCov;ciRatioSignificantCi;ciRatioSignificantDivergence;ciRatioShiftCov;ciRatioShiftCi;ciRatioShiftDivergence")
+    output.appendln("project;benchmarks;meanChangeRateCov;meanChangeRateCi;meanChangeRateDivergence;CiWidthSmallDefault;combinationSignificantCov;combinationSignificantCi;combinationSignificantDivergence;ciRatioSignificantCov;ciRatioSignificantCi;ciRatioSignificantDivergence;ciRatioShiftCov;ciRatioShiftCi;ciRatioShiftDivergence")
 
     file.walk().forEach {
         if (it.isFile && it.name == "variability.csv" && it.parent != file.absolutePath) {
@@ -15,6 +19,7 @@ fun main() {
         }
     }
 
+    output.flush()
 }
 
 private fun eval(name: String, file: File) {
@@ -102,12 +107,12 @@ private fun eval(name: String, file: File) {
         counter++
     }
 
-    print("$name;$counter")
-    print(";${meanChangeRateCov.average()};${meanChangeRateCi.average()};${meanChangeRateDivergence.average()}")
-    print(";${ciWidthSmallerDefault / counter}")
-    print(";${combinationCov / counter};${combinationCi / counter};${combinationDivergence / counter}")
-    print(";${ciRatioCov / counter};${ciRatioCi / counter};${ciRatioDivergence / counter}")
-    println(";${ciRatioListCov.average()};${ciRatioListCi.average()};${ciRatioListDivergence.average()}")
+    output.append("$name;$counter")
+    output.append(";${meanChangeRateCov.average()};${meanChangeRateCi.average()};${meanChangeRateDivergence.average()}")
+    output.append(";${ciWidthSmallerDefault / counter}")
+    output.append(";${combinationCov / counter};${combinationCi / counter};${combinationDivergence / counter}")
+    output.append(";${ciRatioCov / counter};${ciRatioCi / counter};${ciRatioDivergence / counter}")
+    output.appendln(";${ciRatioListCov.average()};${ciRatioListCi.average()};${ciRatioListDivergence.average()}")
 }
 
 

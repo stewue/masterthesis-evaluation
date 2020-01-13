@@ -8,13 +8,8 @@ import ch.uzh.ifi.seal.smr.reconfigure.process.H_compare_criteria.Evaluation
 import java.io.File
 
 fun main() {
-//    val csvInput = File("D:\\rq2\\results\\csv")
-//    val outputDir = "D:\\tmp"
-        val csvInput = File("/home/user/stefan-masterthesis/statistics/csv-jenetics")
+    val csvInput = File("/home/user/stefan-masterthesis/statistics/csv")
     val outputDir = "/home/user/stefan-masterthesis/statistics/tmp"
-//
-//    val csvInput = File("/mnt/evo860/home/stefanwuersten/thesis/statistics/csv")
-//    val outputDir = "/mnt/evo860/home/stefanwuersten/thesis/statistics/tmp"
 
     val d = D_All(csvInput, outputDir)
     d.run()

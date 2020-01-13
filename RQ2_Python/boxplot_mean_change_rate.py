@@ -28,7 +28,7 @@ plt.ylabel("change rate")
 plt.xticks(labelIndex, labels, rotation='vertical')
 plt.tight_layout()
 # plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\images\\boxplotmeanchangerate.pdf')
 
 print("all median: " + str(np.median(all)))
 filtered = all[all < 0.02]

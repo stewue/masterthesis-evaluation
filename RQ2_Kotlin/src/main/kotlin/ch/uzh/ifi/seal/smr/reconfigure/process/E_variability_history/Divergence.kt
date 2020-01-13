@@ -4,7 +4,6 @@ import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItem
 import ch.uzh.ifi.seal.smr.reconfigure.utils.CsvResultItemParser
 import java.io.FileWriter
 import java.nio.file.Paths
-import java.util.*
 
 class Divergence(outputDir: String) {
     private val input = Paths.get(outputDir, "outputDivergenceSingle.csv").toFile()

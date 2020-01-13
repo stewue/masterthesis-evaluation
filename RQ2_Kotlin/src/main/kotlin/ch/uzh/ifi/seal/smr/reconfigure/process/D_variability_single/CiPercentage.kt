@@ -27,7 +27,7 @@ class CiPercentage(outputDir: String) {
         histogram.forEach { (_, map) ->
             val evaluation = CiPercentageEvaluation.getIterationInstance(Defaults.RECONFIGURE_CI_THRESHOLD)
             map.forEach { (iteration, list) ->
-                if(iteration <= 50) {
+                if (iteration <= 50) {
                     evaluation.addIteration(list)
                     evaluation.calculateVariability()
                     val currentCiPercentage = evaluation.getCiPercentageOfIteration(iteration)

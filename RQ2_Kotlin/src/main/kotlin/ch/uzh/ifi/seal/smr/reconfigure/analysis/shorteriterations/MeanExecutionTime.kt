@@ -12,10 +12,10 @@ import java.io.FileWriter
 import java.nio.file.Paths
 
 fun main() {
-    val csvInput10 = File("D:\\rq2\\pre\\10_iterations_10_seconds\\")
-    val csvInput100 = "D:\\rq2\\pre\\100_iterations_1_second"
+    val csvInput10 = File("D:\\extra\\shorteriterations\\10_iterations_10_seconds\\")
+    val csvInput100 = "D:\\extra\\shorteriterations\\100_iterations_1_second"
 
-    val output = FileWriter(File("D:\\rq2\\pre\\mean.csv"))
+    val output = FileWriter(File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\shorteriterations\\mean.csv"))
 
     output.appendln("project;commit;benchmark;params;percentage;mean")
     csvInput10.walk().forEach { file10 ->

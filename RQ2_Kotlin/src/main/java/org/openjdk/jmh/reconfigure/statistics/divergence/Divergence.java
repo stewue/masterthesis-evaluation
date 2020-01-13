@@ -1,7 +1,7 @@
 package org.openjdk.jmh.reconfigure.statistics.divergence;
 
-import org.apache.commons.math3.util.Pair;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+import org.apache.commons.math3.util.Pair;
 import org.openjdk.jmh.reconfigure.helper.ListToArray;
 import org.openjdk.jmh.reconfigure.statistics.Statistic;
 
