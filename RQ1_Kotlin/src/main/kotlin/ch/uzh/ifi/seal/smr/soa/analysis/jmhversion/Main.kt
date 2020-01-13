@@ -13,7 +13,7 @@ private val output = mutableListOf<ResJmhVersion>()
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\jmhversion.csv").toPath()
 
     val items = CsvProjectParser(file).getList()
 

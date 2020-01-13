@@ -32,11 +32,9 @@ abstract class Evaluation(private val inputFile: File, private val inputDir: Str
     }
 
     protected open fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File) {
-        HistoryManager.getRepo(sourceDir).use { repository ->
-            Git(repository).use { git ->
-                HistoryManager.resetToBranch(git)
-            }
-        }
+        val repository = HistoryManager.getRepo(sourceDir)
+        val git = Git(repository)
+        HistoryManager.resetToBranch(git)
     }
 
     protected fun evaluate(project: String, commitId: String?, commitTime: Int?, sourceDir: File, resultFile: Path, outputFile: File) {

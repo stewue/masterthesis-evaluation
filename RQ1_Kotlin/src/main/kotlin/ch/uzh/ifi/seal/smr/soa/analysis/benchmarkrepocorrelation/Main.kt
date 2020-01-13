@@ -8,8 +8,8 @@ private val projects = CsvProjectParser(projectFile).getList()
 private val output = mutableListOf<ResBenchmarkRepoCorrelation>()
 
 fun main() {
-    val file = File("D:\\mp\\current-merged-isMain.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain.csv")
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\benchmarkrepocorrelation.csv").toPath()
     val benchmarks = CsvResultParser(file).getList()
 
     benchmarks.forEach { b ->

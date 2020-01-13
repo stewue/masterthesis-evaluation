@@ -8,7 +8,7 @@ fun main() {
     val versionFile = File("D:\\versions.csv")
     val benchmarkFile = File("D:\\benchmarks.csv")
     val javaFile = File("D:\\java.csv")
-    val csv = File("D:\\RQ1_preprocessed_repo_list_additional_information.csv")
+    val csv = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
     val list = CsvProjectParser(csv).getList()
 
     val versions = mutableMapOf<String, String?>()

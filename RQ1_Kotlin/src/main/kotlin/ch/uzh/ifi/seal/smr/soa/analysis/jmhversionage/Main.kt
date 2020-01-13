@@ -12,9 +12,9 @@ import kotlin.math.round
 private val output = mutableListOf<ResJmhVersionAge>()
 
 fun main() {
-    val fileBenchmarks = File("D:\\mp\\current-merged-isMain.csv")
+    val fileBenchmarks = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain.csv")
     val fileProjects = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\jmhversionage.csv").toPath()
 
     val items = CsvResultParser(fileBenchmarks).getList()
     val projects = CsvProjectParser(fileProjects).getList()
@@ -30,7 +30,7 @@ fun main() {
 
                 val project = projects.find { it.project == item.project }!!
 
-                if(project.numberOfBenchmarks!! > 0) {
+                if (project.numberOfBenchmarks!! > 0) {
                     val useJmhSince = round((project.lastCommit!! - project.firstBenchmarkFound!!) / yearInSeconds * 100) / 100.0
                     output.add(ResJmhVersionAge(item.project, count, timeDiff, useJmhSince))
                 }

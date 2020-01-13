@@ -139,7 +139,7 @@ private fun getCell(count: Int, allCount: Int, bold: Boolean = false): String {
 
     if (bold) {
         ret += "} & \\textbf{"
-    }else{
+    } else {
         ret += " & "
     }
 

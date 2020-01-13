@@ -17,7 +17,6 @@ fun main() {
     println("")
 }
 
-
 private fun matrix(all: Collection<ResExecutionTime>) {
     val elwl = all.filter { it.executionTimePercentage < 1 && it.warmupTimePercentage < 1 }.size
     val eswl = all.filter { it.executionTimePercentage == 1.0 && it.warmupTimePercentage < 1 }.size

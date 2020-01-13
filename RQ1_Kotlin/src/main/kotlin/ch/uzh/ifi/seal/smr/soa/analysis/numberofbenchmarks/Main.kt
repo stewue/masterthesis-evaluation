@@ -10,15 +10,14 @@ private val output = mutableListOf<ResNumberOfBenchmarks>()
 
 fun main() {
     val fileProjects = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\numberofbenchmarks.csv").toPath()
     val projects = CsvProjectParser(fileProjects).getList()
 
-    projects.filter{ it.mainRepo == true }
+    projects.filter { it.mainRepo == true }
             .forEach {
-                val useJmhSince =  if(it.firstBenchmarkFound == null){
-                0.0
-                }
-                else{
+                val useJmhSince = if (it.firstBenchmarkFound == null) {
+                    0.0
+                } else {
                     (it.lastCommit!! - it.firstBenchmarkFound!!) / yearInSeconds
                 }
                 output.add(ResNumberOfBenchmarks(it.project, it.numberOfBenchmarks!!, useJmhSince))

@@ -11,7 +11,7 @@ private val output = mutableListOf<ResJavaVersion>()
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\javaversion.csv").toPath()
 
     val items = CsvProjectParser(file).getList()
 
@@ -20,9 +20,9 @@ fun main() {
                 it.mainRepo == true && it.numberOfBenchmarks!! > 0 && (!it.javaTarget.isNullOrBlank() || !it.javaSource.isNullOrBlank())
             }
             .map {
-                val version = if(it.javaTarget.isNullOrBlank()){
-                     it.javaSource!!
-                }else{
+                val version = if (it.javaTarget.isNullOrBlank()) {
+                    it.javaSource!!
+                } else {
                     it.javaTarget
                 }
                 val useJmhSince = if (it.lastCommit == null || it.firstBenchmarkFound == null) {

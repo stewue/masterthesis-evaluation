@@ -13,27 +13,25 @@ class EvaluationSampleCommits(inputFile: File, inputDir: String, outputDir: File
         try {
             super.processProject(project, sourceDir, outputDir, outputFile)
 
-            HistoryManager.getRepo(sourceDir).use { repository ->
-                Git(repository).use { git ->
-                    val commits = HistoryManager.sampleCommits(repository, git)
-                    commits.forEach { commit ->
-                        try {
-                            val commitId = commit.second.name
-                            val commitTime = commit.first
-                            log.info("[$project] Checkout commit $commitId")
-                            HistoryManager.resetToHead(git, commitId)
-                            val resultFile = Paths.get(outputDir.absolutePath, "${project.toFileSystemName}-$commitTime.csv")
-                            evaluate(project, commitId, commitTime, sourceDir, resultFile, outputFile)
-                        } catch (e: Exception) {
-                            e.printStackTrace()
-                            log.error("${e.cause}: ${e.message}")
-                            exitProcess(-1)
-                        }
-                    }
-                    if (commits.isEmpty()) {
-                        log.error("[$project] No commit was selected")
-                    }
+            val repository = HistoryManager.getRepo(sourceDir)
+            val git = Git(repository)
+            val commits = HistoryManager.sampleCommits(repository, git)
+            commits.forEach { commit ->
+                try {
+                    val commitId = commit.second.name
+                    val commitTime = commit.first
+                    log.info("[$project] Checkout commit $commitId")
+                    HistoryManager.resetToHead(git, commitId)
+                    val resultFile = Paths.get(outputDir.absolutePath, "${project.toFileSystemName}-$commitTime.csv")
+                    evaluate(project, commitId, commitTime, sourceDir, resultFile, outputFile)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    log.error("${e.cause}: ${e.message}")
+                    exitProcess(-1)
                 }
+            }
+            if (commits.isEmpty()) {
+                log.error("[$project] No commit was selected")
             }
         } catch (e: Exception) {
             e.printStackTrace()

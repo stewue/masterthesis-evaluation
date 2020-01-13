@@ -9,8 +9,8 @@ private val output = mutableListOf<ResComment>()
 
 fun main() {
     val comments = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\comments\\current-commit-comments.csv")
-    val history = File("D:\\mp\\history-all.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val history = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\history\\merged.csv")
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\comments.csv").toPath()
 
     val allBenchmarks = CsvResultParser(history).getList()
 

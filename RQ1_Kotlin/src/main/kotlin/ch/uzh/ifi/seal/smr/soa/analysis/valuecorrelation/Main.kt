@@ -6,14 +6,14 @@ import ch.uzh.ifi.seal.smr.soa.utils.*
 import java.io.File
 
 fun main() {
-    val inputFile = File("D:\\mp\\current-merged-isMain.csv")
-    val resultFile = File("D:\\mp\\corr.csv")
+    val inputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain.csv")
+    val resultFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\valuecorrelation.csv").toPath()
+
     val all = CsvResultParser(inputFile).getList()
 
-    //val mapped = alsoDefaultValues(all)
     val mapped = onlySetValues(all)
 
-    OpenCSVWriter.write(resultFile.toPath(), mapped, CustomMappingStrategy(ResValueCorrelation::class.java))
+    OpenCSVWriter.write(resultFile, mapped, CustomMappingStrategy(ResValueCorrelation::class.java))
 }
 
 private fun onlySetValues(all: Set<Result>): List<ResValueCorrelation> {

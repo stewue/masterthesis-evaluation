@@ -8,8 +8,8 @@ import ch.uzh.ifi.seal.smr.soa.utils.toSecond
 import java.io.File
 
 fun main() {
-    val fileHistory = File("D:\\mp\\history-all.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val fileHistory = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\history\\merged.csv")
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\jmh121update.csv").toPath()
 
     val items = CsvResultParser(fileHistory).getList()
     val output = mutableListOf<ResJmh121Update>()

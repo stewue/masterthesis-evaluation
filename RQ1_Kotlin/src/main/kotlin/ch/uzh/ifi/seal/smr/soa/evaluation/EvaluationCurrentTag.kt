@@ -11,17 +11,15 @@ class EvaluationCurrentTag(inputFile: File, inputDir: String, outputDir: File, o
     override fun processProject(project: String, sourceDir: File, outputDir: File, outputFile: File) {
         super.processProject(project, sourceDir, outputDir, outputFile)
 
-        getRepo(sourceDir).use { repository ->
-            Git(repository).use { git ->
-                val tag = getLastTag(git)
-                if (tag != null) {
-                    git.checkout().setName(tag.second)
-                    log.info("[$project] Checkout version ${tag.second}")
-                    evaluate(project, tag.second, tag.third, sourceDir, Paths.get(outputDir.absolutePath, "${project.toFileSystemName}.csv"), outputFile)
-                } else {
-                    log.warn("[$project] Does not have a tag")
-                }
-            }
+        val repository = getRepo(sourceDir)
+        val git = Git(repository)
+        val tag = getLastTag(git)
+        if (tag != null) {
+            git.checkout().setName(tag.second)
+            log.info("[$project] Checkout version ${tag.second}")
+            evaluate(project, tag.second, tag.third, sourceDir, Paths.get(outputDir.absolutePath, "${project.toFileSystemName}.csv"), outputFile)
+        } else {
+            log.warn("[$project] Does not have a tag")
         }
     }
 

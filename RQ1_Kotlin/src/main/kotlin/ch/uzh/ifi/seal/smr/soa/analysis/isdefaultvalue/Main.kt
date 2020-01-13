@@ -15,17 +15,17 @@ import kotlin.reflect.KProperty1
 private val output = mutableListOf<ResIsDefault>()
 
 fun main() {
-    val file = File("D:\\mp\\current-merged-isMain.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain.csv")
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\isdefaultvalue.csv").toPath()
 
     val all = CsvResultParser(file).getList().filter { it.jmhVersion != null }.toSet()
 
     output.add(ResIsDefault("${all.size} benchmarks has a jmh version"))
 
-    val pre120 = all.filter{ it.jmhVersion!!.compareTo(jmh120) < 0 }
+    val pre120 = all.filter { it.jmhVersion!!.compareTo(jmh120) < 0 }
     output.add(ResIsDefault("${pre120.size} benchmarks has jmh version 1.20 or ealier"))
 
-    val post120 = all.filter{ it.jmhVersion!!.compareTo(jmh120) == 1 }
+    val post120 = all.filter { it.jmhVersion!!.compareTo(jmh120) == 1 }
     output.add(ResIsDefault("${post120.size} benchmarks has jmh version 1.21"))
 
     analyze(all, "warmupIterations", Result::warmupIterations, ExecutionConfiguration::warmupIterations)

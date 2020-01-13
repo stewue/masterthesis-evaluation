@@ -2,14 +2,17 @@ package ch.uzh.ifi.seal.smr.soa.analysis.executiontime
 
 import ch.uzh.ifi.seal.bencher.JMHVersion
 import ch.uzh.ifi.seal.smr.soa.analysis.jmh120
-import ch.uzh.ifi.seal.smr.soa.utils.*
+import ch.uzh.ifi.seal.smr.soa.utils.CsvResultParser
+import ch.uzh.ifi.seal.smr.soa.utils.CustomMappingStrategy
+import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
+import ch.uzh.ifi.seal.smr.soa.utils.onlyModeChanged
 import java.io.File
 
 private val output = mutableListOf<ResExecutionTime>()
 
 fun main() {
-    val resultFile = File("D:\\mp\\current-merged-isMain.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val resultFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain.csv")
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\executiontime.csv").toPath()
 
     val all = CsvResultParser(resultFile).getList()
 

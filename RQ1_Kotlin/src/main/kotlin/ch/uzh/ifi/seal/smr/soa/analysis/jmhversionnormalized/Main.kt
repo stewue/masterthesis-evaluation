@@ -13,7 +13,7 @@ private val output = mutableListOf<ResJmhVersionNormalized>()
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\jmhversionnormalized.csv").toPath()
 
     val items = CsvProjectParser(file).getList()
 
@@ -29,15 +29,15 @@ fun main() {
 
     val versions = jmhDate.toList().filter { it.first.patch == 0 }.reversed()
 
-    versions.forEachIndexed{ i, current ->
-        var difference = if(i + 1 < versions.size){
+    versions.forEachIndexed { i, current ->
+        var difference = if (i + 1 < versions.size) {
             val nextVersion = versions[i + 1]
-            round((nextVersion.second - current.second) / yearInSeconds * 12 )
-        }else{
+            round((nextVersion.second - current.second) / yearInSeconds * 12)
+        } else {
             15.0
         }
 
-        if(difference < 1){
+        if (difference < 1) {
             difference = 1.0
         }
 

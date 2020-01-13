@@ -8,7 +8,7 @@ import java.io.File
 private val log = LogManager.getLogger()
 
 fun main() {
-    val csv = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\abc.csv")
+    val csv = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
     val list = CsvProjectParser(csv).getList()
 
     val numberOfStars = mutableMapOf<String, MutableList<Pair<String, Int>>>()

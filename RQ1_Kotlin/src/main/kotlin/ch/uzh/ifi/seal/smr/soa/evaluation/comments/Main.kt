@@ -15,6 +15,9 @@ fun main(args: Array<String>) {
     disableSystemErr()
 
     if (args.size != 3) {
+        // inputFile = see input.csv as example file
+        // inputDir = Folder where all projects are store
+        // outputFile = File where output is persisted
         log.error("Needed arguments: inputFile inputDir outputFile")
         exitProcess(-1)
     }
@@ -35,11 +38,9 @@ fun main(args: Array<String>) {
 }
 
 private fun processProject(project: String, sourceDir: File, outputFile: File) {
-    HistoryManager.getRepo(sourceDir).use { repository ->
-        Git(repository).use { git ->
-            HistoryManager.resetToBranch(git)
-        }
-    }
+    val repository = HistoryManager.getRepo(sourceDir)
+    val git = Git(repository)
+    HistoryManager.resetToBranch(git)
 
     val filePaths = sourceDir.walkTopDown().filter { f ->
         f.isFile && f.extension == "java"

@@ -1,4 +1,4 @@
-To run these code snippets, you must first do the following in the _Bencher_ project
+To run these source code parser, you must first do the following in the _Bencher_ project
 
 i. Add the code snippet `apply plugin: 'maven-publish'` after `apply plugin: 'application'` in the _build.gradle_ file
 

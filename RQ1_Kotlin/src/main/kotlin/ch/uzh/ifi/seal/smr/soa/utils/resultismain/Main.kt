@@ -7,9 +7,8 @@ import java.io.File
 
 fun main() {
     val projectFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val benchmarkFile = File("D:\\mp\\current-merged.csv")
-    val output = File("D:\\mp\\current-merged-isMain.csv").toPath()
-
+    val benchmarkFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged.csv")
+    val output = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain.csv").toPath()
     val projects = CsvProjectParser(projectFile).getList()
     val benchmarks = CsvResultParser(benchmarkFile).getList()
 

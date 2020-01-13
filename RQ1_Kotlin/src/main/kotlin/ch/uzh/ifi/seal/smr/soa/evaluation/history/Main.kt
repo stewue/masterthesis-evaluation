@@ -11,6 +11,8 @@ fun main(args: Array<String>) {
     disableSystemErr()
 
     if (args.size != 2) {
+        // inputFile = see input.csv as example file
+        // inputDir = Folder where all projects are store
         println("Needed arguments: inputFile inputDir")
         exitProcess(-1)
     }
@@ -27,15 +29,13 @@ fun main(args: Array<String>) {
 }
 
 private fun processProject(project: String, dir: File) {
-    HistoryManager.getRepo(dir).use { repository ->
-        Git(repository).use { git ->
-            HistoryManager.resetToBranch(git)
-            val commits = HistoryManager.sampleCommits(repository, git)
-            commits.forEach { commit ->
-                val commitId = commit.second.name
-                val commitTime = commit.first
-                println("$project;$commitTime;$commitId")
-            }
-        }
+    val repository = HistoryManager.getRepo(dir)
+    val git = Git(repository)
+    HistoryManager.resetToBranch(git)
+    val commits = HistoryManager.sampleCommits(repository, git)
+    commits.forEach { commit ->
+        val commitId = commit.second.name
+        val commitTime = commit.first
+        println("$project;$commitTime;$commitId")
     }
 }

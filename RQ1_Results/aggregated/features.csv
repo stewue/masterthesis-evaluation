@@ -10,7 +10,7 @@
 "Benchmark has return type","7154 of 13387 (53.44%)"
 "Benchmark has return type or a blackhole","9682 of 13387 (72.32%)"
 "Benchmark is part of a group","530 (3.96%)"
-"Benchmark has parametrization","2455 (18.34%)"
+"Benchmark has parameterization","2455 (18.34%)"
 "3789 stateObjects are used","973 uses one or more jmhParams and 2816 has no jmh param"
 "state object usage","3529 (26.36%) benchmarks use a state object"
 "7086 method arguments are used","154 cannot be resolved 2.17%"

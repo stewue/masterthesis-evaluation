@@ -11,6 +11,10 @@ fun main(args: Array<String>) {
     disableSystemErr()
 
     if (args.size != 4) {
+        // inputFile = see input.csv as example file
+        // inputDir = Folder where all projects are stored
+        // outputDir = Folder where created files are persisted
+        // outputFile = File for error messages
         log.error("Needed arguments: inputFile inputDir outputDir outputFile")
         exitProcess(-1)
     }
@@ -20,6 +24,11 @@ fun main(args: Array<String>) {
     val outputDir = File(args[2])
     val outputFile = File(args[3])
 
+    /////////////////////////////////
+    // Choose here type of evaluation
+    /////////////////////////////////
     val evaluation = EvaluationCurrentCommit(inputFile, inputDir, outputDir, outputFile)
+    //val evaluation = EvaluationCurrentTag(inputFile, inputDir, outputDir, outputFile)
+    //val evaluation = EvaluationSampleCommits(inputFile, inputDir, outputDir, outputFile)
     evaluation.start()
 }

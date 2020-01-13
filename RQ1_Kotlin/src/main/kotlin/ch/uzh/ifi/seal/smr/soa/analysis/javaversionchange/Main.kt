@@ -9,9 +9,9 @@ import java.io.File
 import kotlin.math.round
 
 fun main() {
-    val fileHistory = File("D:\\mp\\history-all.csv")
+    val fileHistory = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\history\\merged.csv")
     val fileProjects = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\javaversionchange.csv").toPath()
 
     val items = CsvResultParser(fileHistory).getList()
     val projects = CsvProjectParser(fileProjects).getList()

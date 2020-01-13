@@ -5,7 +5,7 @@ import ch.uzh.ifi.seal.smr.soa.utils.OpenCSVWriter
 import java.io.File
 
 fun main() {
-    val csv = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\abc.csv")
+    val csv = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
     val list = CsvProjectParser(csv).getList()
 
     val parent = mutableMapOf<String, String?>()

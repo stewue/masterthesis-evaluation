@@ -7,14 +7,9 @@ import java.nio.file.StandardOpenOption.WRITE
 
 fun main() {
     val inputDir = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\results")
-    val mergedFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\out.csv")
+    val mergedFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged.csv")
 
     oneOutputFile(inputDir, mergedFile)
-/*
-    val inputDir = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\project-history\\results-1")
-    val outputDir = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\project-history\\out")
-
-    mergePerProject(inputDir, outputDir)*/
 }
 
 private fun oneOutputFile(inputDir: File, outputFile: File) {
@@ -22,20 +17,6 @@ private fun oneOutputFile(inputDir: File, outputFile: File) {
 
     inputDir.walk().forEach {
         if (it.isFile) {
-            merge(it, outputFile)
-        }
-    }
-}
-
-private fun mergePerProject(inputDir: File, outputDir: File) {
-    inputDir.walk().forEach {
-        if (it.isFile) {
-            println(it.nameWithoutExtension)
-            val project = it.nameWithoutExtension.dropLast(11)
-            val outputFile = File(outputDir.absolutePath + "/$project.csv")
-            if (!outputFile.exists()) {
-                outputFile.createNewFile()
-            }
             merge(it, outputFile)
         }
     }

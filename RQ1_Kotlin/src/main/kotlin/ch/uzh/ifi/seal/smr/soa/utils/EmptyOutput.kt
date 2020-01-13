@@ -3,7 +3,7 @@ package ch.uzh.ifi.seal.smr.soa.utils
 import java.io.File
 
 fun main() {
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("D:\\out.csv").toPath()
     val output = mutableListOf<Result>()
     val res = Result()
     res.project = ""

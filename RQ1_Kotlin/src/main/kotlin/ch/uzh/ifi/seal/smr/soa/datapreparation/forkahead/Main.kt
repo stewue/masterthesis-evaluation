@@ -16,10 +16,10 @@ fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
     val projects = CsvProjectParser(file).getList()
 
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\forkahead.csv").toPath()
     val output = mutableListOf<ResForkAhead>()
 
-    val defaultBranch = projects.map{ it.project to it.defaultBranch }.toMap()
+    val defaultBranch = projects.map { it.project to it.defaultBranch }.toMap()
 
     val filtered = projects.filter { it.repoAvailable == true && it.mainRepo != true }
 
@@ -41,7 +41,7 @@ fun main() {
 
         if (con.responseCode == 404) {
             output.add(ResForkAhead(project, true))
-        }else{
+        } else {
             val jsonString = IOUtils.toString(con.inputStream, Charset.defaultCharset())
             val json = mapper.readTree(jsonString)
 

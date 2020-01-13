@@ -6,9 +6,9 @@ import java.nio.file.Paths
 
 fun main() {
     val projectFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Datasets\\preprocessed_repo_list_additional_information.csv")
-    val currentBenchmarkFile = File("D:\\mp\\current-merged.csv")
-    val historyPath = "D:\\mp\\history-per-project"
-    val forkAheadFile = File("D:\\mp\\forkAhead.csv")
+    val currentBenchmarkFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\history\\merged.csv")
+    val historyPath = "C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\project-history\\per-project"
+    val forkAheadFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\forkahead.csv")
 
     val projects = CsvProjectParser(projectFile).getList()
     val currentBenchmark = CsvResultParser(currentBenchmarkFile).getList()
@@ -22,15 +22,15 @@ fun main() {
         }
     }.toMap()
 
-    val forkNothingChanged = forkAhead.filter { it.nothingChanged == true }.map{ it.project }
+    val forkNothingChanged = forkAhead.filter { it.nothingChanged == true }.map { it.project }
 
     val output = mutableListOf<ResForkChanged>()
-    val outputFile = File("D:\\mp\\out.csv").toPath()
+    val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\forkchanged.csv").toPath()
 
     projects.filter { it.repoAvailable == true && it.mainRepo != true && it.numberOfBenchmarks!! > 0 && it.rootProject != "orbit/orbit" }.forEach { p ->
         val benchmarks = currentBenchmark.filter { it.project == p.project }
 
-        if(forkNothingChanged.contains(p.project)){
+        if (forkNothingChanged.contains(p.project)) {
             benchmarks.forEach { b ->
                 output.add(ResForkChanged(p.project, b.className, b.benchmarkName, true, true, true, false))
             }
