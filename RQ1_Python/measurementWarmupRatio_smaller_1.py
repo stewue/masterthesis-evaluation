@@ -19,6 +19,6 @@ plt.ylabel('cumulative probability')
 plt.xlabel('$\mathit{measurementWarmupRatio}$')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\measurementWarmupRatio_smaller_1.pdf')
 
 print(len(smallerArray))

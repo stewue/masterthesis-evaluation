@@ -16,7 +16,7 @@ plt.ylabel('cumulative probability')
 plt.yticks(np.arange(0,0.91,0.1))
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\execution_time_per_benchmark.pdf')
 
 print("max: " + str(np.max(totalTime)))
 print("median: " + str(np.median(totalTime)))

@@ -18,7 +18,7 @@ plt.ylabel('# projects')
 plt.xlabel('# benchmarks')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\number_of_benchmarks_per_project.pdf')
 
 print("average: " + str(np.average(filter2)))
 print("median: " + str(np.median(filter2)))

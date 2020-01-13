@@ -78,6 +78,7 @@ gradle publishToMavenLocal
 | current-commit/results | Run ch.uzh.ifi.seal.smr.soa.evaluation.MainKt (and choose evaluation type) |
 | current-commit/merged.csv | Run ch.uzh.ifi.seal.smr.soa.utils.filemerger.MainKt |
 | current-commit/merged-isMain.csv | Run ch.uzh.ifi.seal.smr.soa.utils.resultismain.MainKt |
+| current-commit/merged-isMain-header.csv | Take current-commit/merged-isMain.csv and manually add header generated with ch.uzh.ifi.seal.smr.soa.utils.EmptyOutputKt |
 | current-tag/results | Run ch.uzh.ifi.seal.smr.soa.evaluation.MainKt (and choose evaluation type) |
 | history/results | Run ch.uzh.ifi.seal.smr.soa.evaluation.MainKt (and choose evaluation type) |
 | history/history-selected-commits.csv | Run ch.uzh.ifi.seal.smr.soa.evaluation.history.MainKt |

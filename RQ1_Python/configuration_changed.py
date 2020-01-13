@@ -18,7 +18,7 @@ plt.xlabel('# configuration changes')
 plt.ylabel('probability')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\configuration_changed.pdf')
 
 somewhereChanged = values[values > 0]
 print("at least one configuration change: " + str(somewhereChanged.size) + " (" + str(somewhereChanged.size / values.size) + "%)")

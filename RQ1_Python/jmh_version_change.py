@@ -25,7 +25,7 @@ plt.ylabel('probability')
 plt.xlabel('# JMH version updates')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\jmh_version_change.pdf')
 
 print("long-lived avg: " + str(np.average(older)))
 print("long-lived deviation: " + str(np.std(older)))

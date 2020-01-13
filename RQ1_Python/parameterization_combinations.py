@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from matplotlib.ticker import PercentFormatter
 
-data = pd.read_csv('D:\\mp\\current-merged-isMain-header.csv')
+data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain-header.csv')
 
 def update(df):
     if df['jmhParamCount'] == 0:
@@ -26,4 +26,4 @@ plt.xlabel('# parameterization combinations')
 plt.ylabel('cumulative probability')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\parameterization_combinations.pdf')

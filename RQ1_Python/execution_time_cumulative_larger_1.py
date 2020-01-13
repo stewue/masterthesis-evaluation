@@ -18,7 +18,7 @@ plt.ylabel('cumulative probability')
 plt.xscale('log')
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\execution_time_cumulative_larger_1.pdf')
 
 l10 = all[all > 10]
 print(">10: " + str(l10.size / all.size))

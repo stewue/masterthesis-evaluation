@@ -19,7 +19,7 @@ plt.xlabel('# sample commits')
 plt.legend()
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\sample_commits.pdf')
 
 print("short -> avg: " + str(np.average(short).round(1)))
 print("short -> std: " + str(np.std(short).round(1)))

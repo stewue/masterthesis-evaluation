@@ -8,7 +8,6 @@ data['totalTime'] = data['executionTime'] * data['parameterizationCombinations']
 
 grouped = data.groupby('project')
 
-# # all
 array = []
 for project, benchmarks in grouped:
     array.append(benchmarks['totalTime'].sum()/60)
@@ -23,24 +22,7 @@ plt.ylabel('cumulative probability')
 plt.xticks(np.arange(0,13,1))
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
-
-# under 1 hour
-# array = []
-# for project, benchmarks in grouped:
-#     array.append(benchmarks['totalTime'].sum())
-#
-# all, base = np.histogram(array, bins=600, range=[0,60], weights=np.ones(len(array)) / len(array))
-# cumulative = np.cumsum(all)
-# plt.plot(base[:-1], cumulative)
-#
-# plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-# plt.xlabel('execution time [min]')
-# plt.ylabel('cumulative probability')
-# plt.xticks(np.arange(0,61,10))
-# plt.tight_layout()
-# #plt.show()
-# plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\execution_time_per_testsuite_all.pdf')
 
 print("min: " + str(np.min(array)))
 print("max: " + str(np.max(array)))

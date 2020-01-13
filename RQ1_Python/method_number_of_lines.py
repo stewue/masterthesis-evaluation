@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from matplotlib.ticker import PercentFormatter
 
-data = pd.read_csv('D:\\mp\\current-merged-isMain-header.csv')
+data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain-header.csv')
 
 values = data['numberOfLines']
 valuesAll, base = np.histogram(values, bins=15, range=[1,16], weights=np.ones(len(values)) / len(values))
@@ -19,7 +19,7 @@ plt.yticks(np.arange(0,1.1,0.1))
 plt.xticks(np.arange(1,16,1))
 plt.tight_layout()
 #plt.show()
-plt.savefig('export.pdf')
+plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\method_number_of_lines.pdf')
 
 q1 = values.quantile(0.25)
 q3 = values.quantile(0.75)
