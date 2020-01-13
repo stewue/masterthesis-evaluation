@@ -67,6 +67,9 @@ class Row {
     var lastCommit: Int? = null
 
     @CsvBindByPosition(position = 20)
+    var lastCommitHash: String? = null
+
+    @CsvBindByPosition(position = 21)
     var defaultBranch: String? = null
 
     constructor()

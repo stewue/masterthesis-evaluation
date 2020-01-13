@@ -11,7 +11,10 @@ fun main() {
 
     val map = mutableMapOf<String, Pair<Int, String>>()
     input.forEachLine {
-        val (project, time, commitId) = it.split(";")
+        if (it == "project,commitTime,commitId") {
+            return@forEachLine
+        }
+        val (project, time, commitId) = it.split(",")
         if (map[project] == null) {
             map[project] = Pair(time.toInt(), commitId)
         }
