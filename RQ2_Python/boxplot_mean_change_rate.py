@@ -17,13 +17,13 @@ for column in data.columns:
     labelIndex.append(len(labels))
     array.append(convert(data[column]))
 
-all = np.concatenate( array, axis=0 )
+all = np.concatenate(array, axis=0)
 labels.append('all')
 labelIndex.append(len(labels))
 array.append(all)
 
 plt.boxplot(array)
-plt.ylim(-0.001,0.1)
+plt.ylim(-0.001, 0.1)
 plt.ylabel("change rate")
 plt.xticks(labelIndex, labels, rotation='vertical')
 plt.tight_layout()
@@ -32,4 +32,4 @@ plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\R
 
 print("all median: " + str(np.median(all)))
 filtered = all[all < 0.02]
-print("change smaller 2%:  " + str(len(filtered)/len(all)))
+print("change smaller 2%:  " + str(len(filtered) / len(all)))

@@ -15,9 +15,6 @@ fun main(args: Array<String>) {
         exitProcess(-1)
     }
 
-//    project;benchmark;params;javaPath;jarFile;arguments
-//    log4j2;org.apache.logging.log4j.message.ParameterFormatterBenchmark.latency3ParamsV2;;C:/Programme/java/jdk-13/bin/java;D:/log4j2.jar;-bm ss -f 1 -i 100 -wi 0 -r 1
-//    log4j2;org.apache.logging.log4j.message.ParameterFormatterBenchmark.latency3ParamsV2;a=b&c=d;~/jdk-13/bin/java;~/thesis/log4j2.jar;-bm sample -f 1 -i 100 -wi 0 -r 1
     val inputFile = File(args[0])
     val outputDir = args[1]
 

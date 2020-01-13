@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 
-label = [5,10,15,20,25]
+label = [5, 10, 15, 20, 25]
 
 combination = [0.233, 0.179, 0.141, 0.116, 0.086]
 ciRatio = [0.172, 0.137, 0.120, 0.104, 0.094]
