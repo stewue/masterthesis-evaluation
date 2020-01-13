@@ -7,10 +7,10 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 long = data[data['useJmhSince'] >= 1]['commits']
 short = data[data['useJmhSince'] < 1]['commits']
 
-valuesLong, base = np.histogram(long, range=[0,65], bins=65)
-valuesShort, base = np.histogram(short, range=[0,65], bins=65)
+valuesLong, base = np.histogram(long, range=[0, 65], bins=65)
+valuesShort, base = np.histogram(short, range=[0, 65], bins=65)
 
-label = np.arange(0,65,1)
+label = np.arange(0, 65, 1)
 
 plt.bar(label, valuesShort, label="short-lived projects", color="green", bottom=valuesLong)
 plt.bar(label, valuesLong, label="long-lived projects", color="orange")

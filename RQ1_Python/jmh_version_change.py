@@ -7,7 +7,7 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 
 filteredOlder = data[data['useJmhSince'] > 1]
 older = filteredOlder['numberOfChanges']
-valuesOlder, baseOlder = np.histogram(older, bins=[0,1,2,3,4,5,10,27], weights=np.ones(len(older)) / len(data))
+valuesOlder, baseOlder = np.histogram(older, bins=[0, 1, 2, 3, 4, 5, 10, 27], weights=np.ones(len(older)) / len(data))
 
 filteredYounger = data[data['useJmhSince'] <= 1]
 younger = filteredYounger['numberOfChanges']
@@ -17,7 +17,7 @@ x = np.arange(7)
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 label = ('0', '1', '2', '3', '4', '5-9', '10-27')
-plt.bar(x, valuesYounger, label="short-lived projects",  color="green", bottom=valuesOlder)
+plt.bar(x, valuesYounger, label="short-lived projects", color="green", bottom=valuesOlder)
 plt.bar(x, valuesOlder, label="long-lived projects", color="orange")
 plt.legend()
 plt.xticks(x, label)

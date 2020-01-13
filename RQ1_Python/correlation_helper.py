@@ -30,5 +30,5 @@ def pointbiserialr(data, col1, col2):
 
     return ["\correlationColor{" + corr + "}" + extra]
 
-def dfOutput(df) :
+def dfOutput(df):
     return df.to_csv(index=False).replace(",", " & ").replace("\r", " \\\\ \r")

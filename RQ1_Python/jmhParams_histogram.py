@@ -7,7 +7,7 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 
 filtered = data[data['jmhParamCount'] > 0]
 values = filtered['jmhParamCount']
-valuesAll, base = np.histogram(values, bins=[1,2,3,4,5,6,7,10], weights=np.ones(len(values)) / len(values))
+valuesAll, base = np.histogram(values, bins=[1, 2, 3, 4, 5, 6, 7, 10], weights=np.ones(len(values)) / len(values))
 cumulativeAll = np.cumsum(valuesAll)
 x = ["1", "2", "3", "4", "5", "6", "7-10"]
 

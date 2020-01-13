@@ -12,14 +12,14 @@ array = []
 for project, benchmarks in grouped:
     array.append(benchmarks['totalTime'].sum())
 
-all, base = np.histogram(array, bins=600, range=[0,60], weights=np.ones(len(array)) / len(array))
+all, base = np.histogram(array, bins=600, range=[0, 60], weights=np.ones(len(array)) / len(array))
 cumulative = np.cumsum(all)
 plt.plot(base[:-1], cumulative)
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
 plt.xlabel('execution time [min]')
 plt.ylabel('cumulative probability')
-plt.xticks(np.arange(0,61,10))
+plt.xticks(np.arange(0, 61, 10))
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\execution_time_per_testsuite_1_hour.pdf')

@@ -3,12 +3,12 @@ from correlation_helper import spearman, dfOutput
 
 def spearman_correlation_repo_meta(name, col, data):
     return pd.DataFrame({
-            "name":name,
-            "stars":spearman(data, col, 'stars'),
-            "projectForks":spearman(data, col, 'forks'),
-            "watchers":spearman(data, col, 'watchers'),
-            "numberOfCommits":spearman(data, col, 'numberOfCommits'),
-            "numberOfContributors":spearman(data, col, 'numberOfContributors')
+        "name": name,
+        "stars": spearman(data, col, 'stars'),
+        "projectForks": spearman(data, col, 'forks'),
+        "watchers": spearman(data, col, 'watchers'),
+        "numberOfCommits": spearman(data, col, 'numberOfCommits'),
+        "numberOfContributors": spearman(data, col, 'numberOfContributors')
     })
 
 pd.set_option('display.max_rows', 500)

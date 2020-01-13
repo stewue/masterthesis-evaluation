@@ -8,7 +8,7 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 filtered = data[np.logical_not(np.isnan(data['warmupForks']))]
 values = filtered['warmupForks']
 
-valuesAll, base = np.histogram(values, bins=[0,1,2,3], weights=np.ones(len(values)) / len(values))
+valuesAll, base = np.histogram(values, bins=[0, 1, 2, 3], weights=np.ones(len(values)) / len(values))
 x = np.arange(3)
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(1))

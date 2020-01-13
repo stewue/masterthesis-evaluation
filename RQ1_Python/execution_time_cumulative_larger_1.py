@@ -8,7 +8,7 @@ data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterar
 filtered = data[data['executionTimePercentage'] > 1]
 all = filtered['executionTimePercentage']
 
-valuesAll, base = np.histogram(all, bins=100000, range=[1,11000], weights=np.ones(len(all)) / len(all))
+valuesAll, base = np.histogram(all, bins=100000, range=[1, 11000], weights=np.ones(len(all)) / len(all))
 cumulativeAll = np.cumsum(valuesAll)
 plt.plot(base[:-1], cumulativeAll, label="all")
 
