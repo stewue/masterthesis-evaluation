@@ -7,8 +7,8 @@ private val projectFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_
 private val projects = CsvProjectParser(projectFile).getList()
 private val outputCode = mutableListOf<ResHashChanged>()
 private val outputConfig = mutableListOf<ResHashChanged>()
-private val outputFileCode = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\configurationchanged.csv").toPath()
-private val outputFileConfig = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\codechanged.csv").toPath()
+private val outputFileCode = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\codechanged.csv").toPath()
+private val outputFileConfig = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\configurationchanged.csv").toPath()
 
 fun main() {
     val file = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\project-history\\per-project")
