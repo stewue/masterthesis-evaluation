@@ -55,6 +55,7 @@ private fun analyzeMode(all: Set<Result>) {
 
     output.add(ResAnnotationPresent(
             name = "mode",
+            annotationPresent = notDefault.size,
             annotationPresentPercentage = percentage(notDefault.size, all.size),
             bothAnnotationsUsedSameValue = bothAnnotationsUsedSameValue.size,
             bothAnnotationsUsedDifferentValue = bothAnnotationsUsedDifferentValue.size
@@ -79,6 +80,7 @@ private fun analyzeSingleMode(all: Set<Result>, title: String, p: KMutableProper
 private fun addValue(title: String, all: Set<Result>, selected: List<Result>, listOnlyClass: List<Result>, listOnlyMethod: List<Result>, listBothSame: List<Result>, listBothDifferent: List<Result>, note: String? = null) {
     output.add(ResAnnotationPresent(
             name = title,
+            annotationPresent = selected.size,
             annotationPresentPercentage = percentage(selected.size, all.size),
             onlyClassAnnotationUsed = listOnlyClass.size,
             onlyClassAnnotationUsedPercentage = percentage(listOnlyClass.size, selected.size),
