@@ -34,3 +34,11 @@ ax1.set_xlabel('$\mathit{warmupProportion}$')
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\warmupProportion_smaller_1.pdf')
+
+s1 = array[np.logical_and(array > 0.66, array < 0.67)]
+print("=90%: " + str(s1.size / array.size))
+print("=90%: " + str(s1.size))
+
+s2 = array[np.logical_and(array > 0.90, array < 0.91)]
+print("=90%%: " + str(s2.size / array.size))
+print("=90%: " + str(s2.size))

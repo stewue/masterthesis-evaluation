@@ -34,3 +34,7 @@ ax1.set_xlabel('$\mathit{warmupProportion}$')
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\warmupProportion_larger_1.pdf')
+
+s1 = array[array <= 0.2]
+print("<20%: " + str(s1.size / array.size))
+print("<20%: " + str(s1.size))
