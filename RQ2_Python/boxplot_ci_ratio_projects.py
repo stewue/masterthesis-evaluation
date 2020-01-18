@@ -35,17 +35,13 @@ for column in dataMax.columns:
     max.append(np.mean(converted))
     allMax.append(converted)
 
-print(mean)
-print(min)
-print()
-
 labels.append('all')
 mean.append(np.mean(np.concatenate(allMean, axis=0)))
 min.append(np.mean(np.concatenate(allMin, axis=0)))
 max.append(np.mean(np.concatenate(allMax, axis=0)))
 
 plt.errorbar(labels, mean, yerr=[np.subtract(mean, min),np.subtract(max, mean)], fmt='o', capsize=10)
-plt.ylabel("change rate")
+plt.ylabel("CI ratio")
 plt.xticks(rotation='vertical')
 plt.tight_layout()
 # plt.show()

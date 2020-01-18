@@ -29,7 +29,7 @@ values = [
 ]
 
 plt.boxplot(values)
-plt.ylabel("ci ratio")
+plt.ylabel("CI ratio")
 plt.xticks([1,2,3], ['min', 'mean', 'max'])
 plt.ylim(-0.005, 0.125)
 plt.tight_layout()
