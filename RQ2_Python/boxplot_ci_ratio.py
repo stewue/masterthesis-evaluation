@@ -35,3 +35,7 @@ plt.ylim(-0.005, 0.125)
 plt.tight_layout()
 # plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\images\\boxplot_ciratio_' + type + '.pdf')
+
+print("min: " + str(np.mean(np.concatenate(min, axis=0))))
+print("mean: " + str(np.mean(np.concatenate(mean, axis=0))))
+print("max: " + str(np.mean(np.concatenate(max, axis=0))))
