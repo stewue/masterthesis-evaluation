@@ -23,7 +23,7 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
         val inputDivergence = Paths.get(outputDir, "outputDivergenceTotal.csv").toFile()
         val output = FileWriter(Paths.get(outputDir, "variability.csv").toFile())
 
-        output.append("project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioLowerCov;ratioUpperCov;ratioLowerCi;ratioUpperCi;ratioLowerKld;ratioUpperKld\n")
+        output.append("project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioMeanCov;ratioLowerCov;ratioUpperCov;ratioMeanCi;ratioLowerCi;ratioUpperCi;ratioMeanKld;ratioLowerKld;ratioUpperKld\n")
 
         val reachedForkCov = mutableMapOf<String, Int>()
         val reachedIterationCov = mutableMapOf<String, MutableMap<Int, Int>>()
@@ -101,7 +101,7 @@ class Evaluation(private val csvInput: File, private val outputDir: String) {
                     ciRatioCi.run()
                     ciRatioKld.run()
 
-                    output.append(";${ciRatioCov.lower};${ciRatioCov.upper};${ciRatioCi.lower};${ciRatioCi.upper};${ciRatioKld.lower};${ciRatioKld.upper}")
+                    output.append(";${ciRatioCov.statisticMetric};${ciRatioCov.lower};${ciRatioCov.upper};${ciRatioCi.statisticMetric};${ciRatioCi.lower};${ciRatioCi.upper};${ciRatioKld.statisticMetric};${ciRatioKld.lower};${ciRatioKld.upper}")
                     output.append("\n")
                     output.flush()
                 } catch (e: Exception) {
