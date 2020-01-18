@@ -4,7 +4,7 @@ import java.io.File
 import java.io.FileWriter
 import kotlin.math.abs
 
-private val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\boxplotmeanchangerate.csv")
+private val outputFile = File("C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\variability\\boxplot_meanchangerate_divergence.csv")
 private val output = FileWriter(outputFile)
 
 fun main() {
@@ -50,15 +50,20 @@ fun main() {
 private fun eval(file: File): List<Double> {
     val ret = mutableListOf<Double>()
     file.forEachLine {
-        if (it == "project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioLowerCov;ratioUpperCov;ratioLowerCi;ratioUpperCi;ratioLowerKld;ratioUpperKld") {
+        if (it == "project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioMeanCov;ratioLowerCov;ratioUpperCov;ratioMeanCi;ratioLowerCi;ratioUpperCi;ratioMeanKld;ratioLowerKld;ratioUpperKld") {
             return@forEachLine
         }
 
         val parts = it.split(";")
         val meanDefault = parts[4].toDouble()
-        val meanKld = parts[7].toDouble()
+        // cov
+//        val meanCustom = parts[5].toDouble()
+        // ci
+//        val meanCustom = parts[6].toDouble()
+        // divergence
+        val meanCustom = parts[7].toDouble()
 
-        ret.add(meanChangeRate(meanDefault, meanKld))
+        ret.add(meanChangeRate(meanDefault, meanCustom))
     }
 
     return ret
