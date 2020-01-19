@@ -44,7 +44,7 @@ private fun eval(name: String, file: File) {
     val ciRatioListDivergence = mutableListOf<Double>()
 
     file.forEachLine {
-        if (it == "project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioLowerCov;ratioUpperCov;ratioLowerCi;ratioUpperCi;ratioLowerKld;ratioUpperKld") {
+        if (it == "project;commit;benchmark;params;meanDefault;meanCov;meanCi;meanKld;ciPercentageDefault;ciPercentageCov;ciPercentageCi;ciPercentageKld;effectSizeCov;effectSizeCi;effectSizeKld;wilcoxonCov;wilcoxonCi;wilcoxonKld;ratioMeanCov;ratioLowerCov;ratioUpperCov;ratioMeanCi;ratioLowerCi;ratioUpperCi;ratioMeanKld;ratioLowerKld;ratioUpperKld") {
             return@forEachLine
         }
 
@@ -63,12 +63,15 @@ private fun eval(name: String, file: File) {
         val wilcoxonCov = parts[15].toDouble()
         val wilcoxonCi = parts[16].toDouble()
         val wilcoxonKld = parts[17].toDouble()
-        val ratioLowerCov = parts[18].toDouble()
-        val ratioUpperCov = parts[19].toDouble()
-        val ratioLowerCi = parts[20].toDouble()
-        val ratioUpperCi = parts[21].toDouble()
-        val ratioLowerKld = parts[22].toDouble()
-        val ratioUpperKld = parts[23].toDouble()
+        val ratioMeanCov = parts[18].toDouble()
+        val ratioLowerCov = parts[19].toDouble()
+        val ratioUpperCov = parts[20].toDouble()
+        val ratioMeanCi = parts[21].toDouble()
+        val ratioLowerCi = parts[22].toDouble()
+        val ratioUpperCi = parts[23].toDouble()
+        val ratioMeanKld = parts[24].toDouble()
+        val ratioLowerKld = parts[25].toDouble()
+        val ratioUpperKld = parts[26].toDouble()
 
         meanChangeRateCov.add(meanChangeRate(meanDefault, meanCov))
         meanChangeRateCi.add(meanChangeRate(meanDefault, meanCi))
@@ -91,16 +94,28 @@ private fun eval(name: String, file: File) {
             combinationDivergence++
         }
 
-        ciRatioListCov.add(ciRatioPercentage(ratioLowerCov, ratioUpperCov))
-        if (ciRatioPercentage(ratioLowerCov, ratioUpperCov) > 0.01) {
+        if(ratioMeanCov.isNaN()){
+            ciRatioListCov.add(0.0)
+        }else{
+            ciRatioListCov.add(ratioMeanCov)
+        }
+        if (ratioMeanCov > 0.01) {
             ciRatioCov++
         }
-        ciRatioListCi.add(ciRatioPercentage(ratioLowerCi, ratioUpperCi))
-        if (ciRatioPercentage(ratioLowerCi, ratioUpperCi) > 0.01) {
+        if(ratioMeanCi.isNaN()){
+            ciRatioListCi.add(0.0)
+        }else{
+            ciRatioListCi.add(ratioMeanCi)
+        }
+        if (ratioMeanCi > 0.01) {
             ciRatioCi++
         }
-        ciRatioListDivergence.add(ciRatioPercentage(ratioLowerKld, ratioUpperKld))
-        if (ciRatioPercentage(ratioLowerKld, ratioUpperKld) > 0.01) {
+        if(ratioMeanKld.isNaN()){
+            ciRatioListDivergence.add(0.0)
+        }else{
+            ciRatioListDivergence.add(ratioMeanKld)
+        }
+        if (ratioMeanKld > 0.01) {
             ciRatioDivergence++
         }
 
@@ -121,13 +136,5 @@ private fun meanChangeRate(before: Double, after: Double): Double {
         0.0
     } else {
         abs((after / before) - 1)
-    }
-}
-
-private fun ciRatioPercentage(lower: Double, upper: Double): Double {
-    return when {
-        lower > 1 -> lower - 1
-        upper < 1 -> 1 - upper
-        else -> 0.0
     }
 }

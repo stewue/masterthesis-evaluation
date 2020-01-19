@@ -82,11 +82,3 @@ fun main() {
 private fun getItems(items: Collection<HistogramItem>, min: Int, max: Int): List<HistogramItem> {
     return items.filter { it.fork == 1 && it.iteration > min && it.iteration <= max }
 }
-
-private fun ciRatioPercentage(lower: Double, upper: Double): Double {
-    return when {
-        lower > 1 -> lower - 1
-        upper < 1 -> 1 - upper
-        else -> 0.0
-    }
-}
