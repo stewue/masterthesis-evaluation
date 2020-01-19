@@ -35,10 +35,6 @@ private fun eval(name: String, file: File) {
     var combinationCi = 0
     var combinationDivergence = 0
 
-    var ciRatioCov = 0
-    var ciRatioCi = 0
-    var ciRatioDivergence = 0
-
     val ciRatioListCov = mutableListOf<Double>()
     val ciRatioListCi = mutableListOf<Double>()
     val ciRatioListDivergence = mutableListOf<Double>()
@@ -97,26 +93,17 @@ private fun eval(name: String, file: File) {
         if(ratioMeanCov.isNaN()){
             ciRatioListCov.add(0.0)
         }else{
-            ciRatioListCov.add(ratioMeanCov)
-        }
-        if (ratioMeanCov > 0.01) {
-            ciRatioCov++
+            ciRatioListCov.add(abs( 1 - ratioMeanCov))
         }
         if(ratioMeanCi.isNaN()){
             ciRatioListCi.add(0.0)
         }else{
-            ciRatioListCi.add(ratioMeanCi)
-        }
-        if (ratioMeanCi > 0.01) {
-            ciRatioCi++
+            ciRatioListCi.add(abs( 1 - ratioMeanCi))
         }
         if(ratioMeanKld.isNaN()){
             ciRatioListDivergence.add(0.0)
         }else{
-            ciRatioListDivergence.add(ratioMeanKld)
-        }
-        if (ratioMeanKld > 0.01) {
-            ciRatioDivergence++
+            ciRatioListDivergence.add(abs( 1 - ratioMeanKld))
         }
 
         counter++
@@ -126,7 +113,6 @@ private fun eval(name: String, file: File) {
     output.append(";${meanChangeRateCov.average()};${meanChangeRateCi.average()};${meanChangeRateDivergence.average()}")
     output.append(";${ciWidthSmallerDefault / counter}")
     output.append(";${combinationCov / counter};${combinationCi / counter};${combinationDivergence / counter}")
-    output.append(";${ciRatioCov / counter};${ciRatioCi / counter};${ciRatioDivergence / counter}")
     output.appendln(";${ciRatioListCov.average()};${ciRatioListCi.average()};${ciRatioListDivergence.average()}")
 }
 
