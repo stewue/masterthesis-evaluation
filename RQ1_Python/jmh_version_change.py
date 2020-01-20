@@ -15,14 +15,26 @@ valuesYounger, baseYounger = np.histogram(younger, bins=[0,1,2,3,4,5,10,27], wei
 
 x = np.arange(7)
 
-plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
+fig = plt.figure()
+total = data.shape[0]
+
+# absolute
+ax1 = fig.add_subplot()
+ax1.bar(x, valuesYounger * total, label="short-lived projects", color="green", bottom=valuesOlder * total)
+ax1.bar(x, valuesOlder * total, label="long-lived projects", color="orange")
+ax1.set_ylabel('# projects')
+
+# relative
+ax2 = ax1.twinx()
+plt.gca().yaxis.set_major_formatter(PercentFormatter(1, 0))
+ax2.bar(x, valuesYounger, color="green", bottom=valuesOlder)
+ax2.bar(x, valuesOlder, color="orange")
+ax2.set_ylabel('# projects [%]')
+
 label = ('0', '1', '2', '3', '4', '5-9', '10-27')
-plt.bar(x, valuesYounger, label="short-lived projects", color="green", bottom=valuesOlder)
-plt.bar(x, valuesOlder, label="long-lived projects", color="orange")
-plt.legend()
+ax1.legend()
 plt.xticks(x, label)
-plt.ylabel('probability')
-plt.xlabel('# JMH version updates')
+ax1.set_xlabel('# JMH version updates')
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\jmh_version_change.pdf')
