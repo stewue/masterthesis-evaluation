@@ -1,13 +1,25 @@
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.ticker import PercentFormatter
 
 name = ('1', '2', '3', '4')
-percentage = (0.9731, 0.019, 0.0022, 0.0056)
+percentage = np.array([0.9731, 0.019, 0.0022, 0.0056])
+total = 8894
 
-plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
-plt.bar(name, percentage)
-plt.ylabel('probability')
-plt.xlabel('# modes')
+fig = plt.figure()
+
+# absolute
+ax1 = fig.add_subplot()
+ax1.bar(name, percentage * total)
+ax1.set_ylabel('# benchmarks')
+
+# relative
+ax2 = ax1.twinx()
+plt.gca().yaxis.set_major_formatter(PercentFormatter(1, 0))
+ax2.bar(name, percentage)
+ax2.set_ylabel('# benchmarks [%]')
+
+ax1.set_xlabel('# modes')
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\mode_number.pdf')

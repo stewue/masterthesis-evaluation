@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter
 
 data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\aggregated\\samplecommits.csv')
 
@@ -12,10 +13,23 @@ valuesShort, base = np.histogram(short, range=[0, 65], bins=65)
 
 label = np.arange(0, 65, 1)
 
-plt.bar(label, valuesShort, label="short-lived projects", color="green", bottom=valuesLong)
-plt.bar(label, valuesLong, label="long-lived projects", color="orange")
-plt.ylabel('# projects')
-plt.xlabel('# sample commits')
+fig = plt.figure()
+total = data.shape[0]
+
+# absolute
+ax1 = fig.add_subplot()
+ax1.bar(label, valuesShort, label="short-lived projects", color="green", bottom=valuesLong)
+ax1.bar(label, valuesLong, label="long-lived projects", color="orange")
+ax1.set_ylabel('# projects')
+
+# relative
+ax2 = ax1.twinx()
+plt.gca().yaxis.set_major_formatter(PercentFormatter(1, 0))
+ax2.bar(label, valuesShort / total, label="short-lived projects", color="green", bottom=valuesLong / total)
+ax2.bar(label, valuesLong / total, label="long-lived projects", color="orange")
+ax2.set_ylabel('# projects [%]')
+
+ax1.set_xlabel('# sample commits')
 plt.legend()
 plt.tight_layout()
 #plt.show()
