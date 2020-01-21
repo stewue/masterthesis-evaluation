@@ -39,3 +39,4 @@ plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\R
 print("average: " + str(np.average(filter)))
 print("std: " + str(np.std(filter)))
 print("median: " + str(np.median(filter)))
+print("total: " + str(total))

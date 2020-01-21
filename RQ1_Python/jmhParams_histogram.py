@@ -33,3 +33,4 @@ plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\R
 e1 = values[values <= 1]
 print("=1: " + str(e1.size / total))
 print("=1: " + str(e1.size))
+print("total: " + str(total))

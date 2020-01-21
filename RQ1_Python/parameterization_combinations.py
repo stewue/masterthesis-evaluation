@@ -42,3 +42,4 @@ plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\R
 s10 = values[values <= 10]
 print("<=10: " + str(s10.size / total))
 print("<=10: " + str(s10.size))
+print("total: " + str(total))
