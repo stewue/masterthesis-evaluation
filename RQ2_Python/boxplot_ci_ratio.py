@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy.stats import iqr
 
 def convert(data):
     convered = data.to_numpy()
@@ -36,6 +37,9 @@ plt.tight_layout()
 # plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ2_Results\\images\\boxplot_ciratio_' + type + '.pdf')
 
-print("min: " + str(np.mean(np.concatenate(min, axis=0))))
+print("min: " + str(np.mean(np.concatenate(min, axis=0))) + " -> " + str(np.std(np.concatenate(min, axis=0))))
 print("mean: " + str(np.mean(np.concatenate(mean, axis=0))))
-print("max: " + str(np.mean(np.concatenate(max, axis=0))))
+print("std: " + str(np.std(np.concatenate(mean, axis=0))))
+print("median: " + str(np.median(np.concatenate(mean, axis=0))))
+print("iqr: " + str(iqr(np.concatenate(mean, axis=0))))
+print("max: " + str(np.mean(np.concatenate(max, axis=0))) + " -> " + str(np.std(np.concatenate(max, axis=0))))
