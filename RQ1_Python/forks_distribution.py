@@ -30,4 +30,7 @@ plt.xticks(x, label)
 ax1.set_xlabel('# forks')
 plt.tight_layout()
 #plt.show()
-plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\forks_distribution.pdf')
+#plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\forks_distribution.pdf')
+
+print("total: " + str(total))
+print(valuesAll * total)

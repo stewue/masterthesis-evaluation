@@ -25,3 +25,5 @@ plt.legend()
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\javaTarget_version.pdf')
+
+print("extraction possible: " + str(total))

@@ -26,3 +26,5 @@ ax1.legend()
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\jmh_version.pdf')
+
+print("extraction possible: " + str(total))

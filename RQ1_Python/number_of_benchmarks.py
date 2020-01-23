@@ -15,7 +15,7 @@ x = np.arange(8)
 
 fig = plt.figure()
 ymax = 275
-total = filter.size
+total = 753
 
 # absolute
 ax1 = fig.add_subplot()
@@ -40,3 +40,12 @@ print("average: " + str(np.average(filter)))
 print("std: " + str(np.std(filter)))
 print("median: " + str(np.median(filter)))
 print("total: " + str(total))
+print("max: " + str(np.max(filter)))
+
+s10 = filter[filter < 10]
+print("<10: " + str(s10.size / total))
+print("<10: " + str(s10.size))
+
+l50 = filter[filter >= 50]
+print(">=50: " + str(l50.size / total))
+print(">=50: " + str(l50.size))

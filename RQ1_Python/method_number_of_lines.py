@@ -32,6 +32,10 @@ plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\method_number_of_lines.pdf')
 
+print("mean: " + str(np.mean(values)))
+print("std: " + str(np.std(values)))
+print("max: " + str(np.max(values)))
+
 e1 = values[values == 1]
 print("=1: " + str(e1.size / total))
 print("=1: " + str(e1.size))

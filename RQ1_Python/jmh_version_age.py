@@ -44,3 +44,7 @@ plt.legend()
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\jmh_version_age.pdf')
+
+o2 = older[older > 2]
+print("older 2 years: " + str(len(o2) / len(older)))
+print("older 2 years: " + str(len(o2)))

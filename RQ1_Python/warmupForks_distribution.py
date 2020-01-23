@@ -31,3 +31,6 @@ ax1.set_xlabel('# warmup forks')
 plt.tight_layout()
 #plt.show()
 plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\warmupForks_distribution.pdf')
+
+print("total: " + str(total))
+print(valuesAll * total)

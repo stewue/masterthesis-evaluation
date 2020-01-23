@@ -40,6 +40,9 @@ print("max: " + str(np.max(array)))
 print("median: " + str(np.median(array)))
 print("total: " + str(total))
 
+s1 = list(filter(lambda x: x < 1, array))
+print("<1h: " + str(len(s1) / len(array)))
+
 l3 = list(filter(lambda x: x > 3, array))
 print(">3h: " + str(len(l3) / len(array)))
 

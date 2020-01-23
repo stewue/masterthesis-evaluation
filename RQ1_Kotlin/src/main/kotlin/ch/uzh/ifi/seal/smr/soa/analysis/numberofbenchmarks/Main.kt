@@ -15,12 +15,7 @@ fun main() {
 
     projects.filter { it.mainRepo == true }
             .forEach {
-                val useJmhSince = if (it.firstBenchmarkFound == null) {
-                    0.0
-                } else {
-                    (it.lastCommit!! - it.firstBenchmarkFound!!) / yearInSeconds
-                }
-                output.add(ResNumberOfBenchmarks(it.project, it.numberOfBenchmarks!!, useJmhSince))
+                output.add(ResNumberOfBenchmarks(it.project, it.numberOfBenchmarks!!))
             }
 
     OpenCSVWriter.write(outputFile, output, CustomMappingStrategy(ResNumberOfBenchmarks::class.java))

@@ -14,7 +14,7 @@ valuesShort, base = np.histogram(short, range=[0, 65], bins=65)
 label = np.arange(0, 65, 1)
 
 fig = plt.figure()
-total = data.shape[0]
+total = 753
 
 # absolute
 ax1 = fig.add_subplot()

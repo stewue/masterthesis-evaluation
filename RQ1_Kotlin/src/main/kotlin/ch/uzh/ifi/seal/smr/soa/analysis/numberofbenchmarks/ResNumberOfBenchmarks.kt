@@ -9,13 +9,9 @@ class ResNumberOfBenchmarks {
     @CsvBindByPosition(position = 1)
     var benchmarks: Int = 0
 
-    @CsvBindByPosition(position = 2)
-    var useJmhSince: Double = 0.0
-
     constructor()
-    constructor(project: String, benchmarks: Int, useJmhSince: Double) {
+    constructor(project: String, benchmarks: Int) {
         this.project = project
         this.benchmarks = benchmarks
-        this.useJmhSince = useJmhSince
     }
 }

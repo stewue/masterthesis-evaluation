@@ -3,8 +3,7 @@ import pandas as pd
 import numpy as np
 from matplotlib.ticker import PercentFormatter
 
-data = pd.read_csv('D:\\mp\\current-merged-isMain-header.csv')
-#data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain-header.csv')
+data = pd.read_csv('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\current-commit\\merged-isMain-header.csv')
 
 grouped = data.groupby('project')
 
@@ -19,7 +18,7 @@ x = np.arange(8)
 
 fig = plt.figure()
 ymax = 275
-total = len(array)
+total = 753
 
 # absolute
 ax1 = fig.add_subplot()

@@ -45,3 +45,5 @@ print(">1: " + str(l1.size))
 l10 = all[all > 9]
 print(">10: " + str(l10.size / totalAll))
 print(">10: " + str(l10.size))
+
+print("total: " + str(totalAll))

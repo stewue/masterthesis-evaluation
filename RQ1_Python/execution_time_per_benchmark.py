@@ -27,8 +27,16 @@ ax1.set_xlabel('execution time [min]')
 plt.yticks(np.arange(0, 0.91, 0.1))
 plt.tight_layout()
 #plt.show()
-plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\execution_time_per_benchmark.pdf')
+#plt.savefig('C:\\Users\\stewue\\OneDrive - Wuersten\\Uni\\19_HS\\Masterarbeit\\Repo\\Evaluation\\RQ1_Results\\images\\execution_time_per_benchmark.pdf')
 
 print("max: " + str(np.max(totalTime)))
 print("median: " + str(np.median(totalTime)))
 print("total: " + str(total))
+
+s10 = totalTime[totalTime < 10]
+print("<10min: " + str(len(s10) / total))
+print("<10min: " + str(len(s10)))
+
+s30 = totalTime[totalTime < 30]
+print("<30min: " + str(len(s30) / total))
+print("<30min: " + str(len(s30)))
