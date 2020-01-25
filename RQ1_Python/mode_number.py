@@ -3,8 +3,8 @@ import numpy as np
 from matplotlib.ticker import PercentFormatter
 
 name = ('1', '2', '3', '4')
-percentage = np.array([0.9731, 0.019, 0.0022, 0.0056])
-total = 8894
+percentage = np.array([0.982, 0.013, 0.0015, 0.0037])
+total = 13387
 
 fig = plt.figure()
 
