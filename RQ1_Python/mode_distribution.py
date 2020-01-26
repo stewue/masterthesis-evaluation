@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import PercentFormatter
 
-name = ('throughput', 'average', 'sample', 'singleshot', 'all')
-percentage = np.array([0.2557, 0.3519, 0.0572, 0.0264, 0.0037])
-default = np.array([0.3356, 0, 0, 0, 0])
-total = 13387
+name = ('throughput', 'average time', 'sample time', 'singleshot time')
+percentage = np.array([0.245, 0.344, 0.048, 0.022])
+default = np.array([0.342, 0, 0, 0])
+total = 13148
 
 fig = plt.figure()
 

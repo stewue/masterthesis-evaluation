@@ -34,16 +34,32 @@ private fun analyze(items: Set<Result>, title: String, property: KMutablePropert
 }
 
 private fun analyzeMode(items: Set<Result>) {
+    val counter = mutableMapOf<Result, Int>()
+    count(items, Result::modeIsThroughput, counter)
+    count(items, Result::modeIsAverageTime, counter)
+    count(items, Result::modeIsSampleTime, counter)
+    count(items, Result::modeIsSingleShotTime, counter)
+
+    // default = 1 mode
+    val isDefaultMode = items.filter { it.modeIsThroughput == null && it.modeIsAverageTime == null && it.modeIsSampleTime == null && it.modeIsSingleShotTime == null }
+
+    isDefaultMode.forEach {
+        counter[it] = counter.getOrDefault(it, 0) + 1
+    }
+
+    val exact1Mode = counter.filter { (_, value) -> value == 1 }.map { (key, _) -> key }
+
     println("~~~mode~~~")
-    analyzeSingleMode(items, "throughput", Result::modeIsThroughput)
-    analyzeSingleMode(items, "averageTime", Result::modeIsAverageTime)
-    analyzeSingleMode(items, "sampleTime", Result::modeIsSampleTime)
-    analyzeSingleMode(items, "singleShotTime", Result::modeIsSingleShotTime)
+    println("default: ${isDefaultMode.size} (${percentageString(isDefaultMode.size, exact1Mode.size)})")
+    analyzeSingleMode(exact1Mode, "throughput", Result::modeIsThroughput)
+    analyzeSingleMode(exact1Mode, "averageTime", Result::modeIsAverageTime)
+    analyzeSingleMode(exact1Mode, "sampleTime", Result::modeIsSampleTime)
+    analyzeSingleMode(exact1Mode, "singleShotTime", Result::modeIsSingleShotTime)
     analyzeModeAll(items)
-    analyzeNumberOfModes(items)
+    analyzeNumberOfModes(counter)
 }
 
-private fun analyzeSingleMode(items: Set<Result>, title: String, property: KMutableProperty1<Result, *>) {
+private fun analyzeSingleMode(items: List<Result>, title: String, property: KMutableProperty1<Result, *>) {
     val list = items.filter { property.get(it) == true }
     println("$title: ${list.size} (${percentageString(list.size, items.size)})")
 }
@@ -55,13 +71,7 @@ private fun analyzeModeAll(items: Set<Result>) {
     println("all: ${list.size} (${percentageString(list.size, items.size)})")
 }
 
-private fun analyzeNumberOfModes(items: Set<Result>) {
-    val counter = mutableMapOf<Result, Int>()
-    count(items, Result::modeIsThroughput, counter)
-    count(items, Result::modeIsAverageTime, counter)
-    count(items, Result::modeIsSampleTime, counter)
-    count(items, Result::modeIsSingleShotTime, counter)
-
+private fun analyzeNumberOfModes(counter: Map<Result, Int>) {
     val grouped = counter.toList().groupingBy { it.second }.eachCount().toList().sortedBy { it.first }
 
     grouped.forEach { (numberOfModes, occurrences) ->
